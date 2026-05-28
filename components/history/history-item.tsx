@@ -1,59 +1,67 @@
 "use client";
 
+import { useState } from "react";
+import { FileText, Pencil, Trash2 } from "lucide-react";
+import { getReportLabel } from "@/lib/get-report-label";
 import type { SavedReport } from "@/lib/types";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { HistoryItemLabel } from "./history-item-label";
 
 interface HistoryItemProps {
   report: SavedReport;
   onRestore: () => void;
   onDelete: () => void;
+  onUpdateTitle: (title: string) => void;
 }
 
-export function HistoryItem({ report, onRestore, onDelete }: HistoryItemProps) {
-  const date = new Date(report.createdAt);
-  const formattedDate = date.toLocaleDateString("es-ES", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
-  const formattedTime = date.toLocaleTimeString("es-ES", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
-  const preview = report.markdown.split("\n").slice(0, 3).join(" ");
+export function HistoryItem({
+  report,
+  onRestore,
+  onDelete,
+  onUpdateTitle,
+}: HistoryItemProps) {
+  const [editing, setEditing] = useState(false);
+  const label = getReportLabel(report);
 
   return (
-    <div className="group rounded-md px-2 py-2 transition-colors duration-200 hover:bg-sidebar-accent">
-      <div className="mb-1.5 flex items-center justify-between gap-2">
-        <Badge variant="secondary" className="h-5 px-1.5 text-[0.65rem] font-medium">
-          {report.test}
-        </Badge>
-        <span className="shrink-0 text-[0.65rem] tabular-nums text-muted-foreground">
-          {formattedDate} {formattedTime}
-        </span>
-      </div>
-      <p className="mb-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-        {preview || "Sin contenido"}
-      </p>
-      <div className="flex gap-1 opacity-100 sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
-        <Button
-          variant="ghost"
-          size="xs"
-          className="h-7 flex-1 transition-colors duration-200 active:scale-[0.98]"
-          onClick={onRestore}
+    <div className="group flex items-center justify-between rounded-lg px-2 py-1.5 transition-colors hover:bg-surface-container-high">
+      <button
+        type="button"
+        onClick={onRestore}
+        disabled={editing}
+        className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden text-left disabled:pointer-events-none"
+      >
+        <FileText className="size-5 shrink-0 text-outline" />
+        <HistoryItemLabel
+          label={label}
+          editing={editing}
+          onStartEdit={() => setEditing(true)}
+          onStopEdit={() => setEditing(false)}
+          onSave={onUpdateTitle}
+        />
+      </button>
+      <div className="flex shrink-0 items-center opacity-0 transition-opacity group-hover:opacity-100">
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setEditing(true);
+          }}
+          className="p-1 text-on-surface-variant hover:text-on-surface"
+          aria-label="Editar título"
         >
-          Restaurar
-        </Button>
-        <Button
-          variant="ghost"
-          size="xs"
-          className="h-7 text-muted-foreground transition-colors duration-200 hover:text-destructive active:scale-[0.98]"
-          onClick={onDelete}
+          <Pencil className="size-[18px]" />
+        </button>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onDelete();
+          }}
+          className="p-1 text-on-surface-variant hover:text-destructive"
+          aria-label="Eliminar informe"
         >
-          Eliminar
-        </Button>
+          <Trash2 className="size-[18px]" />
+        </button>
       </div>
     </div>
   );

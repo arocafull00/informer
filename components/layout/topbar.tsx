@@ -1,66 +1,42 @@
 "use client";
 
-import { useMemo } from "react";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { Question, TestType } from "@/lib/types";
-import adirData from "@/data/adir.json";
-import ados2Data from "@/data/ados2.json";
+import type { TestType } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
-const testData: Record<TestType, Question[]> = {
-  ADIR: adirData as unknown as Question[],
-  ADOS2: ados2Data as unknown as Question[],
-};
+const tests: { value: TestType; label: string }[] = [
+  { value: "ADIR", label: "ADI-R" },
+  { value: "ADOS2", label: "ADOS-2" },
+];
 
 export function Topbar() {
-  const { currentTest, answers, setCurrentTest } = useCurrentReportStore();
-
-  const { answered, total } = useMemo(() => {
-    const questions = testData[currentTest];
-    const answeredCount = questions.filter((q) => answers[q.id] !== undefined).length;
-    return { answered: answeredCount, total: questions.length };
-  }, [currentTest, answers]);
-
-  const progress = total > 0 ? (answered / total) * 100 : 0;
+  const { currentTest, setCurrentTest } = useCurrentReportStore();
 
   return (
-    <div className="border-b border-border bg-background px-6 py-3">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Tabs
-          value={currentTest}
-          onValueChange={(value) => setCurrentTest(value as TestType)}
-        >
-          <TabsList variant="line" className="h-9 w-fit">
-            <TabsTrigger value="ADIR" className="px-3">
-              ADI-R
-            </TabsTrigger>
-            <TabsTrigger value="ADOS2" className="px-3">
-              ADOS-2
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
-        <div className="flex min-w-[140px] flex-col gap-1.5">
-          <div className="flex items-baseline justify-between gap-2">
-            <span className="text-xs text-muted-foreground">Progreso</span>
-            <span className="text-xs font-medium tabular-nums text-foreground">
-              {answered} / {total}
-            </span>
-          </div>
-          <div
-            className="h-1 overflow-hidden rounded-full bg-muted"
-            role="progressbar"
-            aria-valuenow={answered}
-            aria-valuemin={0}
-            aria-valuemax={total}
-            aria-label="Preguntas respondidas"
-          >
-            <div
-              className="h-full rounded-full bg-primary transition-[width] duration-200 ease-out motion-reduce:transition-none"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+    <nav className="sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-outline-variant bg-surface px-margin-page">
+      <div className="flex items-center gap-6">
+        <span className="text-headline-lg font-black text-primary">Informer</span>
+        <div className="hidden items-center gap-4 md:flex">
+          {tests.map(({ value, label }) => {
+            const isActive = currentTest === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setCurrentTest(value)}
+                className={cn(
+                  "px-2 py-1 text-body-md transition-colors",
+                  isActive
+                    ? "border-b-2 border-primary pb-1 font-bold text-primary"
+                    : "font-medium text-on-surface-variant hover:bg-surface-container-high rounded"
+                )}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

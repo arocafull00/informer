@@ -11,6 +11,7 @@ type ReportHistoryStore = {
     setCurrentTest: (test: TestType) => void
   ) => void;
   deleteReport: (id: string) => void;
+  updateReportTitle: (id: string, title: string) => void;
 };
 
 export const useReportHistoryStore = create<ReportHistoryStore>()(
@@ -32,6 +33,18 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
       deleteReport: (id) =>
         set((state) => ({
           reports: state.reports.filter((r) => r.id !== id),
+        })),
+      updateReportTitle: (id, title) =>
+        set((state) => ({
+          reports: state.reports.map((report) => {
+            if (report.id !== id) return report;
+            const trimmed = title.trim();
+            if (!trimmed) {
+              const { title: _, ...rest } = report;
+              return rest;
+            }
+            return { ...report, title: trimmed };
+          }),
         })),
     }),
     {

@@ -1,14 +1,16 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface CopyButtonProps {
   text: string;
+  className?: string;
+  showLabel?: boolean;
 }
 
-export function CopyButton({ text }: CopyButtonProps) {
+export function CopyButton({ text, className, showLabel = true }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -18,23 +20,25 @@ export function CopyButton({ text }: CopyButtonProps) {
   };
 
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      className="h-8 transition-colors duration-200 active:scale-[0.98]"
+    <button
+      type="button"
       onClick={handleCopy}
+      className={cn(
+        "flex items-center gap-1 rounded p-2 text-primary transition-colors hover:bg-surface-container active:scale-[0.98]",
+        className
+      )}
     >
       {copied ? (
         <>
-          <Check className="mr-1 h-4 w-4" />
-          Copiado
+          <Check className="size-5" />
+          {showLabel && <span className="text-label-md hidden xl:inline">Copiado</span>}
         </>
       ) : (
         <>
-          <Copy className="mr-1 h-4 w-4" />
-          Copiar
+          <Copy className="size-5" />
+          {showLabel && <span className="text-label-md hidden xl:inline">Copiar</span>}
         </>
       )}
-    </Button>
+    </button>
   );
 }

@@ -19,17 +19,22 @@ export function generateMarkdown(
   Object.entries(sections).forEach(([, questionsInSection]) => {
     if (questionsInSection.length === 0) return;
 
-    const first = questionsInSection[0];
-    lines.push(`${first.sectionNumber}. ${first.section}`);
+    const bullets: string[] = [];
 
     questionsInSection.forEach((question) => {
       const score = answers[question.id];
       if (score === undefined) return;
       const answerText = question.answers[score.toString()];
       if (!answerText) return;
-      lines.push(`- ${answerText}`);
+      bullets.push(`- ${answerText}`);
     });
 
+    if (bullets.length === 0) return;
+
+    const first = questionsInSection[0];
+    lines.push(`${first.sectionNumber}. ${first.section}`);
+    lines.push("");
+    lines.push(...bullets);
     lines.push("");
   });
 

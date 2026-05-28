@@ -12,11 +12,7 @@ export function ScoreSelector({ questionId }: ScoreSelectorProps) {
   const selected = answers[questionId];
 
   return (
-    <div
-      className="inline-flex shrink-0 rounded-md border border-border bg-muted/50 p-0.5"
-      role="group"
-      aria-label="Puntuación"
-    >
+    <div className="flex gap-2" role="group" aria-label="Puntuación">
       {[0, 1, 2, 3].map((score) => {
         const isSelected = selected === score;
         return (
@@ -25,12 +21,10 @@ export function ScoreSelector({ questionId }: ScoreSelectorProps) {
             type="button"
             aria-pressed={isSelected}
             className={cn(
-              "flex h-8 w-8 items-center justify-center rounded-[calc(var(--radius-md)-2px)] text-sm font-medium tabular-nums transition-all duration-200 motion-reduce:transition-none outline-none",
-              "hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
-              "active:scale-[0.97]",
+              "flex size-10 items-center justify-center rounded-lg border text-body-md tabular-nums transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100",
               isSelected
-                ? "bg-background text-foreground shadow-sm"
-                : "text-muted-foreground"
+                ? "border-2 border-primary bg-primary text-on-primary shadow-inner"
+                : "border-outline-variant text-on-surface-variant hover:bg-surface-container"
             )}
             onClick={() => setAnswer(questionId, score)}
           >

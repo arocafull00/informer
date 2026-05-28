@@ -16,4 +16,5 @@ export type SavedReport = {
   test: TestType;
   answers: Record<string, number>;
   markdown: string;
+  title?: string;
 };
