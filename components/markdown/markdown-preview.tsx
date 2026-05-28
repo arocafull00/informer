@@ -6,7 +6,6 @@ import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CopyButton } from "./copy-button";
-import { Card, CardContent } from "@/components/ui/card";
 import adirData from "@/data/adir.json";
 import ados2Data from "@/data/ados2.json";
 import type { Question, TestType } from "@/lib/types";
@@ -27,24 +26,27 @@ export function MarkdownPreview() {
   const isEmpty = markdown.split("\n").filter(Boolean).length <= 2;
 
   return (
-    <Card className="sticky top-0 h-fit">
-      <CardContent className="p-4">
-        <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-medium">Vista previa</h3>
-          <CopyButton text={markdown} />
-        </div>
-        <ScrollArea className="h-[calc(100vh-200px)]">
-          <div className="prose prose-sm max-w-none text-muted-foreground">
-            {isEmpty ? (
-              <p className="text-sm italic text-muted-foreground">
-                Responde las preguntas para ver el informe
+    <div className="flex h-full min-h-0 flex-col">
+      <div className="flex shrink-0 items-center justify-between border-b border-border px-4 py-3">
+        <h3 className="text-sm font-medium text-foreground">Vista previa</h3>
+        <CopyButton text={markdown} />
+      </div>
+      <ScrollArea className="min-h-0 flex-1">
+        <div className="px-4 py-4">
+          {isEmpty ? (
+            <div>
+              <p className="text-sm font-medium text-foreground">Informe vacío</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Asigna puntuaciones en el panel central para generar el texto del informe.
               </p>
-            ) : (
+            </div>
+          ) : (
+            <div className="prose prose-sm max-w-none text-foreground prose-headings:font-medium prose-headings:tracking-tight prose-p:text-sm prose-p:leading-relaxed prose-p:text-muted-foreground prose-strong:text-foreground">
               <ReactMarkdown>{markdown}</ReactMarkdown>
-            )}
-          </div>
-        </ScrollArea>
-      </CardContent>
-    </Card>
+            </div>
+          )}
+        </div>
+      </ScrollArea>
+    </div>
   );
 }

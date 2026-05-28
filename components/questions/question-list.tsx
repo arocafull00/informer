@@ -2,7 +2,6 @@
 
 import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { QuestionRow } from "./question-row";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import adirData from "@/data/adir.json";
 import ados2Data from "@/data/ados2.json";
 import type { Question, TestType } from "@/lib/types";
@@ -33,22 +32,20 @@ export function QuestionList({ className }: QuestionListProps) {
   }, [questions]);
 
   return (
-    <div className={`space-y-6 ${className || ""}`}>
+    <div className={`space-y-8 ${className || ""}`}>
       {Object.entries(grouped).map(([, qs]) => {
         const first = qs[0];
         return (
-          <Card key={first.section}>
-            <CardHeader>
-              <CardTitle className="text-base">
-                {first.sectionNumber}. {first.section}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          <section key={first.section}>
+            <h2 className="sticky top-0 z-10 -mx-1 mb-1 bg-background/95 px-1 py-2 text-base font-medium tracking-tight text-foreground backdrop-blur-sm">
+              {first.sectionNumber}. {first.section}
+            </h2>
+            <div className="divide-y divide-border">
               {qs.map((question) => (
                 <QuestionRow key={question.id} question={question} />
               ))}
-            </CardContent>
-          </Card>
+            </div>
+          </section>
         );
       })}
     </div>

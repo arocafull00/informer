@@ -18,7 +18,12 @@ export function CopyButton({ text }: CopyButtonProps) {
   };
 
   return (
-    <Button variant="ghost" size="sm" onClick={handleCopy}>
+    <Button
+      variant="ghost"
+      size="sm"
+      className="h-8 transition-colors duration-200 active:scale-[0.98]"
+      onClick={handleCopy}
+    >
       {copied ? (
         <>
           <Check className="mr-1 h-4 w-4" />

@@ -8,15 +8,17 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex min-h-dvh overflow-hidden bg-background">
       <Sidebar />
-      <main className="flex flex-1 flex-col overflow-hidden">
+      <main className="flex min-w-0 flex-1 flex-col overflow-hidden bg-background">
         <Topbar />
-        <ScrollArea className="flex-1 p-6">
-          <QuestionList className="max-w-3xl" />
+        <ScrollArea className="flex-1">
+          <div className="p-6">
+            <QuestionList className="max-w-3xl" />
+          </div>
         </ScrollArea>
       </main>
-      <aside className="w-[400px] border-l bg-background p-4">
+      <aside className="flex w-[380px] shrink-0 flex-col border-l border-border bg-preview">
         <MarkdownPreview />
       </aside>
     </div>

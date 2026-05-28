@@ -25,29 +25,31 @@ export function HistoryItem({ report, onRestore, onDelete }: HistoryItemProps) {
   const preview = report.markdown.split("\n").slice(0, 3).join(" ");
 
   return (
-    <div className="rounded-lg border bg-card p-3">
-      <div className="mb-2 flex items-center justify-between">
-        <Badge variant="secondary">{report.test}</Badge>
-        <span className="text-xs text-muted-foreground">
+    <div className="group rounded-md px-2 py-2 transition-colors duration-200 hover:bg-sidebar-accent">
+      <div className="mb-1.5 flex items-center justify-between gap-2">
+        <Badge variant="secondary" className="h-5 px-1.5 text-[0.65rem] font-medium">
+          {report.test}
+        </Badge>
+        <span className="shrink-0 text-[0.65rem] tabular-nums text-muted-foreground">
           {formattedDate} {formattedTime}
         </span>
       </div>
-      <p className="mb-2 line-clamp-2 text-xs text-muted-foreground">
+      <p className="mb-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
         {preview || "Sin contenido"}
       </p>
-      <div className="flex gap-2">
+      <div className="flex gap-1 opacity-100 sm:opacity-0 sm:transition-opacity sm:duration-200 sm:group-hover:opacity-100">
         <Button
-          variant="outline"
-          size="sm"
-          className="flex-1 transition-transform active:scale-[0.97]"
+          variant="ghost"
+          size="xs"
+          className="h-7 flex-1 transition-colors duration-200 active:scale-[0.98]"
           onClick={onRestore}
         >
           Restaurar
         </Button>
         <Button
           variant="ghost"
-          size="sm"
-          className="transition-transform active:scale-[0.97]"
+          size="xs"
+          className="h-7 text-muted-foreground transition-colors duration-200 hover:text-destructive active:scale-[0.98]"
           onClick={onDelete}
         >
           Eliminar

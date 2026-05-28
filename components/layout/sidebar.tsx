@@ -5,8 +5,6 @@ import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { HistoryItem } from "@/components/history/history-item";
 import adirData from "@/data/adir.json";
 import ados2Data from "@/data/ados2.json";
@@ -46,34 +44,37 @@ export function Sidebar() {
   const hasAnswers = Object.keys(answers).length > 0;
 
   return (
-    <aside className="flex h-full w-64 flex-col border-r bg-background">
-      <div className="flex-1 overflow-hidden">
-        <div className="px-4 py-3">
-          <h2 className="text-sm font-semibold text-foreground">Histórico</h2>
-        </div>
-        <Separator className="mb-3" />
-        <ScrollArea className="h-[calc(100vh-200px)] px-4">
-          <div className="space-y-3">
-            {reports.length === 0 ? (
-              <p className="py-8 text-center text-sm text-muted-foreground">
-                No hay informes guardados
+    <aside className="flex h-full w-60 shrink-0 flex-col border-r border-sidebar-border bg-sidebar">
+      <div className="flex items-center justify-between border-b border-sidebar-border px-4 py-3">
+        <span className="text-sm font-medium text-sidebar-foreground">Histórico</span>
+        <span className="text-xs tabular-nums text-muted-foreground">{reports.length}</span>
+      </div>
+      <ScrollArea className="min-h-0 flex-1">
+        <div className="px-2 py-2">
+          {reports.length === 0 ? (
+            <div className="px-2 py-10">
+              <p className="text-sm font-medium text-foreground">Sin informes</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                Responde preguntas y guarda el informe para verlo aquí.
               </p>
-            ) : (
-              reports.map((report) => (
+            </div>
+          ) : (
+            <div className="flex flex-col gap-0.5">
+              {reports.map((report) => (
                 <HistoryItem
                   key={report.id}
                   report={report}
                   onRestore={() => handleRestore(report.id)}
                   onDelete={() => deleteReport(report.id)}
                 />
-              ))
-            )}
-          </div>
-        </ScrollArea>
-      </div>
-      <div className="border-t p-4">
+              ))}
+            </div>
+          )}
+        </div>
+      </ScrollArea>
+      <div className="border-t border-sidebar-border p-3">
         <Button
-          className="w-full"
+          className="w-full transition-colors duration-200"
           onClick={handleSave}
           disabled={!hasAnswers}
         >
