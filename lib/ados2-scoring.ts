@@ -1,97 +1,185 @@
-import { ados2SectionLetter } from "@/lib/ados2-labels";
 import type { Question, TestType } from "@/lib/types";
 
 type Ados2ScoringTest = "ADOS2_ADULTO" | "ADOS2_NINO";
 
-type Ados2ScoringDomainConfig = {
-  id: string;
-  title: string;
+type ItemRef = {
   sectionNumber: number;
-  codes: string[];
-  totalLabel?: string;
-  variant: "warm" | "neutral";
+  code: string;
 };
 
-const ADOS2_SCORING_DOMAINS: Record<Ados2ScoringTest, Ados2ScoringDomainConfig[]> = {
-  ADOS2_ADULTO: [
-    {
-      id: "communication",
-      title: "Comunicación",
-      sectionNumber: 1,
-      codes: ["4", "8", "9", "10"],
-      totalLabel: "TOTAL COMUNICACIÓN (C)",
-      variant: "warm",
+type ScoringItemDef = {
+  itemCode: string;
+  groupId: "communication" | "isr" | "imagination" | "rbs";
+  refs: Record<Ados2ScoringTest, ItemRef>;
+};
+
+const ADOS2_SCORING_ITEMS: ScoringItemDef[] = [
+  {
+    itemCode: "A-4",
+    groupId: "communication",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 1, code: "4" },
+      ADOS2_NINO: { sectionNumber: 1, code: "4" },
     },
-    {
-      id: "isr",
-      title: "Interacción social recíproca",
-      sectionNumber: 2,
-      codes: ["1", "2", "6", "8", "9", "11", "12"],
-      totalLabel: "TOTAL INTERACCIÓN SOCIAL RECÍPROCA (ISR)",
-      variant: "warm",
+  },
+  {
+    itemCode: "A-8",
+    groupId: "communication",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 1, code: "8" },
+      ADOS2_NINO: { sectionNumber: 1, code: "8" },
     },
-    {
-      id: "imagination",
-      title: "Imaginación y creatividad",
-      sectionNumber: 3,
-      codes: ["1"],
-      variant: "neutral",
+  },
+  {
+    itemCode: "A-9",
+    groupId: "communication",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 1, code: "9" },
+      ADOS2_NINO: { sectionNumber: 1, code: "9" },
     },
-    {
-      id: "rbs",
-      title: "Comportamientos estereotipados e intereses restringidos",
-      sectionNumber: 4,
-      codes: ["1", "2", "4", "5"],
-      totalLabel:
-        "TOTAL COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
-      variant: "neutral",
+  },
+  {
+    itemCode: "A-10",
+    groupId: "communication",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 1, code: "10" },
+      ADOS2_NINO: { sectionNumber: 1, code: "10" },
     },
-  ],
-  ADOS2_NINO: [
-    {
-      id: "communication",
-      title: "Comunicación",
-      sectionNumber: 1,
-      codes: ["4", "8", "9", "10"],
-      totalLabel: "TOTAL COMUNICACIÓN (C)",
-      variant: "warm",
+  },
+  {
+    itemCode: "B-1",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "1" },
+      ADOS2_NINO: { sectionNumber: 2, code: "1" },
     },
-    {
-      id: "isr",
-      title: "Interacción social recíproca",
-      sectionNumber: 2,
-      codes: ["1", "2", "5", "6", "7", "9", "10"],
-      totalLabel: "TOTAL INTERACCIÓN SOCIAL RECÍPROCA (ISR)",
-      variant: "warm",
+  },
+  {
+    itemCode: "B-2",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "2" },
+      ADOS2_NINO: { sectionNumber: 2, code: "2" },
     },
-    {
-      id: "imagination",
-      title: "Imaginación y creatividad",
-      sectionNumber: 3,
-      codes: ["1"],
-      variant: "neutral",
+  },
+  {
+    itemCode: "B-6",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "6" },
+      ADOS2_NINO: { sectionNumber: 2, code: "5" },
     },
-    {
-      id: "rbs",
-      title: "Comportamientos estereotipados e intereses restringidos",
-      sectionNumber: 4,
-      codes: ["1", "2", "4", "5"],
-      totalLabel:
-        "TOTAL COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
-      variant: "neutral",
+  },
+  {
+    itemCode: "B-8",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "8" },
+      ADOS2_NINO: { sectionNumber: 2, code: "6" },
     },
-  ],
+  },
+  {
+    itemCode: "B-9",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "9" },
+      ADOS2_NINO: { sectionNumber: 2, code: "7" },
+    },
+  },
+  {
+    itemCode: "B-11",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "11" },
+      ADOS2_NINO: { sectionNumber: 2, code: "9" },
+    },
+  },
+  {
+    itemCode: "B-12",
+    groupId: "isr",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 2, code: "12" },
+      ADOS2_NINO: { sectionNumber: 2, code: "10" },
+    },
+  },
+  {
+    itemCode: "C-1",
+    groupId: "imagination",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 3, code: "1" },
+      ADOS2_NINO: { sectionNumber: 3, code: "1" },
+    },
+  },
+  {
+    itemCode: "D-1",
+    groupId: "rbs",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 4, code: "1" },
+      ADOS2_NINO: { sectionNumber: 4, code: "1" },
+    },
+  },
+  {
+    itemCode: "D-2",
+    groupId: "rbs",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 4, code: "2" },
+      ADOS2_NINO: { sectionNumber: 4, code: "2" },
+    },
+  },
+  {
+    itemCode: "D-4",
+    groupId: "rbs",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 4, code: "4" },
+      ADOS2_NINO: { sectionNumber: 4, code: "4" },
+    },
+  },
+  {
+    itemCode: "D-5",
+    groupId: "rbs",
+    refs: {
+      ADOS2_ADULTO: { sectionNumber: 4, code: "5" },
+      ADOS2_NINO: { sectionNumber: 4, code: "5" },
+    },
+  },
+];
+
+const GROUP_ORDER = [
+  "communication",
+  "isr",
+  "imagination",
+  "rbs",
+] as const;
+
+const GROUP_META: Record<
+  (typeof GROUP_ORDER)[number],
+  { totalLabel?: string; variant: "warm" | "neutral" }
+> = {
+  communication: {
+    totalLabel: "TOTAL COMUNICACIÓN (C)",
+    variant: "warm",
+  },
+  isr: {
+    totalLabel: "TOTAL INTERACCIÓN SOCIAL RECÍPROCA (ISR)",
+    variant: "warm",
+  },
+  imagination: {
+    variant: "neutral",
+  },
+  rbs: {
+    totalLabel:
+      "TOTAL COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    variant: "neutral",
+  },
 };
 
 export type Ados2ScoreRow = {
   itemCode: string;
-  question: string;
   score: number | null;
 };
 
 export type Ados2ScoreDomainResult = {
   id: string;
-  title: string;
   variant: "warm" | "neutral";
   rows: Ados2ScoreRow[];
   total: number | null;
@@ -104,13 +192,6 @@ export type Ados2ScoreSummary = {
   isrTotal: number | null;
   cPlusIsr: number | null;
 };
-
-export function ados2ItemCode(
-  sectionNumber: number,
-  code: string
-): string {
-  return `${ados2SectionLetter(sectionNumber)}-${code}`;
-}
 
 export function findQuestion(
   questions: Question[],
@@ -128,27 +209,22 @@ function sumAnsweredScores(rows: Ados2ScoreRow[]): number | null {
   return answered.reduce((sum, r) => sum + (r.score ?? 0), 0);
 }
 
-function buildDomainRows(
+function buildRow(
+  def: ScoringItemDef,
+  test: Ados2ScoringTest,
   questions: Question[],
-  config: Ados2ScoringDomainConfig,
   answers: Record<string, number>
-): Ados2ScoreRow[] {
-  return config.codes.map((code) => {
-    const question = findQuestion(questions, config.sectionNumber, code);
-    if (!question) {
-      return {
-        itemCode: ados2ItemCode(config.sectionNumber, code),
-        question: "",
-        score: null,
-      };
-    }
-    const score = answers[question.id];
-    return {
-      itemCode: ados2ItemCode(config.sectionNumber, code),
-      question: question.question,
-      score: score !== undefined ? score : null,
-    };
-  });
+): Ados2ScoreRow {
+  const ref = def.refs[test];
+  const question = findQuestion(questions, ref.sectionNumber, ref.code);
+  if (!question) {
+    return { itemCode: def.itemCode, score: null };
+  }
+  const score = answers[question.id];
+  return {
+    itemCode: def.itemCode,
+    score: score !== undefined ? score : null,
+  };
 }
 
 export function buildAdos2ScoreSummary(
@@ -158,19 +234,18 @@ export function buildAdos2ScoreSummary(
 ): Ados2ScoreSummary | null {
   if (test !== "ADOS2_ADULTO" && test !== "ADOS2_NINO") return null;
 
-  const configs = ADOS2_SCORING_DOMAINS[test];
-  const domains: Ados2ScoreDomainResult[] = configs.map((config) => {
-    const rows = buildDomainRows(questions, config, answers).filter(
-      (r) => r.question !== ""
-    );
-    const total = config.totalLabel ? sumAnsweredScores(rows) : null;
+  const domains: Ados2ScoreDomainResult[] = GROUP_ORDER.map((groupId) => {
+    const items = ADOS2_SCORING_ITEMS.filter((item) => item.groupId === groupId);
+    const rows = items.map((def) => buildRow(def, test, questions, answers));
+    const meta = GROUP_META[groupId];
+    const total = meta.totalLabel ? sumAnsweredScores(rows) : null;
+
     return {
-      id: config.id,
-      title: config.title,
-      variant: config.variant,
+      id: groupId,
+      variant: meta.variant,
       rows,
       total,
-      totalLabel: config.totalLabel,
+      totalLabel: meta.totalLabel,
     };
   });
 

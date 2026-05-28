@@ -7,7 +7,7 @@ type Ados2ScoreSummaryProps = {
 
 export function Ados2ScoreSummaryView({ summary }: Ados2ScoreSummaryProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {summary.domains.map((domain) => (
         <Ados2ScoreDomainBlock
           key={domain.id}

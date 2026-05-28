@@ -15,38 +15,32 @@ export function Ados2ScoreDomainBlock({
   const warm = domain.variant === "warm";
 
   return (
-    <section>
-      <h4 className="mb-2 text-headline-md text-on-surface">{domain.title}</h4>
-      <div
-        className={`rounded-lg px-3 ${
-          warm ? "bg-primary/8" : "bg-surface-container"
-        }`}
-      >
-        {domain.rows.map((row) => (
-          <Ados2ScoreRow
-            key={row.itemCode}
-            question={row.question}
-            itemCode={row.itemCode}
-            score={row.score}
-          />
-        ))}
-        {domain.totalLabel && (
-          <Ados2ScoreRow
-            question={domain.totalLabel}
-            itemCode=""
-            score={domain.total}
-            variant="total"
-          />
-        )}
-        {showCPlusIsr && (
-          <Ados2ScoreRow
-            question="PUNTUACIÓN TOTAL C+ISR"
-            itemCode=""
-            score={cPlusIsr}
-            variant="grandTotal"
-          />
-        )}
-      </div>
+    <section
+      className={`rounded-lg px-3 ${
+        warm ? "bg-primary/8" : "bg-surface-container"
+      }`}
+    >
+      {domain.rows.map((row) => (
+        <Ados2ScoreRow
+          key={row.itemCode}
+          label={`(${row.itemCode})`}
+          score={row.score}
+        />
+      ))}
+      {domain.totalLabel && (
+        <Ados2ScoreRow
+          label={domain.totalLabel}
+          score={domain.total}
+          variant="total"
+        />
+      )}
+      {showCPlusIsr && (
+        <Ados2ScoreRow
+          label="PUNTUACIÓN TOTAL C+ISR"
+          score={cPlusIsr}
+          variant="grandTotal"
+        />
+      )}
     </section>
   );
 }
