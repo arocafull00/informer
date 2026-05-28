@@ -4,27 +4,41 @@ type Ados2ScoreRowProps = {
   variant?: "default" | "total" | "grandTotal";
 };
 
+const scoreBoxBase =
+  "flex h-10 w-12 shrink-0 items-center justify-center rounded-md border bg-white text-slate-800 shadow-sm tabular-nums";
+
 export function Ados2ScoreRow({
   label,
   score,
   variant = "default",
 }: Ados2ScoreRowProps) {
-  const isTotal = variant === "total" || variant === "grandTotal";
+  if (variant === "total" || variant === "grandTotal") {
+    const isGrandTotal = variant === "grandTotal";
 
-  return (
-    <div
-      className={`grid grid-cols-[1fr_auto] items-center gap-3 py-2 ${
-        isTotal ? "font-semibold" : ""
-      }`}
-    >
-      <span className="text-body-md text-on-surface">{label}</span>
+    return (
       <div
-        className={`flex size-10 shrink-0 items-center justify-center rounded-lg border text-body-md tabular-nums ${
-          variant === "grandTotal"
-            ? "border-primary bg-primary/15 text-on-surface"
-            : "border-outline-variant bg-surface-container-lowest text-on-surface"
+        className={`flex items-center justify-between border-t border-primary/20 pt-3 ${
+          isGrandTotal ? "mt-1" : "mt-3"
         }`}
       >
+        <span className="font-bold text-slate-900">{label}</span>
+        <div
+          className={`${scoreBoxBase} font-bold ${
+            isGrandTotal
+              ? "border-2 border-primary bg-primary/10"
+              : "border-2 border-primary/20"
+          }`}
+        >
+          {score !== null ? score : "—"}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-center justify-between">
+      <span className="font-medium text-slate-700">{label}</span>
+      <div className={`${scoreBoxBase} border-slate-200 font-semibold`}>
         {score !== null ? score : "—"}
       </div>
     </div>

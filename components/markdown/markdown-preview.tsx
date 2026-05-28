@@ -60,7 +60,7 @@ export function MarkdownPreview() {
           <button
             type="button"
             onClick={handleScoreClick}
-            className="shrink-0 cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface transition-colors hover:bg-surface-container-high"
+            className="interactive-press shrink-0 cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
           >
             Puntuación
           </button>
@@ -84,7 +84,7 @@ export function MarkdownPreview() {
         <button
           type="button"
           onClick={handleCopyText}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-surface-container py-2 text-label-md text-on-surface transition-colors hover:bg-surface-container-high active:scale-[0.98]"
+          className="interactive-press flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-surface-container py-2 text-label-md text-on-surface hover:bg-surface-container-high"
         >
           {copied ? (
             <>
@@ -102,7 +102,7 @@ export function MarkdownPreview() {
           type="button"
           onClick={handleSaveClick}
           disabled={!hasAnswers}
-          className="flex-1 rounded-lg bg-primary py-2 text-label-md text-on-primary transition-opacity hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
+          className="interactive-press flex-1 rounded-lg bg-primary py-2 text-label-md text-on-primary hover:opacity-90 disabled:pointer-events-none disabled:opacity-50"
         >
           Guardar Informe
         </button>

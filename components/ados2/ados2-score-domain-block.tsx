@@ -12,14 +12,8 @@ export function Ados2ScoreDomainBlock({
   showCPlusIsr = false,
   cPlusIsr = null,
 }: Ados2ScoreDomainBlockProps) {
-  const warm = domain.variant === "warm";
-
   return (
-    <section
-      className={`rounded-lg px-3 ${
-        warm ? "bg-primary/8" : "bg-surface-container"
-      }`}
-    >
+    <section className="space-y-3 rounded-lg border border-primary/15 bg-slate-50 p-4">
       {domain.rows.map((row) => (
         <Ados2ScoreRow
           key={row.itemCode}

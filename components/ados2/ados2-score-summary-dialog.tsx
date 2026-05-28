@@ -32,34 +32,32 @@ export function Ados2ScoreSummaryDialog({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-on-background/40 p-4"
+      className="dialog-backdrop fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-labelledby="ados2-score-summary-heading"
-        className="flex max-h-[min(90dvh,720px)] w-full max-w-2xl flex-col rounded-xl border border-outline-variant bg-surface-container-highest shadow-lg"
+        className="dialog-content flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="shrink-0 border-b border-outline-variant px-4 py-3">
-          <h3
+        <div className="shrink-0 border-b border-slate-200 bg-slate-50/80 px-6 py-5">
+          <h2
             id="ados2-score-summary-heading"
-            className="text-headline-md text-on-surface"
+            className="mb-1 text-xl font-bold text-slate-900"
           >
             Puntuación ADOS-2
-          </h3>
-          <p className="mt-0.5 text-body-md text-on-surface-variant">
-            {testLabel}
-          </p>
+          </h2>
+          <p className="text-sm font-medium text-slate-500">{testLabel}</p>
         </div>
-        <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+        <div className="min-h-0 flex-1 overflow-y-auto bg-slate-50/50 p-6">
           <Ados2ScoreSummaryView summary={summary} />
         </div>
-        <div className="shrink-0 border-t border-outline-variant p-4">
+        <div className="flex shrink-0 justify-center border-t border-slate-200 bg-white px-6 py-4">
           <button
             type="button"
             onClick={onClose}
-            className="w-full rounded-lg bg-surface-container py-2 text-label-md text-on-surface transition-colors hover:bg-surface-container-high"
+            className="w-full max-w-sm rounded-md bg-primary px-8 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-none"
           >
             Cerrar
           </button>

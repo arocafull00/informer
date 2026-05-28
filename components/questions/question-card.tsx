@@ -18,7 +18,7 @@ export function QuestionCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-level-1 transition-shadow hover:shadow-md",
+        "card-interactive rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-level-1",
         isSubItem && "ml-6 border-l-2 border-l-primary/30"
       )}
     >

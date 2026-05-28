@@ -26,10 +26,10 @@ export function Topbar() {
                 type="button"
                 onClick={() => setCurrentTest(value)}
                 className={cn(
-                  "px-2 py-1 text-body-md transition-colors cursor-pointer",
+                  "interactive-press cursor-pointer rounded px-2 py-1 text-body-md",
                   isActive
                     ? "border-b-2 border-primary pb-1 font-bold text-primary"
-                    : "font-medium text-on-surface-variant hover:bg-surface-container-high rounded"
+                    : "font-medium text-on-surface-variant hover:bg-surface-container-high"
                 )}
               >
                 {label}

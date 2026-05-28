@@ -47,13 +47,13 @@ export function SaveReportTitleDialog({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-on-background/40 p-4"
+      className="dialog-backdrop fixed inset-0 z-50 flex items-center justify-center bg-on-background/40 p-4"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-labelledby="save-report-title-heading"
-        className="w-full max-w-sm rounded-xl border border-outline-variant bg-surface-container-highest p-4 shadow-lg"
+        className="dialog-content w-full max-w-sm rounded-xl border border-outline-variant bg-surface-container-highest p-4 shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <h3
@@ -82,14 +82,14 @@ export function SaveReportTitleDialog({
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 rounded-lg bg-surface-container py-2 text-label-md text-on-surface transition-colors hover:bg-surface-container-high"
+            className="interactive-press flex-1 rounded-lg bg-surface-container py-2 text-label-md text-on-surface hover:bg-surface-container-high"
           >
             Cancelar
           </button>
           <button
             type="button"
             onClick={handleConfirm}
-            className="flex-1 rounded-lg bg-primary py-2 text-label-md text-on-primary transition-opacity hover:opacity-90"
+            className="interactive-press flex-1 rounded-lg bg-primary py-2 text-label-md text-on-primary hover:opacity-90"
           >
             Guardar
           </button>

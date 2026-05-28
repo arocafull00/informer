@@ -23,7 +23,7 @@ export function HistoryItem({
   const label = getReportLabel(report);
 
   return (
-    <div className="group flex items-center justify-between rounded-lg px-2 py-1.5 transition-colors hover:bg-surface-container-high">
+    <div className="group flex items-center justify-between rounded-lg px-2 py-1.5 transition-[background-color] duration-150 ease-out-strong hover:bg-surface-container-high">
       <button
         type="button"
         onClick={onRestore}
@@ -39,14 +39,14 @@ export function HistoryItem({
           onSave={onUpdateTitle}
         />
       </button>
-      <div className="flex shrink-0 items-center opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="hover-reveal flex shrink-0 items-center">
         <button
           type="button"
           onClick={(e) => {
             e.stopPropagation();
             setEditing(true);
           }}
-          className="p-1 text-on-surface-variant hover:text-on-surface"
+          className="interactive-press rounded p-1 text-on-surface-variant hover:text-on-surface"
           aria-label="Editar título"
         >
           <Pencil className="size-[18px]" />
@@ -57,7 +57,7 @@ export function HistoryItem({
             e.stopPropagation();
             onDelete();
           }}
-          className="p-1 text-on-surface-variant hover:text-destructive"
+          className="interactive-press rounded p-1 text-on-surface-variant hover:text-destructive"
           aria-label="Eliminar informe"
         >
           <Trash2 className="size-[18px]" />

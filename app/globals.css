@@ -144,6 +144,88 @@
   .shadow-level-1 {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
   }
+
+  .ease-out-strong {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .interactive-press {
+    transition:
+      transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+      background-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+      opacity 150ms cubic-bezier(0.23, 1, 0.32, 1),
+      color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+      border-color 150ms cubic-bezier(0.23, 1, 0.32, 1),
+      box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .interactive-press:active {
+    transform: scale(0.97);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .interactive-press {
+      transition: none;
+    }
+
+    .interactive-press:active {
+      transform: none;
+    }
+
+    .dialog-backdrop,
+    .dialog-content {
+      transition: none;
+    }
+
+    .dialog-content {
+      @starting-style {
+        transform: none;
+      }
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .hover-reveal {
+      opacity: 0;
+      transition: opacity 150ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .group:hover .hover-reveal {
+      opacity: 1;
+    }
+
+    .card-interactive {
+      transition: box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .card-interactive:hover {
+      box-shadow:
+        0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  .dialog-backdrop {
+    opacity: 1;
+    transition: opacity 200ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  .dialog-content {
+    opacity: 1;
+    transform: scale(1);
+    transition:
+      opacity 200ms cubic-bezier(0.23, 1, 0.32, 1),
+      transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
 }
 
 @layer base {

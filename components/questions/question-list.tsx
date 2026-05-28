@@ -84,7 +84,7 @@ export function QuestionList() {
                 aria-label="Progreso de la sección"
               >
                 <div
-                  className="h-2 rounded-full bg-primary transition-[width] duration-200 ease-out motion-reduce:transition-none"
+                  className="h-2 rounded-full bg-primary transition-[width] duration-200 ease-out-strong motion-reduce:transition-none"
                   style={{ width: `${progress}%` }}
                 />
               </div>

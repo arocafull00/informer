@@ -33,7 +33,7 @@ export function Sidebar() {
       <button
         type="button"
         onClick={() => reset()}
-        className="mb-3 w-full rounded-lg bg-primary py-1.5 text-label-md text-on-primary transition-opacity hover:opacity-80"
+        className="interactive-press mb-3 w-full rounded-lg bg-primary py-1.5 text-label-md text-on-primary hover:opacity-90"
       >
         Nuevo Informe
       </button>
