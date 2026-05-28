@@ -1,11 +1,12 @@
-export type TestType = "ADIR" | "ADOS2";
+export type TestType = "ADIR" | "ADOS2_ADULTO" | "ADOS2_NINO";
 
 export type Question = {
   id: string;
   test: TestType;
   sectionNumber: number;
   section: string;
-  number: number;
+  code: string;
+  parentCode?: string;
   question: string;
   answers: Record<string, string>;
 };

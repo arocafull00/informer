@@ -2,20 +2,10 @@
 
 import { useMemo } from "react";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
+import { orderQuestionsWithSubItems } from "@/lib/order-questions";
+import { testData, testLabels } from "@/lib/test-data";
+import type { Question } from "@/lib/types";
 import { QuestionCard } from "./question-card";
-import adirData from "@/data/adir.json";
-import ados2Data from "@/data/ados2.json";
-import type { Question, TestType } from "@/lib/types";
-
-const testData: Record<TestType, Question[]> = {
-  ADIR: adirData as unknown as Question[],
-  ADOS2: ados2Data as unknown as Question[],
-};
-
-const testLabels: Record<TestType, string> = {
-  ADIR: "ADI-R",
-  ADOS2: "ADOS-2",
-};
 
 export function QuestionList() {
   const { currentTest, answers } = useCurrentReportStore();
@@ -36,6 +26,7 @@ export function QuestionList() {
     <div className="space-y-stack-section pb-10">
       {Object.entries(grouped).map(([, qs]) => {
         const first = qs[0];
+        const ordered = orderQuestionsWithSubItems(qs);
         const answeredInSection = qs.filter((q) => answers[q.id] !== undefined).length;
         const totalInSection = qs.length;
         const progress =
@@ -72,8 +63,12 @@ export function QuestionList() {
               </div>
             </header>
             <div className="space-y-3">
-              {qs.map((question) => (
-                <QuestionCard key={question.id} question={question} />
+              {ordered.map((question) => (
+                <QuestionCard
+                  key={question.id}
+                  question={question}
+                  isSubItem={!!question.parentCode}
+                />
               ))}
             </div>
           </section>

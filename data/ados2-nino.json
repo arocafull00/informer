@@ -1,0 +1,156 @@
+[
+  {
+    "id": "ados2-nino-a",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "A",
+    "question": "Vocalizaciones inusuales",
+    "answers": {
+      "0": "Sin vocalizaciones inusuales.",
+      "1": "Vocalizaciones inusuales ocasionales.",
+      "2": "Vocalizaciones inusuales frecuentes.",
+      "3": "Vocalizaciones inusuales persistentes."
+    }
+  },
+  {
+    "id": "ados2-nino-a1",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "A1",
+    "parentCode": "A",
+    "question": "Calidad del sonido",
+    "answers": {
+      "0": "Calidad del sonido dentro de la norma.",
+      "1": "Calidad del sonido ligeramente inusual.",
+      "2": "Calidad del sonido claramente inusual.",
+      "7": "No aplicable.",
+      "8": "No evaluable."
+    }
+  },
+  {
+    "id": "ados2-nino-b",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "B",
+    "question": "Ecolalias inmediatas",
+    "answers": {
+      "0": "Sin ecolalias inmediatas.",
+      "2": "Ecolalias inmediatas presentes."
+    }
+  },
+  {
+    "id": "ados2-nino-c",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "C",
+    "question": "Estructura de frases",
+    "answers": {
+      "0": "Estructura de frases apropiada.",
+      "1": "Estructura de frases con irregularidades.",
+      "2": "Estructura de frases claramente alterada.",
+      "3": "Estructura de frases gravemente alterada."
+    }
+  },
+  {
+    "id": "ados2-nino-d",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "D",
+    "question": "Contacto visual",
+    "answers": {
+      "0": "Contacto visual apropiado.",
+      "1": "Contacto visual inconsistente.",
+      "2": "Contacto visual mínimo.",
+      "3": "Evita el contacto visual."
+    }
+  },
+  {
+    "id": "ados2-nino-e",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "E",
+    "question": "Sonrisa social",
+    "answers": {
+      "0": "Sonrisa social apropiada.",
+      "1": "Sonrisa social limitada.",
+      "2": "Sonrisa social claramente reducida.",
+      "3": "No se observa sonrisa social."
+    }
+  },
+  {
+    "id": "ados2-nino-f",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "F",
+    "question": "Compartir placer",
+    "answers": {
+      "0": "Comparte placer de forma apropiada.",
+      "1": "Comparte placer de manera inconsistente.",
+      "2": "Rara vez comparte placer.",
+      "3": "No comparte placer."
+    }
+  },
+  {
+    "id": "ados2-nino-g",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "code": "G",
+    "question": "Juego funcional",
+    "answers": {
+      "0": "Juego funcional apropiado.",
+      "1": "Juego funcional con limitaciones.",
+      "2": "Juego funcional claramente reducido.",
+      "3": "No se observa juego funcional."
+    }
+  },
+  {
+    "id": "ados2-nino-h",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "code": "H",
+    "question": "Juego imaginativo",
+    "answers": {
+      "0": "Juego imaginativo presente.",
+      "1": "Juego imaginativo emergente.",
+      "2": "Juego imaginativo limitado.",
+      "3": "No se observa juego imaginativo."
+    }
+  },
+  {
+    "id": "ados2-nino-i",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "code": "I",
+    "question": "Interés por otros niños",
+    "answers": {
+      "0": "Interés apropiado por otros niños.",
+      "1": "Interés superficial por otros niños.",
+      "2": "Prefiere jugar solo.",
+      "3": "No muestra interés por otros niños."
+    }
+  },
+  {
+    "id": "ados2-nino-j",
+    "test": "ADOS2_NINO",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTO",
+    "code": "J",
+    "question": "Movimientos repetitivos",
+    "answers": {
+      "0": "Sin movimientos repetitivos.",
+      "1": "Movimientos repetitivos leves.",
+      "2": "Movimientos repetitivos moderados.",
+      "3": "Movimientos repetitivos severos."
+    }
+  }
+]

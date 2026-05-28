@@ -4,19 +4,7 @@ import { useMemo, useCallback } from "react";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
-import adirData from "@/data/adir.json";
-import ados2Data from "@/data/ados2.json";
-import type { Question, TestType } from "@/lib/types";
-
-const testData: Record<TestType, Question[]> = {
-  ADIR: adirData as unknown as Question[],
-  ADOS2: ados2Data as unknown as Question[],
-};
-
-const testLabels: Record<TestType, string> = {
-  ADIR: "ADI-R",
-  ADOS2: "ADOS-2",
-};
+import { testData, testLabels } from "@/lib/test-data";
 
 export function useSaveReport() {
   const { currentTest, answers, draftTitle, setDraftTitle } =

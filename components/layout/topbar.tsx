@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 
 const tests: { value: TestType; label: string }[] = [
   { value: "ADIR", label: "ADI-R" },
-  { value: "ADOS2", label: "ADOS-2" },
+  { value: "ADOS2_ADULTO", label: "ADOS-2 Adulto" },
+  { value: "ADOS2_NINO", label: "ADOS-2 Niño" },
 ];
 
 export function Topbar() {
@@ -25,7 +26,7 @@ export function Topbar() {
                 type="button"
                 onClick={() => setCurrentTest(value)}
                 className={cn(
-                  "px-2 py-1 text-body-md transition-colors",
+                  "px-2 py-1 text-body-md transition-colors cursor-pointer",
                   isActive
                     ? "border-b-2 border-primary pb-1 font-bold text-primary"
                     : "font-medium text-on-surface-variant hover:bg-surface-container-high rounded"

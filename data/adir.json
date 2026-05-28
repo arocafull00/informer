@@ -4,10 +4,10 @@
     "test": "ADIR",
     "sectionNumber": 1,
     "section": "DESARROLLO TEMPRANO",
-    "number": 1,
-    "question": "Primeros pasos",
+    "code": "1",
+    "question": "Primeros pasos sin ayuda",
     "answers": {
-      "0": "Primeros pasos dentro de la norma.",
+      "0": "Primeros pasos pronto.",
       "1": "Primeros pasos ligeramente retrasados.",
       "2": "Retraso significativo en los primeros pasos.",
       "3": "No ha adquirido la marcha autónoma."
@@ -18,7 +18,7 @@
     "test": "ADIR",
     "sectionNumber": 1,
     "section": "DESARROLLO TEMPRANO",
-    "number": 2,
+    "code": "2",
     "question": "Control de esfínteres",
     "answers": {
       "0": "Control de esfínteres dentro de la norma.",
@@ -30,113 +30,687 @@
   {
     "id": "adir-03",
     "test": "ADIR",
-    "sectionNumber": 1,
-    "section": "DESARROLLO TEMPRANO",
-    "number": 3,
-    "question": "Lenguaje inicial",
+    "sectionNumber": 2,
+    "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
+    "code": "1",
+    "question": "Edad de las primeras palabras",
     "answers": {
-      "0": "Desarrollo del lenguaje dentro de la norma.",
+      "0": "Primeras palabras muy pronto.",
       "1": "Primeras palabras ligeramente tardías.",
       "2": "Ausencia de palabras funcionalmente significativas.",
-      "3": "No se ha desarrollado ningún tipo de comunicación verbal."
+      "3": "No se ha desarrollado comunicación verbal."
     }
   },
   {
     "id": "adir-04",
     "test": "ADIR",
     "sectionNumber": 2,
-    "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 1,
-    "question": "Comunicación gestual",
+    "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
+    "code": "2",
+    "question": "Edad en la que aparecieron las primeras frases",
     "answers": {
-      "0": "Utiliza gestos comunicativos de forma espontánea.",
-      "1": "Requiere apoyo visual para手势 comunicativos.",
-      "2": "Gestos limitados sin intención comunicativa clara.",
-      "3": "No utiliza gestos comunicativos."
+      "0": "Primeras frases muy pronto",
+      "1": "Primeras frases ligeramente tardías.",
+      "2": "Ausencia de frases funcionales.",
+      "3": "No se han desarrollado frases."
     }
   },
   {
     "id": "adir-05",
     "test": "ADIR",
     "sectionNumber": 2,
-    "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 2,
-    "question": "Inicio de conversaciones",
+    "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
+    "code": "3",
+    "question": "Pérdida de habilidades de lenguaje después de adquirirlas",
     "answers": {
-      "0": "Inicia conversaciones de forma apropiada.",
-      "1": "Inicia conversaciones de manera ocasional.",
-      "2": "Rara vez inicia conversaciones.",
-      "3": "No inicia conversaciones."
+      "0": "Sin pérdida de habilidades una vez adquiridas.",
+      "1": "Pérdida leve y transitoria de habilidades.",
+      "2": "Pérdida parcial de habilidades adquiridas.",
+      "3": "Pérdida significativa de habilidades adquiridas."
     }
   },
   {
     "id": "adir-06",
     "test": "ADIR",
-    "sectionNumber": 2,
-    "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 3,
-    "question": "Conversación recíproca",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "1",
+    "question": "Comprensión de lenguaje simple",
     "answers": {
-      "0": "Mantiene conversaciones recíprocas fluidas.",
-      "1": "Conversaciones con altibajos en la reciprocidad.",
-      "2": "Conversaciones unilaterales predominantes.",
-      "3": "No se observa reciprocidad en la comunicación."
+      "0": "En respuesta a una petición puede buscar un objeto de otra habitación. Atiende instrucciones",
+      "1": "Atiende instrucciones sencillas con apoyo.",
+      "2": "Comprensión limitada de peticiones.",
+      "3": "No atiende instrucciones."
     }
   },
   {
     "id": "adir-07",
     "test": "ADIR",
     "sectionNumber": 3,
-    "section": "INTERACCIÓN SOCIAL",
-    "number": 1,
-    "question": "Contacto visual",
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "2",
+    "question": "Nivel general de lenguaje",
     "answers": {
-      "0": "Contacto visual apropiado.",
-      "1": "Contacto visual inconsistente.",
-      "2": "Contacto visual mínimo.",
-      "3": "Evita completamente el contacto visual."
+      "0": "Uso funcional del lenguaje espontáneo.",
+      "1": "Uso funcional ocasional del lenguaje.",
+      "2": "Uso funcional muy limitado.",
+      "3": "No hay uso funcional del lenguaje."
     }
   },
   {
     "id": "adir-08",
     "test": "ADIR",
     "sectionNumber": 3,
-    "section": "INTERACCIÓN SOCIAL",
-    "number": 2,
-    "question": "Respuesta a llamadas",
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "3",
+    "question": "Uso del cuerpo de otra persona para comunicarse",
     "answers": {
-      "0": "Responde de forma consistente a su nombre.",
-      "1": "Responde de manera variable.",
-      "2": "Responde solo con apoyo visual.",
-      "3": "No responde a su nombre."
+      "0": "No utiliza el cuerpo de otra persona para comunicarse.",
+      "1": "Uso ocasional del cuerpo de otra persona para comunicarse.",
+      "2": "Uso frecuente del cuerpo de otra persona para comunicarse.",
+      "3": "Dependencia marcada del cuerpo de otra persona para comunicarse."
     }
   },
   {
     "id": "adir-09",
     "test": "ADIR",
     "sectionNumber": 3,
-    "section": "INTERACCIÓN SOCIAL",
-    "number": 3,
-    "question": "Juego simbólico",
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "4",
+    "question": "Articulación/pronunciación",
     "answers": {
-      "0": "Juego simbólico presente y desarrollado.",
-      "1": "Juego simbólico emergente.",
-      "2": "Juego simbólico limitado.",
-      "3": "No se observa juego simbólico."
+      "0": "Sin dificultades de articulación.",
+      "1": "Dificultades leves de articulación.",
+      "2": "Dificultades claras de articulación.",
+      "3": "Dificultades graves de articulación."
     }
   },
   {
     "id": "adir-10",
     "test": "ADIR",
     "sectionNumber": 3,
-    "section": "INTERACCIÓN SOCIAL",
-    "number": 4,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "5",
+    "question": "Expresiones estereotipadas y ecolalia diferida",
+    "answers": {
+      "0": "Sin expresiones estereotipadas ni ecolalia.",
+      "1": "Uso ocasional de expresiones estereotipadas.",
+      "2": "A menudo usa expresiones estereotipadas, ecolalia diferida.",
+      "3": "Uso persistente de expresiones estereotipadas y ecolalia."
+    }
+  },
+  {
+    "id": "adir-11",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "6",
+    "question": "Verbalizacion social/charla",
+    "answers": {
+      "0": "Uso social apropiado de la verbalización.",
+      "1": "Uso social algo limitado.",
+      "2": "Poco uso puramente social de la verbalización.",
+      "3": "Casi ningún uso social de la verbalización."
+    }
+  },
+  {
+    "id": "adir-12",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "7",
+    "question": "Conversación recíproca",
+    "answers": {
+      "0": "Conversación recíproca fluida.",
+      "1": "Conversación recíproca con altibajos.",
+      "2": "Poca conversación recíproca.",
+      "3": "No hay conversación recíproca."
+    }
+  },
+  {
+    "id": "adir-13",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "8",
+    "question": "Preguntas o expresiones inapropiadas",
+    "answers": {
+      "0": "Sin comentarios inapropiados.",
+      "1": "Uso ocasional de comentarios inapropiados para la situación.",
+      "2": "Uso frecuente de comentarios inapropiados.",
+      "3": "Comentarios inapropiados predominantes."
+    }
+  },
+  {
+    "id": "adir-14",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "9",
+    "question": "Inversion de pronombres",
+    "answers": {
+      "0": "No hay confusión entre la primera y la tercera persona,",
+      "1": "Confusión ocasional entre personas.",
+      "2": "Confusión frecuente entre personas.",
+      "3": "Confusión persistente entre personas."
+    }
+  },
+  {
+    "id": "adir-15",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "10",
+    "question": "Neologismos o lenguaje idiosincrásico",
+    "answers": {
+      "0": "Sin lenguaje idiosincrásico.",
+      "1": "Uso ocasional de lenguaje idiosincrásico.",
+      "2": "Uso regular de lenguaje idiosincrásico.",
+      "3": "Lenguaje predominantemente idiosincrásico."
+    }
+  },
+  {
+    "id": "adir-16",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "11",
+    "question": "Rituales verbales",
+    "answers": {
+      "0": "Sin ritualización del lenguaje.",
+      "1": "Ritualización ocasional.",
+      "2": "Tendencia a decir cosas de forma ritualizada.",
+      "3": "Lenguaje marcadamente ritualizado."
+    }
+  },
+  {
+    "id": "adir-17",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "12",
+    "question": "Entonación/Volumen/Ritmo/Velocidad",
+    "answers": {
+      "0": "Habla con entonación y ritmo apropiados.",
+      "1": "Habla algo inusual en ritmo o entonación.",
+      "2": "Habla mecánica y rápida.",
+      "3": "Habla muy inusual en ritmo, tono o volumen."
+    }
+  },
+  {
+    "id": "adir-18",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "13",
+    "question": "Habla comunicativa actual",
+    "answers": {
+      "0": "Uso comunicativo del habla amplio y apropiado.",
+      "1": "Uso comunicativo algo restringido.",
+      "2": "Uso comunicativo del habla restringido en frecuencia y contexto.",
+      "3": "Uso comunicativo del habla muy restringido."
+    }
+  },
+  {
+    "id": "adir-19",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "14",
+    "question": "Señalar para mostrar interés",
+    "answers": {
+      "0": "Señala para mostrar interés de forma espontánea.",
+      "1": "Señala para mostrar interés de forma ocasional.",
+      "2": "Señala para mostrar interés de forma limitada.",
+      "3": "No señala para mostrar interés."
+    }
+  },
+  {
+    "id": "adir-20",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "15",
+    "question": "Asentir y negar con la cabeza",
+    "answers": {
+      "0": "Asiente y niega con la cabeza de forma espontánea.",
+      "1": "Asiente y niega de forma inconsistente.",
+      "2": "No Asiente ni niega con la cabeza de forma espontánea.",
+      "3": "No asiente ni niega con la cabeza."
+    }
+  },
+  {
+    "id": "adir-21",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "16",
+    "question": "Gestos convencionales/instrumentales",
+    "answers": {
+      "0": "Gestos comunicativos espontáneos y variados.",
+      "1": "Gestos comunicativos ocasionales.",
+      "2": "Escaso uso espontáneo de gestos limitados en variedad y contextos.",
+      "3": "No utiliza gestos comunicativos."
+    }
+  },
+  {
+    "id": "adir-22",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "17",
+    "question": "Atención a la voz",
+    "answers": {
+      "0": "Responde a la voz aunque esté ocupado.",
+      "1": "Si está ocupado, necesita que se capte su atención directamente para dar respuesta a la voz.",
+      "2": "Responde a la voz solo con apoyo visual.",
+      "3": "No responde a la voz cuando está ocupado."
+    }
+  },
+  {
+    "id": "adir-23",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "18",
+    "question": "Imitación espontánea de acciones",
+    "answers": {
+      "0": "Imitación espontánea de acciones cotidianas.",
+      "1": "Imitación ocasional de acciones cotidianas.",
+      "2": "Sin imitación espontánea de acciones cotidianas.",
+      "3": "No imita acciones cotidianas."
+    }
+  },
+  {
+    "id": "adir-24",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "19",
+    "question": "Juego imaginativo",
+    "answers": {
+      "0": "Juegos imaginativos desarrollados.",
+      "1": "Algunos juegos imaginativos.",
+      "2": "Juegos imaginativos muy limitados.",
+      "3": "No hay juegos imaginativos."
+    }
+  },
+  {
+    "id": "adir-25",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "1",
+    "question": "Mirada directa",
+    "answers": {
+      "0": "Mirada directa apropiada durante las interacciones sociales.",
+      "1": "Mirada directa ocasional durante las interacciones sociales.",
+      "2": "Mirada directa mínima.",
+      "3": "Evita la mirada directa."
+    }
+  },
+  {
+    "id": "adir-26",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "2",
+    "question": "Sonrisa social",
+    "answers": {
+      "0": "Sonríe de forma apropiada a la gente.",
+      "1": "Sonríe de forma inconsistente.",
+      "2": "Sonríe poco a la gente.",
+      "3": "Casi no sonríe a la gente."
+    }
+  },
+  {
+    "id": "adir-27",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "3",
+    "question": "Mostrar y dirigir la atención",
+    "answers": {
+      "0": "Muestra regularmente objetos al progenitor.",
+      "1": "Muestra objetos de forma ocasional.",
+      "2": "Rara vez muestra objetos.",
+      "3": "No muestra objetos al progenitor."
+    }
+  },
+  {
+    "id": "adir-28",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "4",
+    "question": "Ofrecimientos para compartir",
+    "answers": {
+      "0": "Comparte de forma espontánea.",
+      "1": "Comparte a veces si se le pide.",
+      "2": "Comparte raramente.",
+      "3": "No comparte."
+    }
+  },
+  {
+    "id": "adir-29",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "5",
+    "question": "Ofrecimiento de consuelo",
+    "answers": {
+      "0": "Ofrece consuelo de forma apropiada.",
+      "1": "Algún intento de ofrecimiento de consuelo.",
+      "2": "Intentos muy limitados de consuelo.",
+      "3": "No ofrece consuelo."
+    }
+  },
+  {
+    "id": "adir-30",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "6",
+    "question": "Calidad de los acercamientos sociales",
+    "answers": {
+      "0": "Acercamiento social bien coordinado.",
+      "1": "Acercamiento social ocasional.",
+      "2": "Rara vez realiza un acercamiento social bien coordinado.",
+      "3": "No realiza acercamiento social coordinado."
+    }
+  },
+  {
+    "id": "adir-31",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "7",
+    "question": "Variedad de expresiones faciales usadas para comunicarse",
+    "answers": {
+      "0": "Expresiones faciales apropiadas.",
+      "1": "Expresiones faciales algo limitadas.",
+      "2": "Expresiones faciales claramente limitadas.",
+      "3": "Expresiones faciales muy limitadas."
+    }
+  },
+  {
+    "id": "adir-32",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "8",
+    "question": "Expresiones faciales inapropiadas",
+    "answers": {
+      "0": "Respuestas sociales apropiadas y consistentes.",
+      "1": "Respuestas sociales algo limitadas.",
+      "2": "Respuestas sociales muy limitadas. Algunas respuestas e interacciones claras y positivas, aunque no consistentes.",
+      "3": "Respuestas sociales ausentes."
+    }
+  },
+  {
+    "id": "adir-33",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "9",
+    "question": "Iniciativa de actividades apropiadas",
+    "answers": {
+      "0": "Inicia espontáneamente actividades apropiadas variadas.",
+      "1": "Inicia espontáneamente una gama limitada de actividades apropiadas.",
+      "2": "Inicia pocas actividades apropiadas.",
+      "3": "No inicia actividades apropiadas."
+    }
+  },
+  {
+    "id": "adir-34",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "10",
+    "question": "Juego social imitativo",
+    "answers": {
+      "0": "Juego social recíproco apropiado.",
+      "1": "Juego social recíproco ocasional.",
+      "2": "Poco juego social recíproco.",
+      "3": "No hay juego social recíproco."
+    }
+  },
+  {
+    "id": "adir-35",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "11",
     "question": "Interés por otros niños",
     "answers": {
-      "0": "Muestra interés apropiado por otros niños.",
-      "1": "Interés inconsistente por otros niños.",
-      "2": "Prefiere estar solo.",
-      "3": "No muestra ningún interés por otros niños."
+      "0": "Observa y se aproxima a otros niños.",
+      "1": "Ocasionalmente observa a otros niños pero casi nunca trata de aproximarse a ellos.",
+      "2": "Observa a otros niños sin aproximarse.",
+      "3": "No observa ni se aproxima a otros niños."
+    }
+  },
+  {
+    "id": "adir-36",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "12",
+    "question": "Respuesta a aproximaciones de otros niños",
+    "answers": {
+      "0": "Responde a las aproximaciones de otros niños.",
+      "1": "Responde de forma inconsistente.",
+      "2": "Responde raramente.",
+      "3": "No responde a las aproximaciones de otros niños."
+    }
+  },
+  {
+    "id": "adir-37",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "13",
+    "question": "Amistades",
+    "answers": {
+      "0": "Hay personas con quienes tiene algún tipo de relación personal.",
+      "1": "Relaciones personales limitadas.",
+      "2": "Relaciones personales muy limitadas.",
+      "3": "No hay relaciones personales."
+    }
+  },
+  {
+    "id": "adir-38",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "14",
+    "question": "Desinhibición social",
+    "answers": {
+      "0": "Conducta social apropiada.",
+      "1": "Conducta social algo inusual.",
+      "2": "Desinhibición social.",
+      "3": "Desinhibición social marcada."
+    }
+  },
+  {
+    "id": "adir-39",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "1",
+    "question": "Preocupaciones inusuales",
+    "answers": {
+      "0": "Sin preocupaciones inusuales.",
+      "1": "Con preocupaciones inusuales que no interfieren en su dinámica familiar.",
+      "2": "Preocupaciones inusuales que interfieren ocasionalmente.",
+      "3": "Preocupaciones inusuales que interfieren de forma notable."
+    }
+  },
+  {
+    "id": "adir-40",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "2",
+    "question": "Intereses circunscritos",
+    "answers": {
+      "0": "Intereses variados y flexibles.",
+      "1": "Algún interés algo circunscrito.",
+      "2": "Evidente interés circunscrito.",
+      "3": "Interés muy circunscrito y rígido."
+    }
+  },
+  {
+    "id": "adir-41",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "3",
+    "question": "Uso repetitivo de objetos o interes en partes de objetos",
+    "answers": {
+      "0": "Sin actividades con secuencias fijas.",
+      "1": "Hay algunas actividades con secuencias fijas.",
+      "2": "Varias actividades con secuencias fijas.",
+      "3": "Muchas actividades con secuencias fijas rígidas."
+    }
+  },
+  {
+    "id": "adir-42",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "4",
+    "question": "Intereses sensoriales inusuales",
+    "answers": {
+      "0": "Sin intereses sensoriales inusuales.",
+      "1": "Intereses sensoriales inusuales ocasionales.",
+      "2": "Hay intereses sensoriales inusuales.",
+      "3": "Intereses sensoriales inusuales prominentes."
+    }
+  },
+  {
+    "id": "adir-43",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "5",
+    "question": "Respuesta anormal, idiosincrásica, negativa a estímulos sensoriales específicos",
+    "answers": {
+      "0": "Sin respuesta negativa a estímulos específicos.",
+      "1": "Respuesta negativa ocasional.",
+      "2": "Respuesta predecible, negativa, a algún estímulo específico.",
+      "3": "Respuesta negativa intensa y predecible."
+    }
+  },
+  {
+    "id": "adir-44",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "6",
+    "question": "Dificultades con cambios menores en las rutinas propias del sujeto o del entorno personal",
+    "answers": {
+      "0": "Tolera cambios en las rutinas.",
+      "1": "Dificultades leves con cambios en rutinas.",
+      "2": "Con dificultades a los pequeños cambios en las rutinas.",
+      "3": "Gran dificultad con cualquier cambio de rutina."
+    }
+  },
+  {
+    "id": "adir-45",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "7",
+    "question": "Resistencia a cambios triviales en el entorno",
+    "answers": {
+      "0": "Tolera cambios en el entorno.",
+      "1": "Reacción negativa ocasional.",
+      "2": "Reacción negativa a cambios triviales en el entorno.",
+      "3": "Reacción negativa intensa a cambios menores."
+    }
+  },
+  {
+    "id": "adir-46",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "8",
+    "question": "Apego inusual a objetos",
+    "answers": {
+      "0": "Sin manierismos.",
+      "1": "Manierismos ocasionales.",
+      "2": "Con manierismos.",
+      "3": "Manierismos frecuentes y prominentes."
+    }
+  },
+  {
+    "id": "adir-46",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "8",
+    "question": "Manierismos de manos y dedos",
+    "answers": {
+      "0": "Sin manierismos.",
+      "1": "Manierismos ocasionales.",
+      "2": "Con manierismos.",
+      "3": "Manierismos frecuentes y prominentes."
+    }
+  },
+  {
+    "id": "adir-47",
+    "test": "ADIR",
+    "sectionNumber": 6,
+    "section": "COMPORTAMIENTOS GENERALES",
+    "code": "1",
+    "question": "Marcha",
+    "answers": {
+      "0": "Marcha dentro de la norma.",
+      "1": "Algo inusual en la marcha.",
+      "2": "Marcha claramente inusual.",
+      "3": "Marcha muy inusual."
+    }
+  },
+  {
+    "id": "adir-48",
+    "test": "ADIR",
+    "sectionNumber": 6,
+    "section": "COMPORTAMIENTOS GENERALES",
+    "code": "2",
+    "question": "Agresiones",
+    "answers": {
+      "0": "Sin agresiones.",
+      "1": "Agresiones ocasionales y leves.",
+      "2": "Con agresiones leves.",
+      "3": "Agresiones frecuentes o graves."
+    }
+  },
+  {
+    "id": "adir-49",
+    "test": "ADIR",
+    "sectionNumber": 6,
+    "section": "COMPORTAMIENTOS GENERALES",
+    "code": "3",
+    "question": "Autolesiones",
+    "answers": {
+      "0": "Sin autolesiones.",
+      "1": "Autolesiones ocasionales y leves.",
+      "2": "Autolesiones presentes.",
+      "3": "Autolesiones frecuentes o graves."
+    }
+  },
+  {
+    "id": "adir-50",
+    "test": "ADIR",
+    "sectionNumber": 6,
+    "section": "COMPORTAMIENTOS GENERALES",
+    "code": "4",
+    "question": "Hiperventilación",
+    "answers": {
+      "0": "Sin hiperventilación.",
+      "1": "Hiperventilación ocasional.",
+      "2": "Hiperventilación presente.",
+      "3": "Hiperventilación frecuente."
     }
   }
 ]

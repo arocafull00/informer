@@ -5,15 +5,19 @@ import { cn } from "@/lib/utils";
 
 interface ScoreSelectorProps {
   questionId: string;
+  options: Record<string, string>;
 }
 
-export function ScoreSelector({ questionId }: ScoreSelectorProps) {
+export function ScoreSelector({ questionId, options }: ScoreSelectorProps) {
   const { answers, setAnswer } = useCurrentReportStore();
   const selected = answers[questionId];
+  const scores = Object.keys(options)
+    .map(Number)
+    .sort((a, b) => a - b);
 
   return (
-    <div className="flex gap-2" role="group" aria-label="Puntuación">
-      {[0, 1, 2, 3].map((score) => {
+    <div className="flex flex-wrap gap-2" role="group" aria-label="Puntuación">
+      {scores.map((score) => {
         const isSelected = selected === score;
         return (
           <button

@@ -1,4 +1,5 @@
 import type { SavedReport } from "@/lib/types";
+import { testLabels } from "@/lib/test-data";
 
 export function getReportLabel(report: SavedReport): string {
   const trimmed = report.title?.trim();
@@ -7,5 +8,6 @@ export function getReportLabel(report: SavedReport): string {
     day: "2-digit",
     month: "2-digit",
   });
-  return `${report.test} · ${date}`;
+  const label = testLabels[report.test] ?? report.test;
+  return `${label} · ${date}`;
 }

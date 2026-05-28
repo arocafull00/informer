@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/types";
+import { orderQuestionsWithSubItems } from "@/lib/order-questions";
 
 export function generateMarkdown(
   questions: Question[],
@@ -20,13 +21,14 @@ export function generateMarkdown(
     if (questionsInSection.length === 0) return;
 
     const bullets: string[] = [];
+    const ordered = orderQuestionsWithSubItems(questionsInSection);
 
-    questionsInSection.forEach((question) => {
+    ordered.forEach((question) => {
       const score = answers[question.id];
       if (score === undefined) return;
       const answerText = question.answers[score.toString()];
       if (!answerText) return;
-      bullets.push(`- ${answerText}`);
+      bullets.push(`- ${question.code} (${score}): ${answerText}`);
     });
 
     if (bullets.length === 0) return;

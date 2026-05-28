@@ -1,10 +1,10 @@
 [
   {
-    "id": "ados2-01",
-    "test": "ADOS2",
+    "id": "ados2-adulto-a",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 1,
+    "code": "A",
     "question": "Prosodia",
     "answers": {
       "0": "Prosodia dentro de la norma.",
@@ -14,11 +14,24 @@
     }
   },
   {
-    "id": "ados2-02",
-    "test": "ADOS2",
+    "id": "ados2-adulto-a1",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 2,
+    "code": "A1",
+    "parentCode": "A",
+    "question": "Variación del tono",
+    "answers": {
+      "0": "Variación tonal apropiada.",
+      "2": "Variación tonal claramente limitada."
+    }
+  },
+  {
+    "id": "ados2-adulto-b",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "B",
     "question": "Lenguaje formal",
     "answers": {
       "0": "Lenguaje formal apropiado.",
@@ -28,11 +41,11 @@
     }
   },
   {
-    "id": "ados2-03",
-    "test": "ADOS2",
+    "id": "ados2-adulto-c",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "number": 3,
+    "code": "C",
     "question": "Contenidos repetitivos",
     "answers": {
       "0": "Sin contenidos repetitivos.",
@@ -42,25 +55,25 @@
     }
   },
   {
-    "id": "ados2-04",
-    "test": "ADOS2",
+    "id": "ados2-adulto-d",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "number": 1,
+    "code": "D",
     "question": "Emociones expresadas",
     "answers": {
       "0": "Expresión emocional apropiada.",
       "1": "Expresión emocional algo limitada.",
-      "2": "Expresión emocional claramente Deficitaria.",
+      "2": "Expresión emocional claramente deficitaria.",
       "3": "No expresa emociones."
     }
   },
   {
-    "id": "ados2-05",
-    "test": "ADOS2",
+    "id": "ados2-adulto-e",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "number": 2,
+    "code": "E",
     "question": "Iniciación de interacción social",
     "answers": {
       "0": "Inicia interacciones sociales apropiadamente.",
@@ -70,12 +83,12 @@
     }
   },
   {
-    "id": "ados2-06",
-    "test": "ADOS2",
+    "id": "ados2-adulto-f",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "number": 3,
-    "question": "Uso deguiño social",
+    "code": "F",
+    "question": "Uso de guiño social",
     "answers": {
       "0": "Uso apropiado de gestos sociales.",
       "1": "Gestos sociales de forma inconsistente.",
@@ -84,11 +97,11 @@
     }
   },
   {
-    "id": "ados2-07",
-    "test": "ADOS2",
+    "id": "ados2-adulto-g",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 3,
     "section": "JUEGO Y IMAGINACIÓN",
-    "number": 1,
+    "code": "G",
     "question": "Creatividad en el juego",
     "answers": {
       "0": "Juego creativo y variado.",
@@ -98,11 +111,11 @@
     }
   },
   {
-    "id": "ados2-08",
-    "test": "ADOS2",
+    "id": "ados2-adulto-h",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 3,
     "section": "JUEGO Y IMAGINACIÓN",
-    "number": 2,
+    "code": "H",
     "question": "Imaginación",
     "answers": {
       "0": "Uso imaginativo apropiado.",
@@ -112,11 +125,11 @@
     }
   },
   {
-    "id": "ados2-09",
-    "test": "ADOS2",
+    "id": "ados2-adulto-i",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 3,
     "section": "JUEGO Y IMAGINACIÓN",
-    "number": 3,
+    "code": "I",
     "question": "Interés por compañeros",
     "answers": {
       "0": "Interés apropiado por los compañeros.",
@@ -126,11 +139,11 @@
     }
   },
   {
-    "id": "ados2-10",
-    "test": "ADOS2",
+    "id": "ados2-adulto-j",
+    "test": "ADOS2_ADULTO",
     "sectionNumber": 4,
     "section": "COMPORTAMIENTO",
-    "number": 1,
+    "code": "J",
     "question": "Movimientos estereotipados",
     "answers": {
       "0": "Sin movimientos estereotipados.",
