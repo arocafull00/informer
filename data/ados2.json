@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ados2-01",
+    "test": "ADOS2",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 1,
+    "question": "Prosodia",
+    "answers": {
+      "0": "Prosodia dentro de la norma.",
+      "1": "Prosodia ligeramente alterada.",
+      "2": "Prosodia claramente inusual.",
+      "3": "Prosodia gravemente alterada."
+    }
+  },
+  {
+    "id": "ados2-02",
+    "test": "ADOS2",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 2,
+    "question": "Lenguaje formal",
+    "answers": {
+      "0": "Lenguaje formal apropiado.",
+      "1": "Lenguaje formal con algunas irregularidades.",
+      "2": "Lenguaje formalmente alterado.",
+      "3": "Lenguaje incoherente o inapropiado."
+    }
+  },
+  {
+    "id": "ados2-03",
+    "test": "ADOS2",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 3,
+    "question": "Contenidos repetitivos",
+    "answers": {
+      "0": "Sin contenidos repetitivos.",
+      "1": "Contenidos repetitivos ocasionales.",
+      "2": "Contenidos repetitivos frecuentes.",
+      "3": "Verbalizaciones repetitivas persistentes."
+    }
+  },
+  {
+    "id": "ados2-04",
+    "test": "ADOS2",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "number": 1,
+    "question": "Emociones expresadas",
+    "answers": {
+      "0": "Expresión emocional apropiada.",
+      "1": "Expresión emocional algo limitada.",
+      "2": "Expresión emocional claramente Deficitaria.",
+      "3": "No expresa emociones."
+    }
+  },
+  {
+    "id": "ados2-05",
+    "test": "ADOS2",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "number": 2,
+    "question": "Iniciación de interacción social",
+    "answers": {
+      "0": "Inicia interacciones sociales apropiadamente.",
+      "1": "Inicia interacciones de manera variable.",
+      "2": "Rara vez inicia interacciones.",
+      "3": "No inicia interacciones sociales."
+    }
+  },
+  {
+    "id": "ados2-06",
+    "test": "ADOS2",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "number": 3,
+    "question": "Uso deguiño social",
+    "answers": {
+      "0": "Uso apropiado de gestos sociales.",
+      "1": "Gestos sociales de forma inconsistente.",
+      "2": "Gestos sociales limitados.",
+      "3": "No utiliza gestos sociales."
+    }
+  },
+  {
+    "id": "ados2-07",
+    "test": "ADOS2",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "number": 1,
+    "question": "Creatividad en el juego",
+    "answers": {
+      "0": "Juego creativo y variado.",
+      "1": "Juego con creatividad limitada.",
+      "2": "Juego estereotipado.",
+      "3": "No se observa juego creativo."
+    }
+  },
+  {
+    "id": "ados2-08",
+    "test": "ADOS2",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "number": 2,
+    "question": "Imaginación",
+    "answers": {
+      "0": "Uso imaginativo apropiado.",
+      "1": "Uso imaginativo limitado.",
+      "2": "Juego funcional sin imaginación.",
+      "3": "No se observa juego imaginativo."
+    }
+  },
+  {
+    "id": "ados2-09",
+    "test": "ADOS2",
+    "sectionNumber": 3,
+    "section": "JUEGO Y IMAGINACIÓN",
+    "number": 3,
+    "question": "Interés por compañeros",
+    "answers": {
+      "0": "Interés apropiado por los compañeros.",
+      "1": "Interés superficial por compañeros.",
+      "2": "Prefiere objetos sobre personas.",
+      "3": "No muestra interés por compañeros."
+    }
+  },
+  {
+    "id": "ados2-10",
+    "test": "ADOS2",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTO",
+    "number": 1,
+    "question": "Movimientos estereotipados",
+    "answers": {
+      "0": "Sin movimientos estereotipados.",
+      "1": "Movimientos estereotipados leves.",
+      "2": "Movimientos estereotipados moderados.",
+      "3": "Movimientos estereotipados severos."
+    }
+  }
+]

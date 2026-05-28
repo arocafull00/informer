@@ -1,0 +1,142 @@
+[
+  {
+    "id": "adir-01",
+    "test": "ADIR",
+    "sectionNumber": 1,
+    "section": "DESARROLLO TEMPRANO",
+    "number": 1,
+    "question": "Primeros pasos",
+    "answers": {
+      "0": "Primeros pasos dentro de la norma.",
+      "1": "Primeros pasos ligeramente retrasados.",
+      "2": "Retraso significativo en los primeros pasos.",
+      "3": "No ha adquirido la marcha autónoma."
+    }
+  },
+  {
+    "id": "adir-02",
+    "test": "ADIR",
+    "sectionNumber": 1,
+    "section": "DESARROLLO TEMPRANO",
+    "number": 2,
+    "question": "Control de esfínteres",
+    "answers": {
+      "0": "Control de esfínteres dentro de la norma.",
+      "1": "Control de esfínteres levemente retrasado.",
+      "2": "Retraso notable en el control de esfínteres.",
+      "3": "No se ha logrado el control de esfínteres."
+    }
+  },
+  {
+    "id": "adir-03",
+    "test": "ADIR",
+    "sectionNumber": 1,
+    "section": "DESARROLLO TEMPRANO",
+    "number": 3,
+    "question": "Lenguaje inicial",
+    "answers": {
+      "0": "Desarrollo del lenguaje dentro de la norma.",
+      "1": "Primeras palabras ligeramente tardías.",
+      "2": "Ausencia de palabras funcionalmente significativas.",
+      "3": "No se ha desarrollado ningún tipo de comunicación verbal."
+    }
+  },
+  {
+    "id": "adir-04",
+    "test": "ADIR",
+    "sectionNumber": 2,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 1,
+    "question": "Comunicación gestual",
+    "answers": {
+      "0": "Utiliza gestos comunicativos de forma espontánea.",
+      "1": "Requiere apoyo visual para手势 comunicativos.",
+      "2": "Gestos limitados sin intención comunicativa clara.",
+      "3": "No utiliza gestos comunicativos."
+    }
+  },
+  {
+    "id": "adir-05",
+    "test": "ADIR",
+    "sectionNumber": 2,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 2,
+    "question": "Inicio de conversaciones",
+    "answers": {
+      "0": "Inicia conversaciones de forma apropiada.",
+      "1": "Inicia conversaciones de manera ocasional.",
+      "2": "Rara vez inicia conversaciones.",
+      "3": "No inicia conversaciones."
+    }
+  },
+  {
+    "id": "adir-06",
+    "test": "ADIR",
+    "sectionNumber": 2,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "number": 3,
+    "question": "Conversación recíproca",
+    "answers": {
+      "0": "Mantiene conversaciones recíprocas fluidas.",
+      "1": "Conversaciones con altibajos en la reciprocidad.",
+      "2": "Conversaciones unilaterales predominantes.",
+      "3": "No se observa reciprocidad en la comunicación."
+    }
+  },
+  {
+    "id": "adir-07",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "INTERACCIÓN SOCIAL",
+    "number": 1,
+    "question": "Contacto visual",
+    "answers": {
+      "0": "Contacto visual apropiado.",
+      "1": "Contacto visual inconsistente.",
+      "2": "Contacto visual mínimo.",
+      "3": "Evita completamente el contacto visual."
+    }
+  },
+  {
+    "id": "adir-08",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "INTERACCIÓN SOCIAL",
+    "number": 2,
+    "question": "Respuesta a llamadas",
+    "answers": {
+      "0": "Responde de forma consistente a su nombre.",
+      "1": "Responde de manera variable.",
+      "2": "Responde solo con apoyo visual.",
+      "3": "No responde a su nombre."
+    }
+  },
+  {
+    "id": "adir-09",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "INTERACCIÓN SOCIAL",
+    "number": 3,
+    "question": "Juego simbólico",
+    "answers": {
+      "0": "Juego simbólico presente y desarrollado.",
+      "1": "Juego simbólico emergente.",
+      "2": "Juego simbólico limitado.",
+      "3": "No se observa juego simbólico."
+    }
+  },
+  {
+    "id": "adir-10",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "INTERACCIÓN SOCIAL",
+    "number": 4,
+    "question": "Interés por otros niños",
+    "answers": {
+      "0": "Muestra interés apropiado por otros niños.",
+      "1": "Interés inconsistente por otros niños.",
+      "2": "Prefiere estar solo.",
+      "3": "No muestra ningún interés por otros niños."
+    }
+  }
+]
