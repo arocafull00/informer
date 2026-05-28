@@ -1,155 +1,418 @@
 [
   {
-    "id": "ados2-adulto-a",
+    "id": "ados2-adulto-01",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "code": "A",
-    "question": "Prosodia",
+    "code": "1",
+    "question": "Nivel general de lenguaje oral no ecolálico",
     "answers": {
-      "0": "Prosodia dentro de la norma.",
-      "1": "Prosodia ligeramente alterada.",
-      "2": "Prosodia claramente inusual.",
-      "3": "Prosodia gravemente alterada."
+      "0": "Uso de frases fluido y variado, sin limitaciones.",
+      "1": "Utiliza las frases de manera correcta.",
+      "2": "Uso de frases claramente inadecuado o muy limitado."
     }
   },
   {
-    "id": "ados2-adulto-a1",
+    "id": "ados2-adulto-02",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "code": "A1",
-    "parentCode": "A",
-    "question": "Variación del tono",
+    "code": "2",
+    "question": "Anormalidades del habla asociadas al autismo",
     "answers": {
-      "0": "Variación tonal apropiada.",
-      "2": "Variación tonal claramente limitada."
+      "0": "Variación tonal y entonación dentro de la norma.",
+      "1": "Poca variación de timbre, entonación monótona y mecánica.",
+      "2": "Entonación gravemente plana o inusual."
     }
   },
   {
-    "id": "ados2-adulto-b",
+    "id": "ados2-adulto-03",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "code": "B",
-    "question": "Lenguaje formal",
+    "code": "3",
+    "question": "Ecoalia inmediata",
     "answers": {
-      "0": "Lenguaje formal apropiado.",
-      "1": "Lenguaje formal con algunas irregularidades.",
-      "2": "Lenguaje formalmente alterado.",
-      "3": "Lenguaje incoherente o inapropiado."
+      "0": "Sin eco del lenguaje.",
+      "1": "Eco ocasional del lenguaje.",
+      "2": "Eco frecuente o persistente del lenguaje."
     }
   },
   {
-    "id": "ados2-adulto-c",
+    "id": "ados2-adulto-04",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 1,
     "section": "LENGUAJE Y COMUNICACIÓN",
-    "code": "C",
-    "question": "Contenidos repetitivos",
+    "code": "4",
+    "question": "Uso estereotipado o idiosincrásico de palabras o frases",
     "answers": {
-      "0": "Sin contenidos repetitivos.",
-      "1": "Contenidos repetitivos ocasionales.",
-      "2": "Contenidos repetitivos frecuentes.",
-      "3": "Verbalizaciones repetitivas persistentes."
+      "0": "Sin uso de lenguaje idiosincrásico.",
+      "1": "A menudo usa palabras o frases idiosincrásicas.",
+      "2": "Uso predominante de lenguaje idiosincrásico."
     }
   },
   {
-    "id": "ados2-adulto-d",
+    "id": "ados2-adulto-05",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "5",
+    "question": "Ofrece información",
+    "answers": {
+      "0": "Ofrece información de manera espontánea y variada.",
+      "1": "A veces ofrece información de manera espontánea sobre sus propios pensamientos y experiencias.",
+      "2": "No ofrece información de manera espontánea."
+    }
+  },
+  {
+    "id": "ados2-adulto-06",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "6",
+    "question": "Pide información",
+    "answers": {
+      "0": "Responde y formula preguntas de manera espontánea y recíproca.",
+      "1": "Responde adecuadamente a los comentarios de la persona que examina, pero no hace preguntas sobre ello de manera espontánea.",
+      "2": "No responde adecuadamente ni formula preguntas espontáneas."
+    }
+  },
+  {
+    "id": "ados2-adulto-07",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "7",
+    "question": "Narración de sucesos",
+    "answers": {
+      "0": "Proporciona información espontánea y suficiente sin depender de preguntas.",
+      "1": "Proporciona suficiente información aunque puede depender de preguntas específicas.",
+      "2": "Proporciona información insuficiente incluso con preguntas específicas."
+    }
+  },
+  {
+    "id": "ados2-adulto-08",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "8",
+    "question": "Conversación",
+    "answers": {
+      "0": "Conversación recíproca fluida y equilibrada.",
+      "1": "Poca conversación recíproca.",
+      "2": "Sin conversación recíproca o muy limitada."
+    }
+  },
+  {
+    "id": "ados2-adulto-09",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "9",
+    "question": "Gestos descriptivos, conversacionales ,instrumentales o informativos",
+    "answers": {
+      "0": "Uso frecuente y variado de gestos espontáneos.",
+      "1": "Algún uso espontáneo de gestos.",
+      "2": "No se observa uso espontáneo de gestos."
+    }
+  },
+  {
+    "id": "ados2-adulto-1-10",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 1,
+    "section": "LENGUAJE Y COMUNICACIÓN",
+    "code": "10",
+    "question": "Gestos enfáticos o emocionales",
+    "answers": {
+      "0": "Uso frecuente y variado de gestos espontáneos.",
+      "1": "Algún uso espontáneo de gestos.",
+      "2": "No se observa uso espontáneo de gestos."
+    }
+  },
+  {
+    "id": "ados2-adulto-10",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "code": "D",
-    "question": "Emociones expresadas",
+    "code": "1",
+    "question": "Contacto visual inusual",
     "answers": {
-      "0": "Expresión emocional apropiada.",
-      "1": "Expresión emocional algo limitada.",
-      "2": "Expresión emocional claramente deficitaria.",
-      "3": "No expresa emociones."
+      "0": "Contacto visual modulado de forma apropiada.",
+      "1": "Establece un contacto visual modulado pobremente para iniciar, terminar o regular una interacción social.",
+      "2": "Contacto visual ausente o muy inadecuado para regular la interacción."
     }
   },
   {
-    "id": "ados2-adulto-e",
+    "id": "ados2-adulto-11",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "code": "E",
-    "question": "Iniciación de interacción social",
+    "code": "2",
+    "question": "Expresiones faciales dirigidas al examinador",
     "answers": {
-      "0": "Inicia interacciones sociales apropiadamente.",
-      "1": "Inicia interacciones de manera variable.",
-      "2": "Rara vez inicia interacciones.",
-      "3": "No inicia interacciones sociales."
+      "0": "Dirige expresiones faciales variadas y apropiadas al examinador.",
+      "1": "Dirige algunas expresiones faciales a la persona que examina pero con poca variedad.",
+      "2": "Expresiones faciales mínimas o no dirigidas al examinador."
     }
   },
   {
-    "id": "ados2-adulto-f",
+    "id": "ados2-adulto-12",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 2,
     "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "code": "F",
-    "question": "Uso de guiño social",
+    "code": "3",
+    "question": "Producción de lenguaje y comunicación no verbal asociada",
     "answers": {
-      "0": "Uso apropiado de gestos sociales.",
-      "1": "Gestos sociales de forma inconsistente.",
-      "2": "Gestos sociales limitados.",
-      "3": "No utiliza gestos sociales."
+      "0": "Muestra disfrute claro y variado durante la interacción.",
+      "1": "Muestra cierto disfrute durante la interacción.",
+      "2": "No muestra disfrute durante la interacción."
     }
   },
   {
-    "id": "ados2-adulto-g",
+    "id": "ados2-adulto-13",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "4",
+    "question": "Disfrute compartido durante la interacción",
+    "answers": {
+      "0": "Comunica de forma variada y espontánea las emociones sentidas.",
+      "1": "Comunica de manera efectiva diversas emociones que ha sentido.",
+      "2": "Comunicación emocional limitada o inadecuada."
+    }
+  },
+  {
+    "id": "ados2-adulto-14",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "5",
+    "question": "Comprensión de sus propias emociones",
+    "answers": {
+      "0": "Comprensión clara y consistente de los estados emocionales de otros.",
+      "1": "Cierta comprensión e identificación de que comprende los estados emocionales de otros.",
+      "2": "Comprensión emocional de otros claramente limitada."
+    }
+  },
+  {
+    "id": "ados2-adulto-15",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "6",
+    "question": "Comprensión de las emociones de otros/empatía",
+    "answers": {
+      "0": "Comprensión clara y variada de relaciones sociales típicas.",
+      "1": "Muestra ejemplos de comprensión de algunas relaciones sociales típicas.",
+      "2": "Comprensión limitada de relaciones sociales típicas."
+    }
+  },
+  {
+    "id": "ados2-adulto-16",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "7",
+    "question": "Comprensión de las situaciones y relaciones sociales típicas",
+    "answers": {
+      "0": "Indicaciones claras de responsabilidad por sus propias acciones.",
+      "1": "Muestra alguna indicación de ser responsable de sus propias acciones.",
+      "2": "Sin indicación de responsabilidad por sus propias acciones."
+    }
+  },
+  {
+    "id": "ados2-adulto-17",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "8",
+    "question": "Responsabilidad",
+    "answers": {
+      "0": "Intenta involucrar a la otra persona de forma activa y variada.",
+      "1": "Pocos intentos de involucrar a la otra persona.",
+      "2": "No intenta involucrar a la otra persona."
+    }
+  },
+  {
+    "id": "ados2-adulto-18",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "9",
+    "question": "Características de las iniciaciones sociales",
+    "answers": {
+      "0": "Respuestas variadas y claramente ajustadas a cada situación.",
+      "1": "Muestra una gama de respuestas apropiadas que varían de acuerdo a las situaciones.",
+      "2": "Respuestas repetitivas o poco ajustadas a la situación."
+    }
+  },
+  {
+    "id": "ados2-adulto-19",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "10",
+    "question": "Cantidad de iniciaciones sociales/mantenimiento de la atención",
+    "answers": {
+      "0": "Comunicación espontánea y equilibrada, no limitada a respuestas.",
+      "1": "La mayor parte de la comunicación está orientada a responder preguntas.",
+      "2": "Comunicación muy limitada incluso ante preguntas directas."
+    }
+  },
+  {
+    "id": "ados2-adulto-20",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "11",
+    "question": "Calidad de la respuesta social",
+    "answers": {
+      "0": "Interacción fluida, espontánea y muy apropiada.",
+      "1": "La interacción es agradable y apropiada durante la sesión.",
+      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+    }
+  },
+  {
+    "id": "ados2-adulto-2-21",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "12",
+    "question": "Cantidad de comunicación social recíproca",
+    "answers": {
+      "0": "Interacción fluida, espontánea y muy apropiada.",
+      "1": "La interacción es agradable y apropiada durante la sesión.",
+      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+    }
+  },
+  {
+    "id": "ados2-adulto-2-22",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 2,
+    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
+    "code": "13",
+    "question": "Calidad general de la relación",
+    "answers": {
+      "0": "Interacción fluida, espontánea y muy apropiada.",
+      "1": "La interacción es agradable y apropiada durante la sesión.",
+      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+    }
+  },
+  {
+    "id": "ados2-adulto-21",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 3,
-    "section": "JUEGO Y IMAGINACIÓN",
-    "code": "G",
-    "question": "Creatividad en el juego",
+    "section": "IMAGINACIÓN",
+    "code": "1",
+    "question": "Imaginación y creatividad",
     "answers": {
-      "0": "Juego creativo y variado.",
-      "1": "Juego con creatividad limitada.",
-      "2": "Juego estereotipado.",
-      "3": "No se observa juego creativo."
+      "0": "Acciones imaginativas variadas y espontáneas.",
+      "1": "Algunas acciones imaginativas en respuesta a una situación estructurada.",
+      "2": "Sin acciones imaginativas observables."
     }
   },
   {
-    "id": "ados2-adulto-h",
-    "test": "ADOS2_ADULTO",
-    "sectionNumber": 3,
-    "section": "JUEGO Y IMAGINACIÓN",
-    "code": "H",
-    "question": "Imaginación",
-    "answers": {
-      "0": "Uso imaginativo apropiado.",
-      "1": "Uso imaginativo limitado.",
-      "2": "Juego funcional sin imaginación.",
-      "3": "No se observa juego imaginativo."
-    }
-  },
-  {
-    "id": "ados2-adulto-i",
-    "test": "ADOS2_ADULTO",
-    "sectionNumber": 3,
-    "section": "JUEGO Y IMAGINACIÓN",
-    "code": "I",
-    "question": "Interés por compañeros",
-    "answers": {
-      "0": "Interés apropiado por los compañeros.",
-      "1": "Interés superficial por compañeros.",
-      "2": "Prefiere objetos sobre personas.",
-      "3": "No muestra interés por compañeros."
-    }
-  },
-  {
-    "id": "ados2-adulto-j",
+    "id": "ados2-adulto-22",
     "test": "ADOS2_ADULTO",
     "sectionNumber": 4,
-    "section": "COMPORTAMIENTO",
-    "code": "J",
-    "question": "Movimientos estereotipados",
+    "section": "COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    "code": "1",
+    "question": "Interes sensorial inusuall en los materiales de juego de otras personas",
     "answers": {
-      "0": "Sin movimientos estereotipados.",
-      "1": "Movimientos estereotipados leves.",
-      "2": "Movimientos estereotipados moderados.",
-      "3": "Movimientos estereotipados severos."
+      "0": "Sin intereses sensoriales inusuales.",
+      "1": "Intereses sensoriales evidentes.",
+      "2": "Intereses sensoriales prominentes o interferentes."
+    }
+  },
+  {
+    "id": "ados2-adulto-23",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    "code": "2",
+    "question": "Manierismos de manos y dedos y otros manierismos complejos",
+    "answers": {
+      "0": "Sin manierismos.",
+      "1": "Con manierismos.",
+      "2": "Manierismos frecuentes o muy marcados."
+    }
+  },
+  {
+    "id": "ados2-adulto-24",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    "code": "3",
+    "question": "Conducta autolesiva",
+    "answers": {
+      "0": "Sin conducta autolesiva.",
+      "1": "Conducta autolesiva leve u ocasional.",
+      "2": "Conducta autolesiva significativa."
+    }
+  },
+  {
+    "id": "ados2-adulto-25",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    "code": "4",
+    "question": "Interés excesivo o referencias a temas u objetos inusuales o altamente específicos o comportamientos repetitivos",
+    "answers": {
+      "0": "Sin rituales verbales.",
+      "1": "Rituales verbales leves u ocasionales.",
+      "2": "Rituales verbales frecuentes o persistentes."
+    }
+  },
+  {
+    "id": "ados2-adulto-4-26",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 4,
+    "section": "COMPORTAMIENTOS ESTEREOTIPADOS E INTERESES RESTRINGIDOS",
+    "code": "5",
+    "question": "Compulsiones o rituales",
+    "answers": {
+      "0": "Sin rituales verbales.",
+      "1": "Rituales verbales leves u ocasionales.",
+      "2": "Rituales verbales frecuentes o persistentes."
+    }
+  },
+  {
+    "id": "ados2-adulto-26",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 5,
+    "section": "OTROS COMPORTAMIENTOS",
+    "code": "1",
+    "question": "Elevado nivel de actividad/agitación",
+    "answers": {
+      "0": "Postura tranquila y nivel de actividad apropiado.",
+      "1": "Se sienta, pero está inquieta.",
+      "2": "Inquietud marcada o dificultad para permanecer sentado."
+    }
+  },
+  {
+    "id": "ados2-adulto-5-28",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 5,
+    "section": "OTROS COMPORTAMIENTOS",
+    "code": "2",
+    "question": "Berrinches, agresiones, comportamientos negativos o disruptivos",
+    "answers": {
+      "0": "Sin signos de ansiedad o inseguridad.",
+      "1": "Leves signos de ansiedad o inseguridad.",
+      "2": "Ansiedad o inseguridad claramente evidentes."
+    }
+  },
+  {
+    "id": "ados2-adulto-27",
+    "test": "ADOS2_ADULTO",
+    "sectionNumber": 5,
+    "section": "OTROS COMPORTAMIENTOS",
+    "code": "3",
+    "question": "Ansiedad",
+    "answers": {
+      "0": "Sin signos de ansiedad o inseguridad.",
+      "1": "Leves signos de ansiedad o inseguridad.",
+      "2": "Ansiedad o inseguridad claramente evidentes."
     }
   }
 ]
