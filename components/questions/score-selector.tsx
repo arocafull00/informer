@@ -2,7 +2,10 @@
 
 import { useMemo } from "react";
 import { getAnswerScores } from "@/lib/get-answer-scores";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentAnswers,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
 import { cn } from "@/lib/utils";
 
 interface ScoreSelectorProps {
@@ -11,7 +14,8 @@ interface ScoreSelectorProps {
 }
 
 export function ScoreSelector({ questionId, options }: ScoreSelectorProps) {
-  const { answers, setAnswer } = useCurrentReportStore();
+  const answers = useCurrentReportStore(selectCurrentAnswers);
+  const setAnswer = useCurrentReportStore((s) => s.setAnswer);
   const selected = answers[questionId];
   const scores = useMemo(() => getAnswerScores(options), [options]);
 

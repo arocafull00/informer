@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Informer",
   description: "Informes ADI-R y ADOS-2 para profesionales clínicos",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

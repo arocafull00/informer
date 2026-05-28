@@ -1,14 +1,20 @@
 "use client";
 
 import { useMemo, useCallback } from "react";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentAnswers,
+  selectCurrentDraftTitle,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { testData, testLabels } from "@/lib/test-data";
 
 export function useSaveReport() {
-  const { currentTest, answers, draftTitle, setDraftTitle } =
-    useCurrentReportStore();
+  const currentTest = useCurrentReportStore((s) => s.currentTest);
+  const answers = useCurrentReportStore(selectCurrentAnswers);
+  const draftTitle = useCurrentReportStore(selectCurrentDraftTitle);
+  const setDraftTitle = useCurrentReportStore((s) => s.setDraftTitle);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
   const markdown = useMemo(() => {

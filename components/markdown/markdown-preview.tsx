@@ -9,10 +9,14 @@ import { isAdos2Test } from "@/lib/ados2-labels";
 import { buildAdos2ScoreSummary } from "@/lib/ados2-scoring";
 import { useSaveReport } from "@/lib/use-save-report";
 import { testData, testLabels } from "@/lib/test-data";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentAnswers,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
 
 export function MarkdownPreview() {
-  const { currentTest, answers } = useCurrentReportStore();
+  const currentTest = useCurrentReportStore((s) => s.currentTest);
+  const answers = useCurrentReportStore(selectCurrentAnswers);
   const { trySave, saveWithTitle, hasAnswers, markdown, suggestedTitle } =
     useSaveReport();
   const [copied, setCopied] = useState(false);

@@ -1,7 +1,10 @@
 "use client";
 
 import { useMemo } from "react";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentAnswers,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
 import {
   ados2ItemLabel,
   ados2SectionHeading,
@@ -38,7 +41,8 @@ function groupBySection(questions: Question[]): SectionGroup[] {
 }
 
 export function QuestionList() {
-  const { currentTest, answers } = useCurrentReportStore();
+  const currentTest = useCurrentReportStore((s) => s.currentTest);
+  const answers = useCurrentReportStore(selectCurrentAnswers);
 
   const questions = useMemo(() => testData[currentTest], [currentTest]);
   const sections = useMemo(() => groupBySection(questions), [questions]);

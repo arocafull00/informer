@@ -14,8 +14,8 @@ export function Sidebar() {
     const report = reports.find((r) => r.id === id);
     restoreReport(
       id,
-      useCurrentReportStore.getState().setAnswer,
-      useCurrentReportStore.getState().setCurrentTest
+      useCurrentReportStore.getState().setCurrentTest,
+      useCurrentReportStore.getState().replaceAnswersForTest
     );
     if (report?.title?.trim()) {
       setDraftTitle(report.title);
