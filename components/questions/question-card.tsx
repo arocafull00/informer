@@ -7,9 +7,14 @@ import { ScoreSelector } from "./score-selector";
 interface QuestionCardProps {
   question: Question;
   isSubItem?: boolean;
+  displayCode?: string;
 }
 
-export function QuestionCard({ question, isSubItem = false }: QuestionCardProps) {
+export function QuestionCard({
+  question,
+  isSubItem = false,
+  displayCode,
+}: QuestionCardProps) {
   return (
     <div
       className={cn(
@@ -19,7 +24,9 @@ export function QuestionCard({ question, isSubItem = false }: QuestionCardProps)
     >
       <div className="flex gap-3">
         <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-surface-container">
-          <span className="text-label-md text-primary">{question.code}</span>
+          <span className="text-label-md text-primary">
+            {displayCode ?? question.code}
+          </span>
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="mb-1 text-body-lg font-semibold text-on-surface">

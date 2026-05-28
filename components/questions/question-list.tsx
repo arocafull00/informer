@@ -2,38 +2,65 @@
 
 import { useMemo } from "react";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  ados2ItemLabel,
+  ados2SectionHeading,
+  isAdos2Test,
+} from "@/lib/ados2-labels";
 import { orderQuestionsWithSubItems } from "@/lib/order-questions";
 import { testData, testLabels } from "@/lib/test-data";
 import type { Question } from "@/lib/types";
 import { QuestionCard } from "./question-card";
 
+type SectionGroup = {
+  sectionNumber: number;
+  section: string;
+  questions: Question[];
+};
+
+function groupBySection(questions: Question[]): SectionGroup[] {
+  const map = new Map<string, SectionGroup>();
+
+  questions.forEach((q) => {
+    const existing = map.get(q.section);
+    if (existing) {
+      existing.questions.push(q);
+      return;
+    }
+    map.set(q.section, {
+      sectionNumber: q.sectionNumber,
+      section: q.section,
+      questions: [q],
+    });
+  });
+
+  return [...map.values()].sort((a, b) => a.sectionNumber - b.sectionNumber);
+}
+
 export function QuestionList() {
   const { currentTest, answers } = useCurrentReportStore();
 
   const questions = useMemo(() => testData[currentTest], [currentTest]);
-
-  const grouped = useMemo(() => {
-    const groups: Record<string, Question[]> = {};
-    questions.forEach((q) => {
-      const key = `${q.sectionNumber}. ${q.section}`;
-      if (!groups[key]) groups[key] = [];
-      groups[key].push(q);
-    });
-    return groups;
-  }, [questions]);
+  const sections = useMemo(() => groupBySection(questions), [questions]);
+  const isAdos2 = isAdos2Test(currentTest);
 
   return (
     <div className="space-y-stack-section pb-10">
-      {Object.entries(grouped).map(([, qs]) => {
-        const first = qs[0];
+      {sections.map(({ sectionNumber, section, questions: qs }) => {
         const ordered = orderQuestionsWithSubItems(qs);
-        const answeredInSection = qs.filter((q) => answers[q.id] !== undefined).length;
+        const answeredInSection = qs.filter(
+          (q) => answers[q.id] !== undefined
+        ).length;
         const totalInSection = qs.length;
         const progress =
           totalInSection > 0 ? (answeredInSection / totalInSection) * 100 : 0;
 
+        const sectionTitle = isAdos2
+          ? ados2SectionHeading(sectionNumber, section)
+          : `${sectionNumber}. ${section}`;
+
         return (
-          <section key={`${first.sectionNumber}-${first.section}`}>
+          <section key={`${sectionNumber}-${section}`}>
             <header className="mb-6">
               <div className="mb-4 flex items-end justify-between">
                 <div>
@@ -41,7 +68,7 @@ export function QuestionList() {
                     {testLabels[currentTest]}
                   </span>
                   <h1 className="mt-1 text-headline-lg text-on-background">
-                    {first.sectionNumber}. {first.section}
+                    {sectionTitle}
                   </h1>
                 </div>
                 <span className="text-mono-sm text-on-surface-variant">
@@ -63,11 +90,16 @@ export function QuestionList() {
               </div>
             </header>
             <div className="space-y-3">
-              {ordered.map((question) => (
+              {ordered.map((question, index) => (
                 <QuestionCard
                   key={question.id}
                   question={question}
-                  isSubItem={!!question.parentCode}
+                  isSubItem={isAdos2 ? false : !!question.parentCode}
+                  displayCode={
+                    isAdos2
+                      ? ados2ItemLabel(sectionNumber, index + 1)
+                      : undefined
+                  }
                 />
               ))}
             </div>
