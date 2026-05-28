@@ -3,15 +3,32 @@
 import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Check, Copy } from "lucide-react";
-import { useSaveReport } from "@/lib/use-save-report";
+import { Ados2ScoreSummaryDialog } from "@/components/ados2/ados2-score-summary-dialog";
 import { SaveReportTitleDialog } from "@/components/reports/save-report-title-dialog";
-import { CopyButton } from "./copy-button";
+import { isAdos2Test } from "@/lib/ados2-labels";
+import { buildAdos2ScoreSummary } from "@/lib/ados2-scoring";
+import { useSaveReport } from "@/lib/use-save-report";
+import { testData, testLabels } from "@/lib/test-data";
+import { useCurrentReportStore } from "@/store/use-current-report-store";
 
 export function MarkdownPreview() {
+  const { currentTest, answers } = useCurrentReportStore();
   const { trySave, saveWithTitle, hasAnswers, markdown, suggestedTitle } =
     useSaveReport();
   const [copied, setCopied] = useState(false);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
+  const [scoreDialogOpen, setScoreDialogOpen] = useState(false);
+
+  const isAdos2 = isAdos2Test(currentTest);
+
+  const scoreSummary = useMemo(() => {
+    if (!isAdos2) return null;
+    return buildAdos2ScoreSummary(
+      currentTest,
+      testData[currentTest],
+      answers
+    );
+  }, [isAdos2, currentTest, answers]);
 
   const isEmpty = useMemo(
     () => markdown.split("\n").filter(Boolean).length <= 2,
@@ -30,11 +47,24 @@ export function MarkdownPreview() {
     setSaveDialogOpen(true);
   };
 
+  const handleScoreClick = () => {
+    if (!scoreSummary) return;
+    setScoreDialogOpen(true);
+  };
+
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div className="flex shrink-0 items-center justify-between border-b border-outline-variant bg-surface-container-lowest p-3">
+      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-outline-variant bg-surface-container-lowest p-3">
         <h2 className="text-headline-md text-on-surface">VISTA PREVIA DEL INFORME</h2>
-        <CopyButton text={markdown} />
+        {isAdos2 && scoreSummary && (
+          <button
+            type="button"
+            onClick={handleScoreClick}
+            className="shrink-0 cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface transition-colors hover:bg-surface-container-high"
+          >
+            Puntuación
+          </button>
+        )}
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto bg-surface-container-lowest p-4">
         {isEmpty ? (
@@ -83,6 +113,14 @@ export function MarkdownPreview() {
         onClose={() => setSaveDialogOpen(false)}
         onConfirm={saveWithTitle}
       />
+      {scoreSummary && (
+        <Ados2ScoreSummaryDialog
+          open={scoreDialogOpen}
+          testLabel={testLabels[currentTest]}
+          summary={scoreSummary}
+          onClose={() => setScoreDialogOpen(false)}
+        />
+      )}
     </div>
   );
 }

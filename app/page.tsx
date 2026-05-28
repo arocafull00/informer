@@ -14,7 +14,7 @@ export default function Home() {
         <section className="mx-auto flex min-w-0 flex-1 flex-col overflow-y-auto bg-background p-gutter-grid lg:max-w-[960px]">
           <QuestionList />
         </section>
-        <aside className="flex w-[35%] min-w-[320px] max-w-[480px] shrink-0 flex-col border-l border-outline-variant bg-surface">
+        <aside className="flex w-[45%] min-w-[360px] max-w-[720px] shrink-0 flex-col border-l border-outline-variant bg-surface">
           <MarkdownPreview />
         </aside>
       </main>
