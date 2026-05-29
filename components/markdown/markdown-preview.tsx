@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Check, Copy } from "lucide-react";
+import { AdirGenerateResultsDialog } from "@/components/adir/adir-generate-results-dialog";
 import { Ados2ScoreSummaryDialog } from "@/components/ados2/ados2-score-summary-dialog";
 import { SaveReportTitleDialog } from "@/components/reports/save-report-title-dialog";
 import { isAdos2Test } from "@/lib/ados2-labels";
@@ -22,8 +23,10 @@ export function MarkdownPreview() {
   const [copied, setCopied] = useState(false);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
   const [scoreDialogOpen, setScoreDialogOpen] = useState(false);
+  const [adirResultsDialogOpen, setAdirResultsDialogOpen] = useState(false);
 
   const isAdos2 = isAdos2Test(currentTest);
+  const isAdir = currentTest === "ADIR";
 
   const scoreSummary = useMemo(() => {
     if (!isAdos2) return null;
@@ -60,6 +63,15 @@ export function MarkdownPreview() {
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex shrink-0 items-center justify-between gap-2 border-b border-outline-variant bg-surface-container-lowest p-3">
         <h2 className="text-headline-md text-on-surface">VISTA PREVIA DEL INFORME</h2>
+        {isAdir && (
+          <button
+            type="button"
+            onClick={() => setAdirResultsDialogOpen(true)}
+            className="interactive-press shrink-0 cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
+          >
+            Generar resultados
+          </button>
+        )}
         {isAdos2 && scoreSummary && (
           <button
             type="button"
@@ -116,6 +128,10 @@ export function MarkdownPreview() {
         suggestedTitle={suggestedTitle}
         onClose={() => setSaveDialogOpen(false)}
         onConfirm={saveWithTitle}
+      />
+      <AdirGenerateResultsDialog
+        open={adirResultsDialogOpen}
+        onClose={() => setAdirResultsDialogOpen(false)}
       />
       {scoreSummary && (
         <Ados2ScoreSummaryDialog
