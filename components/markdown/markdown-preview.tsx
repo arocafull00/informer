@@ -79,7 +79,7 @@ export function MarkdownPreview() {
               onClick={() => setAdirResultsDialogOpen(true)}
               className="interactive-press cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
             >
-              Generar resultados
+              Generar ADI-R
             </button>
           )}
           {isAdos2 && scoreSummary && (

@@ -7,138 +7,52 @@
     "patient.name": {
       "type": "text",
       "x": 220,
-      "y": 670,
+      "y": 665,
       "width": 360,
       "height": 14,
-      "fontSize": 11,
+      "fontSize": 10,
       "align": "left"
     },
     "patient.evaluationDate.year": {
-      "type": "point",
-      "x": 397,
-      "y": 648
+      "type": "text",
+      "x": 390,
+      "y": 644,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
     },
     "patient.evaluationDate.month": {
-      "type": "point",
-      "x": 426,
-      "y": 648
+      "type": "text",
+      "x": 419,
+      "y": 644,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
     },
     "patient.evaluationDate.day": {
-      "type": "point",
-      "x": 454,
-      "y": 648
+      "type": "text",
+      "x": 447,
+      "y": 644,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
     },
     "patient.chronologicalAge": {
-      "type": "point",
-      "x": 396,
-      "y": 616
-    },
-    "patient.evaluationDate.day.0": {
       "type": "text",
-      "x": 292,
-      "y": 528,
+      "x": 389,
+      "y": 612,
       "width": 14,
       "height": 14,
       "fontSize": 10,
       "align": "center"
-    },
-    "patient.evaluationDate.day.1": {
-      "type": "text",
-      "x": 308,
-      "y": 528,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.evaluationDate.month.0": {
-      "type": "text",
-      "x": 332,
-      "y": 528,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.evaluationDate.month.1": {
-      "type": "text",
-      "x": 348,
-      "y": 528,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.evaluationDate.year.0": {
-      "type": "text",
-      "x": 372,
-      "y": 528,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.evaluationDate.year.1": {
-      "type": "text",
-      "x": 388,
-      "y": 528,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.chronologicalAge.years.0": {
-      "type": "text",
-      "x": 292,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.chronologicalAge.years.1": {
-      "type": "text",
-      "x": 308,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "directScores.Ad.point": {
-      "type": "point",
-      "x": 177,
-      "y": 531
-    },
-    "directScores.Ca.point": {
-      "type": "point",
-      "x": 176,
-      "y": 509
-    },
-    "directScores.An.point": {
-      "type": "point",
-      "x": 176,
-      "y": 488
-    },
-    "directScores.Fi.point": {
-      "type": "point",
-      "x": 177,
-      "y": 464
-    },
-    "directScores.Mv.point": {
-      "type": "point",
-      "x": 177,
-      "y": 440
-    },
-    "directScores.Mnv.point": {
-      "type": "point",
-      "x": 177,
-      "y": 416
     },
     "directScores.Ad": {
       "type": "text",
-      "x": 88,
-      "y": 448,
+      "x": 163,
+      "y": 530,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -146,8 +60,8 @@
     },
     "directScores.Ca": {
       "type": "text",
-      "x": 88,
-      "y": 418,
+      "x": 163,
+      "y": 508,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -155,8 +69,8 @@
     },
     "directScores.An": {
       "type": "text",
-      "x": 88,
-      "y": 388,
+      "x": 163,
+      "y": 487,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -164,8 +78,8 @@
     },
     "directScores.Fi": {
       "type": "text",
-      "x": 88,
-      "y": 358,
+      "x": 163,
+      "y": 463,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -173,8 +87,8 @@
     },
     "directScores.Mv": {
       "type": "text",
-      "x": 88,
-      "y": 328,
+      "x": 163,
+      "y": 439,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -182,56 +96,17 @@
     },
     "directScores.Mnv": {
       "type": "text",
-      "x": 88,
-      "y": 298,
+      "x": 163,
+      "y": 415,
       "width": 28,
       "height": 14,
       "fontSize": 10,
       "align": "center"
-    },
-    "tScores.Ad.point": {
-      "type": "point",
-      "x": 233,
-      "y": 530
-    },
-    "tScores.An.point": {
-      "type": "point",
-      "x": 232,
-      "y": 486
-    },
-    "tScores.Ca.point": {
-      "type": "point",
-      "x": 301,
-      "y": 507
-    },
-    "tScores.Fi.point": {
-      "type": "point",
-      "x": 300,
-      "y": 463
-    },
-    "tScores.Mv.point": {
-      "type": "point",
-      "x": 436,
-      "y": 439
-    },
-    "tScores.Mnv.point": {
-      "type": "point",
-      "x": 436,
-      "y": 417
     },
     "tScores.Ad": {
       "type": "text",
-      "x": 248,
-      "y": 448,
-      "width": 28,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "tScores.Ca": {
-      "type": "text",
-      "x": 318,
-      "y": 418,
+      "x": 219,
+      "y": 530,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -239,8 +114,17 @@
     },
     "tScores.An": {
       "type": "text",
-      "x": 248,
-      "y": 388,
+      "x": 218,
+      "y": 485,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.Ca": {
+      "type": "text",
+      "x": 287,
+      "y": 506,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -248,8 +132,8 @@
     },
     "tScores.Fi": {
       "type": "text",
-      "x": 318,
-      "y": 358,
+      "x": 286,
+      "y": 462,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -257,8 +141,8 @@
     },
     "tScores.Mv": {
       "type": "text",
-      "x": 388,
-      "y": 328,
+      "x": 422,
+      "y": 438,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -266,37 +150,17 @@
     },
     "tScores.Mnv": {
       "type": "text",
-      "x": 388,
-      "y": 298,
+      "x": 422,
+      "y": 416,
       "width": 28,
       "height": 14,
       "fontSize": 10,
       "align": "center"
     },
-    "tSums.IV.point": {
-      "type": "point",
-      "x": 233,
-      "y": 384
-    },
-    "tSums.INV.point": {
-      "type": "point",
-      "x": 303,
-      "y": 385
-    },
-    "tSums.IG.point": {
-      "type": "point",
-      "x": 374,
-      "y": 385
-    },
-    "tSums.IM.point": {
-      "type": "point",
-      "x": 440,
-      "y": 385
-    },
     "tSums.IV": {
       "type": "text",
-      "x": 248,
-      "y": 272,
+      "x": 219,
+      "y": 383,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -304,8 +168,8 @@
     },
     "tSums.INV": {
       "type": "text",
-      "x": 318,
-      "y": 272,
+      "x": 289,
+      "y": 384,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -313,8 +177,8 @@
     },
     "tSums.IG": {
       "type": "text",
-      "x": 354,
-      "y": 272,
+      "x": 360,
+      "y": 384,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -322,138 +186,53 @@
     },
     "tSums.IM": {
       "type": "text",
-      "x": 420,
-      "y": 272,
+      "x": 426,
+      "y": 384,
       "width": 28,
       "height": 14,
       "fontSize": 10,
       "align": "center"
     },
-    "indices.IV.point": {
-      "type": "point",
-      "x": 233,
-      "y": 353
-    },
-    "indices.INV.point": {
-      "type": "point",
-      "x": 302,
-      "y": 353
-    },
-    "indices.IG.point": {
-      "type": "point",
-      "x": 372,
-      "y": 354
-    },
-    "indices.IM.point": {
-      "type": "point",
-      "x": 436,
-      "y": 355
-    },
-    "indices.IV.value.point": {
-      "type": "point",
-      "x": 231,
-      "y": 296
-    },
-    "indices.INV.value.point": {
-      "type": "point",
-      "x": 301,
-      "y": 299
-    },
-    "indices.IG.value.point": {
-      "type": "point",
-      "x": 371,
-      "y": 298
-    },
-    "indices.IM.value.point": {
-      "type": "point",
-      "x": 442,
-      "y": 298
-    },
     "indices.IV": {
       "type": "text",
-      "x": 118,
-      "y": 232,
-      "width": 48,
-      "height": 18,
-      "fontSize": 12,
+      "x": 219,
+      "y": 346,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
       "align": "center"
     },
     "indices.INV": {
       "type": "text",
-      "x": 208,
-      "y": 232,
-      "width": 48,
-      "height": 18,
-      "fontSize": 12,
+      "x": 288,
+      "y": 346,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
       "align": "center"
     },
     "indices.IG": {
       "type": "text",
-      "x": 298,
-      "y": 232,
-      "width": 48,
-      "height": 18,
-      "fontSize": 12,
+      "x": 355,
+      "y": 347,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
       "align": "center"
     },
     "indices.IM": {
       "type": "text",
-      "x": 388,
-      "y": 232,
-      "width": 48,
-      "height": 18,
-      "fontSize": 12,
-      "align": "center"
-    },
-    "intervals.IV.point": {
-      "type": "point",
-      "x": 218,
-      "y": 322
-    },
-    "percentiles.IV.point": {
-      "type": "point",
-      "x": 248,
-      "y": 324
-    },
-    "intervals.INV.point": {
-      "type": "point",
-      "x": 287,
-      "y": 322
-    },
-    "percentiles.INV.point": {
-      "type": "point",
-      "x": 317,
-      "y": 321
-    },
-    "intervals.IG.point": {
-      "type": "point",
-      "x": 357,
-      "y": 322
-    },
-    "percentiles.IG.point": {
-      "type": "point",
-      "x": 384,
-      "y": 323
-    },
-    "intervals.IM.point": {
-      "type": "point",
       "x": 422,
-      "y": 323
-    },
-    "percentiles.IM.point": {
-      "type": "point",
-      "x": 455,
-      "y": 323
-    },
-    "intervals.confidenceLevel.point": {
-      "type": "point",
-      "x": 164,
-      "y": 315
+      "y": 348,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
     },
     "intervals.confidenceLevel": {
       "type": "text",
-      "x": 248,
-      "y": 202,
+      "x": 150,
+      "y": 311,
       "width": 28,
       "height": 14,
       "fontSize": 10,
@@ -461,72 +240,72 @@
     },
     "intervals.IV": {
       "type": "text",
-      "x": 118,
-      "y": 182,
-      "width": 48,
+      "x": 204,
+      "y": 315,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "percentiles.IV": {
       "type": "text",
-      "x": 118,
-      "y": 162,
-      "width": 48,
+      "x": 217,
+      "y": 289,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "intervals.INV": {
       "type": "text",
-      "x": 208,
-      "y": 182,
-      "width": 48,
+      "x": 273,
+      "y": 315,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "percentiles.INV": {
       "type": "text",
-      "x": 208,
-      "y": 162,
-      "width": 48,
+      "x": 287,
+      "y": 289,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "intervals.IG": {
       "type": "text",
-      "x": 298,
-      "y": 182,
-      "width": 48,
+      "x": 343,
+      "y": 315,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "percentiles.IG": {
       "type": "text",
-      "x": 298,
-      "y": 162,
-      "width": 48,
+      "x": 357,
+      "y": 289,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "intervals.IM": {
       "type": "text",
-      "x": 388,
-      "y": 182,
-      "width": 48,
+      "x": 408,
+      "y": 316,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
     },
     "percentiles.IM": {
       "type": "text",
-      "x": 388,
-      "y": 162,
-      "width": 48,
+      "x": 428,
+      "y": 289,
+      "width": 28,
       "height": 14,
       "fontSize": 9,
       "align": "center"
