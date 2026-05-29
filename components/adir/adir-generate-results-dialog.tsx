@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { AdirAlgorithmStep } from "./adir-algorithm-step";
 import { AdirInformantStep } from "./adir-informant-step";
 import { AdirDomainScoresStep } from "./adir-domain-scores-step";
@@ -26,6 +26,7 @@ import {
   isAdirWizardStepComplete,
 } from "@/lib/adir-scoring";
 import { useAdirResultsDraftStore } from "@/store/use-adir-results-draft-store";
+import { useCurrentReportStore } from "@/store/use-current-report-store";
 
 type AdirGenerateResultsDialogProps = {
   open: boolean;
@@ -50,11 +51,19 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
   const setAlgorithm = useAdirResultsDraftStore((state) => state.setAlgorithm);
   const setScore = useAdirResultsDraftStore((state) => state.setScore);
   const setTotal = useAdirResultsDraftStore((state) => state.setTotal);
+  const syncComputedScores = useAdirResultsDraftStore(
+    (state) => state.syncComputedScores
+  );
   const resetDraft = useAdirResultsDraftStore((state) => state.reset);
+  const adirAnswers = useCurrentReportStore((state) => state.answersByTest.ADIR);
 
   const stepContentRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
+
+  useEffect(() => {
+    syncComputedScores(adirAnswers);
+  }, [adirAnswers, form.subject.chronologicalAge, syncComputedScores]);
 
   const isComplete = isAdirResultsFormComplete(form);
   const isCurrentStepComplete = isAdirWizardStepComplete(step, form);
