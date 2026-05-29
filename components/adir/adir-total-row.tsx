@@ -24,7 +24,7 @@ export function AdirTotalRow({
   if (computed) {
     return (
       <div className="grid grid-cols-[1fr_5rem] items-center gap-3">
-        <Label htmlFor={id} className="text-body-md font-medium text-on-surface">
+        <Label htmlFor={id} className="text-body-md font-black text-on-surface">
           {displayLabel}
         </Label>
         <div
@@ -39,7 +39,7 @@ export function AdirTotalRow({
 
   return (
     <div className="grid grid-cols-[1fr_5rem] items-center gap-3">
-      <Label htmlFor={id} className="text-body-md font-medium text-on-surface">
+      <Label htmlFor={id} className="text-body-md font-bold text-on-surface">
         {displayLabel}
       </Label>
       <Input

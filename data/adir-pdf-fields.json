@@ -6,7 +6,7 @@
   "fields": {
     "subject.nameOrId": {
       "type": "text",
-      "x": 416,
+      "x": 260,
       "y": 758,
       "width": 560,
       "height": 18,
@@ -14,31 +14,61 @@
       "align": "left"
     },
 
-    "subject.birthDay": {
+    "subject.birthDay.0": {
       "type": "text",
       "x": 181,
-      "y": 727,
+      "y": 730,
       "width": 18,
       "height": 18,
       "fontSize": 12,
       "align": "center"
     },
 
-    "subject.birthMonth": {
+    "subject.birthDay.1": {
       "type": "text",
       "x": 202,
-      "y": 732,
+      "y": 730,
       "width": 18,
       "height": 18,
       "fontSize": 12,
       "align": "center"
     },
 
-    "subject.birthYear": {
+    "subject.birthMonth.0": {
       "type": "text",
       "x": 229,
       "y": 730,
-      "width": 25,
+      "width": 18,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+
+    "subject.birthMonth.1": {
+      "type": "text",
+      "x": 250,
+      "y": 730,
+      "width": 18,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+
+    "subject.birthYear.0": {
+      "type": "text",
+      "x": 277,
+      "y": 730,
+      "width": 18,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+
+    "subject.birthYear.1": {
+      "type": "text",
+      "x": 298,
+      "y": 730,
+      "width": 18,
       "height": 18,
       "fontSize": 12,
       "align": "center"

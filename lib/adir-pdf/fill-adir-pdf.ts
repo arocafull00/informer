@@ -2,7 +2,11 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import type { AdirResultsForm } from "@/lib/adir-scoring";
-import type { AdirPdfFieldMap, AdirPdfTextField } from "./types";
+import type {
+  AdirPdfCheckField,
+  AdirPdfFieldMap,
+  AdirPdfTextField,
+} from "./types";
 
 function loadFieldMap(): AdirPdfFieldMap {
   const mapPath = path.join(process.cwd(), "data", "adir-pdf-fields.json");
@@ -14,22 +18,48 @@ function loadTemplateBytes(): Uint8Array {
   return readFileSync(templatePath);
 }
 
+function splitTwoDigitPart(value: string): [string, string] {
+  return [value[0] ?? "", value[1] ?? ""];
+}
+
 function parseBirthDateParts(birthDate: string): {
-  day: string;
-  month: string;
-  year: string;
+  day: [string, string];
+  month: [string, string];
+  year: [string, string];
 } | null {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(birthDate);
   if (!match) return null;
   return {
-    day: match[3],
-    month: match[2],
-    year: match[1].slice(-2),
+    day: splitTwoDigitPart(match[3]),
+    month: splitTwoDigitPart(match[2]),
+    year: splitTwoDigitPart(match[1].slice(-2)),
   };
 }
 
 function getTextBaseline(field: AdirPdfTextField): number {
   return field.y + field.height * 0.32;
+}
+
+function drawCheckInField(
+  page: ReturnType<PDFDocument["getPages"]>[number],
+  field: AdirPdfCheckField,
+) {
+  const { x, y, radius } = field;
+  const size = radius * 2.6;
+
+  page.drawLine({
+    start: { x: x - size * 0.35, y: y + size * 0.05 },
+    end: { x: x - size * 0.05, y: y - size * 0.25 },
+    thickness: 1.4,
+    color: rgb(0, 0, 0),
+  });
+
+  page.drawLine({
+    start: { x: x - size * 0.05, y: y - size * 0.25 },
+    end: { x: x + size * 0.4, y: y + size * 0.35 },
+    thickness: 1.4,
+    color: rgb(0, 0, 0),
+  });
 }
 
 function drawTextInField(
@@ -69,9 +99,12 @@ function buildFieldValues(form: AdirResultsForm): Record<string, string> {
 
   const birthParts = parseBirthDateParts(form.subject.birthDate);
   if (birthParts) {
-    values["subject.birthDay"] = birthParts.day;
-    values["subject.birthMonth"] = birthParts.month;
-    values["subject.birthYear"] = birthParts.year;
+    values["subject.birthDay.0"] = birthParts.day[0];
+    values["subject.birthDay.1"] = birthParts.day[1];
+    values["subject.birthMonth.0"] = birthParts.month[0];
+    values["subject.birthMonth.1"] = birthParts.month[1];
+    values["subject.birthYear.0"] = birthParts.year[0];
+    values["subject.birthYear.1"] = birthParts.year[1];
   }
 
   for (const [key, value] of Object.entries(form.scores)) {
@@ -98,13 +131,7 @@ export async function fillAdirPdf(form: AdirResultsForm): Promise<Uint8Array> {
   for (const [fieldKey, field] of Object.entries(fieldMap.fields)) {
     if (field.type === "check") {
       if (fieldKey !== `algorithm.${form.algorithm}`) continue;
-      page.drawEllipse({
-        x: field.x,
-        y: field.y,
-        xScale: field.radius * 0.75,
-        yScale: field.radius * 0.55,
-        color: rgb(0, 0, 0),
-      });
+      drawCheckInField(page, field);
       continue;
     }
 

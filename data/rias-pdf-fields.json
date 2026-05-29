@@ -1,0 +1,497 @@
+{
+  "pageSize": {
+    "width": 496,
+    "height": 710
+  },
+  "fields": {
+    "patient.name": {
+      "type": "text",
+      "x": 118,
+      "y": 648,
+      "width": 360,
+      "height": 14,
+      "fontSize": 11,
+      "align": "left"
+    },
+    "patient.sex.varon": {
+      "type": "check",
+      "x": 230,
+      "y": 632,
+      "radius": 5
+    },
+    "patient.sex.mujer": {
+      "type": "check",
+      "x": 310,
+      "y": 632,
+      "radius": 5
+    },
+    "patient.center": {
+      "type": "text",
+      "x": 118,
+      "y": 612,
+      "width": 360,
+      "height": 14,
+      "fontSize": 10,
+      "align": "left"
+    },
+    "patient.educationLevel": {
+      "type": "text",
+      "x": 118,
+      "y": 592,
+      "width": 360,
+      "height": 14,
+      "fontSize": 10,
+      "align": "left"
+    },
+    "patient.examiner": {
+      "type": "text",
+      "x": 118,
+      "y": 572,
+      "width": 360,
+      "height": 14,
+      "fontSize": 10,
+      "align": "left"
+    },
+    "patient.consultationReason": {
+      "type": "text",
+      "x": 118,
+      "y": 552,
+      "width": 360,
+      "height": 14,
+      "fontSize": 10,
+      "align": "left"
+    },
+    "patient.evaluationDate.day.0": {
+      "type": "text",
+      "x": 292,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.evaluationDate.day.1": {
+      "type": "text",
+      "x": 308,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.evaluationDate.month.0": {
+      "type": "text",
+      "x": 332,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.evaluationDate.month.1": {
+      "type": "text",
+      "x": 348,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.evaluationDate.year.0": {
+      "type": "text",
+      "x": 372,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.evaluationDate.year.1": {
+      "type": "text",
+      "x": 388,
+      "y": 528,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.day.0": {
+      "type": "text",
+      "x": 292,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.day.1": {
+      "type": "text",
+      "x": 308,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.month.0": {
+      "type": "text",
+      "x": 332,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.month.1": {
+      "type": "text",
+      "x": 348,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.year.0": {
+      "type": "text",
+      "x": 372,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.birthDate.year.1": {
+      "type": "text",
+      "x": 388,
+      "y": 508,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.years.0": {
+      "type": "text",
+      "x": 292,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.years.1": {
+      "type": "text",
+      "x": 308,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.months.0": {
+      "type": "text",
+      "x": 332,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.months.1": {
+      "type": "text",
+      "x": 348,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.days.0": {
+      "type": "text",
+      "x": 372,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "patient.chronologicalAge.days.1": {
+      "type": "text",
+      "x": 388,
+      "y": 488,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.Ad": {
+      "type": "text",
+      "x": 88,
+      "y": 448,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.Ca": {
+      "type": "text",
+      "x": 88,
+      "y": 418,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.An": {
+      "type": "text",
+      "x": 88,
+      "y": 388,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.Fi": {
+      "type": "text",
+      "x": 88,
+      "y": 358,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.Mv": {
+      "type": "text",
+      "x": 88,
+      "y": 328,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "directScores.Mnv": {
+      "type": "text",
+      "x": 88,
+      "y": 298,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "baremo": {
+      "type": "text",
+      "x": 418,
+      "y": 462,
+      "width": 56,
+      "height": 12,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "tScores.Ad": {
+      "type": "text",
+      "x": 248,
+      "y": 448,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.Ca": {
+      "type": "text",
+      "x": 318,
+      "y": 418,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.An": {
+      "type": "text",
+      "x": 248,
+      "y": 388,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.Fi": {
+      "type": "text",
+      "x": 318,
+      "y": 358,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.Mv": {
+      "type": "text",
+      "x": 388,
+      "y": 328,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tScores.Mnv": {
+      "type": "text",
+      "x": 388,
+      "y": 298,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tSums.IV": {
+      "type": "text",
+      "x": 248,
+      "y": 272,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tSums.INV": {
+      "type": "text",
+      "x": 318,
+      "y": 272,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tSums.IG": {
+      "type": "text",
+      "x": 354,
+      "y": 272,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "tSums.IM": {
+      "type": "text",
+      "x": 420,
+      "y": 272,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "indices.IV": {
+      "type": "text",
+      "x": 118,
+      "y": 232,
+      "width": 48,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+    "indices.INV": {
+      "type": "text",
+      "x": 208,
+      "y": 232,
+      "width": 48,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+    "indices.IG": {
+      "type": "text",
+      "x": 298,
+      "y": 232,
+      "width": 48,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+    "indices.IM": {
+      "type": "text",
+      "x": 388,
+      "y": 232,
+      "width": 48,
+      "height": 18,
+      "fontSize": 12,
+      "align": "center"
+    },
+    "intervals.confidenceLevel": {
+      "type": "text",
+      "x": 248,
+      "y": 202,
+      "width": 28,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "intervals.IV": {
+      "type": "text",
+      "x": 118,
+      "y": 182,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "percentiles.IV": {
+      "type": "text",
+      "x": 118,
+      "y": 162,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "intervals.INV": {
+      "type": "text",
+      "x": 208,
+      "y": 182,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "percentiles.INV": {
+      "type": "text",
+      "x": 208,
+      "y": 162,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "intervals.IG": {
+      "type": "text",
+      "x": 298,
+      "y": 182,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "percentiles.IG": {
+      "type": "text",
+      "x": 298,
+      "y": 162,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "intervals.IM": {
+      "type": "text",
+      "x": 388,
+      "y": 182,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    },
+    "percentiles.IM": {
+      "type": "text",
+      "x": 388,
+      "y": 162,
+      "width": 48,
+      "height": 14,
+      "fontSize": 9,
+      "align": "center"
+    }
+  }
+}
