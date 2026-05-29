@@ -33,6 +33,12 @@ function parseDateParts(date: string): {
   };
 }
 
+function parseIntervalRange(value: string): { min: string; max: string } | null {
+  const match = /^(\d+)\s*-\s*(\d+)$/.exec(value.trim());
+  if (!match) return null;
+  return { min: match[1], max: match[2] };
+}
+
 function assignDateParts(
   values: Record<string, string>,
   prefix: string,
@@ -118,8 +124,13 @@ function buildFieldValues(form: RiasResultsForm): Record<string, string> {
   }
 
   for (const key of ["IV", "INV", "IG", "IM"] as const) {
-    if (form.intervals[key]) {
-      values[`intervals.${key}`] = form.intervals[key];
+    const interval = form.intervals[key];
+    if (interval) {
+      const range = parseIntervalRange(interval);
+      if (range) {
+        values[`intervals.${key}.min`] = range.min;
+        values[`intervals.${key}.max`] = range.max;
+      }
     }
     if (form.percentiles[key]) {
       values[`percentiles.${key}`] = form.percentiles[key];

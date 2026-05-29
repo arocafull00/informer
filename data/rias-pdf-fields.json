@@ -238,76 +238,112 @@
       "fontSize": 10,
       "align": "center"
     },
-    "intervals.IV": {
+    "intervals.IV.min": {
       "type": "text",
-      "x": 204,
+      "x": 201,
       "y": 315,
-      "width": 28,
+      "width": 24,
       "height": 14,
       "fontSize": 9,
-      "align": "center"
+      "align": "right"
+    },
+    "intervals.IV.max": {
+      "type": "text",
+      "x": 238,
+      "y": 315,
+      "width": 24,
+      "height": 14,
+      "fontSize": 9,
+      "align": "left"
     },
     "percentiles.IV": {
       "type": "text",
       "x": 217,
-      "y": 289,
+      "y": 292,
       "width": 28,
       "height": 14,
-      "fontSize": 9,
+      "fontSize": 12,
       "align": "center"
     },
-    "intervals.INV": {
+    "intervals.INV.min": {
       "type": "text",
-      "x": 273,
+      "x": 270,
       "y": 315,
-      "width": 28,
+      "width": 24,
       "height": 14,
       "fontSize": 9,
-      "align": "center"
+      "align": "right"
+    },
+    "intervals.INV.max": {
+      "type": "text",
+      "x": 307,
+      "y": 315,
+      "width": 24,
+      "height": 14,
+      "fontSize": 9,
+      "align": "left"
     },
     "percentiles.INV": {
       "type": "text",
       "x": 287,
-      "y": 289,
+      "y": 292,
       "width": 28,
       "height": 14,
-      "fontSize": 9,
+      "fontSize": 12,
       "align": "center"
     },
-    "intervals.IG": {
+    "intervals.IG.min": {
       "type": "text",
-      "x": 343,
+      "x": 340,
       "y": 315,
-      "width": 28,
+      "width": 24,
       "height": 14,
       "fontSize": 9,
-      "align": "center"
+      "align": "right"
+    },
+    "intervals.IG.max": {
+      "type": "text",
+      "x": 377,
+      "y": 315,
+      "width": 24,
+      "height": 14,
+      "fontSize": 9,
+      "align": "left"
     },
     "percentiles.IG": {
       "type": "text",
       "x": 357,
-      "y": 289,
+      "y": 292,
       "width": 28,
       "height": 14,
-      "fontSize": 9,
+      "fontSize": 12,
       "align": "center"
     },
-    "intervals.IM": {
+    "intervals.IM.min": {
       "type": "text",
-      "x": 408,
+      "x": 405,
       "y": 316,
-      "width": 28,
+      "width": 24,
       "height": 14,
       "fontSize": 9,
-      "align": "center"
+      "align": "right"
+    },
+    "intervals.IM.max": {
+      "type": "text",
+      "x": 442,
+      "y": 316,
+      "width": 24,
+      "height": 14,
+      "fontSize": 9,
+      "align": "left"
     },
     "percentiles.IM": {
       "type": "text",
       "x": 428,
-      "y": 289,
+      "y": 292,
       "width": 28,
       "height": 14,
-      "fontSize": 9,
+      "fontSize": 12,
       "align": "center"
     }
   }
