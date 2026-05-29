@@ -17,7 +17,16 @@ export type RiasPdfCheckField = {
   radius: number;
 };
 
-export type RiasPdfField = RiasPdfTextField | RiasPdfCheckField;
+export type RiasPdfPointField = {
+  type: "point";
+  x: number;
+  y: number;
+};
+
+export type RiasPdfField =
+  | RiasPdfTextField
+  | RiasPdfCheckField
+  | RiasPdfPointField;
 
 export type RiasPdfFieldMap = {
   pageSize: { width: number; height: number };

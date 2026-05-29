@@ -6,60 +6,32 @@
   "fields": {
     "patient.name": {
       "type": "text",
-      "x": 118,
-      "y": 648,
+      "x": 220,
+      "y": 670,
       "width": 360,
       "height": 14,
       "fontSize": 11,
       "align": "left"
     },
-    "patient.sex.varon": {
-      "type": "check",
-      "x": 230,
-      "y": 632,
-      "radius": 5
+    "patient.evaluationDate.year": {
+      "type": "point",
+      "x": 397,
+      "y": 648
     },
-    "patient.sex.mujer": {
-      "type": "check",
-      "x": 310,
-      "y": 632,
-      "radius": 5
+    "patient.evaluationDate.month": {
+      "type": "point",
+      "x": 426,
+      "y": 648
     },
-    "patient.center": {
-      "type": "text",
-      "x": 118,
-      "y": 612,
-      "width": 360,
-      "height": 14,
-      "fontSize": 10,
-      "align": "left"
+    "patient.evaluationDate.day": {
+      "type": "point",
+      "x": 454,
+      "y": 648
     },
-    "patient.educationLevel": {
-      "type": "text",
-      "x": 118,
-      "y": 592,
-      "width": 360,
-      "height": 14,
-      "fontSize": 10,
-      "align": "left"
-    },
-    "patient.examiner": {
-      "type": "text",
-      "x": 118,
-      "y": 572,
-      "width": 360,
-      "height": 14,
-      "fontSize": 10,
-      "align": "left"
-    },
-    "patient.consultationReason": {
-      "type": "text",
-      "x": 118,
-      "y": 552,
-      "width": 360,
-      "height": 14,
-      "fontSize": 10,
-      "align": "left"
+    "patient.chronologicalAge": {
+      "type": "point",
+      "x": 396,
+      "y": 616
     },
     "patient.evaluationDate.day.0": {
       "type": "text",
@@ -115,60 +87,6 @@
       "fontSize": 10,
       "align": "center"
     },
-    "patient.birthDate.day.0": {
-      "type": "text",
-      "x": 292,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.birthDate.day.1": {
-      "type": "text",
-      "x": 308,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.birthDate.month.0": {
-      "type": "text",
-      "x": 332,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.birthDate.month.1": {
-      "type": "text",
-      "x": 348,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.birthDate.year.0": {
-      "type": "text",
-      "x": 372,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "patient.birthDate.year.1": {
-      "type": "text",
-      "x": 388,
-      "y": 508,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
-    },
     "patient.chronologicalAge.years.0": {
       "type": "text",
       "x": 292,
@@ -187,41 +105,35 @@
       "fontSize": 10,
       "align": "center"
     },
-    "patient.chronologicalAge.months.0": {
-      "type": "text",
-      "x": 332,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
+    "directScores.Ad.point": {
+      "type": "point",
+      "x": 177,
+      "y": 531
     },
-    "patient.chronologicalAge.months.1": {
-      "type": "text",
-      "x": 348,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
+    "directScores.Ca.point": {
+      "type": "point",
+      "x": 176,
+      "y": 509
     },
-    "patient.chronologicalAge.days.0": {
-      "type": "text",
-      "x": 372,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
+    "directScores.An.point": {
+      "type": "point",
+      "x": 176,
+      "y": 488
     },
-    "patient.chronologicalAge.days.1": {
-      "type": "text",
-      "x": 388,
-      "y": 488,
-      "width": 14,
-      "height": 14,
-      "fontSize": 10,
-      "align": "center"
+    "directScores.Fi.point": {
+      "type": "point",
+      "x": 177,
+      "y": 464
+    },
+    "directScores.Mv.point": {
+      "type": "point",
+      "x": 177,
+      "y": 440
+    },
+    "directScores.Mnv.point": {
+      "type": "point",
+      "x": 177,
+      "y": 416
     },
     "directScores.Ad": {
       "type": "text",
@@ -277,14 +189,35 @@
       "fontSize": 10,
       "align": "center"
     },
-    "baremo": {
-      "type": "text",
-      "x": 418,
-      "y": 462,
-      "width": 56,
-      "height": 12,
-      "fontSize": 9,
-      "align": "center"
+    "tScores.Ad.point": {
+      "type": "point",
+      "x": 233,
+      "y": 530
+    },
+    "tScores.An.point": {
+      "type": "point",
+      "x": 232,
+      "y": 486
+    },
+    "tScores.Ca.point": {
+      "type": "point",
+      "x": 301,
+      "y": 507
+    },
+    "tScores.Fi.point": {
+      "type": "point",
+      "x": 300,
+      "y": 463
+    },
+    "tScores.Mv.point": {
+      "type": "point",
+      "x": 436,
+      "y": 439
+    },
+    "tScores.Mnv.point": {
+      "type": "point",
+      "x": 436,
+      "y": 417
     },
     "tScores.Ad": {
       "type": "text",
@@ -340,6 +273,26 @@
       "fontSize": 10,
       "align": "center"
     },
+    "tSums.IV.point": {
+      "type": "point",
+      "x": 233,
+      "y": 384
+    },
+    "tSums.INV.point": {
+      "type": "point",
+      "x": 303,
+      "y": 385
+    },
+    "tSums.IG.point": {
+      "type": "point",
+      "x": 374,
+      "y": 385
+    },
+    "tSums.IM.point": {
+      "type": "point",
+      "x": 440,
+      "y": 385
+    },
     "tSums.IV": {
       "type": "text",
       "x": 248,
@@ -376,6 +329,46 @@
       "fontSize": 10,
       "align": "center"
     },
+    "indices.IV.point": {
+      "type": "point",
+      "x": 233,
+      "y": 353
+    },
+    "indices.INV.point": {
+      "type": "point",
+      "x": 302,
+      "y": 353
+    },
+    "indices.IG.point": {
+      "type": "point",
+      "x": 372,
+      "y": 354
+    },
+    "indices.IM.point": {
+      "type": "point",
+      "x": 436,
+      "y": 355
+    },
+    "indices.IV.value.point": {
+      "type": "point",
+      "x": 231,
+      "y": 296
+    },
+    "indices.INV.value.point": {
+      "type": "point",
+      "x": 301,
+      "y": 299
+    },
+    "indices.IG.value.point": {
+      "type": "point",
+      "x": 371,
+      "y": 298
+    },
+    "indices.IM.value.point": {
+      "type": "point",
+      "x": 442,
+      "y": 298
+    },
     "indices.IV": {
       "type": "text",
       "x": 118,
@@ -411,6 +404,51 @@
       "height": 18,
       "fontSize": 12,
       "align": "center"
+    },
+    "intervals.IV.point": {
+      "type": "point",
+      "x": 218,
+      "y": 322
+    },
+    "percentiles.IV.point": {
+      "type": "point",
+      "x": 248,
+      "y": 324
+    },
+    "intervals.INV.point": {
+      "type": "point",
+      "x": 287,
+      "y": 322
+    },
+    "percentiles.INV.point": {
+      "type": "point",
+      "x": 317,
+      "y": 321
+    },
+    "intervals.IG.point": {
+      "type": "point",
+      "x": 357,
+      "y": 322
+    },
+    "percentiles.IG.point": {
+      "type": "point",
+      "x": 384,
+      "y": 323
+    },
+    "intervals.IM.point": {
+      "type": "point",
+      "x": 422,
+      "y": 323
+    },
+    "percentiles.IM.point": {
+      "type": "point",
+      "x": 455,
+      "y": 323
+    },
+    "intervals.confidenceLevel.point": {
+      "type": "point",
+      "x": 164,
+      "y": 315
     },
     "intervals.confidenceLevel": {
       "type": "text",
