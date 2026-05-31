@@ -6,7 +6,6 @@ export type Question = {
   sectionNumber: number;
   section: string;
   code: string;
-  parentCode?: string;
   question: string;
   answers: Record<string, string>;
 };

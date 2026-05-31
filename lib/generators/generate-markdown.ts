@@ -1,6 +1,5 @@
 import { ados2SectionHeading } from "@/lib/ados2-labels";
 import type { Question } from "@/lib/types";
-import { orderQuestionsWithSubItems } from "@/lib/order-questions";
 
 const REPORT_TITLE = "**RESUMEN DE LOS ÍTEMS CODIFICADOS**";
 
@@ -35,9 +34,8 @@ function collectAnswerLines(
   bullet: string
 ): string[] {
   const lines: string[] = [];
-  const ordered = orderQuestionsWithSubItems(questionsInSection);
 
-  ordered.forEach((question) => {
+  questionsInSection.forEach((question) => {
     const score = answers[question.id];
     if (score === undefined) return;
     const answerText = question.answers[score.toString()];

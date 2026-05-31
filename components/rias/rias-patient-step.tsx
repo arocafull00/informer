@@ -38,16 +38,33 @@ export function RiasPatientStep({ patient, onChange }: RiasPatientStepProps) {
         />
       </div>
       <div className="space-y-1.5">
-        <Label htmlFor="rias-patient-age" className="text-body-md text-on-surface">
-          Edad cronológica (años)
-        </Label>
-        <Input
-          id="rias-patient-age"
-          inputMode="numeric"
-          value={patient.chronologicalAge}
-          onChange={(e) => update("chronologicalAge", e.target.value)}
-          className="h-9 max-w-[8rem] border-outline-variant bg-surface-container-lowest text-body-md text-on-surface"
-        />
+        <p className="text-body-md text-on-surface">Edad cronológica</p>
+        <div className="flex flex-wrap items-end gap-3">
+          <div className="space-y-1.5">
+            <Label htmlFor="rias-patient-age-years" className="text-label-md text-on-surface-variant">
+              Años
+            </Label>
+            <Input
+              id="rias-patient-age-years"
+              inputMode="numeric"
+              value={patient.chronologicalAge}
+              onChange={(e) => update("chronologicalAge", e.target.value)}
+              className="h-9 w-20 border-outline-variant bg-surface-container-lowest text-body-md text-on-surface"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="rias-patient-age-months" className="text-label-md text-on-surface-variant">
+              Meses (opcional)
+            </Label>
+            <Input
+              id="rias-patient-age-months"
+              inputMode="numeric"
+              value={patient.chronologicalAgeMonths}
+              onChange={(e) => update("chronologicalAgeMonths", e.target.value)}
+              className="h-9 w-20 border-outline-variant bg-surface-container-lowest text-body-md text-on-surface"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

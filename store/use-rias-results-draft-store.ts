@@ -52,10 +52,7 @@ function mergePersistedRiasState(persisted: unknown): RiasResultsDraftState {
     };
   }
 
-  const legacyPatient = form.patient as
-    | Partial<RiasPatient>
-    | { chronologicalAge?: unknown }
-    | undefined;
+  const legacyPatient = form.patient as Partial<RiasPatient> | undefined;
 
   const mergedForm = mergeRiasTSums({
     ...defaults.form,
@@ -66,6 +63,10 @@ function mergePersistedRiasState(persisted: unknown): RiasResultsDraftState {
       chronologicalAge: normalizeChronologicalAge(
         legacyPatient?.chronologicalAge,
       ),
+      chronologicalAgeMonths:
+        typeof legacyPatient?.chronologicalAgeMonths === "string"
+          ? legacyPatient.chronologicalAgeMonths
+          : defaults.form.patient.chronologicalAgeMonths,
     },
     directScores: { ...defaults.form.directScores, ...form.directScores },
     tScores: { ...defaults.form.tScores, ...form.tScores },
@@ -127,7 +128,7 @@ export const useRiasResultsDraftStore = create<RiasResultsDraftStore>()(
     }),
     {
       name: "informer-rias-results-draft",
-      version: 5,
+      version: 6,
       partialize: (state) => ({ step: state.step, form: state.form }),
       migrate: (persistedState) => mergePersistedRiasState(persistedState),
     },

@@ -1,3 +1,4 @@
+import { capScoreForSum } from "@/lib/score-sum-cap";
 import type { Question, TestType } from "@/lib/types";
 
 type Ados2ScoringTest = "ADOS2_ADULTO" | "ADOS2_NINO";
@@ -206,7 +207,7 @@ export function findQuestion(
 function sumAnsweredScores(rows: Ados2ScoreRow[]): number | null {
   const answered = rows.filter((r) => r.score !== null);
   if (answered.length === 0) return null;
-  return answered.reduce((sum, r) => sum + (r.score ?? 0), 0);
+  return answered.reduce((sum, r) => sum + capScoreForSum(r.score ?? 0), 0);
 }
 
 function buildRow(

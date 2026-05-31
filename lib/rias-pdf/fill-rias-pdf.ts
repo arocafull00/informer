@@ -101,6 +101,12 @@ function buildFieldValues(form: RiasResultsForm): Record<string, string> {
     "intervals.confidenceLevel": form.intervals.confidenceLevel,
   };
 
+  if (form.patient.chronologicalAgeMonths.trim() !== "") {
+    values["patient.chronologicalAgeMonths"] = splitTwoDigitPart(
+      form.patient.chronologicalAgeMonths,
+    ).join("");
+  }
+
   assignDateParts(values, "patient.evaluationDate", form.patient.evaluationDate);
 
   for (const [key, value] of Object.entries(form.directScores)) {

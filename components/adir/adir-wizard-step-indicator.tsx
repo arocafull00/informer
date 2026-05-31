@@ -9,7 +9,7 @@ export function AdirWizardStepIndicator({
   currentStep,
 }: AdirWizardStepIndicatorProps) {
   return (
-    <ol className="flex flex-wrap gap-2 sm:flex-nowrap">
+    <ol className="flex min-w-0 gap-2 overflow-x-auto pb-1">
       {ADIR_WIZARD_STEPS.map((label, index) => {
         const isActive = index === currentStep;
         const isComplete = index < currentStep;
@@ -18,15 +18,14 @@ export function AdirWizardStepIndicator({
           <li
             key={label}
             className={cn(
-              "rounded-full px-3 py-1 text-label-md transition-colors",
-              isActive &&
-                "bg-primary text-on-primary",
+              "shrink-0 rounded-full px-3 py-1 text-label-md whitespace-nowrap transition-colors",
+              isActive && "bg-primary text-on-primary",
               isComplete &&
                 !isActive &&
                 "bg-surface-container-high text-on-surface",
               !isActive &&
                 !isComplete &&
-                "bg-surface-container text-on-surface-variant"
+                "bg-surface-container text-on-surface-variant",
             )}
           >
             {label}

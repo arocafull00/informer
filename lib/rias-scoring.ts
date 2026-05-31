@@ -6,6 +6,7 @@ export type RiasPatient = {
   name: string;
   evaluationDate: string;
   chronologicalAge: string;
+  chronologicalAgeMonths: string;
 };
 
 export type RiasDirectScores = Record<RiasSubtestKey, number | null>;
@@ -39,6 +40,15 @@ export const RIAS_WIZARD_STEPS = [
   "Suma puntuaciones T",
   "Índices del RIAS",
   "Intervalos y percentiles",
+] as const;
+
+export const RIAS_WIZARD_STEP_SHORT_LABELS = [
+  "Paciente",
+  "P. directa",
+  "P. T",
+  "Suma T",
+  "Índices",
+  "Intervalos",
 ] as const;
 
 export const RIAS_SUBTEST_KEYS: RiasSubtestKey[] = [
@@ -110,7 +120,7 @@ const EMPTY_INDICES = (): RiasIndices => ({
 });
 
 const EMPTY_INTERVALS = (): RiasIntervals => ({
-  confidenceLevel: "",
+  confidenceLevel: "95",
   IV: "",
   INV: "",
   IG: "",
@@ -135,6 +145,7 @@ export function createDefaultRiasResultsForm(): RiasResultsForm {
       name: "",
       evaluationDate: "",
       chronologicalAge: "",
+      chronologicalAgeMonths: "",
     },
     directScores: EMPTY_DIRECT_SCORES(),
     tScores: EMPTY_T_SCORES(),

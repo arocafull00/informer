@@ -49,6 +49,15 @@
       "fontSize": 10,
       "align": "center"
     },
+    "patient.chronologicalAgeMonths": {
+      "type": "text",
+      "x": 419,
+      "y": 612,
+      "width": 14,
+      "height": 14,
+      "fontSize": 10,
+      "align": "center"
+    },
     "directScores.Ad": {
       "type": "text",
       "x": 163,

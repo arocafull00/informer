@@ -3,6 +3,11 @@ import {
   type AdirScoreKey,
   type AdirScores,
 } from "@/lib/adir-scoring";
+import { capScoreForSum } from "@/lib/score-sum-cap";
+
+export type AdirDomainScoringContext = {
+  chronologicalAge: string;
+};
 
 const LANGUAGE_LEVEL_QUESTION_ID = "adir-07";
 
@@ -10,10 +15,6 @@ type DomainQuestionResolver = (
   answers: Record<string, number>,
   context: AdirDomainScoringContext,
 ) => string[];
-
-type AdirDomainScoringContext = {
-  chronologicalAge: string;
-};
 
 const STATIC_DOMAIN_QUESTIONS: Partial<Record<AdirScoreKey, string[]>> = {
   A1: ["adir-25", "adir-26", "adir-31"],
@@ -45,7 +46,7 @@ function resolveA2Questions(
   _answers: Record<string, number>,
   context: AdirDomainScoringContext,
 ): string[] {
-  const questionIds = ["adir-24", "adir-35", "adir-36"];
+  const questionIds = ["adir-24-2", "adir-35", "adir-36"];
   const ageYears = parseChronologicalAgeYears(context.chronologicalAge);
 
   if (ageYears !== null && ageYears >= 10) {
@@ -73,7 +74,14 @@ const DOMAIN_QUESTION_RESOLVERS: Partial<
   C2: (answers) => resolveC2Questions(answers),
 };
 
-function resolveDomainQuestionIds(
+export function formatAdirQuestionNumber(questionId: string): string {
+  const match = /^adir-(\d+)(?:-(\d+))?$/.exec(questionId);
+  if (!match) return questionId;
+  if (match[2]) return `${match[1]}.${match[2]}`;
+  return match[1];
+}
+
+export function resolveAdirDomainQuestionIds(
   key: AdirScoreKey,
   answers: Record<string, number>,
   context: AdirDomainScoringContext,
@@ -82,6 +90,23 @@ function resolveDomainQuestionIds(
   if (resolver) return resolver(answers, context);
 
   return STATIC_DOMAIN_QUESTIONS[key] ?? [];
+}
+
+export function formatAdirScoreBreakdown(
+  questionIds: string[],
+  answers: Record<string, number>,
+): string {
+  if (questionIds.length === 0) return "";
+
+  return questionIds
+    .map((questionId) => {
+      const value = answers[questionId];
+      if (value === undefined) {
+        return `${formatAdirQuestionNumber(questionId)} (—)`;
+      }
+      return `${formatAdirQuestionNumber(questionId)} (${capScoreForSum(value)})`;
+    })
+    .join(" + ");
 }
 
 function sumAnsweredQuestions(
@@ -95,7 +120,7 @@ function sumAnsweredQuestions(
   for (const questionId of questionIds) {
     const value = answers[questionId];
     if (value === undefined) return null;
-    total += value;
+    total += capScoreForSum(value);
   }
 
   return total;
@@ -108,7 +133,7 @@ export function computeAdirDomainScores(
   const scores = {} as AdirScores;
 
   for (const key of ADIR_SCORE_KEYS) {
-    const questionIds = resolveDomainQuestionIds(key, answers, context);
+    const questionIds = resolveAdirDomainQuestionIds(key, answers, context);
     scores[key] = sumAnsweredQuestions(questionIds, answers);
   }
 

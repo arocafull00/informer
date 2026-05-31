@@ -4,12 +4,12 @@
     "test": "ADIR",
     "sectionNumber": 1,
     "section": "DESARROLLO TEMPRANO",
-    "code": "5",
+    "code": "1",
     "question": "Primeros pasos sin ayuda",
     "answers": {
-      "995": "Aún no ha dado los primeros pasos.",
       "996": "Primeros pasos dentro de la norma.",
-      "997": "Primeros pasos tardíos."
+      "997": "Primeros pasos tardíos.",
+      "995": "Aún no ha dado los primeros pasos."
     }
   },
   {
@@ -17,12 +17,12 @@
     "test": "ADIR",
     "sectionNumber": 1,
     "section": "DESARROLLO TEMPRANO",
-    "code": "6",
+    "code": "2",
     "question": "Control de esfínteres",
     "answers": {
       "993": "Control de esfínteres dentro de la norma tanto de día como de noche.",
-      "994": "Aún no se ha logrado el control de esfínteres.",
-      "997": "Control de esfínteres algo tardío."
+      "997": "Control de esfínteres algo tardío.",
+      "994": "Aún no se ha logrado el control de esfínteres."
     }
   },
   {
@@ -30,13 +30,13 @@
     "test": "ADIR",
     "sectionNumber": 2,
     "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
-    "code": "9",
+    "code": "1",
     "question": "Edad de las primeras palabras",
     "answers": {
       "0": "Primeras palabras muy pronto.",
-      "994": "No se ha desarrollado comunicación verbal.",
       "996": "Primeras palabras dentro de la norma.",
-      "997": "Primeras palabras tarde."
+      "997": "Primeras palabras tarde.",
+      "994": "No se ha desarrollado comunicación verbal."
     }
   },
   {
@@ -44,7 +44,7 @@
     "test": "ADIR",
     "sectionNumber": 2,
     "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
-    "code": "10",
+    "code": "2",
     "question": "Edad en la que aparecieron las primeras frases",
     "answers": {
       "0": "Primeras frases muy pronto.",
@@ -57,7 +57,7 @@
     "test": "ADIR",
     "sectionNumber": 2,
     "section": "ADQUISICIÓN Y PÉRDIDA DE LENGUAJE / OTRAS HABILIDADES",
-    "code": "11",
+    "code": "3",
     "question": "Pérdida de habilidades de lenguaje después de adquirirlas",
     "answers": {
       "0": "Sin pérdida de habilidades una vez adquiridas.",
@@ -69,7 +69,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "29",
+    "code": "1",
     "question": "Comprensión de lenguaje simple",
     "answers": {
       "0": "En respuesta a una petición puede buscar un objeto de otra habitación. Atiende instrucciones.",
@@ -83,7 +83,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "30",
+    "code": "2",
     "question": "Nivel general de lenguaje",
     "answers": {
       "0": "Uso funcional del lenguaje espontáneo.",
@@ -96,7 +96,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "31",
+    "code": "3",
     "question": "Uso del cuerpo de otra persona para comunicarse",
     "answers": {
       "0": "No utiliza el cuerpo de otra persona para comunicarse.",
@@ -110,7 +110,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "32",
+    "code": "4",
     "question": "Articulación/pronunciación",
     "answers": {
       "0": "Entendido por cualquier persona.",
@@ -124,7 +124,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "33",
+    "code": "5",
     "question": "Expresiones estereotipadas y ecolalia diferida",
     "answers": {
       "0": "Raramente usa expresiones/habla estereotipadas ni ecolalia.",
@@ -138,7 +138,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "34",
+    "code": "6",
     "question": "Verbalización social/charla",
     "answers": {
       "0": "Uso social del habla.",
@@ -151,7 +151,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "35",
+    "code": "7",
     "question": "Conversación recíproca",
     "answers": {
       "0": "Conversación recíproca fluida.",
@@ -165,7 +165,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "36",
+    "code": "8",
     "question": "Preguntas o expresiones inapropiadas",
     "answers": {
       "0": "Rara vez hace comentarios o preguntas inapropiados al contexto.",
@@ -178,7 +178,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "37",
+    "code": "9",
     "question": "Inversion de pronombres",
     "answers": {
       "0": "No hay confusión entre la primera y la tercera persona.",
@@ -192,7 +192,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "38",
+    "code": "10",
     "question": "Neologismos o lenguaje idiosincrásico",
     "answers": {
       "0": "Sin lenguaje idiosincrásico.",
@@ -205,7 +205,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "39",
+    "code": "11",
     "question": "Rituales verbales",
     "answers": {
       "0": "Sin rituales verbales.",
@@ -219,7 +219,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "40",
+    "code": "12",
     "question": "Entonación/Volumen/Ritmo/Velocidad",
     "answers": {
       "0": "Habla con entonación y ritmo apropiados.",
@@ -233,7 +233,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "41",
+    "code": "13",
     "question": "Habla comunicativa actual",
     "answers": {
       "0": "Uso comunicativo del habla amplio y apropiado.",
@@ -247,7 +247,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "42",
+    "code": "14",
     "question": "Señalar para mostrar interés",
     "answers": {
       "0": "Señala para mostrar interés de forma espontánea.",
@@ -261,7 +261,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "43",
+    "code": "15",
     "question": "Asentir y negar con la cabeza",
     "answers": {
       "0": "Asiente y niega con la cabeza de forma espontánea.",
@@ -274,7 +274,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "45",
+    "code": "16",
     "question": "Gestos convencionales/instrumentales",
     "answers": {
       "0": "Uso apropiado de gestos.",
@@ -288,7 +288,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "46",
+    "code": "17",
     "question": "Atención a la voz",
     "answers": {
       "0": "Responde a la voz aunque esté ocupado.",
@@ -302,7 +302,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "47",
+    "code": "18",
     "question": "Imitación espontánea de acciones",
     "answers": {
       "0": "Imitación espontánea de acciones cotidianas.",
@@ -316,7 +316,7 @@
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "48",
+    "code": "19",
     "question": "Juego imaginativo",
     "answers": {
       "0": "Variedad de juegos imaginativos.",
@@ -325,12 +325,13 @@
       "3": "No hay juego imaginativo."
     }
   },
+   },
   {
-    "id": "adir-24-2",
+    "id": "adir-24",
     "test": "ADIR",
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
-    "code": "49",
+    "code": "19",
     "question": "Juego imaginativo con sus iguales",
     "answers": {
       "0": "Variedad de juegos imaginativos con otros niños.",
@@ -344,7 +345,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "50",
+    "code": "1",
     "question": "Mirada directa",
     "answers": {
       "0": "Mirada directa apropiada durante las interacciones sociales.",
@@ -358,7 +359,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "51",
+    "code": "2",
     "question": "Sonrisa social",
     "answers": {
       "0": "Con sonrisa social.",
@@ -372,7 +373,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "52",
+    "code": "3",
     "question": "Mostrar y dirigir la atención",
     "answers": {
       "0": "Muestra regularmente objetos al progenitor.",
@@ -386,7 +387,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "53",
+    "code": "4",
     "question": "Ofrecimientos para compartir",
     "answers": {
       "0": "Comparte de forma espontánea.",
@@ -396,11 +397,11 @@
     }
   },
   {
-    "id": "adir-28-2",
+    "id": "adir-28",
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "54",
+    "code": "4",
     "question": "Busca compartir su deleite o goce con otros",
     "answers": {
       "0": "Frecuentes intentos de compartir las cosas que disfruta con los demás.",
@@ -408,12 +409,13 @@
       "2": "Escasos intentos de compartir placer."
     }
   },
+  },
   {
     "id": "adir-29",
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "55",
+    "code": "5",
     "question": "Ofrecimiento de consuelo",
     "answers": {
       "0": "Ofrece consuelo de forma apropiada.",
@@ -427,7 +429,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "56",
+    "code": "6",
     "question": "Calidad de los acercamientos sociales",
     "answers": {
       "0": "Acercamientos sociales bien coordinados.",
@@ -440,7 +442,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "57",
+    "code": "7",
     "question": "Variedad de expresiones faciales usadas para comunicarse",
     "answers": {
       "0": "Expresiones faciales apropiadas.",
@@ -453,7 +455,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "58",
+    "code": "8",
     "question": "Expresiones faciales inapropiadas",
     "answers": {
       "0": "Expresiones faciales apropiadas al contexto.",
@@ -461,17 +463,18 @@
       "2": "Expresiones faciales inapropiadas en varios contextos."
     }
   },
+    },
   {
-    "id": "adir-32-2",
+    "id": "adir-32",
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "59",
+    "code": "8",
     "question": "Calidad de las respuestas sociales",
     "answers": {
       "0": "Respuestas sociales apropiadas.",
       "1": "Respuestas sociales muy limitadas. Algunas respuestas e interacciones claras y positivas, aunque no consistentes.",
-      "2": "Respuestas sociales a padres o muy conocidos pero de forma limitada.",
+      "2": "Respuestas sociales a padres o muy conocidos pero de forma limitada."
       "3": "Poco interés en responder a la gente, excepto a personas muy conocidas."
     }
   },
@@ -480,7 +483,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "60",
+    "code": "9",
     "question": "Iniciativa de actividades apropiadas",
     "answers": {
       "0": "Inicia espontáneamente actividades apropiadas variadas.",
@@ -494,7 +497,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "61",
+    "code": "10",
     "question": "Juego social imitativo",
     "answers": {
       "0": "Juego social apropiado.",
@@ -508,7 +511,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "62",
+    "code": "11",
     "question": "Interés por otros niños",
     "answers": {
       "0": "A menudo observa y se aproxima a otros niños.",
@@ -522,7 +525,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "63",
+    "code": "12",
     "question": "Respuesta a aproximaciones de otros niños",
     "answers": {
       "0": "Responde a las aproximaciones de otros niños.",
@@ -536,7 +539,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "65",
+    "code": "13",
     "question": "Amistades",
     "answers": {
       "0": "Hay personas aproximadamente de su misma edad con quienes tiene algún tipo de relación personal y hay evidente reciprocidad.",
@@ -550,7 +553,7 @@
     "test": "ADIR",
     "sectionNumber": 4,
     "section": "DESARROLLO SOCIAL Y JUEGO",
-    "code": "66",
+    "code": "14",
     "question": "Desinhibición social",
     "answers": {
       "0": "Inhibición social normal.",
@@ -564,7 +567,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "67",
+    "code": "1",
     "question": "Preocupaciones inusuales",
     "answers": {
       "0": "Sin preocupaciones inusuales.",
@@ -578,7 +581,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "68",
+    "code": "2",
     "question": "Intereses circunscritos",
     "answers": {
       "0": "No tiene intereses circunscritos.",
@@ -592,7 +595,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "69",
+    "code": "3",
     "question": "Uso repetitivo de objetos o interes en partes de objetos",
     "answers": {
       "0": "Poco uso repetitivo de objetos.",
@@ -601,12 +604,13 @@
       "3": "Juego ligado al uso estereotipado de objetos hasta interferir en otras actividades."
     }
   },
+    },
   {
-    "id": "adir-41-2",
+    "id": "adir-41",
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "70",
+    "code": "3",
     "question": "Compulsiones/Rituales",
     "answers": {
       "0": "Sin compulsiones o rituales.",
@@ -620,12 +624,12 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "71",
+    "code": "4",
     "question": "Intereses sensoriales inusuales",
     "answers": {
       "0": "Sin intereses sensoriales inusuales.",
       "1": "Intereses sensoriales inusuales ocasionales.",
-      "2": "Hay intereses sensoriales inusuales."
+      "2": "Hay intereses sensoriales inusuales.",
     }
   },
   {
@@ -633,7 +637,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "74",
+    "code": "6",
     "question": "Dificultades con cambios menores en las rutinas propias del sujeto o del entorno personal",
     "answers": {
       "0": "Sin dificultades con los pequeños cambios en las rutinas.",
@@ -647,7 +651,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "75",
+    "code": "7",
     "question": "Resistencia a cambios triviales en el entorno",
     "answers": {
       "0": "Tolera cambios en el entorno.",
@@ -661,12 +665,12 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "76",
+    "code": "8",
     "question": "Apego inusual a objetos",
     "answers": {
       "0": "Sin apego a objetos.",
       "1": "Algún apego a objetos.",
-      "2": "Con apego a objetos inusuales."
+      "2": "Con apego a objetos inusuales.",
     }
   },
   {
@@ -674,7 +678,7 @@
     "test": "ADIR",
     "sectionNumber": 5,
     "section": "INTERESES Y COMPORTAMIENTOS",
-    "code": "77",
+    "code": "8",
     "question": "Manierismos de manos y dedos",
     "answers": {
       "0": "Sin manierismos.",
@@ -688,7 +692,7 @@
     "test": "ADIR",
     "sectionNumber": 6,
     "section": "COMPORTAMIENTOS GENERALES",
-    "code": "80",
+    "code": "1",
     "question": "Marcha",
     "answers": {
       "0": "Marcha normal.",
@@ -701,7 +705,7 @@
     "test": "ADIR",
     "sectionNumber": 6,
     "section": "COMPORTAMIENTOS GENERALES",
-    "code": "81",
+    "code": "2",
     "question": "Agresiones",
     "answers": {
       "0": "Sin agresiones.",
@@ -715,7 +719,7 @@
     "test": "ADIR",
     "sectionNumber": 6,
     "section": "COMPORTAMIENTOS GENERALES",
-    "code": "83",
+    "code": "3",
     "question": "Autolesiones",
     "answers": {
       "0": "Sin autolesiones.",
@@ -729,20 +733,21 @@
     "test": "ADIR",
     "sectionNumber": 6,
     "section": "COMPORTAMIENTOS GENERALES",
-    "code": "84",
+    "code": "4",
     "question": "Hiperventilación",
     "answers": {
       "0": "Sin hiperventilación.",
       "1": "Hiperventilación ocasional.",
       "2": "Hiperventilación frecuente."
     }
-  },
+  }
+    },
   {
-    "id": "adir-51-2",
+    "id": "adir-51",
     "test": "ADIR",
     "sectionNumber": 6,
     "section": "COMPORTAMIENTOS GENERALES",
-    "code": "85",
+    "code": "4",
     "question": "Desmayos/Ataques/Ausencias",
     "answers": {
       "0": "Sin desmayos o ausencias.",

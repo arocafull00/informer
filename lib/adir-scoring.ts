@@ -1,3 +1,5 @@
+import { capScoreForSum } from "@/lib/score-sum-cap";
+
 export type AdirAlgorithm =
   | "conducta_actual_2_3"
   | "conducta_actual_4_9"

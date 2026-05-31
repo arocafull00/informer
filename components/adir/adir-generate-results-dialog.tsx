@@ -7,12 +7,11 @@ import { AdirDomainScoresStep } from "./adir-domain-scores-step";
 import { AdirTotalsStep } from "./adir-totals-step";
 import { AdirSubjectStep } from "./adir-subject-step";
 import { AdirWizardStepIndicator } from "./adir-wizard-step-indicator";
-import { Button } from "@/components/ui/button";
+import { WizardDialogActions } from "@/components/wizard/wizard-dialog-actions";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -155,14 +154,19 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
       onKeyDown={handleFormKeyDown}
       className="flex min-h-0 flex-1 flex-col"
     >
-      <DialogHeader className="shrink-0 border-b border-outline-variant px-6 py-5">
-        <DialogTitle className="text-headline-md text-on-surface">
-          Generar resultados ADI-R
-        </DialogTitle>
-        <DialogDescription className="text-body-md text-on-surface-variant">
-          {ADIR_WIZARD_STEPS[step]}
-        </DialogDescription>
-        <div className="pt-3">
+      <DialogHeader className="shrink-0 gap-0 border-b border-outline-variant px-6 py-5">
+        <div className="min-w-0 space-y-1">
+          <DialogTitle className="text-headline-md text-on-surface">
+            Generar resultados ADI-R
+          </DialogTitle>
+          <DialogDescription className="text-body-md text-on-surface-variant">
+            {ADIR_WIZARD_STEPS[step]}
+          </DialogDescription>
+        </div>
+        {generateError && (
+          <p className="pt-3 text-body-md text-error">{generateError}</p>
+        )}
+        <div className="min-w-0 pt-3">
           <AdirWizardStepIndicator currentStep={step} />
         </div>
       </DialogHeader>
@@ -188,6 +192,10 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
               <AdirDomainScoresStep
                 sectionIndex={step - ADIR_DOMAIN_SCORE_STEP_OFFSET}
                 scores={form.scores}
+                answers={adirAnswers}
+                scoringContext={{
+                  chronologicalAge: form.subject.chronologicalAge,
+                }}
                 onScoreChange={setScore}
               />
             )}
@@ -196,52 +204,15 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
           )}
         </div>
       </ScrollArea>
-      <DialogFooter className="mx-0 mb-0 shrink-0 flex-col gap-3 border-t border-outline-variant bg-surface-container-lowest px-6 py-5 sm:flex-row sm:justify-between">
-        {generateError && (
-          <p className="w-full text-body-md text-error sm:order-first sm:basis-full">
-            {generateError}
-          </p>
-        )}
-        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleCancel}
-            disabled={isGenerating}
-            className="border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high"
-          >
-            Reiniciar
-          </Button>
-          {!isFirstStep && (
-            <Button
-              type="button"
-              variant="outline"
-              onClick={handlePrevious}
-              disabled={isGenerating}
-              className="border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high"
-            >
-              Anterior
-            </Button>
-          )}
-        </div>
-        {isLastStep ? (
-          <Button
-            type="submit"
-            disabled={!isComplete || isGenerating}
-            className="bg-primary text-on-primary hover:opacity-90"
-          >
-            {isGenerating ? "Generando…" : "Generar resultados"}
-          </Button>
-        ) : (
-          <Button
-            type="submit"
-            disabled={!isCurrentStepComplete || isGenerating}
-            className="bg-primary text-on-primary hover:opacity-90"
-          >
-            Siguiente
-          </Button>
-        )}
-      </DialogFooter>
+      <WizardDialogActions
+        isFirstStep={isFirstStep}
+        isLastStep={isLastStep}
+        isComplete={isComplete}
+        isCurrentStepComplete={isCurrentStepComplete}
+        isGenerating={isGenerating}
+        onCancel={handleCancel}
+        onPrevious={handlePrevious}
+      />
     </form>
   );
 }

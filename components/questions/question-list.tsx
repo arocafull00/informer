@@ -10,7 +10,6 @@ import {
   ados2SectionHeading,
   isAdos2Test,
 } from "@/lib/ados2-labels";
-import { orderQuestionsWithSubItems } from "@/lib/order-questions";
 import { testData, testLabels } from "@/lib/test-data";
 import type { Question } from "@/lib/types";
 import { QuestionCard } from "./question-card";
@@ -51,7 +50,6 @@ export function QuestionList() {
   return (
     <div className="space-y-stack-section pb-10">
       {sections.map(({ sectionNumber, section, questions: qs }) => {
-        const ordered = orderQuestionsWithSubItems(qs);
         const answeredInSection = qs.filter(
           (q) => answers[q.id] !== undefined
         ).length;
@@ -94,11 +92,10 @@ export function QuestionList() {
               </div>
             </header>
             <div className="space-y-3">
-              {ordered.map((question, index) => (
+              {qs.map((question, index) => (
                 <QuestionCard
                   key={question.id}
                   question={question}
-                  isSubItem={isAdos2 ? false : !!question.parentCode}
                   displayCode={
                     isAdos2
                       ? ados2ItemLabel(sectionNumber, index + 1)

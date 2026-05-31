@@ -16,8 +16,8 @@ export function AdirScoreInputRow({
   onChange,
 }: AdirScoreInputRowProps) {
   return (
-    <div className="grid grid-cols-[1fr_5rem] items-center gap-3">
-      <Label htmlFor={id} className="text-body-md text-on-surface">
+    <div className="grid grid-cols-[minmax(0,1fr)_5rem] items-start gap-3">
+      <Label htmlFor={id} className="break-words text-body-md text-on-surface-variant">
         {label}
       </Label>
       <Input
