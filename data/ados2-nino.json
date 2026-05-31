@@ -7,9 +7,10 @@
     "code": "1",
     "question": "Nivel general de lenguaje oral no ecolálico",
     "answers": {
-      "0": "Uso de frases fluido y variado, sin limitaciones.",
-      "1": "Utiliza las frases de manera correcta.",
-      "2": "Uso de frases claramente inadecuado o muy limitado."
+      "0": "Utiliza las frases de manera correcta.",
+      "1": "Utiliza habla compleja, pero con errores gramaticales recurrentes.",
+      "2": "El habla no ecolálica se compone principalmente de frases simples",
+      "3": "El habla no-ecolálica consiste principalmente en frases simples."
     }
   },
   {
@@ -21,8 +22,9 @@
     "question": "Anormalidades del habla asociadas al autismo",
     "answers": {
       "0": "Variación tonal y entonación dentro de la norma.",
-      "1": "Poca variación de timbre, entonación monótona y mecánica.",
-      "2": "Entonación gravemente plana o inusual."
+      "1": "Poca variación de timbre y tono, entonación monótona.",
+      "2": "Habla plana, mecánica, rápida y con ritmo entrecortado e irregular.",
+      "7": "Tartamudeo o trastorno de la fluidez verbal."
     }
   },
   {
@@ -33,9 +35,9 @@
     "code": "3",
     "question": "Ecoalia inmediata",
     "answers": {
-      "0": "Sin eco del lenguaje.",
+      "0": "No repite el habla de otra persona.",
       "1": "Eco ocasional del lenguaje.",
-      "2": "Eco frecuente o persistente del lenguaje."
+      "2": "Repite palabras y frases con regularidad."
     }
   },
   {
@@ -46,9 +48,10 @@
     "code": "4",
     "question": "Uso estereotipado o idiosincrásico de palabras o frases",
     "answers": {
-      "0": "Sin uso de lenguaje idiosincrásico.",
-      "1": "A menudo usa palabras o frases idiosincrásicas.",
-      "2": "Uso predominante de lenguaje idiosincrásico."
+      "0": "Casi nunca usa palabras o frases estereotipadas o idiosincrásicas",
+      "1": "Uso ocasional de palabras o frases idiosincrásicas.",
+      "2": "A menudo usa palabras o frases idiosincrásicas.",
+      "3": "Casi siempre utiliza habla rara o estereotipada."
     }
   },
   {
@@ -59,9 +62,9 @@
     "code": "5",
     "question": "Ofrece información",
     "answers": {
-      "0": "Ofrece información de manera espontánea y variada.",
+      "0": "Ofrece información de manera espontánea y variada sobre sus pensamientos, sentimientos o experiencias.",
       "1": "A veces ofrece información de manera espontánea sobre sus propios pensamientos y experiencias.",
-      "2": "No ofrece información de manera espontánea."
+      "2": "Casi nunca ofrece información de manera espontánea, a menos que sea acerca de sus intereses."
     }
   },
   {
@@ -72,9 +75,9 @@
     "code": "6",
     "question": "Pide información",
     "answers": {
-      "0": "Responde y formula preguntas de manera espontánea y recíproca.",
-      "1": "Responde adecuadamente a los comentarios de la persona que examina, pero no hace preguntas sobre ello de manera espontánea.",
-      "2": "No responde adecuadamente ni formula preguntas espontáneas."
+      "0": "Le pregunta al examinador sobre sus pensamientos, sentimientos o experiencias",
+      "1": "Ocasionalmente le pregunta al examinador sobre sus pensamientos, sentimientos o experiencias",
+      "2": "Responde adecuadamente a los comentarios de la persona que examina, pero no hace preguntas sobre ello de manera espontánea."
     }
   },
   {
@@ -85,9 +88,10 @@
     "code": "7",
     "question": "Narración de sucesos",
     "answers": {
-      "0": "Proporciona información espontánea y suficiente sin depender de preguntas.",
-      "1": "Proporciona suficiente información aunque puede depender de preguntas específicas.",
-      "2": "Proporciona información insuficiente incluso con preguntas específicas."
+      "0": "Proporciona suficiente información espontánea sin depender de preguntas específicas para continuar.",
+      "1": "Proporciona suficiente información aunque puede depender inicialmente de preguntas específicas.",
+      "2": "Proporciona información pero necesita preguntas específicas para continuar.",
+      "3": "Respuestas insuficientes o inconsistentes, incluso a las preguntas específicas."
     }
   },
   {
@@ -99,8 +103,9 @@
     "question": "Conversación",
     "answers": {
       "0": "Conversación recíproca fluida y equilibrada.",
-      "1": "Poca conversación recíproca.",
-      "2": "Sin conversación recíproca o muy limitada."
+      "1": "Parte del habla incluye elaboración espontánea de sus propias respuestas.",
+      "2": "Poca conversación recíproca, sigue su propio tren de pensamiento.",
+      "3": "Poca habla comunicativa espontánea"
     }
   },
   {
@@ -111,22 +116,10 @@
     "code": "9",
     "question": "Gestos descriptivos, conversacionales ,instrumentales o informativos",
     "answers": {
-      "0": "Uso frecuente y variado de gestos espontáneos.",
-      "1": "Algún uso espontáneo de gestos.",
-      "2": "No se observa uso espontáneo de gestos."
-    }
-  },
-  {
-    "id": "ados2-nino-1-10",
-    "test": "ADOS2_NINO",
-    "sectionNumber": 1,
-    "section": "LENGUAJE Y COMUNICACIÓN",
-    "code": "10",
-    "question": "Gestos enfáticos o emocionales",
-    "answers": {
-      "0": "Uso frecuente y variado de gestos espontáneos.",
-      "1": "Algún uso espontáneo de gestos.",
-      "2": "No se observa uso espontáneo de gestos."
+      "0": "Uso espontáneo de gestos descriptivos.",
+      "1": "Algún uso espontáneo de gestos descriptivos, pero poco variados.",
+      "2": "Uso limitado de gestos descriptivos.",
+      "3": "Ausencia o uso muy limitado de gestos"
     }
   },
   {
@@ -138,8 +131,7 @@
     "question": "Contacto visual inusual",
     "answers": {
       "0": "Contacto visual modulado de forma apropiada.",
-      "1": "Establece un contacto visual modulado pobremente para iniciar, terminar o regular una interacción social.",
-      "2": "Contacto visual ausente o muy inadecuado para regular la interacción."
+      "2": "Establece un contacto visual modulado pobremente para iniciar, terminar o regular una interacción social."
     }
   },
   {
@@ -152,22 +144,10 @@
     "answers": {
       "0": "Dirige expresiones faciales variadas y apropiadas al examinador.",
       "1": "Dirige algunas expresiones faciales a la persona que examina pero con poca variedad.",
-      "2": "Expresiones faciales mínimas o no dirigidas al examinador."
+      "2": "No dirige expresiones faciales apropiadas a la persona que examina."
     }
   },
-  {
-    "id": "ados2-nino-12",
-    "test": "ADOS2_NINO",
-    "sectionNumber": 2,
-    "section": "INTERACCIÓN SOCIAL RECÍPROCA",
-    "code": "3",
-    "question": "Producción de lenguaje y comunicación no verbal asociada",
-    "answers": {
-      "0": "Muestra disfrute claro y variado durante la interacción.",
-      "1": "Muestra cierto disfrute durante la interacción.",
-      "2": "No muestra disfrute durante la interacción."
-    }
-  },
+
   {
     "id": "ados2-nino-13",
     "test": "ADOS2_NINO",
@@ -176,9 +156,10 @@
     "code": "4",
     "question": "Disfrute compartido durante la interacción",
     "answers": {
-      "0": "Comunica de forma variada y espontánea las emociones sentidas.",
-      "1": "Comunica de manera efectiva diversas emociones que ha sentido.",
-      "2": "Comunicación emocional limitada o inadecuada."
+      "0": "Muestra disfrute claro y variado durante la interacción.",
+      "1": "Muestra cierto disfrute durante la interacción.",
+      "2": "Muestra escaso disfrute durante la interacción.",
+      "3": "Poco o nulo disfrute expresado durante la evaluación"
     }
   },
   {
@@ -189,9 +170,9 @@
     "code": "5",
     "question": "Comprensión de las emociones de otros/empatía",
     "answers": {
-      "0": "Comprensión clara y variada de relaciones sociales típicas.",
-      "1": "Muestra ejemplos de comprensión de algunas relaciones sociales típicas.",
-      "2": "Comprensión limitada de relaciones sociales típicas."
+      "0": "Transmite espontáneamente una clara comprensión de varias emociones en otras personas.",
+      "1": "Muestra ejemplos de comprensión e identificación de una emoción en otras personas.",
+      "2": "Escasa o nula identificación o comunicación de que comprende los estados emocionales de otros."
     }
   },
   {
@@ -202,9 +183,10 @@
     "code": "6",
     "question": "Comprensión de las situaciones y relaciones sociales típicas",
     "answers": {
-      "0": "Indicaciones claras de responsabilidad por sus propias acciones.",
-      "1": "Muestra alguna indicación de ser responsable de sus propias acciones.",
-      "2": "Sin indicación de responsabilidad por sus propias acciones."
+      "0": "Muestra ejemplos de comprensión de varias relaciones sociales típicas.",
+      "1": "Muestra ejemplos de comprensión de varias relaciones sociales típicas, pero no de su propio papel en las mismas .",
+      "2": "Muestra cierta comprensión de una sola relación social típica, pero no de su papel en la misma.",
+      "3": "Muestra escasa o nula comprensión de las relaciones sociales típicas"
     }
   },
   {
@@ -215,9 +197,10 @@
     "code": "7",
     "question": "Características de las iniciaciones sociales",
     "answers": {
-      "0": "Respuestas variadas y claramente ajustadas a cada situación.",
-      "1": "Muestra una gama de respuestas apropiadas que varían de acuerdo a las situaciones.",
-      "2": "Respuestas repetitivas o poco ajustadas a la situación."
+      "0": "Iniciaciones sociales adecuadas.",
+      "1": "Iniciaciones sociales con características ligeramente inusuales.",
+      "2": "Iniciaciones sociales inapropiadas.",
+      "3": "No hay iniciaciones sociales"
     }
   },
   {
@@ -228,9 +211,11 @@
     "code": "8",
     "question": "Cantidad de iniciaciones sociales/mantenimiento de la atención",
     "answers": {
-      "0": "Comunicación espontánea y equilibrada, no limitada a respuestas.",
-      "1": "La mayor parte de la comunicación está orientada a responder preguntas.",
-      "2": "Comunicación muy limitada incluso ante preguntas directas."
+      "0": "Intentos frecuentes de captar o mantener la atención del examinador.",
+      "1": "Algunos intentos de captar, mantener o dirigir la atención del examinador.",
+      "2": "Realiza intentos ocasionales de captar, mantener o dirigir la atención del examinador.",
+      "3": "Muestra poca preocupación por si el examinador está prestándole atención.",
+      "7": "Demandas de atención inusualmente frecuentes, intensas o excesivas."
     }
   },
   {
@@ -241,9 +226,10 @@
     "code": "9",
     "question": "Calidad de la respuesta social",
     "answers": {
-      "0": "Interacción fluida, espontánea y muy apropiada.",
-      "1": "La interacción es agradable y apropiada durante la sesión.",
-      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+      "0": "Muestra una gama de respuestas apropiadas",
+      "1": "Reacciona a la mayoría de contextos sociales, pero de forma algo limitada.",
+      "2": "Respuestas extrañas, estereotipadas o poco variadas.",
+      "3": "Respuesta mínima o inexistente a los intentos del examinador por implicar al evaluado."
     }
   },
   {
@@ -254,9 +240,10 @@
     "code": "10",
     "question": "Cantidad de comunicación social recíproca",
     "answers": {
-      "0": "Interacción fluida, espontánea y muy apropiada.",
-      "1": "La interacción es agradable y apropiada durante la sesión.",
-      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+      "0": "Uso extenso de comportamientos verbales o no verbales para realizar un intercambio social.",
+      "1": "Comunicación social recíproca reducida en frecuencia.",
+      "2": "La mayor parte de la comunicación está orientada a objetos, a responder preguntas, es ecolálica o hay poca reciprocidad.",
+      "3": "Escasa comunicación con la persona que examina."
     }
   },
   {
@@ -267,9 +254,9 @@
     "code": "11",
     "question": "Calidad general de la relación",
     "answers": {
-      "0": "Interacción fluida, espontánea y muy apropiada.",
-      "1": "La interacción es agradable y apropiada durante la sesión.",
-      "2": "Interacción incómoda, rígida o inapropiada durante la sesión."
+      "0": "La interacción es agradable y apropiada durante la sesión.",
+      "1": "La interacción es agradable, pero no de forma sostenida.",
+      "2": "La sesión ha resultado incómoda la mayor parte del tiempo."
     }
   },
   {
@@ -280,9 +267,9 @@
     "code": "1",
     "question": "Imaginación y creatividad",
     "answers": {
-      "0": "Acciones imaginativas variadas y espontáneas.",
+      "0": "Introduce diversas acciones imaginativas variadas y espontáneas.",
       "1": "Algunas acciones imaginativas en respuesta a una situación estructurada.",
-      "2": "Sin acciones imaginativas observables."
+      "2": "Escasas acciones imaginativas."
     }
   },
   {
@@ -294,8 +281,9 @@
     "question": "Interes sensorial inusual en los materiales de juego de otras personas",
     "answers": {
       "0": "Sin intereses sensoriales inusuales.",
-      "1": "Intereses sensoriales evidentes.",
-      "2": "Intereses sensoriales prominentes o interferentes."
+      "1": "Varios intereses sensoriales.",
+      "2": "Intereses sensoriales evidentes.",
+      "3": "Comportamientos evidentes de búsqueda sensorial en todas las tareas, interfiriendo en la evaluación."
     }
   },
   {
@@ -307,7 +295,7 @@
     "question": "Manierismos de manos y dedos y otros manierismos complejos",
     "answers": {
       "0": "Sin manierismos.",
-      "1": "Con manierismos.",
+      "1": "Presenta algunos manierismos.",
       "2": "Manierismos frecuentes o muy marcados."
     }
   },
@@ -332,9 +320,10 @@
     "code": "4",
     "question": "Interés excesivo o referencias a temas u objetos inusuales o altamente específicos o comportamientos repetitivos",
     "answers": {
-      "0": "Sin rituales verbales.",
-      "1": "Rituales verbales leves u ocasionales.",
-      "2": "Rituales verbales frecuentes o persistentes."
+      "0": "No hubo un interés excesivo.",
+      "1": "Referencias ocasionales a temas de interés inusuales.",
+      "2": "Con patrones de interés evidentes.",
+      "3": "Preocupaciones o comportamientos repetitivos hasta el punto de interferir en la evaluación"
     }
   },
   {
@@ -345,9 +334,9 @@
     "code": "5",
     "question": "Compulsiones o rituales",
     "answers": {
-      "0": "Sin rituales verbales.",
-      "1": "Rituales verbales leves u ocasionales.",
-      "2": "Rituales verbales frecuentes o persistentes."
+      "0": "Sin compulsiones ni rituales.",
+      "1": "Presenta algunos rituales sin conducta compulsiva.",
+      "2": "Una o más actividades que el evaluado tiene que completar o decir de manera específica."
     }
   },
   {
@@ -359,8 +348,10 @@
     "question": "Elevado nivel de actividad/agitación",
     "answers": {
       "0": "Postura tranquila y nivel de actividad apropiado.",
-      "1": "Se sienta, pero está inquieta.",
-      "2": "Inquietud marcada o dificultad para permanecer sentado."
+      "1": "Se sienta, pero está inquieto.",
+      "2": "Dificultad para permanecer sentado.",
+      "3": "Comportamientos hiperactivos que son difíciles de interrumpir.",
+      "7": "Poca actividad."
     }
   },
   {
@@ -371,9 +362,10 @@
     "code": "2",
     "question": "Berrinches, agresiones, comportamientos negativos o disruptivos",
     "answers": {
-      "0": "Sin signos de ansiedad o inseguridad.",
-      "1": "Leves signos de ansiedad o inseguridad.",
-      "2": "Ansiedad o inseguridad claramente evidentes."
+      "0": "No se muestra enfadado.",
+      "1": "Muestra ligera disrupción.",
+      "2": "Muestra más de un comportamiento intencionalmente disruptivo.",
+      "3": "Muestra berrinches temperamentales marcados."
     }
   },
   {
@@ -384,9 +376,9 @@
     "code": "3",
     "question": "Ansiedad",
     "answers": {
-      "0": "Sin signos de ansiedad o inseguridad.",
+      "0": "No hay signos de ansiedad o inseguridad.",
       "1": "Leves signos de ansiedad o inseguridad.",
-      "2": "Ansiedad o inseguridad claramente evidentes."
+      "2": "Ansiedad marcada a lo largo de la evaluación."
     }
   }
 ]
