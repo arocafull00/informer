@@ -5,7 +5,7 @@ import { TopbarNav } from "@/components/layout/topbar-nav";
 
 export function Topbar() {
   return (
-    <nav className="sticky top-0 z-50 flex h-16 shrink-0 items-center border-b border-outline-variant bg-surface px-margin-page">
+    <nav className="relative sticky top-0 z-50 flex h-16 shrink-0 items-center border-b border-outline-variant bg-surface px-margin-page">
       <Image
         src="/icon-bg.png"
         alt="Informer"

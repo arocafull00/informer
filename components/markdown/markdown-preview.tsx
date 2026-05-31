@@ -3,41 +3,14 @@
 import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Check, Copy } from "lucide-react";
-import { AdirGenerateResultsDialog } from "@/components/adir/adir-generate-results-dialog";
-import { RiasGenerateResultsDialog } from "@/components/rias/rias-generate-results-dialog";
-import { Ados2ScoreSummaryDialog } from "@/components/ados2/ados2-score-summary-dialog";
 import { SaveReportTitleDialog } from "@/components/reports/save-report-title-dialog";
-import { isAdos2Test } from "@/lib/ados2-labels";
-import { buildAdos2ScoreSummary } from "@/lib/ados2-scoring";
 import { useSaveReport } from "@/lib/use-save-report";
-import { testData, testLabels } from "@/lib/test-data";
-import {
-  selectCurrentAnswers,
-  useCurrentReportStore,
-} from "@/store/use-current-report-store";
 
 export function MarkdownPreview() {
-  const currentTest = useCurrentReportStore((s) => s.currentTest);
-  const answers = useCurrentReportStore(selectCurrentAnswers);
   const { trySave, saveWithTitle, hasAnswers, markdown, suggestedTitle } =
     useSaveReport();
   const [copied, setCopied] = useState(false);
   const [saveDialogOpen, setSaveDialogOpen] = useState(false);
-  const [scoreDialogOpen, setScoreDialogOpen] = useState(false);
-  const [adirResultsDialogOpen, setAdirResultsDialogOpen] = useState(false);
-  const [riasResultsDialogOpen, setRiasResultsDialogOpen] = useState(false);
-
-  const isAdos2 = isAdos2Test(currentTest);
-  const isAdir = currentTest === "ADIR";
-
-  const scoreSummary = useMemo(() => {
-    if (!isAdos2) return null;
-    return buildAdos2ScoreSummary(
-      currentTest,
-      testData[currentTest],
-      answers
-    );
-  }, [isAdos2, currentTest, answers]);
 
   const isEmpty = useMemo(
     () => markdown.split("\n").filter(Boolean).length <= 2,
@@ -56,42 +29,10 @@ export function MarkdownPreview() {
     setSaveDialogOpen(true);
   };
 
-  const handleScoreClick = () => {
-    if (!scoreSummary) return;
-    setScoreDialogOpen(true);
-  };
-
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-outline-variant bg-surface-container-lowest p-3">
+      <div className="flex shrink-0 items-center border-b border-outline-variant bg-surface-container-lowest p-3">
         <h2 className="text-headline-md text-on-surface">VISTA PREVIA DEL INFORME</h2>
-        <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
-          <button
-            type="button"
-            onClick={() => setRiasResultsDialogOpen(true)}
-            className="interactive-press cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
-          >
-            Generar RIAS
-          </button>
-          {isAdir && (
-            <button
-              type="button"
-              onClick={() => setAdirResultsDialogOpen(true)}
-              className="interactive-press cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
-            >
-              Generar ADI-R
-            </button>
-          )}
-          {isAdos2 && scoreSummary && (
-            <button
-              type="button"
-              onClick={handleScoreClick}
-              className="interactive-press cursor-pointer rounded-lg border border-outline-variant bg-surface-container px-3 py-1.5 text-label-md text-on-surface hover:bg-surface-container-high"
-            >
-              Puntuación
-            </button>
-          )}
-        </div>
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto bg-surface-container-lowest p-4">
         {isEmpty ? (
@@ -140,22 +81,6 @@ export function MarkdownPreview() {
         onClose={() => setSaveDialogOpen(false)}
         onConfirm={saveWithTitle}
       />
-      <AdirGenerateResultsDialog
-        open={adirResultsDialogOpen}
-        onClose={() => setAdirResultsDialogOpen(false)}
-      />
-      <RiasGenerateResultsDialog
-        open={riasResultsDialogOpen}
-        onClose={() => setRiasResultsDialogOpen(false)}
-      />
-      {scoreSummary && (
-        <Ados2ScoreSummaryDialog
-          open={scoreDialogOpen}
-          testLabel={testLabels[currentTest]}
-          summary={scoreSummary}
-          onClose={() => setScoreDialogOpen(false)}
-        />
-      )}
     </div>
   );
 }
