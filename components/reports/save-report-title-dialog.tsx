@@ -16,11 +16,18 @@ export function SaveReportTitleDialog({
   onConfirm,
 }: SaveReportTitleDialogProps) {
   const [value, setValue] = useState("");
+  const [prevOpen, setPrevOpen] = useState(open);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (open) {
+      setValue("");
+    }
+  }
 
   useEffect(() => {
     if (!open) return;
-    setValue("");
     const frame = requestAnimationFrame(() => {
       inputRef.current?.focus();
     });
@@ -84,7 +91,7 @@ export function SaveReportTitleDialog({
             onClick={onClose}
             className="interactive-press flex-1 rounded-lg bg-surface-container py-2 text-label-md text-on-surface hover:bg-surface-container-high"
           >
-            Cancelar
+            Reiniciar
           </button>
           <button
             type="button"

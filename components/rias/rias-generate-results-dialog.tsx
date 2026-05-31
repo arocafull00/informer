@@ -202,7 +202,7 @@ function RiasGenerateResultsWizard({ onClose }: RiasGenerateResultsWizardProps) 
             disabled={isGenerating}
             className="border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high"
           >
-            Cancelar
+            Reiniciar
           </Button>
           {!isFirstStep && (
             <Button
