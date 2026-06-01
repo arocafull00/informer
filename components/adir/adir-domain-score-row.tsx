@@ -1,6 +1,6 @@
+import { AdirScoreBreakdownLabel } from "./adir-score-breakdown-label";
 import { AdirScoreInputRow } from "./adir-score-input-row";
 import {
-  formatAdirScoreBreakdown,
   resolveAdirDomainQuestionIds,
   type AdirDomainScoringContext,
 } from "@/lib/adir-domain-scoring";
@@ -22,12 +22,17 @@ export function AdirDomainScoreRow({
   onChange,
 }: AdirDomainScoreRowProps) {
   const questionIds = resolveAdirDomainQuestionIds(scoreKey, answers, context);
-  const breakdown = formatAdirScoreBreakdown(questionIds, answers);
 
   return (
     <AdirScoreInputRow
       id={`adir-score-${scoreKey}`}
-      label={breakdown}
+      label={
+        <AdirScoreBreakdownLabel
+          scoreKey={scoreKey}
+          questionIds={questionIds}
+          answers={answers}
+        />
+      }
       value={value}
       onChange={onChange}
     />

@@ -92,13 +92,13 @@ export function QuestionList() {
               </div>
             </header>
             <div className="space-y-3">
-              {qs.map((question, index) => (
+              {qs.map((question) => (
                 <QuestionCard
                   key={question.id}
                   question={question}
                   displayCode={
                     isAdos2
-                      ? ados2ItemLabel(sectionNumber, index + 1)
+                      ? ados2ItemLabel(sectionNumber, question.code)
                       : undefined
                   }
                 />

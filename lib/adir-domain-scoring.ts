@@ -9,7 +9,7 @@ export type AdirDomainScoringContext = {
   chronologicalAge: string;
 };
 
-const LANGUAGE_LEVEL_QUESTION_ID = "adir-07";
+const LANGUAGE_LEVEL_QUESTION_ID = "adir-30";
 
 type DomainQuestionResolver = (
   answers: Record<string, number>,
@@ -17,16 +17,16 @@ type DomainQuestionResolver = (
 ) => string[];
 
 const STATIC_DOMAIN_QUESTIONS: Partial<Record<AdirScoreKey, string[]>> = {
-  A1: ["adir-25", "adir-26", "adir-31"],
-  A3: ["adir-27", "adir-28"],
-  A4: ["adir-08", "adir-29", "adir-30", "adir-32", "adir-32-2"],
-  B1: ["adir-19", "adir-20", "adir-21"],
-  B2Verbal: ["adir-11", "adir-12"],
-  B3Verbal: ["adir-10", "adir-13", "adir-14", "adir-15"],
-  B4: ["adir-23", "adir-24", "adir-34"],
-  C1: ["adir-39", "adir-40"],
-  C3: ["adir-47", "adir-47-2"],
-  C4: ["adir-41", "adir-42"],
+  A1: ["adir-50", "adir-51", "adir-57"],
+  A3: ["adir-52", "adir-53", "adir-54"],
+  A4: ["adir-31", "adir-55", "adir-56", "adir-58", "adir-59"],
+  B1: ["adir-42", "adir-43","adir-44", "adir-45"],
+  B2Verbal: ["adir-34", "adir-35"],
+  B3Verbal: ["adir-33", "adir-36", "adir-37", "adir-38"],
+  B4: ["adir-47", "adir-48", "adir-61"],
+  C1: ["adir-67", "adir-68"],
+  C3: ["adir-77", "adir-78"],
+  C4: ["adir-69", "adir-71"],
 };
 
 function parseChronologicalAgeYears(chronologicalAge: string): number | null {
@@ -46,22 +46,26 @@ function resolveA2Questions(
   _answers: Record<string, number>,
   context: AdirDomainScoringContext,
 ): string[] {
-  const questionIds = ["adir-24-2", "adir-35", "adir-36"];
+  const questionIds = ["adir-49", "adir-62", "adir-63"];
   const ageYears = parseChronologicalAgeYears(context.chronologicalAge);
 
+  if (ageYears !== null && ageYears < 10) {
+    questionIds.push("adir-64");
+  }
+
   if (ageYears !== null && ageYears >= 10) {
-    questionIds.push("adir-37");
+    questionIds.push("adir-65");
   }
 
   return questionIds;
 }
 
 function resolveC2Questions(answers: Record<string, number>): string[] {
-  const questionIds = ["adir-44", "adir-45"];
+  const questionIds = ["adir-70"];
   const languageLevel = answers[LANGUAGE_LEVEL_QUESTION_ID];
 
   if (languageLevel === 0) {
-    questionIds.push("adir-16");
+    questionIds.push("adir-39");
   }
 
   return questionIds;
@@ -92,7 +96,11 @@ export function resolveAdirDomainQuestionIds(
   return STATIC_DOMAIN_QUESTIONS[key] ?? [];
 }
 
-export function formatAdirScoreBreakdown(
+export function formatAdirScoreKeyLabel(key: AdirScoreKey): string {
+  return key.replace(/Verbal$/, "");
+}
+
+export function formatAdirQuestionBreakdown(
   questionIds: string[],
   answers: Record<string, number>,
 ): string {

@@ -23,7 +23,7 @@ export function ados2SectionHeading(
 
 export function ados2ItemLabel(
   sectionNumber: number,
-  indexInSection: number
+  code: string
 ): string {
-  return `${ados2SectionLetter(sectionNumber)}${indexInSection}`;
+  return `${ados2SectionLetter(sectionNumber)}${code}`;
 }

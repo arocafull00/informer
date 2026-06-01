@@ -1,10 +1,11 @@
+import type { ReactNode } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { parseAdirScoreInput } from "@/lib/adir-scoring";
 
 type AdirScoreInputRowProps = {
   id: string;
-  label: string;
+  label: ReactNode;
   value: number | null;
   onChange: (value: number | null) => void;
 };
