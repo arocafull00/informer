@@ -20,7 +20,7 @@ const STATIC_DOMAIN_QUESTIONS: Partial<Record<AdirScoreKey, string[]>> = {
   A1: ["adir-50", "adir-51", "adir-57"],
   A3: ["adir-52", "adir-53", "adir-54"],
   A4: ["adir-31", "adir-55", "adir-56", "adir-58", "adir-59"],
-  B1: ["adir-42", "adir-43","adir-44", "adir-45"],
+  B1: ["adir-42", "adir-43", "adir-44", "adir-45"],
   B2Verbal: ["adir-34", "adir-35"],
   B3Verbal: ["adir-33", "adir-36", "adir-37", "adir-38"],
   B4: ["adir-47", "adir-48", "adir-61"],

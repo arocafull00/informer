@@ -262,7 +262,20 @@
     "sectionNumber": 3,
     "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
     "code": "43",
-    "question": "Asentir y negar con la cabeza",
+    "question": "Asentir con la cabeza",
+    "answers": {
+      "0": "Asiente y niega con la cabeza de forma espontánea.",
+      "1": "A veces asiente y niega de forma espontánea.",
+      "2": "No asiente ni niega con la cabeza de forma espontánea."
+    }
+  },
+  {
+    "id": "adir-44",
+    "test": "ADIR",
+    "sectionNumber": 3,
+    "section": "FUNCIONAMIENTO DE LENGUAJE Y COMUNICACIÓN",
+    "code": "44",
+    "question": "Negar con la cabeza",
     "answers": {
       "0": "Asiente y niega con la cabeza de forma espontánea.",
       "1": "A veces asiente y niega de forma espontánea.",
