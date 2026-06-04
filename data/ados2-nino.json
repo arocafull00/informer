@@ -242,7 +242,7 @@
     "answers": {
       "0": "Uso extenso de comportamientos verbales o no verbales para realizar un intercambio social.",
       "1": "Comunicación social recíproca reducida en frecuencia.",
-      "2": "La mayor parte de la comunicación está orientada a objetos, a responder preguntas, es ecolálica o hay poca reciprocidad.",
+      "2": "poca reciprocidad en la conversación",
       "3": "Escasa comunicación con la persona que examina."
     }
   },
@@ -320,10 +320,10 @@
     "code": "4",
     "question": "Interés excesivo o referencias a temas u objetos inusuales o altamente específicos o comportamientos repetitivos",
     "answers": {
-      "0": "No hubo un interés excesivo.",
-      "1": "Referencias ocasionales a temas de interés inusuales.",
-      "2": "Con patrones de interés evidentes.",
-      "3": "Preocupaciones o comportamientos repetitivos hasta el punto de interferir en la evaluación"
+      "0": "Sin referencias a temas específicos de su interés",
+      "1": "Referencias ocasionales a temas de su interés",
+      "2": "Patrones de interés evidentes",
+      "3": "Comportamientos repetitivos evidentes hasta el punto que interfieren en la evaluación"
     }
   },
   {

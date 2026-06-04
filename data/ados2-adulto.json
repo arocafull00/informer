@@ -132,7 +132,7 @@
     "answers": {
       "0": "Variedad de gestos enfáticos o emocionales adecuados y bien integrados en el habla",
       "1": "Algún uso espontáneo de gestos enfáticos o emocionales.",
-      "2": "Gestos enfáticos o emocionales extraños o mal integrados."
+      "2": "Escasos gestos enfáticos o emocionales."
     }
   },
   {
@@ -281,7 +281,7 @@
     "answers": {
       "0": "Uso extenso de comportamientos verbales o no verbales para realizar un intercambio social.",
       "1": "Comunicación social recíproca reducida en frecuencia.",
-      "2": "La mayor parte de la comunicación está orientada a objetos, a responder preguntas, es ecolálica o hay poca reciprocidad."
+      "2": "Poca reciprocidad en la conversación."
     }
   },
   {
@@ -358,10 +358,10 @@
     "code": "4",
     "question": "Interés excesivo o referencias a temas u objetos inusuales o altamente específicos o comportamientos repetitivos",
     "answers": {
-      "0": "Sin rituales verbales.",
-      "1": "Rituales verbales leves u ocasionales.",
-      "2": "Con rituales verbales frecuentes o persistentes.",
-      "3": "Con rituales verbales que interfieren en la evaluación."
+      "0": "Sin referencias a temas específicos de su interés",
+      "1": "Referencias ocasionales a temas de su interés",
+      "2": "Patrones de interés evidentes",
+      "3": "Comportamientos repetitivos evidentes hasta el punto que interfieren en la evaluación"
     }
   },
   {
