@@ -15,7 +15,7 @@ export function AdirScoreBreakdownLabel({
   questionIds,
   answers,
 }: AdirScoreBreakdownLabelProps) {
-  const breakdown = formatAdirQuestionBreakdown(questionIds, answers);
+  const breakdown = formatAdirQuestionBreakdown(scoreKey, questionIds, answers);
 
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-1">

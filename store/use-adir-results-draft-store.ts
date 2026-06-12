@@ -69,13 +69,23 @@ export const useAdirResultsDraftStore = create<AdirResultsDraftStore>()(
             chronologicalAge: state.form.subject.chronologicalAge,
           });
           const nextScores = { ...state.form.scores };
+          const nextScoreSources = { ...state.scoreSources };
 
           for (const key of ADIR_SCORE_KEYS) {
-            if (state.scoreSources[key] === "manual") continue;
+            const isManual = state.scoreSources[key] === "manual";
+            const manualScore = state.form.scores[key];
+
+            if (isManual && manualScore !== null) continue;
+
             nextScores[key] = computed[key];
+
+            if (isManual) {
+              delete nextScoreSources[key];
+            }
           }
 
           return {
+            scoreSources: nextScoreSources,
             form: mergeAdirTotals({
               ...state.form,
               scores: nextScores,

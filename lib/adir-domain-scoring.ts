@@ -25,39 +25,60 @@ const STATIC_DOMAIN_QUESTIONS: Partial<Record<AdirScoreKey, string[]>> = {
   B3Verbal: ["adir-33", "adir-36", "adir-37", "adir-38"],
   B4: ["adir-47", "adir-48", "adir-61"],
   C1: ["adir-67", "adir-68"],
-  C3: ["adir-77", "adir-78"],
   C4: ["adir-69", "adir-71"],
 };
 
-function parseChronologicalAgeYears(chronologicalAge: string): number | null {
-  const trimmed = chronologicalAge.trim();
-  if (!trimmed) return null;
+const A2_BASE_QUESTION_IDS = ["adir-49", "adir-62", "adir-63"];
+const A2_MAX_QUESTION_IDS = ["adir-64", "adir-65"];
+const C3_MAX_QUESTION_IDS = ["adir-77", "adir-78"];
 
-  const match = /^(\d+)/.exec(trimmed);
-  if (!match) return null;
+function computeMaxAmongQuestions(
+  questionIds: string[],
+  answers: Record<string, number>,
+): number | null {
+  const cappedScores = questionIds
+    .map((questionId) => {
+      const value = answers[questionId];
+      if (value === undefined) return null;
+      return capScoreForSum(value);
+    })
+    .filter((value): value is number => value !== null);
 
-  const years = Number.parseInt(match[1], 10);
-  if (Number.isNaN(years)) return null;
+  if (cappedScores.length === 0) return null;
 
-  return years;
+  return Math.max(...cappedScores);
 }
 
-function resolveA2Questions(
-  _answers: Record<string, number>,
-  context: AdirDomainScoringContext,
-): string[] {
-  const questionIds = ["adir-49", "adir-62", "adir-63"];
-  const ageYears = parseChronologicalAgeYears(context.chronologicalAge);
+function formatMaxAmongQuestionsBreakdown(
+  label: string,
+  questionIds: string[],
+  answers: Record<string, number>,
+): string {
+  const maxScore = computeMaxAmongQuestions(questionIds, answers);
+  if (maxScore === null) return `${label} (—)`;
+  return `${label} (${maxScore})`;
+}
 
-  if (ageYears !== null && ageYears < 10) {
-    questionIds.push("adir-64");
-  }
+function resolveA2Questions(): string[] {
+  return [...A2_BASE_QUESTION_IDS, ...A2_MAX_QUESTION_IDS];
+}
 
-  if (ageYears !== null && ageYears >= 10) {
-    questionIds.push("adir-65");
-  }
+function resolveC3Questions(): string[] {
+  return [...C3_MAX_QUESTION_IDS];
+}
 
-  return questionIds;
+function computeA2Score(answers: Record<string, number>): number | null {
+  const baseTotal = sumAnsweredQuestions(A2_BASE_QUESTION_IDS, answers);
+  if (baseTotal === null) return null;
+
+  const maxQuestionScore = computeMaxAmongQuestions(A2_MAX_QUESTION_IDS, answers);
+  if (maxQuestionScore === null) return null;
+
+  return baseTotal + maxQuestionScore;
+}
+
+function computeC3Score(answers: Record<string, number>): number | null {
+  return computeMaxAmongQuestions(C3_MAX_QUESTION_IDS, answers);
 }
 
 function resolveC2Questions(answers: Record<string, number>): string[] {
@@ -74,8 +95,16 @@ function resolveC2Questions(answers: Record<string, number>): string[] {
 const DOMAIN_QUESTION_RESOLVERS: Partial<
   Record<AdirScoreKey, DomainQuestionResolver>
 > = {
-  A2: resolveA2Questions,
+  A2: () => resolveA2Questions(),
   C2: (answers) => resolveC2Questions(answers),
+  C3: () => resolveC3Questions(),
+};
+
+const DOMAIN_SCORE_COMPUTERS: Partial<
+  Record<AdirScoreKey, (answers: Record<string, number>) => number | null>
+> = {
+  A2: computeA2Score,
+  C3: computeC3Score,
 };
 
 export function formatAdirQuestionNumber(questionId: string): string {
@@ -101,9 +130,26 @@ export function formatAdirScoreKeyLabel(key: AdirScoreKey): string {
 }
 
 export function formatAdirQuestionBreakdown(
+  scoreKey: AdirScoreKey,
   questionIds: string[],
   answers: Record<string, number>,
 ): string {
+  if (scoreKey === "A2") {
+    const baseBreakdown = A2_BASE_QUESTION_IDS.map((questionId) => {
+      const value = answers[questionId];
+      if (value === undefined) {
+        return `${formatAdirQuestionNumber(questionId)} (—)`;
+      }
+      return `${formatAdirQuestionNumber(questionId)} (${capScoreForSum(value)})`;
+    }).join(" + ");
+
+    return `${baseBreakdown} + ${formatMaxAmongQuestionsBreakdown("64/65", A2_MAX_QUESTION_IDS, answers)}`;
+  }
+
+  if (scoreKey === "C3") {
+    return formatMaxAmongQuestionsBreakdown("77/78", C3_MAX_QUESTION_IDS, answers);
+  }
+
   if (questionIds.length === 0) return "";
 
   return questionIds
@@ -141,6 +187,12 @@ export function computeAdirDomainScores(
   const scores = {} as AdirScores;
 
   for (const key of ADIR_SCORE_KEYS) {
+    const computer = DOMAIN_SCORE_COMPUTERS[key];
+    if (computer) {
+      scores[key] = computer(answers);
+      continue;
+    }
+
     const questionIds = resolveAdirDomainQuestionIds(key, answers, context);
     scores[key] = sumAnsweredQuestions(questionIds, answers);
   }

@@ -543,6 +543,19 @@
       "2": "Raramente responde a las aproximaciones de otros niños.",
       "3": "No responde a las aproximaciones de otros niños y evita su aproximación."
     }
+  },{
+    "id": "adir-64",
+    "test": "ADIR",
+    "sectionNumber": 4,
+    "section": "DESARROLLO SOCIAL Y JUEGO",
+    "code": "64",
+    "question": "Juego en grupo con sus iguales",
+    "answers": {
+      "0": "Busca activamente y juega cooperativamente en diferentes grupos en una variedad de actividades y situaciones.",
+      "1": "Alguna clase de juego cooperativo en grupo.",
+      "2": "Disfruta de juegos activos paralelos pero rara vez busca y juega cooperativamente en grupos.",
+      "3": "No busca y juega cooperativamente."
+    }
   },
   {
     "id": "adir-65",
@@ -694,6 +707,20 @@
       "1": "Manierismos ocasionales.",
       "2": "Con manierismos.",
       "3": "Manierismos frecuentes y con deterioro social."
+    }
+  },
+  {
+    "id": "adir-78",
+    "test": "ADIR",
+    "sectionNumber": 5,
+    "section": "INTERESES Y COMPORTAMIENTOS",
+    "code": "78",
+    "question": "Otros manierismos complejos o movimientos estereotipados del cuerpo",
+    "answers": {
+      "0": "Sin otros manierismos complejos o movimientos estereotipados del cuerpo.",
+      "1": "Otros manierismos complejos o movimientos estereotipados del cuerpo ocasionales.",
+      "2": "Claros y frecuentes manierismos complejos o movimientos estereotipados del cuerpo.",
+      "3": "Marcados manierismos asociados con deterioro social."
     }
   },
   {
