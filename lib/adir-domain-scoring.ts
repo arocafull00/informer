@@ -30,7 +30,7 @@ const STATIC_DOMAIN_QUESTIONS: Partial<Record<AdirScoreKey, string[]>> = {
 
 const A2_BASE_QUESTION_IDS = ["adir-49", "adir-62", "adir-63"];
 const A2_MAX_QUESTION_IDS = ["adir-64", "adir-65"];
-const C3_MAX_QUESTION_IDS = ["adir-77", "adir-78"];
+const C3_MAX_QUESTION_IDS = ["adir-77"];
 
 function computeMaxAmongQuestions(
   questionIds: string[],
@@ -147,7 +147,7 @@ export function formatAdirQuestionBreakdown(
   }
 
   if (scoreKey === "C3") {
-    return formatMaxAmongQuestionsBreakdown("77/78", C3_MAX_QUESTION_IDS, answers);
+    return formatMaxAmongQuestionsBreakdown("77", C3_MAX_QUESTION_IDS, answers);
   }
 
   if (questionIds.length === 0) return "";

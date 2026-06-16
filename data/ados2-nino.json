@@ -77,8 +77,8 @@
     "answers": {
       "0": "Le pregunta al examinador sobre sus pensamientos, sentimientos o experiencias",
       "1": "Ocasionalmente le pregunta al examinador sobre sus pensamientos, sentimientos o experiencias",
-      "2": "Responde adecuadamente a los comentarios de la persona que examina, pero no hace preguntas sobre ello de manera espontánea.",
-      "3": "Rara vez o nuncahace preguntas sobre sus pensamientos, sentimientos o experiencias."
+      "2": "Responde adecuadamente a los comentarios de la persona que examina, pero no hace preguntas de manera espontánea.",
+      "3": "Rara vez o nunca hace preguntas."
     }
   },
   {
