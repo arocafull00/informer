@@ -6,9 +6,14 @@ import { ScoreSelector } from "./score-selector";
 interface QuestionCardProps {
   question: Question;
   displayCode?: string;
+  showAnswerLabels?: boolean;
 }
 
-export function QuestionCard({ question, displayCode }: QuestionCardProps) {
+export function QuestionCard({
+  question,
+  displayCode,
+  showAnswerLabels = false,
+}: QuestionCardProps) {
   return (
     <div className="card-interactive rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-level-1">
       <div className="flex gap-3">
@@ -21,7 +26,11 @@ export function QuestionCard({ question, displayCode }: QuestionCardProps) {
           <h3 className="mb-1 text-body-lg font-semibold text-on-surface">
             {question.question}
           </h3>
-          <ScoreSelector questionId={question.id} options={question.answers} />
+          <ScoreSelector
+            questionId={question.id}
+            options={question.answers}
+            showLabels={showAnswerLabels}
+          />
         </div>
       </div>
     </div>

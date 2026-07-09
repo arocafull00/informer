@@ -101,6 +101,7 @@ export function QuestionList() {
                       ? ados2ItemLabel(sectionNumber, question.code)
                       : undefined
                   }
+                  showAnswerLabels={isAdos2}
                 />
               ))}
             </div>

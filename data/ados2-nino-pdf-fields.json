@@ -1,0 +1,134 @@
+{
+  "pageSize": {
+    "width": 595,
+    "height": 842
+  },
+  "fields": {
+    "scores.A-4": {
+      "type": "point",
+      "x": 504,
+      "y": 590,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.A-8": {
+      "type": "point",
+      "x": 504,
+      "y": 569,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.A-9": {
+      "type": "point",
+      "x": 504,
+      "y": 550,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.A-10": {
+      "type": "point",
+      "x": 504,
+      "y": 518,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.communication": {
+      "type": "point",
+      "x": 504,
+      "y": 502,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-1": {
+      "type": "point",
+      "x": 504,
+      "y": 484,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-2": {
+      "type": "point",
+      "x": 504,
+      "y": 466,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-6": {
+      "type": "point",
+      "x": 504,
+      "y": 448,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-8": {
+      "type": "point",
+      "x": 504,
+      "y": 428,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-9": {
+      "type": "point",
+      "x": 504,
+      "y": 409,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-11": {
+      "type": "point",
+      "x": 504,
+      "y": 394,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-12": {
+      "type": "point",
+      "x": 504,
+      "y": 334,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.isr": {
+      "type": "point",
+      "x": 504,
+      "y": 317,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.cPlusIsr": {
+      "type": "point",
+      "x": 504,
+      "y": 301,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.C-1": {
+      "type": "point",
+      "x": 504,
+      "y": 284,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.D-1": {
+      "type": "point",
+      "x": 504,
+      "y": 267,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.rbs": {
+      "type": "point",
+      "x": 504,
+      "y": 245,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "clasificacion": {
+      "type": "point",
+      "x": 162,
+      "y": 138,
+      "fontSize": 10,
+      "align": "left"
+    }
+  }
+}

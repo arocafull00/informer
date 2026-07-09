@@ -21,6 +21,18 @@ const templates = [
     width: 496,
     height: 710,
   },
+  {
+    input: path.join(root, "data", "ADOS2-niño.pdf"),
+    output: path.join(outDir, "ados2-nino.png"),
+    width: 595,
+    height: 842,
+  },
+  {
+    input: path.join(root, "data", "ADOS2-adulto.pdf"),
+    output: path.join(outDir, "ados2-adulto.png"),
+    width: 595,
+    height: 842,
+  },
 ];
 
 async function renderTemplate(template) {

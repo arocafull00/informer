@@ -41,7 +41,6 @@ export function TopbarNav() {
   const [riasResultsDialogOpen, setRiasResultsDialogOpen] = useState(false);
 
   const isAdos2 = isAdos2Test(currentTest);
-  const isAdir = currentTest === "ADIR";
 
   const scoreSummary = useMemo(() => {
     if (!isAdos2) return null;
@@ -145,6 +144,7 @@ export function TopbarNav() {
       {scoreSummary && (
         <Ados2ScoreSummaryDialog
           open={scoreDialogOpen}
+          test={currentTest}
           testLabel={testLabels[currentTest]}
           summary={scoreSummary}
           onClose={() => setScoreDialogOpen(false)}
