@@ -146,8 +146,8 @@
     },
     "clasificacion": {
       "type": "point",
-      "x": 193,
-      "y": 122,
+      "x": 170,
+      "y": 117,
       "fontSize": 10,
       "align": "left"
     }

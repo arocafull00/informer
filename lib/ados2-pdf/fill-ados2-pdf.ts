@@ -158,12 +158,14 @@ export async function fillAdos2Pdf(form: Ados2PdfForm): Promise<Uint8Array> {
   const pdfDoc = await PDFDocument.load(templateBytes);
   const page = pdfDoc.getPages()[0];
   const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   const values = buildFieldValues(form);
 
   for (const [fieldKey, field] of Object.entries(fieldMap.fields)) {
     const value = values[fieldKey];
     if (!value) continue;
-    drawFieldValue(page, field, value, font);
+    const fieldFont = fieldKey === "clasificacion" ? boldFont : font;
+    drawFieldValue(page, field, value, fieldFont);
   }
 
   return pdfDoc.save();
