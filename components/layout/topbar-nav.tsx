@@ -130,7 +130,7 @@ export function TopbarNav() {
           onClick={handleScoreClick}
           className={actionButtonClassName}
         >
-          Puntuación ADOS-2
+          Generar ADOS-2
         </button>
       </div>
       <AdirGenerateResultsDialog
