@@ -3,14 +3,16 @@ import { Ados2ScoreRow } from "./ados2-score-row";
 
 type Ados2ScoreDomainBlockProps = {
   domain: Ados2ScoreDomainResult;
-  showCPlusIsr?: boolean;
-  cPlusIsr?: number | null;
+  showGrandTotal?: boolean;
+  grandTotal?: number | null;
+  grandTotalLabel?: string;
 };
 
 export function Ados2ScoreDomainBlock({
   domain,
-  showCPlusIsr = false,
-  cPlusIsr = null,
+  showGrandTotal = false,
+  grandTotal = null,
+  grandTotalLabel = "PUNTUACIÓN TOTAL C+ISR",
 }: Ados2ScoreDomainBlockProps) {
   return (
     <section className="space-y-3 rounded-lg border border-primary/15 bg-slate-50 p-4">
@@ -28,10 +30,10 @@ export function Ados2ScoreDomainBlock({
           variant="total"
         />
       )}
-      {showCPlusIsr && (
+      {showGrandTotal && (
         <Ados2ScoreRow
-          label="PUNTUACIÓN TOTAL C+ISR"
-          score={cPlusIsr}
+          label={grandTotalLabel}
+          score={grandTotal}
           variant="grandTotal"
         />
       )}

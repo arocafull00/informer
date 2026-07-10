@@ -72,7 +72,7 @@ export function Ados2ScoreSummaryDialog({
           <p className="text-sm font-medium text-slate-500">{testLabel}</p>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto bg-slate-50/50 p-6">
-          <Ados2ScoreSummaryView summary={summary} />
+          <Ados2ScoreSummaryView test={test} summary={summary} />
         </div>
         <div className="flex shrink-0 flex-col items-center gap-3 border-t border-slate-200 bg-white px-6 py-4">
           {downloadError ? (

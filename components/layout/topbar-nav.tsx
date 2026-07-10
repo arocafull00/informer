@@ -143,6 +143,7 @@ export function TopbarNav() {
       />
       {scoreSummary && (
         <Ados2ScoreSummaryDialog
+          key={currentTest}
           open={scoreDialogOpen}
           test={currentTest}
           testLabel={testLabels[currentTest]}

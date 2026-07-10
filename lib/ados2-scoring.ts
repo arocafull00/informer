@@ -1,159 +1,108 @@
 import { capScoreForSum } from "@/lib/score-sum-cap";
 import type { Question, TestType } from "@/lib/types";
 
-type Ados2ScoringTest = "ADOS2_ADULTO" | "ADOS2_NINO";
-
 type ItemRef = {
   sectionNumber: number;
   code: string;
 };
 
-type ScoringItemDef = {
+type NinoGroupId = "as" | "crr";
+
+type NinoScoringItemDef = {
   itemCode: string;
-  groupId: "communication" | "isr" | "imagination" | "rbs";
-  refs: Record<Ados2ScoringTest, ItemRef>;
+  groupId: NinoGroupId;
+  ref: ItemRef;
 };
 
-const ADOS2_SCORING_ITEMS: ScoringItemDef[] = [
+type AdultGroupId = "communication" | "isr" | "imagination" | "rbs";
+
+type AdultScoringItemDef = {
+  itemCode: string;
+  groupId: AdultGroupId;
+  ref: ItemRef;
+};
+
+const ADOS2_NINO_SCORING_ITEMS: NinoScoringItemDef[] = [
+  { itemCode: "A-7", groupId: "as", ref: { sectionNumber: 1, code: "7" } },
+  { itemCode: "A-8", groupId: "as", ref: { sectionNumber: 1, code: "8" } },
+  { itemCode: "A-9", groupId: "as", ref: { sectionNumber: 1, code: "9" } },
+  { itemCode: "B-1", groupId: "as", ref: { sectionNumber: 2, code: "1" } },
+  { itemCode: "B-2", groupId: "as", ref: { sectionNumber: 2, code: "2" } },
+  { itemCode: "B-4", groupId: "as", ref: { sectionNumber: 2, code: "4" } },
+  { itemCode: "B-7", groupId: "as", ref: { sectionNumber: 2, code: "7" } },
+  { itemCode: "B-9", groupId: "as", ref: { sectionNumber: 2, code: "9" } },
+  { itemCode: "B-10", groupId: "as", ref: { sectionNumber: 2, code: "10" } },
+  { itemCode: "B-11", groupId: "as", ref: { sectionNumber: 2, code: "11" } },
+  { itemCode: "A-4", groupId: "crr", ref: { sectionNumber: 1, code: "4" } },
+  { itemCode: "D-1", groupId: "crr", ref: { sectionNumber: 4, code: "1" } },
+  { itemCode: "D-2", groupId: "crr", ref: { sectionNumber: 4, code: "2" } },
+  { itemCode: "D-4", groupId: "crr", ref: { sectionNumber: 4, code: "4" } },
+];
+
+const ADOS2_ADULTO_SCORING_ITEMS: AdultScoringItemDef[] = [
   {
     itemCode: "A-4",
     groupId: "communication",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 1, code: "4" },
-      ADOS2_NINO: { sectionNumber: 1, code: "4" },
-    },
+    ref: { sectionNumber: 1, code: "4" },
   },
   {
     itemCode: "A-8",
     groupId: "communication",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 1, code: "8" },
-      ADOS2_NINO: { sectionNumber: 1, code: "8" },
-    },
+    ref: { sectionNumber: 1, code: "8" },
   },
   {
     itemCode: "A-9",
     groupId: "communication",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 1, code: "9" },
-      ADOS2_NINO: { sectionNumber: 1, code: "9" },
-    },
+    ref: { sectionNumber: 1, code: "9" },
   },
   {
     itemCode: "A-10",
     groupId: "communication",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 1, code: "10" },
-      ADOS2_NINO: { sectionNumber: 1, code: "10" },
-    },
+    ref: { sectionNumber: 1, code: "10" },
   },
-  {
-    itemCode: "B-1",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "1" },
-      ADOS2_NINO: { sectionNumber: 2, code: "1" },
-    },
-  },
-  {
-    itemCode: "B-2",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "2" },
-      ADOS2_NINO: { sectionNumber: 2, code: "2" },
-    },
-  },
-  {
-    itemCode: "B-6",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "6" },
-      ADOS2_NINO: { sectionNumber: 2, code: "5" },
-    },
-  },
-  {
-    itemCode: "B-8",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "8" },
-      ADOS2_NINO: { sectionNumber: 2, code: "6" },
-    },
-  },
-  {
-    itemCode: "B-9",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "9" },
-      ADOS2_NINO: { sectionNumber: 2, code: "7" },
-    },
-  },
-  {
-    itemCode: "B-11",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "11" },
-      ADOS2_NINO: { sectionNumber: 2, code: "9" },
-    },
-  },
-  {
-    itemCode: "B-12",
-    groupId: "isr",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 2, code: "12" },
-      ADOS2_NINO: { sectionNumber: 2, code: "10" },
-    },
-  },
+  { itemCode: "B-1", groupId: "isr", ref: { sectionNumber: 2, code: "1" } },
+  { itemCode: "B-2", groupId: "isr", ref: { sectionNumber: 2, code: "2" } },
+  { itemCode: "B-6", groupId: "isr", ref: { sectionNumber: 2, code: "6" } },
+  { itemCode: "B-8", groupId: "isr", ref: { sectionNumber: 2, code: "8" } },
+  { itemCode: "B-9", groupId: "isr", ref: { sectionNumber: 2, code: "9" } },
+  { itemCode: "B-11", groupId: "isr", ref: { sectionNumber: 2, code: "11" } },
+  { itemCode: "B-12", groupId: "isr", ref: { sectionNumber: 2, code: "12" } },
   {
     itemCode: "C-1",
     groupId: "imagination",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 3, code: "1" },
-      ADOS2_NINO: { sectionNumber: 3, code: "1" },
-    },
+    ref: { sectionNumber: 3, code: "1" },
   },
-  {
-    itemCode: "D-1",
-    groupId: "rbs",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 4, code: "1" },
-      ADOS2_NINO: { sectionNumber: 4, code: "1" },
-    },
-  },
-  {
-    itemCode: "D-2",
-    groupId: "rbs",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 4, code: "2" },
-      ADOS2_NINO: { sectionNumber: 4, code: "2" },
-    },
-  },
-  {
-    itemCode: "D-4",
-    groupId: "rbs",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 4, code: "4" },
-      ADOS2_NINO: { sectionNumber: 4, code: "4" },
-    },
-  },
-  {
-    itemCode: "D-5",
-    groupId: "rbs",
-    refs: {
-      ADOS2_ADULTO: { sectionNumber: 4, code: "5" },
-      ADOS2_NINO: { sectionNumber: 4, code: "5" },
-    },
-  },
+  { itemCode: "D-1", groupId: "rbs", ref: { sectionNumber: 4, code: "1" } },
+  { itemCode: "D-2", groupId: "rbs", ref: { sectionNumber: 4, code: "2" } },
+  { itemCode: "D-4", groupId: "rbs", ref: { sectionNumber: 4, code: "4" } },
+  { itemCode: "D-5", groupId: "rbs", ref: { sectionNumber: 4, code: "5" } },
 ];
 
-const GROUP_ORDER = [
+const NINO_GROUP_ORDER: NinoGroupId[] = ["as", "crr"];
+
+const ADULT_GROUP_ORDER: AdultGroupId[] = [
   "communication",
   "isr",
   "imagination",
   "rbs",
-] as const;
+];
 
-const GROUP_META: Record<
-  (typeof GROUP_ORDER)[number],
+const NINO_GROUP_META: Record<
+  NinoGroupId,
+  { totalLabel: string; variant: "warm" | "neutral" }
+> = {
+  as: {
+    totalLabel: "TOTAL AS",
+    variant: "warm",
+  },
+  crr: {
+    totalLabel: "TOTAL CRR",
+    variant: "neutral",
+  },
+};
+
+const ADULT_GROUP_META: Record<
+  AdultGroupId,
   { totalLabel?: string; variant: "warm" | "neutral" }
 > = {
   communication: {
@@ -191,6 +140,8 @@ export type Ados2ScoreSummary = {
   domains: Ados2ScoreDomainResult[];
   communicationTotal: number | null;
   isrTotal: number | null;
+  asTotal: number | null;
+  crrTotal: number | null;
   cPlusIsr: number | null;
 };
 
@@ -211,41 +162,82 @@ function sumAnsweredScores(rows: Ados2ScoreRow[]): number | null {
 }
 
 function buildRow(
-  def: ScoringItemDef,
-  test: Ados2ScoringTest,
+  itemCode: string,
+  ref: ItemRef,
   questions: Question[],
-  answers: Record<string, number>
+  answers: Record<string, number>,
 ): Ados2ScoreRow {
-  const ref = def.refs[test];
   const question = findQuestion(questions, ref.sectionNumber, ref.code);
   if (!question) {
-    return { itemCode: def.itemCode, score: null };
+    return { itemCode, score: null };
   }
   const score = answers[question.id];
   return {
-    itemCode: def.itemCode,
+    itemCode,
     score: score !== undefined ? score : null,
   };
 }
 
-export function buildAdos2ScoreSummary(
-  test: TestType,
+function buildNinoScoreSummary(
   questions: Question[],
-  answers: Record<string, number>
-): Ados2ScoreSummary | null {
-  if (test !== "ADOS2_ADULTO" && test !== "ADOS2_NINO") return null;
-
-  const domains: Ados2ScoreDomainResult[] = GROUP_ORDER.map((groupId) => {
-    const items = ADOS2_SCORING_ITEMS.filter((item) => item.groupId === groupId);
-    const rows = items.map((def) => buildRow(def, test, questions, answers));
-    const meta = GROUP_META[groupId];
-    const total = meta.totalLabel ? sumAnsweredScores(rows) : null;
+  answers: Record<string, number>,
+): Ados2ScoreSummary {
+  const domains: Ados2ScoreDomainResult[] = NINO_GROUP_ORDER.map((groupId) => {
+    const items = ADOS2_NINO_SCORING_ITEMS.filter(
+      (item) => item.groupId === groupId,
+    );
+    const rows = items.map((def) =>
+      buildRow(def.itemCode, def.ref, questions, answers),
+    );
+    const meta = NINO_GROUP_META[groupId];
 
     return {
       id: groupId,
       variant: meta.variant,
       rows,
-      total,
+      total: sumAnsweredScores(rows),
+      totalLabel: meta.totalLabel,
+    };
+  });
+
+  const as = domains.find((d) => d.id === "as");
+  const crr = domains.find((d) => d.id === "crr");
+  const asTotal = as?.total ?? null;
+  const crrTotal = crr?.total ?? null;
+
+  let cPlusIsr: number | null = null;
+  if (asTotal !== null || crrTotal !== null) {
+    cPlusIsr = (asTotal ?? 0) + (crrTotal ?? 0);
+  }
+
+  return {
+    domains,
+    communicationTotal: null,
+    isrTotal: null,
+    asTotal,
+    crrTotal,
+    cPlusIsr,
+  };
+}
+
+function buildAdultScoreSummary(
+  questions: Question[],
+  answers: Record<string, number>,
+): Ados2ScoreSummary {
+  const domains: Ados2ScoreDomainResult[] = ADULT_GROUP_ORDER.map((groupId) => {
+    const items = ADOS2_ADULTO_SCORING_ITEMS.filter(
+      (item) => item.groupId === groupId,
+    );
+    const rows = items.map((def) =>
+      buildRow(def.itemCode, def.ref, questions, answers),
+    );
+    const meta = ADULT_GROUP_META[groupId];
+
+    return {
+      id: groupId,
+      variant: meta.variant,
+      rows,
+      total: meta.totalLabel ? sumAnsweredScores(rows) : null,
       totalLabel: meta.totalLabel,
     };
   });
@@ -264,6 +256,22 @@ export function buildAdos2ScoreSummary(
     domains,
     communicationTotal,
     isrTotal,
+    asTotal: null,
+    crrTotal: null,
     cPlusIsr,
   };
+}
+
+export function buildAdos2ScoreSummary(
+  test: TestType,
+  questions: Question[],
+  answers: Record<string, number>,
+): Ados2ScoreSummary | null {
+  if (test !== "ADOS2_ADULTO" && test !== "ADOS2_NINO") return null;
+
+  if (test === "ADOS2_NINO") {
+    return buildNinoScoreSummary(questions, answers);
+  }
+
+  return buildAdultScoreSummary(questions, answers);
 }

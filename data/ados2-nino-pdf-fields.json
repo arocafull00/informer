@@ -4,129 +4,129 @@
     "height": 842
   },
   "fields": {
-    "scores.A-4": {
+    "scores.A-7": {
       "type": "point",
-      "x": 504,
+      "x": 522,
       "y": 590,
       "fontSize": 10,
       "align": "center"
     },
     "scores.A-8": {
       "type": "point",
-      "x": 504,
-      "y": 569,
+      "x": 522,
+      "y": 568,
       "fontSize": 10,
       "align": "center"
     },
     "scores.A-9": {
       "type": "point",
-      "x": 504,
-      "y": 550,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "scores.A-10": {
-      "type": "point",
-      "x": 504,
-      "y": 518,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "totals.communication": {
-      "type": "point",
-      "x": 504,
-      "y": 502,
+      "x": 522,
+      "y": 545,
       "fontSize": 10,
       "align": "center"
     },
     "scores.B-1": {
       "type": "point",
-      "x": 504,
-      "y": 484,
+      "x": 522,
+      "y": 500,
       "fontSize": 10,
       "align": "center"
     },
     "scores.B-2": {
       "type": "point",
-      "x": 504,
-      "y": 466,
+      "x": 522,
+      "y": 480,
       "fontSize": 10,
       "align": "center"
     },
-    "scores.B-6": {
+    "scores.B-4": {
       "type": "point",
-      "x": 504,
-      "y": 448,
+      "x": 522,
+      "y": 456,
       "fontSize": 10,
       "align": "center"
     },
-    "scores.B-8": {
+    "scores.B-7": {
       "type": "point",
-      "x": 504,
-      "y": 428,
+      "x": 522,
+      "y": 437,
       "fontSize": 10,
       "align": "center"
     },
     "scores.B-9": {
       "type": "point",
-      "x": 504,
-      "y": 409,
+      "x": 522,
+      "y": 417,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.B-10": {
+      "type": "point",
+      "x": 522,
+      "y": 395,
       "fontSize": 10,
       "align": "center"
     },
     "scores.B-11": {
       "type": "point",
-      "x": 504,
-      "y": 394,
+      "x": 522,
+      "y": 373,
       "fontSize": 10,
       "align": "center"
     },
-    "scores.B-12": {
+    "totals.as": {
       "type": "point",
-      "x": 504,
-      "y": 334,
+      "x": 522,
+      "y": 345,
       "fontSize": 10,
       "align": "center"
     },
-    "totals.isr": {
+    "scores.A-4": {
       "type": "point",
-      "x": 504,
-      "y": 317,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "totals.cPlusIsr": {
-      "type": "point",
-      "x": 504,
-      "y": 301,
-      "fontSize": 10,
-      "align": "center"
-    },
-    "scores.C-1": {
-      "type": "point",
-      "x": 504,
-      "y": 284,
+      "x": 522,
+      "y": 283,
       "fontSize": 10,
       "align": "center"
     },
     "scores.D-1": {
       "type": "point",
-      "x": 504,
-      "y": 267,
+      "x": 522,
+      "y": 263,
       "fontSize": 10,
       "align": "center"
     },
-    "totals.rbs": {
+    "scores.D-2": {
       "type": "point",
-      "x": 504,
-      "y": 245,
+      "x": 522,
+      "y": 246,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "scores.D-4": {
+      "type": "point",
+      "x": 522,
+      "y": 224,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.crr": {
+      "type": "point",
+      "x": 522,
+      "y": 200,
+      "fontSize": 10,
+      "align": "center"
+    },
+    "totals.asPlusCrr": {
+      "type": "point",
+      "x": 522,
+      "y": 175,
       "fontSize": 10,
       "align": "center"
     },
     "clasificacion": {
       "type": "point",
-      "x": 162,
-      "y": 138,
+      "x": 197,
+      "y": 125,
       "fontSize": 10,
       "align": "left"
     }

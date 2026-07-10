@@ -118,6 +118,17 @@ function buildFieldValues(form: Ados2PdfForm): Record<string, string> {
     }
 
     if (domain.total === null) continue;
+
+    if (form.test === "ADOS2_NINO") {
+      if (domain.id === "as") {
+        values["totals.as"] = String(domain.total);
+      }
+      if (domain.id === "crr") {
+        values["totals.crr"] = String(domain.total);
+      }
+      continue;
+    }
+
     if (domain.id === "communication") {
       values["totals.communication"] = String(domain.total);
     }
@@ -130,7 +141,11 @@ function buildFieldValues(form: Ados2PdfForm): Record<string, string> {
   }
 
   if (summary.cPlusIsr !== null) {
-    values["totals.cPlusIsr"] = String(summary.cPlusIsr);
+    if (form.test === "ADOS2_NINO") {
+      values["totals.asPlusCrr"] = String(summary.cPlusIsr);
+    } else {
+      values["totals.cPlusIsr"] = String(summary.cPlusIsr);
+    }
     values["clasificacion"] = getClassification(form.test, summary.cPlusIsr);
   }
 
