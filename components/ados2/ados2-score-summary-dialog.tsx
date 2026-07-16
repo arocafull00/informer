@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { downloadAdos2Pdf } from "@/lib/ados2-pdf/download-ados2-pdf";
+import { EMPTY_ADOS2_SUBJECT, type Ados2Subject } from "@/lib/ados2-pdf/types";
 import type { Ados2ScoreSummary } from "@/lib/ados2-scoring";
 import type { TestType } from "@/lib/types";
 import { Ados2ScoreSummaryView } from "./ados2-score-summary";
+import { Ados2SubjectFields } from "./ados2-subject-fields";
 
 type Ados2ScoreSummaryDialogProps = {
   open: boolean;
@@ -21,8 +23,14 @@ export function Ados2ScoreSummaryDialog({
   summary,
   onClose,
 }: Ados2ScoreSummaryDialogProps) {
+  const [subject, setSubject] = useState<Ados2Subject>(EMPTY_ADOS2_SUBJECT);
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    setSubject(EMPTY_ADOS2_SUBJECT);
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -39,7 +47,7 @@ export function Ados2ScoreSummaryDialog({
     setIsDownloading(true);
     setDownloadError(null);
     try {
-      await downloadAdos2Pdf(test, summary);
+      await downloadAdos2Pdf(test, summary, subject);
     } catch (error) {
       setDownloadError(
         error instanceof Error ? error.message : "No se pudo generar el PDF",
@@ -72,6 +80,7 @@ export function Ados2ScoreSummaryDialog({
           <p className="text-sm font-medium text-slate-500">{testLabel}</p>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto bg-slate-50/50 p-6">
+          <Ados2SubjectFields subject={subject} onChange={setSubject} />
           <Ados2ScoreSummaryView test={test} summary={summary} />
         </div>
         <div className="flex shrink-0 flex-col items-center gap-3 border-t border-slate-200 bg-white px-6 py-4">

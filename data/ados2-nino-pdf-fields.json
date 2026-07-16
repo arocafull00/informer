@@ -4,6 +4,27 @@
     "height": 842
   },
   "fields": {
+    "subject.identification": {
+      "type": "text",
+      "x": 118,
+      "y": 724,
+      "width": 265,
+      "height": 14,
+      "fontSize": 10,
+      "align": "left"
+    },
+    "subject.sex.varon": {
+      "type": "check",
+      "x": 523,
+      "y": 730,
+      "radius": 5
+    },
+    "subject.sex.mujer": {
+      "type": "check",
+      "x": 564,
+      "y": 730,
+      "radius": 5
+    },
     "scores.A-7": {
       "type": "point",
       "x": 522,

@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     return new Response("Invalid JSON body", { status: 400 });
   }
 
-  if (!isAdos2PdfTest(form.test) || !form.summary) {
+  if (!isAdos2PdfTest(form.test) || !form.summary || !form.subject) {
     return new Response("Invalid ADOS-2 PDF form", { status: 400 });
   }
 

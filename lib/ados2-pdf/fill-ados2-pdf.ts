@@ -3,7 +3,7 @@ import path from "node:path";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { capScoreForSum } from "@/lib/score-sum-cap";
 import type {
-  Ados2PdfField,
+  Ados2PdfCheckField,
   Ados2PdfFieldMap,
   Ados2PdfForm,
   Ados2PdfPointField,
@@ -81,9 +81,31 @@ function drawTextAtPoint(
   });
 }
 
+function drawCheckInField(
+  page: ReturnType<PDFDocument["getPages"]>[number],
+  field: Ados2PdfCheckField,
+) {
+  const { x, y, radius } = field;
+  const size = radius * 2.6;
+
+  page.drawLine({
+    start: { x: x - size * 0.35, y: y + size * 0.05 },
+    end: { x: x - size * 0.05, y: y - size * 0.25 },
+    thickness: 1.4,
+    color: rgb(0, 0, 0),
+  });
+
+  page.drawLine({
+    start: { x: x - size * 0.05, y: y - size * 0.25 },
+    end: { x: x + size * 0.4, y: y + size * 0.35 },
+    thickness: 1.4,
+    color: rgb(0, 0, 0),
+  });
+}
+
 function drawFieldValue(
   page: ReturnType<PDFDocument["getPages"]>[number],
-  field: Ados2PdfField,
+  field: Ados2PdfTextField | Ados2PdfPointField,
   text: string,
   font: Awaited<ReturnType<PDFDocument["embedFont"]>>,
 ) {
@@ -109,7 +131,19 @@ function getClassification(test: Ados2PdfTest, total: number): string {
 
 function buildFieldValues(form: Ados2PdfForm): Record<string, string> {
   const values: Record<string, string> = {};
-  const { summary } = form;
+  const { summary, subject } = form;
+
+  if (subject.identification.trim()) {
+    values["subject.identification"] = subject.identification.trim();
+  }
+
+  if (subject.sex === "varon") {
+    values["subject.sex.varon"] = "1";
+  }
+
+  if (subject.sex === "mujer") {
+    values["subject.sex.mujer"] = "1";
+  }
 
   for (const domain of summary.domains) {
     for (const row of domain.rows) {
@@ -162,6 +196,12 @@ export async function fillAdos2Pdf(form: Ados2PdfForm): Promise<Uint8Array> {
   const values = buildFieldValues(form);
 
   for (const [fieldKey, field] of Object.entries(fieldMap.fields)) {
+    if (field.type === "check") {
+      if (!values[fieldKey]) continue;
+      drawCheckInField(page, field);
+      continue;
+    }
+
     const value = values[fieldKey];
     if (!value) continue;
     const fieldFont = fieldKey === "clasificacion" ? boldFont : font;
