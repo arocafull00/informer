@@ -5,6 +5,7 @@ export function isFemalePatientSex(sex: string): boolean {
 const FEMININE_REPLACEMENTS: [string, string][] = [
   ["al evaluado", "a la evaluada"],
   ["el evaluado", "la evaluada"],
+  ["entenderlo", "entenderla"],
   ["enfadado", "enfadada"],
   ["inquieto", "inquieta"],
   ["sentado", "sentada"],
