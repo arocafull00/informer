@@ -1,7 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import type { Ados2Subject, Ados2SubjectSex } from "@/lib/ados2-pdf/types";
-import { Ados2SubjectSexPicker } from "./ados2-subject-sex-picker";
+import type { Ados2Subject } from "@/lib/ados2-pdf/types";
 
 type Ados2SubjectFieldsProps = {
   subject: Ados2Subject;
@@ -24,13 +23,6 @@ export function Ados2SubjectFields({ subject, onChange }: Ados2SubjectFieldsProp
           value={subject.identification}
           onChange={(e) => update("identification", e.target.value)}
           className="h-9 border-outline-variant bg-surface-container-lowest text-body-md text-on-surface"
-        />
-      </div>
-      <div className="space-y-1.5">
-        <p className="text-body-md text-on-surface">Sexo</p>
-        <Ados2SubjectSexPicker
-          value={subject.sex}
-          onChange={(sex: Ados2SubjectSex) => update("sex", sex)}
         />
       </div>
     </div>

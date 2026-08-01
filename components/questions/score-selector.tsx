@@ -2,8 +2,10 @@
 
 import { useMemo } from "react";
 import { getAnswerScores } from "@/lib/get-answer-scores";
+import { applyGenderedPhrasing } from "@/lib/gendered-phrasing";
 import {
   selectCurrentAnswers,
+  selectCurrentPatientSex,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
 import { ScoreOptionButton } from "./score-option-button";
@@ -20,6 +22,7 @@ export function ScoreSelector({
   showLabels = false,
 }: ScoreSelectorProps) {
   const answers = useCurrentReportStore(selectCurrentAnswers);
+  const patientSex = useCurrentReportStore(selectCurrentPatientSex);
   const setAnswer = useCurrentReportStore((s) => s.setAnswer);
   const selected = answers[questionId];
   const scores = useMemo(() => getAnswerScores(options), [options]);
@@ -41,7 +44,7 @@ export function ScoreSelector({
         <ScoreOptionButton
           key={score}
           score={score}
-          label={options[String(score)]}
+          label={applyGenderedPhrasing(options[String(score)], patientSex)}
           isSelected={selected === score}
           variant={variant}
           onSelect={() => setAnswer(questionId, score)}

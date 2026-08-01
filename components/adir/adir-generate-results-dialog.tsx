@@ -25,7 +25,11 @@ import {
   isAdirWizardStepComplete,
 } from "@/lib/adir-scoring";
 import { useAdirResultsDraftStore } from "@/store/use-adir-results-draft-store";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentPatientSex,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
+import type { AdirSubjectSex } from "@/lib/adir-scoring";
 
 type AdirGenerateResultsDialogProps = {
   open: boolean;
@@ -55,10 +59,19 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
   );
   const resetDraft = useAdirResultsDraftStore((state) => state.reset);
   const adirAnswers = useCurrentReportStore((state) => state.answersByTest.ADIR);
+  const patientSex = useCurrentReportStore(selectCurrentPatientSex);
 
   const stepContentRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!patientSex) return;
+    setSubject({
+      ...useAdirResultsDraftStore.getState().form.subject,
+      sex: patientSex as AdirSubjectSex,
+    });
+  }, [patientSex, setSubject]);
 
   useEffect(() => {
     syncComputedScores(adirAnswers);

@@ -1,4 +1,5 @@
 import { ados2SectionHeading } from "@/lib/ados2-labels";
+import { applyGenderedPhrasing } from "@/lib/gendered-phrasing";
 import type { Question } from "@/lib/types";
 
 const REPORT_TITLE = "**RESUMEN DE LOS ÍTEMS CODIFICADOS**";
@@ -31,7 +32,8 @@ function groupBySection(questions: Question[]): SectionGroup[] {
 function collectAnswerLines(
   questionsInSection: Question[],
   answers: Record<string, number>,
-  bullet: string
+  bullet: string,
+  patientSex: string
 ): string[] {
   const lines: string[] = [];
 
@@ -40,7 +42,7 @@ function collectAnswerLines(
     if (score === undefined) return;
     const answerText = question.answers[score.toString()];
     if (!answerText) return;
-    lines.push(`${bullet} ${answerText}`);
+    lines.push(`${bullet} ${applyGenderedPhrasing(answerText, patientSex)}`);
   });
 
   return lines;
@@ -48,12 +50,13 @@ function collectAnswerLines(
 
 function generateAdirMarkdown(
   questions: Question[],
-  answers: Record<string, number>
+  answers: Record<string, number>,
+  patientSex: string
 ): string {
   const lines: string[] = [REPORT_TITLE, ""];
 
   groupBySection(questions).forEach(({ section, questions: inSection }) => {
-    const bullets = collectAnswerLines(inSection, answers, "*");
+    const bullets = collectAnswerLines(inSection, answers, "*", patientSex);
     if (bullets.length === 0) return;
 
     lines.push(section);
@@ -67,13 +70,14 @@ function generateAdirMarkdown(
 
 function generateAdos2Markdown(
   questions: Question[],
-  answers: Record<string, number>
+  answers: Record<string, number>,
+  patientSex: string
 ): string {
   const lines: string[] = [REPORT_TITLE, ""];
 
   groupBySection(questions).forEach(
     ({ sectionNumber, section, questions: inSection }) => {
-      const bullets = collectAnswerLines(inSection, answers, "-");
+      const bullets = collectAnswerLines(inSection, answers, "-", patientSex);
       if (bullets.length === 0) return;
 
       lines.push(`**${ados2SectionHeading(sectionNumber, section)}**`);
@@ -88,19 +92,20 @@ function generateAdos2Markdown(
 
 export function generateMarkdown(
   questions: Question[],
-  answers: Record<string, number>
+  answers: Record<string, number>,
+  patientSex = ""
 ): string {
   if (questions.length === 0) return "";
 
   const test = questions[0].test;
 
   if (test === "ADIR") {
-    return generateAdirMarkdown(questions, answers);
+    return generateAdirMarkdown(questions, answers, patientSex);
   }
 
   if (test === "ADOS2_ADULTO" || test === "ADOS2_NINO") {
-    return generateAdos2Markdown(questions, answers);
+    return generateAdos2Markdown(questions, answers, patientSex);
   }
 
-  return generateAdirMarkdown(questions, answers);
+  return generateAdirMarkdown(questions, answers, patientSex);
 }

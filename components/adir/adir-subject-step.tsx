@@ -1,7 +1,6 @@
-import { AdirSubjectSexPicker } from "./adir-subject-sex-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import type { AdirSubject, AdirSubjectSex } from "@/lib/adir-scoring";
+import type { AdirSubject } from "@/lib/adir-scoring";
 
 type AdirSubjectStepProps = {
   subject: AdirSubject;
@@ -47,13 +46,6 @@ export function AdirSubjectStep({ subject, onChange }: AdirSubjectStepProps) {
           value={subject.chronologicalAge}
           onChange={(e) => update("chronologicalAge", e.target.value)}
           className="h-9 border-outline-variant bg-surface-container-lowest text-body-md text-on-surface"
-        />
-      </div>
-      <div className="space-y-1.5">
-        <p className="text-body-md text-on-surface">Sexo</p>
-        <AdirSubjectSexPicker
-          value={subject.sex}
-          onChange={(sex: AdirSubjectSex) => update("sex", sex)}
         />
       </div>
     </div>

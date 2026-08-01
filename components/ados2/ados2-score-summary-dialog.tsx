@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { downloadAdos2Pdf } from "@/lib/ados2-pdf/download-ados2-pdf";
-import { EMPTY_ADOS2_SUBJECT, type Ados2Subject } from "@/lib/ados2-pdf/types";
+import { EMPTY_ADOS2_SUBJECT, type Ados2Subject, type Ados2SubjectSex } from "@/lib/ados2-pdf/types";
 import type { Ados2ScoreSummary } from "@/lib/ados2-scoring";
 import type { TestType } from "@/lib/types";
+import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { Ados2ScoreSummaryView } from "./ados2-score-summary";
 import { Ados2SubjectFields } from "./ados2-subject-fields";
 
@@ -29,8 +30,14 @@ export function Ados2ScoreSummaryDialog({
 
   useEffect(() => {
     if (!open) return;
-    setSubject(EMPTY_ADOS2_SUBJECT);
-  }, [open]);
+    const patientSex = useCurrentReportStore.getState().patientSexByTest[
+      test
+    ] as Ados2SubjectSex;
+    setSubject({
+      ...EMPTY_ADOS2_SUBJECT,
+      sex: patientSex ?? "",
+    });
+  }, [open, test]);
 
   useEffect(() => {
     if (!open) return;

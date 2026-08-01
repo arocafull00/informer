@@ -1,14 +1,30 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
 import { HistoryItem } from "@/components/history/history-item";
+import { NewReportDialog } from "@/components/reports/new-report-dialog";
+import { useSaveReport } from "@/lib/use-save-report";
+import { testLabels } from "@/lib/test-data";
 
 export function Sidebar() {
   const { reports, restoreReport, deleteReport, updateReportTitle } =
     useReportHistoryStore();
+  const currentTest = useCurrentReportStore((s) => s.currentTest);
   const reset = useCurrentReportStore((s) => s.reset);
   const setDraftTitle = useCurrentReportStore((s) => s.setDraftTitle);
+  const setPatientSex = useCurrentReportStore((s) => s.setPatientSex);
+  const { createNewReport } = useSaveReport();
+  const [newReportOpen, setNewReportOpen] = useState(false);
+
+  const suggestedTitle = useMemo(() => {
+    const date = new Date().toLocaleDateString("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+    });
+    return `${testLabels[currentTest]} · ${date}`;
+  }, [currentTest]);
 
   const handleRestore = (id: string) => {
     const report = reports.find((r) => r.id === id);
@@ -19,9 +35,17 @@ export function Sidebar() {
     );
     if (report?.title?.trim()) {
       setDraftTitle(report.title);
-      return;
+    } else {
+      setDraftTitle("");
     }
-    setDraftTitle("");
+    setPatientSex(report?.patientSex ?? "");
+  };
+
+  const handleNewReportConfirm = (title: string, patientSex: string) => {
+    reset();
+    setDraftTitle(title);
+    setPatientSex(patientSex);
+    createNewReport(title, patientSex);
   };
 
   return (
@@ -32,7 +56,7 @@ export function Sidebar() {
       </div>
       <button
         type="button"
-        onClick={() => reset()}
+        onClick={() => setNewReportOpen(true)}
         className="interactive-press mb-3 w-full rounded-lg bg-primary py-1.5 text-label-md text-on-primary hover:opacity-90"
       >
         Nuevo Informe
@@ -54,6 +78,13 @@ export function Sidebar() {
           ))
         )}
       </div>
+      <NewReportDialog
+        open={newReportOpen}
+        currentTest={currentTest}
+        suggestedTitle={suggestedTitle}
+        onClose={() => setNewReportOpen(false)}
+        onConfirm={handleNewReportConfirm}
+      />
     </aside>
   );
 }

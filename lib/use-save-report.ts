@@ -4,6 +4,7 @@ import { useMemo, useCallback } from "react";
 import {
   selectCurrentAnswers,
   selectCurrentDraftTitle,
+  selectCurrentPatientSex,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
@@ -14,13 +15,14 @@ export function useSaveReport() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
   const answers = useCurrentReportStore(selectCurrentAnswers);
   const draftTitle = useCurrentReportStore(selectCurrentDraftTitle);
+  const patientSex = useCurrentReportStore(selectCurrentPatientSex);
   const setDraftTitle = useCurrentReportStore((s) => s.setDraftTitle);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
   const markdown = useMemo(() => {
     const data = testData[currentTest];
-    return generateMarkdown(data, answers);
-  }, [currentTest, answers]);
+    return generateMarkdown(data, answers, patientSex);
+  }, [currentTest, answers, patientSex]);
 
   const hasAnswers = Object.keys(answers).length > 0;
 
@@ -46,6 +48,7 @@ export function useSaveReport() {
         answers: { ...answers },
         markdown,
         ...(trimmed ? { title: trimmed } : {}),
+        ...(patientSex ? { patientSex } : {}),
       });
     },
     [
@@ -55,6 +58,7 @@ export function useSaveReport() {
       currentTest,
       answers,
       markdown,
+      patientSex,
     ]
   );
 
@@ -66,9 +70,29 @@ export function useSaveReport() {
     return true;
   }, [hasAnswers, draftTitle, saveWithTitle]);
 
+  const createNewReport = useCallback(
+    (title: string, patientSex: string) => {
+      const trimmed = title.trim();
+      const data = testData[currentTest];
+      const emptyAnswers: Record<string, number> = {};
+
+      saveReport({
+        id: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
+        test: currentTest,
+        answers: emptyAnswers,
+        markdown: generateMarkdown(data, emptyAnswers, patientSex),
+        ...(trimmed ? { title: trimmed } : {}),
+        ...(patientSex ? { patientSex } : {}),
+      });
+    },
+    [currentTest, saveReport]
+  );
+
   return {
     trySave,
     saveWithTitle,
+    createNewReport,
     hasAnswers,
     markdown,
     suggestedTitle,

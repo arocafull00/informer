@@ -17,4 +17,5 @@ export type SavedReport = {
   answers: Record<string, number>;
   markdown: string;
   title?: string;
+  patientSex?: string;
 };

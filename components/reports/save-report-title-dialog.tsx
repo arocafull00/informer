@@ -60,7 +60,7 @@ export function SaveReportTitleDialog({
       <div
         role="dialog"
         aria-labelledby="save-report-title-heading"
-        className="dialog-content w-full max-w-sm rounded-xl border border-outline-variant bg-surface-container-highest p-4 shadow-lg"
+        className="dialog-content w-full max-w-sm rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <h3
