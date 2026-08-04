@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { FileText, Pencil, Trash2 } from "lucide-react";
 import { getReportLabel } from "@/lib/get-report-label";
+import { cn } from "@/lib/utils";
 import type { SavedReport } from "@/lib/types";
 import { HistoryItemLabel } from "./history-item-label";
 
 interface HistoryItemProps {
   report: SavedReport;
+  isActive: boolean;
   onRestore: () => void;
   onDelete: () => void;
   onUpdateTitle: (title: string) => void;
@@ -15,6 +17,7 @@ interface HistoryItemProps {
 
 export function HistoryItem({
   report,
+  isActive,
   onRestore,
   onDelete,
   onUpdateTitle,
@@ -23,16 +26,29 @@ export function HistoryItem({
   const label = getReportLabel(report);
 
   return (
-    <div className="group flex items-center justify-between rounded-lg px-2 py-1.5 transition-[background-color] duration-150 ease-out-strong hover:bg-surface-container-high">
+    <div
+      className={cn(
+        "group flex items-center justify-between rounded-lg px-2 py-1.5 transition-[background-color,color] duration-150 ease-out-strong",
+        isActive
+          ? "bg-surface-container-high text-primary"
+          : "hover:bg-surface-container-high"
+      )}
+    >
       <button
         type="button"
         onClick={onRestore}
         disabled={editing}
         className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden text-left disabled:pointer-events-none"
       >
-        <FileText className="size-5 shrink-0 text-outline" />
+        <FileText
+          className={cn(
+            "size-5 shrink-0",
+            isActive ? "text-primary" : "text-outline"
+          )}
+        />
         <HistoryItemLabel
           label={label}
+          isActive={isActive}
           editing={editing}
           onStartEdit={() => setEditing(true)}
           onStopEdit={() => setEditing(false)}

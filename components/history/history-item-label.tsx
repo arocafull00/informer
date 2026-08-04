@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface HistoryItemLabelProps {
   label: string;
+  isActive: boolean;
   editing: boolean;
   onStartEdit: () => void;
   onStopEdit: () => void;
@@ -12,6 +14,7 @@ interface HistoryItemLabelProps {
 
 export function HistoryItemLabel({
   label,
+  isActive,
   editing,
   onStartEdit,
   onStopEdit,
@@ -32,7 +35,13 @@ export function HistoryItemLabel({
 
   if (!editing) {
     return (
-      <span className="truncate text-body-md" onDoubleClick={onStartEdit}>
+      <span
+        className={cn(
+          "truncate text-body-md",
+          isActive && "font-medium text-primary"
+        )}
+        onDoubleClick={onStartEdit}
+      >
         {label}
       </span>
     );

@@ -2,7 +2,12 @@
 
 import { useMemo, useState } from "react";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
-import { useCurrentReportStore } from "@/store/use-current-report-store";
+import {
+  selectCurrentReportId,
+  useCurrentReportStore,
+} from "@/store/use-current-report-store";
+import { useAdirResultsDraftStore } from "@/store/use-adir-results-draft-store";
+import { useRiasResultsDraftStore } from "@/store/use-rias-results-draft-store";
 import { HistoryItem } from "@/components/history/history-item";
 import { NewReportDialog } from "@/components/reports/new-report-dialog";
 import { useSaveReport } from "@/lib/use-save-report";
@@ -12,9 +17,13 @@ export function Sidebar() {
   const { reports, restoreReport, deleteReport, updateReportTitle } =
     useReportHistoryStore();
   const currentTest = useCurrentReportStore((s) => s.currentTest);
+  const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const reset = useCurrentReportStore((s) => s.reset);
   const setDraftTitle = useCurrentReportStore((s) => s.setDraftTitle);
   const setPatientSex = useCurrentReportStore((s) => s.setPatientSex);
+  const setCurrentReportId = useCurrentReportStore((s) => s.setCurrentReportId);
+  const resetAdirDraft = useAdirResultsDraftStore((s) => s.reset);
+  const resetRiasDraft = useRiasResultsDraftStore((s) => s.reset);
   const { createNewReport } = useSaveReport();
   const [newReportOpen, setNewReportOpen] = useState(false);
 
@@ -28,17 +37,28 @@ export function Sidebar() {
 
   const handleRestore = (id: string) => {
     const report = reports.find((r) => r.id === id);
+    if (!report) return;
     restoreReport(
       id,
       useCurrentReportStore.getState().setCurrentTest,
       useCurrentReportStore.getState().replaceAnswersForTest
     );
-    if (report?.title?.trim()) {
+    setCurrentReportId(id);
+    if (report.title?.trim()) {
       setDraftTitle(report.title);
     } else {
       setDraftTitle("");
     }
-    setPatientSex(report?.patientSex ?? "");
+    setPatientSex(report.patientSex ?? "");
+    resetAdirDraft();
+    resetRiasDraft();
+  };
+
+  const handleDelete = (id: string) => {
+    if (currentReportId === id) {
+      setCurrentReportId(undefined);
+    }
+    deleteReport(id);
   };
 
   const handleNewReportConfirm = (title: string, patientSex: string) => {
@@ -46,6 +66,8 @@ export function Sidebar() {
     setDraftTitle(title);
     setPatientSex(patientSex);
     createNewReport(title, patientSex);
+    resetAdirDraft();
+    resetRiasDraft();
   };
 
   return (
@@ -71,8 +93,9 @@ export function Sidebar() {
             <HistoryItem
               key={report.id}
               report={report}
+              isActive={report.id === currentReportId}
               onRestore={() => handleRestore(report.id)}
-              onDelete={() => deleteReport(report.id)}
+              onDelete={() => handleDelete(report.id)}
               onUpdateTitle={(title) => updateReportTitle(report.id, title)}
             />
           ))

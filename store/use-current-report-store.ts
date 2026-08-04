@@ -20,15 +20,23 @@ const emptyPatientSexByTest = (): Record<TestType, string> => ({
   ADOS2_NINO: "",
 });
 
+const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => ({
+  ADIR: undefined,
+  ADOS2_ADULTO: undefined,
+  ADOS2_NINO: undefined,
+});
+
 type CurrentReportStore = {
   currentTest: TestType;
   answersByTest: Record<TestType, Record<string, number>>;
   draftTitleByTest: Record<TestType, string | undefined>;
   patientSexByTest: Record<TestType, string>;
+  currentReportIdByTest: Record<TestType, string | undefined>;
   setCurrentTest: (test: TestType) => void;
   setAnswer: (questionId: string, value: number) => void;
   setDraftTitle: (title: string) => void;
   setPatientSex: (sex: string) => void;
+  setCurrentReportId: (id: string | undefined) => void;
   replaceAnswersForTest: (test: TestType, answers: Record<string, number>) => void;
   reset: () => void;
 };
@@ -42,6 +50,9 @@ export const selectCurrentDraftTitle = (state: CurrentReportStore) =>
 export const selectCurrentPatientSex = (state: CurrentReportStore) =>
   state.patientSexByTest[state.currentTest];
 
+export const selectCurrentReportId = (state: CurrentReportStore) =>
+  state.currentReportIdByTest[state.currentTest];
+
 export const useCurrentReportStore = create<CurrentReportStore>()(
   persist(
     (set) => ({
@@ -49,6 +60,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
       answersByTest: emptyAnswersByTest(),
       draftTitleByTest: emptyDraftTitleByTest(),
       patientSexByTest: emptyPatientSexByTest(),
+      currentReportIdByTest: emptyCurrentReportIdByTest(),
       setCurrentTest: (test) => set({ currentTest: test }),
       setAnswer: (questionId, value) =>
         set((state) => ({
@@ -74,6 +86,13 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             [state.currentTest]: sex,
           },
         })),
+      setCurrentReportId: (id) =>
+        set((state) => ({
+          currentReportIdByTest: {
+            ...state.currentReportIdByTest,
+            [state.currentTest]: id,
+          },
+        })),
       replaceAnswersForTest: (test, answers) =>
         set((state) => ({
           answersByTest: {
@@ -95,19 +114,29 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             ...state.patientSexByTest,
             [state.currentTest]: "",
           },
+          currentReportIdByTest: {
+            ...state.currentReportIdByTest,
+            [state.currentTest]: undefined,
+          },
         })),
     }),
     {
       name: "informer-current-report",
-      version: 2,
+      version: 3,
       migrate: (persistedState, version) => {
         const state = persistedState as Partial<CurrentReportStore>;
+
+        if (version >= 3) {
+          return state as CurrentReportStore;
+        }
 
         if (version >= 2) {
           return {
             ...state,
             patientSexByTest:
               state.patientSexByTest ?? emptyPatientSexByTest(),
+            currentReportIdByTest:
+              state.currentReportIdByTest ?? emptyCurrentReportIdByTest(),
           } as CurrentReportStore;
         }
 
@@ -137,6 +166,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
           answersByTest,
           draftTitleByTest,
           patientSexByTest: emptyPatientSexByTest(),
+          currentReportIdByTest: emptyCurrentReportIdByTest(),
         };
       },
     }

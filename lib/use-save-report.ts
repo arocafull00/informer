@@ -5,6 +5,7 @@ import {
   selectCurrentAnswers,
   selectCurrentDraftTitle,
   selectCurrentPatientSex,
+  selectCurrentReportId,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
@@ -16,8 +17,11 @@ export function useSaveReport() {
   const answers = useCurrentReportStore(selectCurrentAnswers);
   const draftTitle = useCurrentReportStore(selectCurrentDraftTitle);
   const patientSex = useCurrentReportStore(selectCurrentPatientSex);
+  const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const setDraftTitle = useCurrentReportStore((s) => s.setDraftTitle);
+  const setCurrentReportId = useCurrentReportStore((s) => s.setCurrentReportId);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
+  const reports = useReportHistoryStore((s) => s.reports);
 
   const markdown = useMemo(() => {
     const data = testData[currentTest];
@@ -41,20 +45,30 @@ export function useSaveReport() {
       if (trimmed) {
         setDraftTitle(trimmed);
       }
+      const existingReport = currentReportId
+        ? reports.find((r) => r.id === currentReportId)
+        : undefined;
+      const id = existingReport?.id ?? crypto.randomUUID();
       saveReport({
-        id: crypto.randomUUID(),
-        createdAt: new Date().toISOString(),
+        id,
+        createdAt: existingReport?.createdAt ?? new Date().toISOString(),
         test: currentTest,
         answers: { ...answers },
         markdown,
         ...(trimmed ? { title: trimmed } : {}),
         ...(patientSex ? { patientSex } : {}),
       });
+      if (!existingReport) {
+        setCurrentReportId(id);
+      }
     },
     [
       hasAnswers,
       setDraftTitle,
+      currentReportId,
+      reports,
       saveReport,
+      setCurrentReportId,
       currentTest,
       answers,
       markdown,
@@ -75,9 +89,10 @@ export function useSaveReport() {
       const trimmed = title.trim();
       const data = testData[currentTest];
       const emptyAnswers: Record<string, number> = {};
+      const id = crypto.randomUUID();
 
       saveReport({
-        id: crypto.randomUUID(),
+        id,
         createdAt: new Date().toISOString(),
         test: currentTest,
         answers: emptyAnswers,
@@ -85,8 +100,9 @@ export function useSaveReport() {
         ...(trimmed ? { title: trimmed } : {}),
         ...(patientSex ? { patientSex } : {}),
       });
+      setCurrentReportId(id);
     },
-    [currentTest, saveReport]
+    [currentTest, saveReport, setCurrentReportId]
   );
 
   return {

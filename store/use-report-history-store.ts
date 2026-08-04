@@ -22,9 +22,14 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
     (set, get) => ({
       reports: [],
       saveReport: (report) =>
-        set((state) => ({
-          reports: [report, ...state.reports],
-        })),
+        set((state) => {
+          const existingIndex = state.reports.findIndex((r) => r.id === report.id);
+          if (existingIndex === -1) {
+            return { reports: [report, ...state.reports] };
+          }
+          const reports = state.reports.filter((r) => r.id !== report.id);
+          return { reports: [report, ...reports] };
+        }),
       restoreReport: (id, setCurrentTest, replaceAnswersForTest) => {
         const report = get().reports.find((r) => r.id === id);
         if (!report) return;

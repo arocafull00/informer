@@ -77,6 +77,7 @@ function RiasGenerateResultsWizard({ onClose }: RiasGenerateResultsWizardProps) 
     setGenerateError(null);
     try {
       await downloadRiasPdf(form);
+      resetDraft();
       onClose();
     } catch (error) {
       setGenerateError(

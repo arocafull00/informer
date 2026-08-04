@@ -99,6 +99,7 @@ function AdirGenerateResultsWizard({ onClose }: AdirGenerateResultsWizardProps) 
     setGenerateError(null);
     try {
       await downloadAdirPdf(form);
+      resetDraft();
       onClose();
     } catch (error) {
       setGenerateError(
