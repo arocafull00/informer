@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import {
   selectCurrentAnswers,
+  selectCurrentReportId,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
 import {
@@ -42,6 +43,8 @@ function groupBySection(questions: Question[]): SectionGroup[] {
 export function QuestionList() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
   const answers = useCurrentReportStore(selectCurrentAnswers);
+  const currentReportId = useCurrentReportStore(selectCurrentReportId);
+  const scoringEnabled = Boolean(currentReportId);
 
   const questions = useMemo(() => testData[currentTest], [currentTest]);
   const sections = useMemo(() => groupBySection(questions), [questions]);
@@ -49,6 +52,17 @@ export function QuestionList() {
 
   return (
     <div className="space-y-stack-section pb-10">
+      {!scoringEnabled && (
+        <div className="rounded-xl border border-outline-variant bg-surface-container-low p-4">
+          <p className="text-body-md font-medium text-on-surface">
+            Selecciona o crea un informe
+          </p>
+          <p className="mt-1 text-body-md leading-relaxed text-on-surface-variant">
+            Usa Nuevo Informe en el histórico o abre uno existente para empezar a
+            puntuar.
+          </p>
+        </div>
+      )}
       {sections.map(({ sectionNumber, section, questions: qs }) => {
         const answeredInSection = qs.filter(
           (q) => answers[q.id] !== undefined
@@ -96,6 +110,7 @@ export function QuestionList() {
                 <QuestionCard
                   key={question.id}
                   question={question}
+                  disabled={!scoringEnabled}
                   displayCode={
                     isAdos2
                       ? ados2ItemLabel(sectionNumber, question.code)

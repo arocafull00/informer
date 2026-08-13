@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { TestType } from "@/lib/types";
+import type { SavedReport, TestType } from "@/lib/types";
 
 const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
   ADIR: {},
@@ -32,12 +32,11 @@ type CurrentReportStore = {
   draftTitleByTest: Record<TestType, string | undefined>;
   patientSexByTest: Record<TestType, string>;
   currentReportIdByTest: Record<TestType, string | undefined>;
-  setCurrentTest: (test: TestType) => void;
+  openReport: (report: SavedReport) => void;
   setAnswer: (questionId: string, value: number) => void;
   setDraftTitle: (title: string) => void;
   setPatientSex: (sex: string) => void;
   setCurrentReportId: (id: string | undefined) => void;
-  replaceAnswersForTest: (test: TestType, answers: Record<string, number>) => void;
   reset: () => void;
 };
 
@@ -61,7 +60,26 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
       draftTitleByTest: emptyDraftTitleByTest(),
       patientSexByTest: emptyPatientSexByTest(),
       currentReportIdByTest: emptyCurrentReportIdByTest(),
-      setCurrentTest: (test) => set({ currentTest: test }),
+      openReport: (report) =>
+        set((state) => ({
+          currentTest: report.test,
+          answersByTest: {
+            ...state.answersByTest,
+            [report.test]: { ...report.answers },
+          },
+          draftTitleByTest: {
+            ...state.draftTitleByTest,
+            [report.test]: report.title?.trim() || undefined,
+          },
+          patientSexByTest: {
+            ...state.patientSexByTest,
+            [report.test]: report.patientSex ?? "",
+          },
+          currentReportIdByTest: {
+            ...state.currentReportIdByTest,
+            [report.test]: report.id,
+          },
+        })),
       setAnswer: (questionId, value) =>
         set((state) => ({
           answersByTest: {
@@ -91,13 +109,6 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
           currentReportIdByTest: {
             ...state.currentReportIdByTest,
             [state.currentTest]: id,
-          },
-        })),
-      replaceAnswersForTest: (test, answers) =>
-        set((state) => ({
-          answersByTest: {
-            ...state.answersByTest,
-            [test]: { ...answers },
           },
         })),
       reset: () =>

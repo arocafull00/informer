@@ -7,6 +7,7 @@ type ScoreOptionButtonProps = {
   label?: string;
   isSelected: boolean;
   variant: "compact" | "labeled";
+  disabled?: boolean;
   onSelect: () => void;
 };
 
@@ -15,6 +16,7 @@ export function ScoreOptionButton({
   label,
   isSelected,
   variant,
+  disabled = false,
   onSelect,
 }: ScoreOptionButtonProps) {
   const ariaLabel = label ? `${score}: ${label}` : String(score);
@@ -25,8 +27,9 @@ export function ScoreOptionButton({
         type="button"
         aria-label={ariaLabel}
         aria-pressed={isSelected}
+        disabled={disabled}
         className={cn(
-          "interactive-press flex w-full items-start gap-3 rounded-lg border p-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
+          "interactive-press flex w-full items-start gap-3 rounded-lg border p-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50",
           isSelected
             ? "border-2 border-primary bg-primary/5"
             : "border-outline-variant hover:bg-surface-container"
@@ -58,8 +61,9 @@ export function ScoreOptionButton({
       title={label}
       aria-label={ariaLabel}
       aria-pressed={isSelected}
+      disabled={disabled}
       className={cn(
-        "interactive-press flex size-10 items-center justify-center rounded-lg border text-body-md tabular-nums outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
+        "interactive-press flex size-10 items-center justify-center rounded-lg border text-body-md tabular-nums outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50",
         isSelected
           ? "border-2 border-primary bg-primary text-on-primary shadow-inner"
           : "border-outline-variant text-on-surface-variant hover:bg-surface-container"

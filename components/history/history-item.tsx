@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FileText, Pencil, Trash2 } from "lucide-react";
 import { getReportLabel } from "@/lib/get-report-label";
+import { testLabels } from "@/lib/test-data";
 import { cn } from "@/lib/utils";
 import type { SavedReport } from "@/lib/types";
 import { HistoryItemLabel } from "./history-item-label";
@@ -28,10 +29,10 @@ export function HistoryItem({
   return (
     <div
       className={cn(
-        "group flex items-center justify-between rounded-lg px-2 py-1.5 transition-[background-color,color] duration-150 ease-out-strong",
+        "group flex items-center justify-between rounded-lg border px-2 py-1.5 transition-[background-color,color,border-color,box-shadow] duration-150 ease-out-strong",
         isActive
-          ? "bg-surface-container-high text-primary"
-          : "hover:bg-surface-container-high"
+          ? "border-primary bg-surface-container-lowest text-primary shadow-level-1"
+          : "border-transparent hover:bg-surface-container-high"
       )}
     >
       <button
@@ -46,14 +47,24 @@ export function HistoryItem({
             isActive ? "text-primary" : "text-outline"
           )}
         />
-        <HistoryItemLabel
-          label={label}
-          isActive={isActive}
-          editing={editing}
-          onStartEdit={() => setEditing(true)}
-          onStopEdit={() => setEditing(false)}
-          onSave={onUpdateTitle}
-        />
+        <span className="min-w-0 flex-1">
+          <span
+            className={cn(
+              "mb-0.5 block truncate text-mono-sm font-medium",
+              isActive ? "text-primary" : "text-on-surface-variant"
+            )}
+          >
+            {testLabels[report.test]}
+          </span>
+          <HistoryItemLabel
+            label={label}
+            isActive={isActive}
+            editing={editing}
+            onStartEdit={() => setEditing(true)}
+            onStopEdit={() => setEditing(false)}
+            onSave={onUpdateTitle}
+          />
+        </span>
       </button>
       <div className="hover-reveal flex shrink-0 items-center">
         <button

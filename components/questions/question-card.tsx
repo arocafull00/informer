@@ -7,12 +7,14 @@ interface QuestionCardProps {
   question: Question;
   displayCode?: string;
   showAnswerLabels?: boolean;
+  disabled?: boolean;
 }
 
 export function QuestionCard({
   question,
   displayCode,
   showAnswerLabels = false,
+  disabled = false,
 }: QuestionCardProps) {
   return (
     <div className="card-interactive rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-level-1">
@@ -30,6 +32,7 @@ export function QuestionCard({
             questionId={question.id}
             options={question.answers}
             showLabels={showAnswerLabels}
+            disabled={disabled}
           />
         </div>
       </div>

@@ -14,12 +14,14 @@ interface ScoreSelectorProps {
   questionId: string;
   options: Record<string, string>;
   showLabels?: boolean;
+  disabled?: boolean;
 }
 
 export function ScoreSelector({
   questionId,
   options,
   showLabels = false,
+  disabled = false,
 }: ScoreSelectorProps) {
   const answers = useCurrentReportStore(selectCurrentAnswers);
   const patientSex = useCurrentReportStore(selectCurrentPatientSex);
@@ -39,6 +41,7 @@ export function ScoreSelector({
       }
       role="group"
       aria-label="Puntuación"
+      aria-disabled={disabled}
     >
       {scores.map((score) => (
         <ScoreOptionButton
@@ -47,7 +50,11 @@ export function ScoreSelector({
           label={applyGenderedPhrasing(options[String(score)], patientSex)}
           isSelected={selected === score}
           variant={variant}
-          onSelect={() => setAnswer(questionId, score)}
+          disabled={disabled}
+          onSelect={() => {
+            if (disabled) return;
+            setAnswer(questionId, score);
+          }}
         />
       ))}
     </div>

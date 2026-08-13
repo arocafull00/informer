@@ -38,7 +38,7 @@ export function HistoryItemLabel({
       <span
         className={cn(
           "truncate text-body-md",
-          isActive && "font-medium text-primary"
+          isActive && "font-semibold text-primary"
         )}
         onDoubleClick={onStartEdit}
       >
