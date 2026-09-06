@@ -6,7 +6,7 @@ import { HistoryItem } from "@/components/history/history-item";
 import { NewReportDialog } from "@/components/reports/new-report-dialog";
 import { RiasGenerateResultsDialog } from "@/components/rias/rias-generate-results-dialog";
 import { useCreateNewReport } from "@/lib/use-save-report";
-import type { TestType } from "@/lib/types";
+import type { CreateReportInput } from "@/lib/types";
 import { useAdirResultsDraftStore } from "@/store/use-adir-results-draft-store";
 import {
   selectCurrentReportId,
@@ -15,10 +15,10 @@ import {
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 
 export function Sidebar() {
-  const { reports, deleteReport, updateReportTitle } = useReportHistoryStore();
+  const { reports, deleteReport, updatePatientName } = useReportHistoryStore();
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const openReport = useCurrentReportStore((state) => state.openReport);
-  const setDraftTitle = useCurrentReportStore((state) => state.setDraftTitle);
+  const setPatientName = useCurrentReportStore((state) => state.setPatientName);
   const setCurrentReportId = useCurrentReportStore(
     (state) => state.setCurrentReportId
   );
@@ -41,19 +41,15 @@ export function Sidebar() {
     deleteReport(id);
   };
 
-  const handleUpdateTitle = (id: string, title: string) => {
-    updateReportTitle(id, title);
+  const handleUpdatePatientName = (id: string, patientName: string) => {
+    updatePatientName(id, patientName);
     if (currentReportId === id) {
-      setDraftTitle(title);
+      setPatientName(patientName);
     }
   };
 
-  const handleNewReportConfirm = (
-    test: TestType,
-    title: string,
-    patientSex: string
-  ) => {
-    createNewReport(test, title, patientSex);
+  const handleNewReportConfirm = (input: CreateReportInput) => {
+    createNewReport(input);
     resetAdirDraft();
   };
 
@@ -98,7 +94,9 @@ export function Sidebar() {
               isActive={report.id === currentReportId}
               onRestore={() => handleRestore(report.id)}
               onDelete={() => handleDelete(report.id)}
-              onUpdateTitle={(title) => handleUpdateTitle(report.id, title)}
+              onUpdatePatientName={(patientName) =>
+                handleUpdatePatientName(report.id, patientName)
+              }
             />
           ))
         )}

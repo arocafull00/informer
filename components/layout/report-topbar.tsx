@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { getReportLabel } from "@/lib/get-report-label";
 import { testLabels } from "@/lib/test-data";
 import {
-  selectCurrentDraftTitle,
+  selectCurrentPatientName,
   selectCurrentReportId,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
@@ -13,7 +13,7 @@ import { useReportHistoryStore } from "@/store/use-report-history-store";
 export function ReportTopbar() {
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const currentTest = useCurrentReportStore((state) => state.currentTest);
-  const draftTitle = useCurrentReportStore(selectCurrentDraftTitle);
+  const patientName = useCurrentReportStore(selectCurrentPatientName);
   const report = useReportHistoryStore((state) =>
     currentReportId
       ? state.reports.find((item) => item.id === currentReportId)
@@ -22,11 +22,11 @@ export function ReportTopbar() {
 
   const title = useMemo(() => {
     if (!currentReportId) return null;
-    const trimmedDraft = draftTitle?.trim();
-    if (trimmedDraft) return trimmedDraft;
+    const trimmedPatientName = patientName?.trim();
+    if (trimmedPatientName) return trimmedPatientName;
     if (report) return getReportLabel(report);
     return testLabels[currentTest];
-  }, [currentReportId, currentTest, draftTitle, report]);
+  }, [currentReportId, currentTest, patientName, report]);
 
   return (
     <header className="flex shrink-0 items-center gap-3 border-b border-outline-variant bg-surface-container-lowest px-gutter-grid py-3">

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { AdirSubjectSexPicker } from "@/components/adir/adir-subject-sex-picker";
 import { Ados2SubjectSexPicker } from "@/components/ados2/ados2-subject-sex-picker";
+import { CumanesIdentificationFields } from "@/components/cumanes/cumanes-identification-fields";
 import {
   Dialog,
   DialogContent,
@@ -14,13 +15,17 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import type { Ados2SubjectSex } from "@/lib/ados2-pdf/types";
 import type { AdirSubjectSex } from "@/lib/adir-scoring";
 import { isAdos2Test } from "@/lib/ados2-labels";
+import {
+  EMPTY_CUMANES_IDENTIFICATION,
+  type CumanesIdentification,
+} from "@/lib/cumanes-types";
 import { testLabels } from "@/lib/test-data";
-import type { TestType } from "@/lib/types";
+import type { CreateReportInput, TestType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 type NewReportDialogProps = {
   onClose: () => void;
-  onConfirm: (test: TestType, title: string, patientSex: string) => void;
+  onConfirm: (input: CreateReportInput) => void;
 };
 
 const reportTypes: {
@@ -43,6 +48,11 @@ const reportTypes: {
     label: "ADOS-2 Niño",
     description: "Observación adaptada a población infantil.",
   },
+  {
+    value: "CUMANES",
+    label: "CUMANES",
+    description: "Madurez neuropsicológica en población escolar.",
+  },
 ];
 
 export function NewReportDialog({
@@ -51,23 +61,21 @@ export function NewReportDialog({
 }: NewReportDialogProps) {
   const [step, setStep] = useState<1 | 2>(1);
   const [selectedTest, setSelectedTest] = useState<TestType | null>(null);
-  const [title, setTitle] = useState("");
+  const [patientName, setPatientName] = useState("");
   const [adirSex, setAdirSex] = useState<AdirSubjectSex>("");
   const [adosSex, setAdosSex] = useState<Ados2SubjectSex>("");
+  const [cumanesIdentification, setCumanesIdentification] =
+    useState<CumanesIdentification>({ ...EMPTY_CUMANES_IDENTIFICATION });
 
   const isAdos2 = selectedTest ? isAdos2Test(selectedTest) : false;
-  const patientSex = isAdos2 ? adosSex : adirSex;
-  const suggestedTitle = selectedTest
-    ? `${testLabels[selectedTest]} · ${new Date().toLocaleDateString("es-ES", {
-        day: "2-digit",
-        month: "2-digit",
-      })}`
-    : "";
+  const isCumanes = selectedTest === "CUMANES";
+  const patientSex = isAdos2 || isCumanes ? adosSex : adirSex;
 
   const handleTestChange = (value: string) => {
     setSelectedTest(value as TestType);
     setAdirSex("");
     setAdosSex("");
+    setCumanesIdentification({ ...EMPTY_CUMANES_IDENTIFICATION });
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -79,8 +87,13 @@ export function NewReportDialog({
       return;
     }
 
-    if (!selectedTest || !patientSex) return;
-    onConfirm(selectedTest, title.trim() || suggestedTitle, patientSex);
+    if (!selectedTest) return;
+    onConfirm({
+      test: selectedTest,
+      patientName,
+      patientSex,
+      ...(isCumanes ? { cumanesIdentification } : {}),
+    });
     onClose();
   };
 
@@ -93,10 +106,10 @@ export function NewReportDialog({
     >
       <DialogContent
         showCloseButton={false}
-        className="w-full max-w-lg gap-0 overflow-hidden border-outline-variant bg-surface-container-lowest p-0 sm:max-w-lg"
+        className="flex max-h-[90vh] w-full max-w-lg flex-col gap-0 overflow-hidden border-outline-variant bg-surface-container-lowest p-0 sm:max-w-lg"
       >
-        <form onSubmit={handleSubmit}>
-          <DialogHeader className="border-b border-outline-variant px-5 py-4">
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <DialogHeader className="shrink-0 border-b border-outline-variant px-5 py-4">
             <div className="flex items-start justify-between gap-4 pr-1">
               <div>
                 <DialogTitle className="text-headline-md text-on-surface">
@@ -105,7 +118,7 @@ export function NewReportDialog({
                 <DialogDescription className="mt-1 text-body-md text-on-surface-variant">
                   {step === 1
                     ? "Elige el instrumento que quedará asignado al informe."
-                    : `Completa los datos para ${selectedTest ? testLabels[selectedTest] : "el informe"}.`}
+                    : `Añade los datos que quieras conservar para ${selectedTest ? testLabels[selectedTest] : "el informe"}.`}
                 </DialogDescription>
               </div>
               <span className="shrink-0 text-mono-sm text-on-surface-variant">
@@ -130,7 +143,7 @@ export function NewReportDialog({
             </div>
           </DialogHeader>
 
-          <div className="px-5 py-5">
+          <div className="min-h-0 overflow-y-auto px-5 py-5">
             {step === 1 ? (
               <RadioGroup
                 value={selectedTest ?? ""}
@@ -187,45 +200,61 @@ export function NewReportDialog({
                   </p>
                 </div>
 
-                <div className="space-y-1.5">
-                  <label
-                    htmlFor="new-report-title"
-                    className="text-body-md font-medium text-on-surface"
-                  >
-                    Título
-                  </label>
-                  <input
-                    autoFocus
-                    id="new-report-title"
-                    type="text"
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    placeholder={suggestedTitle}
-                    className="w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-body-md text-on-surface outline-none transition-colors focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30"
+                {isCumanes ? (
+                  <CumanesIdentificationFields
+                    idPrefix="new-cumanes"
+                    patientName={patientName}
+                    patientSex={patientSex}
+                    identification={cumanesIdentification}
+                    onPatientNameChange={setPatientName}
+                    onPatientSexChange={(sex) =>
+                      setAdosSex(sex as Ados2SubjectSex)
+                    }
+                    onIdentificationChange={setCumanesIdentification}
                   />
-                </div>
+                ) : (
+                  <>
+                    <div className="space-y-1.5">
+                      <label
+                        htmlFor="new-report-patient-name"
+                        className="text-body-md font-medium text-on-surface"
+                      >
+                        Nombre del paciente
+                      </label>
+                      <input
+                        autoFocus
+                        id="new-report-patient-name"
+                        type="text"
+                        value={patientName}
+                        onChange={(event) => setPatientName(event.target.value)}
+                        placeholder="Nombre y apellidos"
+                        className="w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-body-md text-on-surface outline-none transition-colors focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30"
+                      />
+                    </div>
 
-                <fieldset className="space-y-1.5">
-                  <legend className="text-body-md font-medium text-on-surface">
-                    Sexo
-                  </legend>
-                  {isAdos2 ? (
-                    <Ados2SubjectSexPicker
-                      value={adosSex}
-                      onChange={setAdosSex}
-                    />
-                  ) : (
-                    <AdirSubjectSexPicker
-                      value={adirSex}
-                      onChange={setAdirSex}
-                    />
-                  )}
-                </fieldset>
+                    <fieldset className="space-y-1.5">
+                      <legend className="text-body-md font-medium text-on-surface">
+                        Sexo
+                      </legend>
+                      {isAdos2 ? (
+                        <Ados2SubjectSexPicker
+                          value={adosSex}
+                          onChange={setAdosSex}
+                        />
+                      ) : (
+                        <AdirSubjectSexPicker
+                          value={adirSex}
+                          onChange={setAdirSex}
+                        />
+                      )}
+                    </fieldset>
+                  </>
+                )}
               </div>
             )}
           </div>
 
-          <div className="flex items-center gap-2 border-t border-outline-variant bg-surface-container-low px-5 py-4">
+          <div className="flex shrink-0 items-center gap-2 border-t border-outline-variant bg-surface-container-low px-5 py-4">
             {step === 1 ? (
               <>
                 <button
@@ -261,7 +290,6 @@ export function NewReportDialog({
                 </button>
                 <button
                   type="submit"
-                  disabled={!patientSex}
                   className="interactive-press min-h-9 rounded-lg bg-primary px-4 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Crear informe

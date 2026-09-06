@@ -2,7 +2,7 @@ import type { SavedReport } from "@/lib/types";
 import { testLabels } from "@/lib/test-data";
 
 export function getReportLabel(report: SavedReport): string {
-  const trimmed = report.title?.trim();
+  const trimmed = report.patientName?.trim();
   if (trimmed) return trimmed;
   const date = new Date(report.createdAt).toLocaleDateString("es-ES", {
     day: "2-digit",

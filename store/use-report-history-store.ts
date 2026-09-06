@@ -6,8 +6,10 @@ type ReportHistoryStore = {
   reports: SavedReport[];
   saveReport: (report: SavedReport) => void;
   deleteReport: (id: string) => void;
-  updateReportTitle: (id: string, title: string) => void;
+  updatePatientName: (id: string, patientName: string) => void;
 };
+
+type LegacySavedReport = SavedReport & { title?: string };
 
 export const useReportHistoryStore = create<ReportHistoryStore>()(
   persist(
@@ -27,22 +29,36 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
         set((state) => ({
           reports: state.reports.filter((r) => r.id !== id),
         })),
-      updateReportTitle: (id, title) =>
+      updatePatientName: (id, patientName) =>
         set((state) => ({
           reports: state.reports.map((report) => {
             if (report.id !== id) return report;
-            const trimmed = title.trim();
+            const trimmed = patientName.trim();
             if (!trimmed) {
-              const { title: removedTitle, ...rest } = report;
-              void removedTitle;
+              const { patientName: removedPatientName, ...rest } = report;
+              void removedPatientName;
               return rest;
             }
-            return { ...report, title: trimmed };
+            return { ...report, patientName: trimmed };
           }),
         })),
     }),
     {
       name: "informer-history",
+      version: 1,
+      migrate: (persistedState) => {
+        const state = persistedState as { reports?: LegacySavedReport[] };
+        return {
+          reports: (state.reports ?? []).map((report) => {
+            const { title, ...currentReport } = report;
+            const patientName = report.patientName?.trim() || title?.trim();
+            return {
+              ...currentReport,
+              ...(patientName ? { patientName } : {}),
+            };
+          }),
+        };
+      },
     }
   )
 );

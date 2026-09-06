@@ -3,7 +3,9 @@
 import { useMemo, useCallback, useEffect } from "react";
 import {
   selectCurrentAnswers,
-  selectCurrentDraftTitle,
+  selectCurrentCumanesIdentification,
+  selectCurrentCumanesLaterality,
+  selectCurrentPatientName,
   selectCurrentPatientSex,
   selectCurrentReportId,
   useCurrentReportStore,
@@ -11,7 +13,11 @@ import {
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { testData } from "@/lib/test-data";
-import type { SavedReport, TestType } from "@/lib/types";
+import {
+  EMPTY_CUMANES_IDENTIFICATION,
+  EMPTY_CUMANES_LATERALITY,
+} from "@/lib/cumanes-types";
+import type { CreateReportInput, SavedReport } from "@/lib/types";
 
 export function useReportMarkdown() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
@@ -27,8 +33,14 @@ export function useReportMarkdown() {
 export function useAutoSaveReport() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
   const answers = useCurrentReportStore(selectCurrentAnswers);
-  const draftTitle = useCurrentReportStore(selectCurrentDraftTitle);
+  const patientName = useCurrentReportStore(selectCurrentPatientName);
   const patientSex = useCurrentReportStore(selectCurrentPatientSex);
+  const cumanesIdentification = useCurrentReportStore(
+    selectCurrentCumanesIdentification
+  );
+  const cumanesLaterality = useCurrentReportStore(
+    selectCurrentCumanesLaterality
+  );
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
@@ -42,27 +54,42 @@ export function useAutoSaveReport() {
       .reports.find((r) => r.id === currentReportId);
     if (!existingReport) return;
 
-    const trimmedTitle = draftTitle?.trim();
+    const trimmedPatientName = patientName?.trim();
+    const {
+      patientName: previousPatientName,
+      patientSex: previousPatientSex,
+      cumanesIdentification: previousCumanesIdentification,
+      cumanesLaterality: previousCumanesLaterality,
+      ...reportBase
+    } = existingReport;
+    void previousPatientName;
+    void previousPatientSex;
+    void previousCumanesIdentification;
+    void previousCumanesLaterality;
+
     saveReport({
-      id: existingReport.id,
-      createdAt: existingReport.createdAt,
+      ...reportBase,
       test: currentTest,
       answers: { ...answers },
       markdown,
-      ...(trimmedTitle
-        ? { title: trimmedTitle }
-        : existingReport.title
-          ? { title: existingReport.title }
-          : {}),
+      ...(trimmedPatientName ? { patientName: trimmedPatientName } : {}),
       ...(patientSex ? { patientSex } : {}),
+      ...(currentTest === "CUMANES"
+        ? {
+            cumanesIdentification: { ...cumanesIdentification },
+            cumanesLaterality: { ...cumanesLaterality },
+          }
+        : {}),
     });
   }, [
     currentReportId,
     currentTest,
     answers,
     markdown,
-    draftTitle,
+    patientName,
     patientSex,
+    cumanesIdentification,
+    cumanesLaterality,
     saveReport,
   ]);
 }
@@ -72,8 +99,13 @@ export function useCreateNewReport() {
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
   return useCallback(
-    (test: TestType, title: string, patientSex: string) => {
-      const trimmed = title.trim();
+    ({
+      test,
+      patientName,
+      patientSex,
+      cumanesIdentification,
+    }: CreateReportInput) => {
+      const trimmedPatientName = patientName?.trim();
       const data = testData[test];
       const emptyAnswers: Record<string, number> = {};
       const report: SavedReport = {
@@ -81,9 +113,18 @@ export function useCreateNewReport() {
         createdAt: new Date().toISOString(),
         test,
         answers: emptyAnswers,
-        markdown: generateMarkdown(data, emptyAnswers, patientSex),
-        ...(trimmed ? { title: trimmed } : {}),
+        markdown: generateMarkdown(data, emptyAnswers, patientSex ?? ""),
+        ...(trimmedPatientName ? { patientName: trimmedPatientName } : {}),
         ...(patientSex ? { patientSex } : {}),
+        ...(test === "CUMANES"
+          ? {
+              cumanesIdentification: {
+                ...EMPTY_CUMANES_IDENTIFICATION,
+                ...cumanesIdentification,
+              },
+              cumanesLaterality: { ...EMPTY_CUMANES_LATERALITY },
+            }
+          : {}),
       };
 
       saveReport(report);

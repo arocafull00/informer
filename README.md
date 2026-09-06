@@ -1,43 +1,38 @@
 # Informer
 
-Herramienta web para profesionales clínicos que codifican entrevistas y observaciones de evaluación del espectro autista. Permite registrar puntuaciones ítem a ítem y generar automáticamente un informe en texto listo para copiar o guardar.
+Herramienta de escritorio para profesionales clínicos que administran evaluaciones del espectro autista y de inteligencia. Permite puntuar ítems, redactar el informe narrativo al mismo tiempo y rellenar los PDFs oficiales de resultados.
 
-## Instrumentos soportados
+Está pensada para sesiones largas en mesa: elegir instrumento, codificar, previsualizar, guardar y volver a un informe anterior sin cambiar de herramienta.
 
-| Instrumento | Descripción |
-|-------------|-------------|
-| **ADI-R** | Entrevista Diagnóstica para el Autismo — Autismo-Revisado |
-| **ADOS-2 Adulto** | Módulo de observación para adolescentes y adultos |
-| **ADOS-2 Niño** | Módulo de observación para niños |
+## Instrumentos
 
-Los bancos de preguntas y respuestas codificadas están en `data/` (`adir.json`, `ados2-adulto.json`, `ados2-nino.json`).
+| Instrumento | Qué hace |
+|-------------|----------|
+| **ADI-R** | Codificación de la entrevista diagnóstica. Genera el informe en Markdown y, con un asistente de resultados (sujeto, informante, algoritmo, dominios y totales), descarga el PDF de resultados. |
+| **ADOS-2 Adulto** | Observación para adolescentes y adultos. Informe narrativo, resumen de dominios (comunicación, interacción social recíproca, imaginación, comportamientos repetitivos) y PDF de puntuaciones. |
+| **ADOS-2 Niño** | Observación infantil. Mismo flujo: ítems, informe, resumen de dominios y PDF. |
+| **CUMANES** | Registro de datos identificativos y puntuaciones directas con conversión en vivo a puntuaciones de transformación, decatipos, suma T, puntuación típica IDN y percentil por edad. La conversión IDN se mantiene en `data/cumanes-idn-norms-7-11.json`. |
+| **RIAS** | No es un informe de ítems. Un asistente recoge datos del paciente, puntuaciones directas, T, índices, intervalos y percentiles, y genera el PDF de perfil. |
 
-## Funcionalidades
+Los bancos de ítems ADI-R y ADOS-2 y el baremo editable de CUMANES están en `data/`.
 
-- **Codificación interactiva** — Formulario por secciones con selector de puntuación para cada ítem.
-- **Vista previa en tiempo real** — El informe en Markdown se actualiza al asignar puntuaciones.
-- **Resumen ADOS-2** — Cálculo de puntuaciones por dominios (comunicación, interacción social recíproca, imaginación y comportamientos repetitivos/restrictivos).
-- **Copiar informe** — Exportación del texto generado al portapapeles.
-- **Histórico local** — Guardar, restaurar, renombrar y eliminar informes. Los datos persisten en el navegador.
+## Flujo de trabajo
 
-## Interfaz
+1. **Nuevo informe** — Se elige el instrumento y se pueden añadir el nombre del paciente y el sexo. CUMANES permite completar además sus datos identificativos; todos son opcionales.
+2. **Codificación** — ADI-R y ADOS-2 usan ítems por secciones; CUMANES recoge las puntuaciones directas de sus 13 pruebas.
+3. **Vista previa** — El Markdown se actualiza al puntuar ADI-R/ADOS-2. En CUMANES se muestran la transformación y el decatipo en vivo.
+4. **Resultados en PDF** — Desde la vista previa se abre el asistente del instrumento y se descarga el formulario rellenado. RIAS se lanza aparte desde la barra lateral.
+5. **Histórico** — Los informes se guardan solos en el navegador (Zustand persist). Se pueden restaurar, renombrar y eliminar.
 
-La aplicación tiene tres paneles:
+La interfaz tiene tres paneles: histórico a la izquierda, ítems en el centro, vista previa a la derecha.
 
-1. **Barra lateral** — Histórico de informes guardados y acceso a «Nuevo Informe».
-2. **Panel central** — Listado de ítems del instrumento activo, agrupados por sección.
-3. **Panel derecho** — Vista previa del informe, copia y guardado.
+## Stack
 
-El selector de instrumento (ADI-R / ADOS-2 Adulto / ADOS-2 Niño) está en la barra superior.
-
-## Stack técnico
-
-- [Next.js 16](https://nextjs.org) (App Router)
-- [React 19](https://react.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwind CSS 4](https://tailwindcss.com)
-- [Zustand](https://zustand-demo.pmnd.rs) — estado global y persistencia local
-- [react-markdown](https://github.com/remarkjs/react-markdown) — renderizado de la vista previa
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 4
+- Zustand (informe actual e histórico local)
+- react-markdown (vista previa)
+- pdf-lib (relleno de plantillas PDF en rutas `/api/*-pdf`)
 
 ## Desarrollo
 
@@ -49,17 +44,17 @@ npm run dev
 Abre [http://localhost:3000](http://localhost:3000).
 
 ```bash
-npm run build   # compilación de producción
-npm run start   # servidor de producción
-npm run lint    # ESLint
+npm run build
+npm run start
+npm run lint
 ```
 
-## Estructura del proyecto
+## Estructura
 
 ```
-app/              Rutas y layout
-components/       UI (preguntas, informe, histórico, ADOS-2)
-data/             Bancos de ítems y respuestas codificadas
-lib/              Generación de Markdown, puntuación ADOS-2, tipos
-store/            Estado del informe actual e histórico (Zustand)
+app/              Rutas, layout y APIs de PDF
+components/       UI (preguntas, informe, histórico, ADI-R, ADOS-2, CUMANES, RIAS)
+data/             Bancos de ítems, baremos y coordenadas de campos PDF
+lib/              Markdown, puntuación, relleno de PDFs, tipos
+store/            Informe actual, histórico y borradores de asistentes
 ```

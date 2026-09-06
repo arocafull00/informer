@@ -1,4 +1,9 @@
-export type TestType = "ADIR" | "ADOS2_ADULTO" | "ADOS2_NINO";
+import type {
+  CumanesIdentification,
+  CumanesLaterality,
+} from "@/lib/cumanes-types";
+
+export type TestType = "ADIR" | "ADOS2_ADULTO" | "ADOS2_NINO" | "CUMANES";
 
 export type Question = {
   id: string;
@@ -16,6 +21,15 @@ export type SavedReport = {
   test: TestType;
   answers: Record<string, number>;
   markdown: string;
-  title?: string;
+  patientName?: string;
   patientSex?: string;
+  cumanesIdentification?: CumanesIdentification;
+  cumanesLaterality?: CumanesLaterality;
+};
+
+export type CreateReportInput = {
+  test: TestType;
+  patientName?: string;
+  patientSex?: string;
+  cumanesIdentification?: CumanesIdentification;
 };

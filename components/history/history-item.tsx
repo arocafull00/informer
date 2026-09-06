@@ -13,7 +13,7 @@ interface HistoryItemProps {
   isActive: boolean;
   onRestore: () => void;
   onDelete: () => void;
-  onUpdateTitle: (title: string) => void;
+  onUpdatePatientName: (patientName: string) => void;
 }
 
 export function HistoryItem({
@@ -21,7 +21,7 @@ export function HistoryItem({
   isActive,
   onRestore,
   onDelete,
-  onUpdateTitle,
+  onUpdatePatientName,
 }: HistoryItemProps) {
   const [editing, setEditing] = useState(false);
   const label = getReportLabel(report);
@@ -62,7 +62,7 @@ export function HistoryItem({
             editing={editing}
             onStartEdit={() => setEditing(true)}
             onStopEdit={() => setEditing(false)}
-            onSave={onUpdateTitle}
+            onSave={onUpdatePatientName}
           />
         </span>
       </button>
@@ -74,7 +74,7 @@ export function HistoryItem({
             setEditing(true);
           }}
           className="interactive-press rounded p-1 text-on-surface-variant hover:text-on-surface"
-          aria-label="Editar título"
+          aria-label="Editar nombre del paciente"
         >
           <Pencil className="size-[18px]" />
         </button>

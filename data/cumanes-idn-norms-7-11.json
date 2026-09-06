@@ -1,0 +1,1496 @@
+{
+  "7": {
+    "<=20": {
+      "typicalScore": 61,
+      "percentile": "<1"
+    },
+    "21": {
+      "typicalScore": 67,
+      "percentile": 1
+    },
+    "22": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "23": {
+      "typicalScore": 69,
+      "percentile": 2
+    },
+    "24": {
+      "typicalScore": 70,
+      "percentile": 2
+    },
+    "25": {
+      "typicalScore": 71,
+      "percentile": 3
+    },
+    "26": {
+      "typicalScore": 72,
+      "percentile": 3
+    },
+    "27": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "28": {
+      "typicalScore": 74,
+      "percentile": 4
+    },
+    "29": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "30": {
+      "typicalScore": 77,
+      "percentile": 6
+    },
+    "31": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "32": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "33": {
+      "typicalScore": 80,
+      "percentile": 9
+    },
+    "34": {
+      "typicalScore": 82,
+      "percentile": 12
+    },
+    "35": {
+      "typicalScore": 83,
+      "percentile": 13
+    },
+    "36": {
+      "typicalScore": 85,
+      "percentile": 16
+    },
+    "37": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "38": {
+      "typicalScore": 87,
+      "percentile": 19
+    },
+    "39": {
+      "typicalScore": 88,
+      "percentile": 21
+    },
+    "40": {
+      "typicalScore": 89,
+      "percentile": 23
+    },
+    "41": {
+      "typicalScore": 90,
+      "percentile": 25
+    },
+    "42": {
+      "typicalScore": 91,
+      "percentile": 27
+    },
+    "43": {
+      "typicalScore": 92,
+      "percentile": 30
+    },
+    "44": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "45": {
+      "typicalScore": 94,
+      "percentile": 34
+    },
+    "46": {
+      "typicalScore": 95,
+      "percentile": 37
+    },
+    "47": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "48": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "49": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "50": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "51": {
+      "typicalScore": 101,
+      "percentile": 53
+    },
+    "52": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "53": {
+      "typicalScore": 103,
+      "percentile": 58
+    },
+    "54": {
+      "typicalScore": 104,
+      "percentile": 61
+    },
+    "55": {
+      "typicalScore": 105,
+      "percentile": 63
+    },
+    "56": {
+      "typicalScore": 106,
+      "percentile": 66
+    },
+    "57": {
+      "typicalScore": 107,
+      "percentile": 68
+    },
+    "58": {
+      "typicalScore": 108,
+      "percentile": 70
+    },
+    "59": {
+      "typicalScore": 109,
+      "percentile": 73
+    },
+    "60": {
+      "typicalScore": 110,
+      "percentile": 75
+    },
+    "61": {
+      "typicalScore": 111,
+      "percentile": 77
+    },
+    "62": {
+      "typicalScore": 112,
+      "percentile": 79
+    },
+    "63": {
+      "typicalScore": 113,
+      "percentile": 81
+    },
+    "64": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "65": {
+      "typicalScore": 115,
+      "percentile": 84
+    },
+    "66": {
+      "typicalScore": 116,
+      "percentile": 86
+    },
+    "67": {
+      "typicalScore": 117,
+      "percentile": 87
+    },
+    "68": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "69": {
+      "typicalScore": 120,
+      "percentile": 91
+    },
+    "70": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "71": {
+      "typicalScore": 122,
+      "percentile": 93
+    },
+    "72": {
+      "typicalScore": 123,
+      "percentile": 94
+    },
+    "73": {
+      "typicalScore": 124,
+      "percentile": 95
+    },
+    "74": {
+      "typicalScore": 125,
+      "percentile": 95
+    },
+    "75": {
+      "typicalScore": 130,
+      "percentile": 98
+    },
+    "76": {
+      "typicalScore": 132,
+      "percentile": 98
+    },
+    "77": {
+      "typicalScore": 133,
+      "percentile": 99
+    },
+    "78": {
+      "typicalScore": 135,
+      "percentile": 99
+    },
+    "79": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "80": {
+      "typicalScore": 137,
+      "percentile": 99
+    },
+    "81": {
+      "typicalScore": 138,
+      "percentile": 99
+    },
+    ">=82": {
+      "typicalScore": 139,
+      "percentile": ">99"
+    }
+  },
+  "8": {
+    "<=24": {
+      "typicalScore": 61,
+      "percentile": "<1"
+    },
+    "25": {
+      "typicalScore": 62,
+      "percentile": 1
+    },
+    "26": {
+      "typicalScore": 63,
+      "percentile": 1
+    },
+    "27": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "28": {
+      "typicalScore": 65,
+      "percentile": 1
+    },
+    "29": {
+      "typicalScore": 66,
+      "percentile": 1
+    },
+    "30": {
+      "typicalScore": 67,
+      "percentile": 1
+    },
+    "31": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "32": {
+      "typicalScore": 69,
+      "percentile": 2
+    },
+    "33": {
+      "typicalScore": 71,
+      "percentile": 3
+    },
+    "34": {
+      "typicalScore": 72,
+      "percentile": 3
+    },
+    "35": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "36": {
+      "typicalScore": 74,
+      "percentile": 4
+    },
+    "37": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "38": {
+      "typicalScore": 77,
+      "percentile": 6
+    },
+    "39": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "40": {
+      "typicalScore": 80,
+      "percentile": 9
+    },
+    "41": {
+      "typicalScore": 81,
+      "percentile": 10
+    },
+    "42": {
+      "typicalScore": 82,
+      "percentile": 12
+    },
+    "43": {
+      "typicalScore": 83,
+      "percentile": 13
+    },
+    "44": {
+      "typicalScore": 84,
+      "percentile": 14
+    },
+    "45": {
+      "typicalScore": 85,
+      "percentile": 16
+    },
+    "46": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "47": {
+      "typicalScore": 87,
+      "percentile": 19
+    },
+    "48": {
+      "typicalScore": 88,
+      "percentile": 21
+    },
+    "49": {
+      "typicalScore": 89,
+      "percentile": 23
+    },
+    "50": {
+      "typicalScore": 90,
+      "percentile": 25
+    },
+    "51": {
+      "typicalScore": 91,
+      "percentile": 27
+    },
+    "52": {
+      "typicalScore": 92,
+      "percentile": 30
+    },
+    "53": {
+      "typicalScore": 92,
+      "percentile": 30
+    },
+    "54": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "55": {
+      "typicalScore": 94,
+      "percentile": 34
+    },
+    "56": {
+      "typicalScore": 95,
+      "percentile": 37
+    },
+    "57": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "58": {
+      "typicalScore": 97,
+      "percentile": 42
+    },
+    "59": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "60": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "61": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "62": {
+      "typicalScore": 101,
+      "percentile": 53
+    },
+    "63": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "64": {
+      "typicalScore": 103,
+      "percentile": 58
+    },
+    "65": {
+      "typicalScore": 104,
+      "percentile": 61
+    },
+    "66": {
+      "typicalScore": 105,
+      "percentile": 63
+    },
+    "67": {
+      "typicalScore": 106,
+      "percentile": 66
+    },
+    "68": {
+      "typicalScore": 108,
+      "percentile": 70
+    },
+    "69": {
+      "typicalScore": 109,
+      "percentile": 73
+    },
+    "70": {
+      "typicalScore": 110,
+      "percentile": 75
+    },
+    "71": {
+      "typicalScore": 111,
+      "percentile": 77
+    },
+    "72": {
+      "typicalScore": 111,
+      "percentile": 77
+    },
+    "73": {
+      "typicalScore": 112,
+      "percentile": 79
+    },
+    "74": {
+      "typicalScore": 113,
+      "percentile": 81
+    },
+    "75": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "76": {
+      "typicalScore": 116,
+      "percentile": 86
+    },
+    "77": {
+      "typicalScore": 117,
+      "percentile": 87
+    },
+    "78": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "79": {
+      "typicalScore": 119,
+      "percentile": 90
+    },
+    "80": {
+      "typicalScore": 120,
+      "percentile": 91
+    },
+    "81": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "82": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "83": {
+      "typicalScore": 122,
+      "percentile": 93
+    },
+    "84": {
+      "typicalScore": 123,
+      "percentile": 94
+    },
+    "85": {
+      "typicalScore": 124,
+      "percentile": 95
+    },
+    "86": {
+      "typicalScore": 125,
+      "percentile": 95
+    },
+    "87": {
+      "typicalScore": 126,
+      "percentile": 96
+    },
+    "88": {
+      "typicalScore": 128,
+      "percentile": 97
+    },
+    "89": {
+      "typicalScore": 130,
+      "percentile": 98
+    },
+    "90": {
+      "typicalScore": 132,
+      "percentile": 98
+    },
+    "91": {
+      "typicalScore": 134,
+      "percentile": 99
+    },
+    "92": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    ">=93": {
+      "typicalScore": 139,
+      "percentile": ">99"
+    }
+  },
+  "9": {
+    "<=26": {
+      "typicalScore": 61,
+      "percentile": "<1"
+    },
+    "27": {
+      "typicalScore": 65,
+      "percentile": 1
+    },
+    "28": {
+      "typicalScore": 67,
+      "percentile": 1
+    },
+    "29": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "30": {
+      "typicalScore": 69,
+      "percentile": 2
+    },
+    "31": {
+      "typicalScore": 70,
+      "percentile": 2
+    },
+    "32": {
+      "typicalScore": 71,
+      "percentile": 3
+    },
+    "33": {
+      "typicalScore": 72,
+      "percentile": 3
+    },
+    "34": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "35": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "36": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "37": {
+      "typicalScore": 74,
+      "percentile": 4
+    },
+    "38": {
+      "typicalScore": 74,
+      "percentile": 4
+    },
+    "39": {
+      "typicalScore": 75,
+      "percentile": 5
+    },
+    "40": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "41": {
+      "typicalScore": 77,
+      "percentile": 6
+    },
+    "42": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "43": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "44": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "45": {
+      "typicalScore": 80,
+      "percentile": 9
+    },
+    "46": {
+      "typicalScore": 81,
+      "percentile": 10
+    },
+    "47": {
+      "typicalScore": 82,
+      "percentile": 12
+    },
+    "48": {
+      "typicalScore": 83,
+      "percentile": 13
+    },
+    "49": {
+      "typicalScore": 83,
+      "percentile": 13
+    },
+    "50": {
+      "typicalScore": 84,
+      "percentile": 14
+    },
+    "51": {
+      "typicalScore": 84,
+      "percentile": 14
+    },
+    "52": {
+      "typicalScore": 85,
+      "percentile": 16
+    },
+    "53": {
+      "typicalScore": 85,
+      "percentile": 16
+    },
+    "54": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "55": {
+      "typicalScore": 87,
+      "percentile": 19
+    },
+    "56": {
+      "typicalScore": 88,
+      "percentile": 21
+    },
+    "57": {
+      "typicalScore": 89,
+      "percentile": 23
+    },
+    "58": {
+      "typicalScore": 90,
+      "percentile": 25
+    },
+    "59": {
+      "typicalScore": 91,
+      "percentile": 27
+    },
+    "60": {
+      "typicalScore": 92,
+      "percentile": 30
+    },
+    "61": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "62": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "63": {
+      "typicalScore": 94,
+      "percentile": 34
+    },
+    "64": {
+      "typicalScore": 95,
+      "percentile": 37
+    },
+    "65": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "66": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "67": {
+      "typicalScore": 97,
+      "percentile": 42
+    },
+    "68": {
+      "typicalScore": 97,
+      "percentile": 42
+    },
+    "69": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "70": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "71": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "72": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "73": {
+      "typicalScore": 101,
+      "percentile": 53
+    },
+    "74": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "75": {
+      "typicalScore": 104,
+      "percentile": 61
+    },
+    "76": {
+      "typicalScore": 104,
+      "percentile": 61
+    },
+    "77": {
+      "typicalScore": 105,
+      "percentile": 63
+    },
+    "78": {
+      "typicalScore": 106,
+      "percentile": 66
+    },
+    "79": {
+      "typicalScore": 107,
+      "percentile": 68
+    },
+    "80": {
+      "typicalScore": 108,
+      "percentile": 70
+    },
+    "81": {
+      "typicalScore": 109,
+      "percentile": 73
+    },
+    "82": {
+      "typicalScore": 110,
+      "percentile": 75
+    },
+    "83": {
+      "typicalScore": 111,
+      "percentile": 77
+    },
+    "84": {
+      "typicalScore": 112,
+      "percentile": 79
+    },
+    "85": {
+      "typicalScore": 113,
+      "percentile": 81
+    },
+    "86": {
+      "typicalScore": 115,
+      "percentile": 84
+    },
+    "87": {
+      "typicalScore": 116,
+      "percentile": 86
+    },
+    "88": {
+      "typicalScore": 117,
+      "percentile": 87
+    },
+    "89": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "90": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "91": {
+      "typicalScore": 119,
+      "percentile": 90
+    },
+    "92": {
+      "typicalScore": 120,
+      "percentile": 91
+    },
+    "93": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "94": {
+      "typicalScore": 122,
+      "percentile": 93
+    },
+    "95": {
+      "typicalScore": 123,
+      "percentile": 94
+    },
+    "96": {
+      "typicalScore": 124,
+      "percentile": 95
+    },
+    "97": {
+      "typicalScore": 125,
+      "percentile": 95
+    },
+    "98": {
+      "typicalScore": 126,
+      "percentile": 96
+    },
+    "99": {
+      "typicalScore": 127,
+      "percentile": 96
+    },
+    "100": {
+      "typicalScore": 128,
+      "percentile": 97
+    },
+    "101": {
+      "typicalScore": 129,
+      "percentile": 97
+    },
+    "102": {
+      "typicalScore": 130,
+      "percentile": 98
+    },
+    "103": {
+      "typicalScore": 133,
+      "percentile": 99
+    },
+    ">=104": {
+      "typicalScore": 139,
+      "percentile": ">99"
+    }
+  },
+  "10": {
+    "<=38": {
+      "typicalScore": 61,
+      "percentile": "<1"
+    },
+    "39": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "40": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "41": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "42": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "43": {
+      "typicalScore": 66,
+      "percentile": 1
+    },
+    "44": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "45": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "46": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "47": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "48": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "49": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "50": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "51": {
+      "typicalScore": 69,
+      "percentile": 2
+    },
+    "52": {
+      "typicalScore": 71,
+      "percentile": 3
+    },
+    "53": {
+      "typicalScore": 72,
+      "percentile": 3
+    },
+    "54": {
+      "typicalScore": 72,
+      "percentile": 3
+    },
+    "55": {
+      "typicalScore": 73,
+      "percentile": 4
+    },
+    "56": {
+      "typicalScore": 75,
+      "percentile": 5
+    },
+    "57": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "58": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "59": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "60": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "61": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "62": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "63": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "64": {
+      "typicalScore": 77,
+      "percentile": 6
+    },
+    "65": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "66": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "67": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "68": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "69": {
+      "typicalScore": 80,
+      "percentile": 9
+    },
+    "70": {
+      "typicalScore": 82,
+      "percentile": 12
+    },
+    "71": {
+      "typicalScore": 84,
+      "percentile": 14
+    },
+    "72": {
+      "typicalScore": 85,
+      "percentile": 16
+    },
+    "73": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "74": {
+      "typicalScore": 87,
+      "percentile": 19
+    },
+    "75": {
+      "typicalScore": 88,
+      "percentile": 21
+    },
+    "76": {
+      "typicalScore": 89,
+      "percentile": 23
+    },
+    "77": {
+      "typicalScore": 91,
+      "percentile": 27
+    },
+    "78": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "79": {
+      "typicalScore": 95,
+      "percentile": 37
+    },
+    "80": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "81": {
+      "typicalScore": 97,
+      "percentile": 42
+    },
+    "82": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "83": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "84": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "85": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "86": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "87": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "88": {
+      "typicalScore": 103,
+      "percentile": 58
+    },
+    "89": {
+      "typicalScore": 105,
+      "percentile": 63
+    },
+    "90": {
+      "typicalScore": 106,
+      "percentile": 66
+    },
+    "91": {
+      "typicalScore": 107,
+      "percentile": 68
+    },
+    "92": {
+      "typicalScore": 108,
+      "percentile": 70
+    },
+    "93": {
+      "typicalScore": 109,
+      "percentile": 73
+    },
+    "94": {
+      "typicalScore": 110,
+      "percentile": 75
+    },
+    "95": {
+      "typicalScore": 112,
+      "percentile": 79
+    },
+    "96": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "97": {
+      "typicalScore": 116,
+      "percentile": 86
+    },
+    "98": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "99": {
+      "typicalScore": 119,
+      "percentile": 90
+    },
+    "100": {
+      "typicalScore": 119,
+      "percentile": 90
+    },
+    "101": {
+      "typicalScore": 120,
+      "percentile": 91
+    },
+    "102": {
+      "typicalScore": 124,
+      "percentile": 95
+    },
+    "103": {
+      "typicalScore": 127,
+      "percentile": 96
+    },
+    "104": {
+      "typicalScore": 128,
+      "percentile": 97
+    },
+    "105": {
+      "typicalScore": 131,
+      "percentile": 98
+    },
+    "106": {
+      "typicalScore": 132,
+      "percentile": 98
+    },
+    "107": {
+      "typicalScore": 133,
+      "percentile": 99
+    },
+    "108": {
+      "typicalScore": 134,
+      "percentile": 99
+    },
+    "109": {
+      "typicalScore": 135,
+      "percentile": 99
+    },
+    "110": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "111": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "112": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "113": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "114": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "115": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "116": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "117": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "118": {
+      "typicalScore": 137,
+      "percentile": 99
+    },
+    "119": {
+      "typicalScore": 137,
+      "percentile": 99
+    },
+    "120": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "121": {
+      "typicalScore": 138,
+      "percentile": 99
+    },
+    ">=122": {
+      "typicalScore": 139,
+      "percentile": ">99"
+    }
+  },
+  "11": {
+    "<=53": {
+      "typicalScore": 61,
+      "percentile": "<1"
+    },
+    "54": {
+      "typicalScore": 63,
+      "percentile": 1
+    },
+    "55": {
+      "typicalScore": 64,
+      "percentile": 1
+    },
+    "56": {
+      "typicalScore": 65,
+      "percentile": 1
+    },
+    "57": {
+      "typicalScore": 68,
+      "percentile": 2
+    },
+    "58": {
+      "typicalScore": 69,
+      "percentile": 2
+    },
+    "59": {
+      "typicalScore": 70,
+      "percentile": 2
+    },
+    "60": {
+      "typicalScore": 74,
+      "percentile": 4
+    },
+    "61": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "62": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "63": {
+      "typicalScore": 76,
+      "percentile": 5
+    },
+    "64": {
+      "typicalScore": 77,
+      "percentile": 6
+    },
+    "65": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "66": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "67": {
+      "typicalScore": 78,
+      "percentile": 7
+    },
+    "68": {
+      "typicalScore": 79,
+      "percentile": 8
+    },
+    "69": {
+      "typicalScore": 80,
+      "percentile": 9
+    },
+    "70": {
+      "typicalScore": 81,
+      "percentile": 10
+    },
+    "71": {
+      "typicalScore": 83,
+      "percentile": 13
+    },
+    "72": {
+      "typicalScore": 84,
+      "percentile": 14
+    },
+    "73": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "74": {
+      "typicalScore": 86,
+      "percentile": 18
+    },
+    "75": {
+      "typicalScore": 88,
+      "percentile": 21
+    },
+    "76": {
+      "typicalScore": 89,
+      "percentile": 23
+    },
+    "77": {
+      "typicalScore": 90,
+      "percentile": 25
+    },
+    "78": {
+      "typicalScore": 93,
+      "percentile": 32
+    },
+    "79": {
+      "typicalScore": 95,
+      "percentile": 37
+    },
+    "80": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "81": {
+      "typicalScore": 96,
+      "percentile": 39
+    },
+    "82": {
+      "typicalScore": 97,
+      "percentile": 42
+    },
+    "83": {
+      "typicalScore": 98,
+      "percentile": 45
+    },
+    "84": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "85": {
+      "typicalScore": 99,
+      "percentile": 47
+    },
+    "86": {
+      "typicalScore": 100,
+      "percentile": 50
+    },
+    "87": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "88": {
+      "typicalScore": 102,
+      "percentile": 55
+    },
+    "89": {
+      "typicalScore": 103,
+      "percentile": 58
+    },
+    "90": {
+      "typicalScore": 104,
+      "percentile": 61
+    },
+    "91": {
+      "typicalScore": 105,
+      "percentile": 63
+    },
+    "92": {
+      "typicalScore": 107,
+      "percentile": 68
+    },
+    "93": {
+      "typicalScore": 108,
+      "percentile": 70
+    },
+    "94": {
+      "typicalScore": 110,
+      "percentile": 75
+    },
+    "95": {
+      "typicalScore": 111,
+      "percentile": 77
+    },
+    "96": {
+      "typicalScore": 112,
+      "percentile": 79
+    },
+    "97": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "98": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "99": {
+      "typicalScore": 114,
+      "percentile": 82
+    },
+    "100": {
+      "typicalScore": 115,
+      "percentile": 84
+    },
+    "101": {
+      "typicalScore": 116,
+      "percentile": 86
+    },
+    "102": {
+      "typicalScore": 117,
+      "percentile": 87
+    },
+    "103": {
+      "typicalScore": 118,
+      "percentile": 88
+    },
+    "104": {
+      "typicalScore": 119,
+      "percentile": 90
+    },
+    "105": {
+      "typicalScore": 120,
+      "percentile": 91
+    },
+    "106": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "107": {
+      "typicalScore": 121,
+      "percentile": 92
+    },
+    "108": {
+      "typicalScore": 122,
+      "percentile": 93
+    },
+    "109": {
+      "typicalScore": 123,
+      "percentile": 94
+    },
+    "110": {
+      "typicalScore": 124,
+      "percentile": 95
+    },
+    "111": {
+      "typicalScore": 125,
+      "percentile": 95
+    },
+    "112": {
+      "typicalScore": 126,
+      "percentile": 96
+    },
+    "113": {
+      "typicalScore": 127,
+      "percentile": 96
+    },
+    "114": {
+      "typicalScore": 128,
+      "percentile": 97
+    },
+    "115": {
+      "typicalScore": 129,
+      "percentile": 97
+    },
+    "116": {
+      "typicalScore": 130,
+      "percentile": 98
+    },
+    "117": {
+      "typicalScore": 131,
+      "percentile": 98
+    },
+    "118": {
+      "typicalScore": 132,
+      "percentile": 98
+    },
+    "119": {
+      "typicalScore": 133,
+      "percentile": 99
+    },
+    "120": {
+      "typicalScore": 134,
+      "percentile": 99
+    },
+    "121": {
+      "typicalScore": 135,
+      "percentile": 99
+    },
+    "122": {
+      "typicalScore": 136,
+      "percentile": 99
+    },
+    "123": {
+      "typicalScore": 137,
+      "percentile": 99
+    },
+    "124": {
+      "typicalScore": 138,
+      "percentile": 99
+    },
+    "125": {
+      "typicalScore": 138,
+      "percentile": 99
+    },
+    ">=126": {
+      "typicalScore": 139,
+      "percentile": ">99"
+    }
+  }
+}
