@@ -55,10 +55,10 @@ export function GroupNameDialog({
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-1.5">
+          <div className="space-y-2">
             <label
               htmlFor={inputId}
-              className="text-body-md font-medium text-on-surface"
+              className="block pb-2 text-body-md font-medium text-on-surface"
             >
               Nombre del paciente
             </label>
