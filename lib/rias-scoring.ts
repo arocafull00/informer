@@ -156,6 +156,23 @@ export function createDefaultRiasResultsForm(): RiasResultsForm {
   };
 }
 
+export function normalizeRiasResultsForm(
+  form?: Partial<RiasResultsForm>,
+): RiasResultsForm {
+  const defaults = createDefaultRiasResultsForm();
+  return mergeRiasTSums({
+    ...defaults,
+    ...form,
+    patient: { ...defaults.patient, ...form?.patient },
+    directScores: { ...defaults.directScores, ...form?.directScores },
+    tScores: { ...defaults.tScores, ...form?.tScores },
+    tSums: { ...defaults.tSums, ...form?.tSums },
+    indices: { ...defaults.indices, ...form?.indices },
+    intervals: { ...defaults.intervals, ...form?.intervals },
+    percentiles: { ...defaults.percentiles, ...form?.percentiles },
+  });
+}
+
 export function computeRiasTSums(tScores: RiasTScores): RiasTSums {
   const IV = sumWhenComplete([tScores.Ad, tScores.An]);
   const INV = sumWhenComplete([tScores.Ca, tScores.Fi]);

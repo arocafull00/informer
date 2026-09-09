@@ -4,6 +4,7 @@ import type {
 } from "@/lib/cumanes-types";
 import type { CarasIdentification } from "@/lib/caras-r-types";
 import type { StaiIdentification } from "@/lib/stai-types";
+import type { RiasPatient, RiasResultsForm } from "@/lib/rias-scoring";
 
 export type TestType =
   | "ADIR"
@@ -11,7 +12,9 @@ export type TestType =
   | "ADOS2_NINO"
   | "CUMANES"
   | "CARAS_R"
-  | "STAI";
+  | "STAI"
+  | "RIAS"
+  | "DERS";
 
 export type Question = {
   id: string;
@@ -37,6 +40,7 @@ export type SavedReport = {
   cumanesLaterality?: CumanesLaterality;
   carasIdentification?: CarasIdentification;
   staiIdentification?: StaiIdentification;
+  riasForm?: RiasResultsForm;
 };
 
 export type ReportGroup = {
@@ -52,4 +56,5 @@ export type CreateReportInput = {
   cumanesIdentification?: CumanesIdentification;
   carasIdentification?: CarasIdentification;
   staiIdentification?: StaiIdentification;
+  riasPatient?: RiasPatient;
 };

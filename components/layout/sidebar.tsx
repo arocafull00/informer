@@ -9,7 +9,7 @@ import {
   type DragStartEvent,
 } from "@dnd-kit/dom";
 import { isSortable } from "@dnd-kit/react/sortable";
-import { FilePlus, FolderPlus, Sparkles } from "lucide-react";
+import { FilePlus, FolderPlus } from "lucide-react";
 import { DeleteGroupDialog } from "@/components/history/delete-group-dialog";
 import { GroupNameDialog } from "@/components/history/group-name-dialog";
 import { HistoryGroup } from "@/components/history/history-group";
@@ -18,7 +18,6 @@ import {
   UNGROUPED_KEY,
 } from "@/components/history/history-item";
 import { NewReportDialog } from "@/components/reports/new-report-dialog";
-import { RiasGenerateResultsDialog } from "@/components/rias/rias-generate-results-dialog";
 import { useCreateNewReport } from "@/lib/use-save-report";
 import type { CreateReportInput, ReportGroup } from "@/lib/types";
 import { useAdirResultsDraftStore } from "@/store/use-adir-results-draft-store";
@@ -92,7 +91,6 @@ export function Sidebar() {
     group: ReportGroup;
     reportCount: number;
   } | null>(null);
-  const [riasDialogOpen, setRiasDialogOpen] = useState(false);
 
   const ungroupedReports = useMemo(
     () => reports.filter((report) => !report.groupId),
@@ -155,14 +153,6 @@ export function Sidebar() {
         >
           <FolderPlus className="size-4" aria-hidden="true" />
           Nuevo paciente
-        </button>
-        <button
-          type="button"
-          onClick={() => setRiasDialogOpen(true)}
-          className="interactive-press flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-label-md text-on-surface hover:bg-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <Sparkles className="size-4" aria-hidden="true" />
-          Generar RIAS
         </button>
       </div>
 
@@ -287,10 +277,6 @@ export function Sidebar() {
           if (groupToDelete) deleteGroup(groupToDelete.group.id);
           setGroupToDelete(null);
         }}
-      />
-      <RiasGenerateResultsDialog
-        open={riasDialogOpen}
-        onClose={() => setRiasDialogOpen(false)}
       />
     </aside>
   );

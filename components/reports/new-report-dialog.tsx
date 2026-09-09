@@ -6,6 +6,7 @@ import { Ados2SubjectSexPicker } from "@/components/ados2/ados2-subject-sex-pick
 import { CumanesIdentificationFields } from "@/components/cumanes/cumanes-identification-fields";
 import { CarasIdentificationFields } from "@/components/caras-r/caras-identification-fields";
 import { StaiIdentificationFields } from "@/components/stai/stai-identification-fields";
+import { RiasPatientStep } from "@/components/rias/rias-patient-step";
 import {
   Dialog,
   DialogContent,
@@ -31,6 +32,10 @@ import {
 } from "@/lib/stai-types";
 import { testLabels } from "@/lib/test-data";
 import type { CreateReportInput, TestType } from "@/lib/types";
+import {
+  createDefaultRiasResultsForm,
+  type RiasPatient,
+} from "@/lib/rias-scoring";
 import { cn } from "@/lib/utils";
 
 type NewReportDialogProps = {
@@ -73,6 +78,16 @@ const reportTypes: {
     label: "STAI",
     description: "Inventario de ansiedad estado-rasgo.",
   },
+  {
+    value: "RIAS",
+    label: "RIAS",
+    description: "Escalas de inteligencia y memoria.",
+  },
+  {
+    value: "DERS",
+    label: "DERS",
+    description: "Escala de dificultades en la regulación emocional.",
+  },
 ];
 
 export function NewReportDialog({
@@ -90,11 +105,15 @@ export function NewReportDialog({
     useState<CarasIdentification>({ ...EMPTY_CARAS_IDENTIFICATION });
   const [staiIdentification, setStaiIdentification] =
     useState<StaiIdentification>({ ...EMPTY_STAI_IDENTIFICATION });
+  const [riasPatient, setRiasPatient] = useState<RiasPatient>(
+    () => createDefaultRiasResultsForm().patient
+  );
 
   const isAdos2 = selectedTest ? isAdos2Test(selectedTest) : false;
   const isCumanes = selectedTest === "CUMANES";
   const isCaras = selectedTest === "CARAS_R";
   const isStai = selectedTest === "STAI";
+  const isRias = selectedTest === "RIAS";
   const patientSex = isCaras
     ? ""
     : isAdos2 || isCumanes || isStai
@@ -108,6 +127,7 @@ export function NewReportDialog({
     setCumanesIdentification({ ...EMPTY_CUMANES_IDENTIFICATION });
     setCarasIdentification({ ...EMPTY_CARAS_IDENTIFICATION });
     setStaiIdentification({ ...EMPTY_STAI_IDENTIFICATION });
+    setRiasPatient(createDefaultRiasResultsForm().patient);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -122,11 +142,12 @@ export function NewReportDialog({
     if (!selectedTest) return;
     onConfirm({
       test: selectedTest,
-      patientName,
+      patientName: isRias ? riasPatient.name : patientName,
       patientSex,
       ...(isCumanes ? { cumanesIdentification } : {}),
       ...(isCaras ? { carasIdentification } : {}),
       ...(isStai ? { staiIdentification } : {}),
+      ...(isRias ? { riasPatient } : {}),
     });
     onClose();
   };
@@ -266,12 +287,17 @@ export function NewReportDialog({
                     }
                     onIdentificationChange={setStaiIdentification}
                   />
+                ) : isRias ? (
+                  <RiasPatientStep
+                    patient={riasPatient}
+                    onChange={setRiasPatient}
+                  />
                 ) : (
                   <>
                     <div className="space-y-1.5">
                       <label
                         htmlFor="new-report-patient-name"
-                        className="text-body-md font-medium text-on-surface"
+                        className="text-body-md font-medium text-on-surface pb-1"
                       >
                         Nombre del paciente
                       </label>

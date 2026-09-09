@@ -9,11 +9,13 @@ import {
   selectCurrentPatientName,
   selectCurrentPatientSex,
   selectCurrentReportId,
+  selectCurrentRiasForm,
   selectCurrentStaiIdentification,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
 import { buildCarasMarkdown } from "@/lib/caras-r-scoring";
 import { EMPTY_CARAS_IDENTIFICATION } from "@/lib/caras-r-types";
+import { buildDersMarkdown } from "@/lib/ders-scoring";
 import { buildStaiMarkdown } from "@/lib/stai-scoring";
 import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
@@ -24,6 +26,10 @@ import {
   EMPTY_CUMANES_LATERALITY,
 } from "@/lib/cumanes-types";
 import type { CreateReportInput, SavedReport } from "@/lib/types";
+import {
+  createDefaultRiasResultsForm,
+  normalizeRiasResultsForm,
+} from "@/lib/rias-scoring";
 
 export function useReportMarkdown() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
@@ -43,6 +49,10 @@ export function useReportMarkdown() {
     if (currentTest === "STAI") {
       return buildStaiMarkdown(staiIdentification, patientSex, answers);
     }
+    if (currentTest === "DERS") {
+      return buildDersMarkdown(patientSex, answers);
+    }
+    if (currentTest === "RIAS") return "";
     const data = testData[currentTest];
     return generateMarkdown(data, answers, patientSex);
   }, [answers, carasIdentification, currentTest, patientSex, staiIdentification]);
@@ -65,6 +75,7 @@ export function useAutoSaveReport() {
   const staiIdentification = useCurrentReportStore(
     selectCurrentStaiIdentification
   );
+  const riasForm = useCurrentReportStore(selectCurrentRiasForm);
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
@@ -86,6 +97,7 @@ export function useAutoSaveReport() {
       cumanesLaterality: previousCumanesLaterality,
       carasIdentification: previousCarasIdentification,
       staiIdentification: previousStaiIdentification,
+      riasForm: previousRiasForm,
       ...reportBase
     } = existingReport;
     void previousPatientName;
@@ -94,6 +106,7 @@ export function useAutoSaveReport() {
     void previousCumanesLaterality;
     void previousCarasIdentification;
     void previousStaiIdentification;
+    void previousRiasForm;
 
     saveReport({
       ...reportBase,
@@ -114,6 +127,9 @@ export function useAutoSaveReport() {
       ...(currentTest === "STAI"
         ? { staiIdentification: { ...staiIdentification } }
         : {}),
+      ...(currentTest === "RIAS"
+        ? { riasForm: normalizeRiasResultsForm(riasForm) }
+        : {}),
     });
   }, [
     currentReportId,
@@ -126,6 +142,7 @@ export function useAutoSaveReport() {
     cumanesLaterality,
     carasIdentification,
     staiIdentification,
+    riasForm,
     saveReport,
   ]);
 }
@@ -142,6 +159,7 @@ export function useCreateNewReport() {
       cumanesIdentification,
       carasIdentification,
       staiIdentification,
+      riasPatient,
     }: CreateReportInput) => {
       const trimmedPatientName = patientName?.trim();
       const data = testData[test];
@@ -154,13 +172,23 @@ export function useCreateNewReport() {
         ...EMPTY_STAI_IDENTIFICATION,
         ...staiIdentification,
       };
+      const initialRiasForm = normalizeRiasResultsForm({
+        ...createDefaultRiasResultsForm(),
+        patient: {
+          ...createDefaultRiasResultsForm().patient,
+          ...riasPatient,
+          name: riasPatient?.name.trim() || trimmedPatientName || "",
+        },
+      });
       const report: SavedReport = {
         id: crypto.randomUUID(),
         createdAt: new Date().toISOString(),
         test,
         answers: emptyAnswers,
         markdown:
-          test === "CARAS_R"
+          test === "RIAS"
+            ? ""
+            : test === "CARAS_R"
             ? buildCarasMarkdown(initialCarasIdentification, emptyAnswers)
             : test === "STAI"
               ? buildStaiMarkdown(
@@ -168,7 +196,9 @@ export function useCreateNewReport() {
                   patientSex ?? "",
                   emptyAnswers
                 )
-              : generateMarkdown(data, emptyAnswers, patientSex ?? ""),
+              : test === "DERS"
+                ? buildDersMarkdown(patientSex ?? "", emptyAnswers)
+                : generateMarkdown(data, emptyAnswers, patientSex ?? ""),
         ...(trimmedPatientName ? { patientName: trimmedPatientName } : {}),
         ...(patientSex ? { patientSex } : {}),
         ...(test === "CUMANES"
@@ -194,6 +224,7 @@ export function useCreateNewReport() {
               },
             }
           : {}),
+        ...(test === "RIAS" ? { riasForm: initialRiasForm } : {}),
       };
 
       saveReport(report);

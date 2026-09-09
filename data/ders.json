@@ -1,0 +1,450 @@
+[
+  {
+    "id": "ders-01",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "1",
+    "question": "Percibo con claridad mis sentimientos.",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-02",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "2",
+    "question": "Presto atención a cómo me siento.",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-03",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "3",
+    "question": "Vivo mis emociones como algo desbordante y fuera de control.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-04",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "4",
+    "question": "No tengo ni idea de cómo me siento.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-05",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "5",
+    "question": "Tengo dificultades para comprender mis sentimientos.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-06",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "6",
+    "question": "Estoy atento a mis sentimientos.",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-07",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "7",
+    "question": "Doy importancia a lo que estoy sintiendo.",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-08",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "8",
+    "question": "Estoy confuso/a sobre lo que siento.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-09",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "9",
+    "question": "Cuando me siento mal, reconozco mis emociones.",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-10",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "10",
+    "question": "Cuando me siento mal, me enfado conmigo mismo/a por sentirme de esa manera.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-11",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "11",
+    "question": "Cuando me encuentro mal, me da vergüenza sentirme así.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-12",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "12",
+    "question": "Cuando me siento mal, tengo dificultades para sacar el trabajo adelante.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-13",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "13",
+    "question": "Cuando me siento mal, pierdo el control.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-14",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "14",
+    "question": "Cuando me siento mal, creo que estaré así durante mucho tiempo.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-15",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "15",
+    "question": "Cuando me encuentro mal, creo que acabaré sintiéndome muy deprimido/a.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-16",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "16",
+    "question": "Cuando me siento mal, me resulta difícil centrarme en otras cosas.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-17",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "17",
+    "question": "Cuando me encuentro mal, me siento fuera de control.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-18",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "18",
+    "question": "Cuando me siento mal, me siento avergonzado conmigo mismo/a por sentirme de esa manera.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-19",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "19",
+    "question": "Cuando me encuentro mal, me siento como si fuera débil.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-20",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "20",
+    "question": "Cuando me encuentro mal, me siento culpable por sentirme así.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-21",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "21",
+    "question": "Cuando me siento mal, tengo dificultades para concentrarme.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-22",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "22",
+    "question": "Cuando me siento mal, tengo dificultades para controlar mi comportamiento.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-23",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "23",
+    "question": "Cuando me siento mal, me irrito conmigo mismo/a por sentirme así.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-24",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "24",
+    "question": "Cuando me encuentro mal, empiezo a sentirme muy mal sobre mí mismo/a.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-25",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "25",
+    "question": "Cuando me siento mal, creo que regodearme en ello es todo lo que puedo hacer.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-26",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "26",
+    "question": "Cuando me siento mal, pierdo el control sobre mi comportamiento.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-27",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "27",
+    "question": "Cuando me siento mal, tengo dificultades para pensar sobre cualquier otra cosa.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  },
+  {
+    "id": "ders-28",
+    "test": "DERS",
+    "sectionNumber": 1,
+    "section": "DERS",
+    "code": "28",
+    "question": "Cuando me siento mal, mis emociones parecen desbordarse.",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo",
+      "4": "Casi siempre",
+      "5": "Siempre"
+    }
+  }
+]

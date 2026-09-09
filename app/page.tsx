@@ -10,6 +10,9 @@ import { CarasResultsPanel } from "@/components/caras-r/caras-results-panel";
 import { CarasScoreForm } from "@/components/caras-r/caras-score-form";
 import { StaiQuestionnaire } from "@/components/stai/stai-questionnaire";
 import { StaiResultsPanel } from "@/components/stai/stai-results-panel";
+import { RiasScoreForm } from "@/components/rias/rias-score-form";
+import { RiasResultsPanel } from "@/components/rias/rias-results-panel";
+import { DersResultsPanel } from "@/components/ders/ders-results-panel";
 import { useAutoSaveReport } from "@/lib/use-save-report";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
 
@@ -19,6 +22,8 @@ export default function Home() {
   const isCumanes = currentTest === "CUMANES";
   const isCaras = currentTest === "CARAS_R";
   const isStai = currentTest === "STAI";
+  const isRias = currentTest === "RIAS";
+  const isDers = currentTest === "DERS";
 
   return (
     <div className="h-dvh w-full overflow-hidden bg-background">
@@ -34,6 +39,8 @@ export default function Home() {
                 <CarasScoreForm />
               ) : isStai ? (
                 <StaiQuestionnaire />
+              ) : isRias ? (
+                <RiasScoreForm />
               ) : (
                 <QuestionList />
               )}
@@ -45,6 +52,10 @@ export default function Home() {
                 <CarasResultsPanel />
               ) : isStai ? (
                 <StaiResultsPanel />
+              ) : isRias ? (
+                <RiasResultsPanel />
+              ) : isDers ? (
+                <DersResultsPanel />
               ) : (
                 <MarkdownPreview />
               )}

@@ -14,6 +14,16 @@ import {
   EMPTY_STAI_IDENTIFICATION,
   type StaiIdentification,
 } from "@/lib/stai-types";
+import {
+  createDefaultRiasResultsForm,
+  mergeRiasTSums,
+  normalizeRiasResultsForm,
+  type RiasIndexKey,
+  type RiasIntervals,
+  type RiasPatient,
+  type RiasResultsForm,
+  type RiasSubtestKey,
+} from "@/lib/rias-scoring";
 import type { SavedReport, TestType } from "@/lib/types";
 
 const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
@@ -23,6 +33,8 @@ const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
   CUMANES: {},
   CARAS_R: {},
   STAI: {},
+  RIAS: {},
+  DERS: {},
 });
 
 const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
@@ -32,6 +44,8 @@ const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
   CUMANES: undefined,
   CARAS_R: undefined,
   STAI: undefined,
+  RIAS: undefined,
+  DERS: undefined,
 });
 
 const emptyPatientSexByTest = (): Record<TestType, string> => ({
@@ -41,6 +55,8 @@ const emptyPatientSexByTest = (): Record<TestType, string> => ({
   CUMANES: "",
   CARAS_R: "",
   STAI: "",
+  RIAS: "",
+  DERS: "",
 });
 
 const emptyCumanesIdentificationByTest = (): Record<
@@ -53,6 +69,8 @@ const emptyCumanesIdentificationByTest = (): Record<
   CUMANES: { ...EMPTY_CUMANES_IDENTIFICATION },
   CARAS_R: { ...EMPTY_CUMANES_IDENTIFICATION },
   STAI: { ...EMPTY_CUMANES_IDENTIFICATION },
+  RIAS: { ...EMPTY_CUMANES_IDENTIFICATION },
+  DERS: { ...EMPTY_CUMANES_IDENTIFICATION },
 });
 
 const emptyCumanesLateralityByTest = (): Record<
@@ -65,6 +83,8 @@ const emptyCumanesLateralityByTest = (): Record<
   CUMANES: { ...EMPTY_CUMANES_LATERALITY },
   CARAS_R: { ...EMPTY_CUMANES_LATERALITY },
   STAI: { ...EMPTY_CUMANES_LATERALITY },
+  RIAS: { ...EMPTY_CUMANES_LATERALITY },
+  DERS: { ...EMPTY_CUMANES_LATERALITY },
 });
 
 const emptyCarasIdentificationByTest = (): Record<
@@ -77,6 +97,8 @@ const emptyCarasIdentificationByTest = (): Record<
   CUMANES: { ...EMPTY_CARAS_IDENTIFICATION },
   CARAS_R: { ...EMPTY_CARAS_IDENTIFICATION },
   STAI: { ...EMPTY_CARAS_IDENTIFICATION },
+  RIAS: { ...EMPTY_CARAS_IDENTIFICATION },
+  DERS: { ...EMPTY_CARAS_IDENTIFICATION },
 });
 
 const emptyStaiIdentificationByTest = (): Record<
@@ -89,6 +111,19 @@ const emptyStaiIdentificationByTest = (): Record<
   CUMANES: { ...EMPTY_STAI_IDENTIFICATION },
   CARAS_R: { ...EMPTY_STAI_IDENTIFICATION },
   STAI: { ...EMPTY_STAI_IDENTIFICATION },
+  RIAS: { ...EMPTY_STAI_IDENTIFICATION },
+  DERS: { ...EMPTY_STAI_IDENTIFICATION },
+});
+
+const emptyRiasFormByTest = (): Record<TestType, RiasResultsForm> => ({
+  ADIR: createDefaultRiasResultsForm(),
+  ADOS2_ADULTO: createDefaultRiasResultsForm(),
+  ADOS2_NINO: createDefaultRiasResultsForm(),
+  CUMANES: createDefaultRiasResultsForm(),
+  CARAS_R: createDefaultRiasResultsForm(),
+  STAI: createDefaultRiasResultsForm(),
+  RIAS: createDefaultRiasResultsForm(),
+  DERS: createDefaultRiasResultsForm(),
 });
 
 const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => ({
@@ -98,6 +133,8 @@ const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => (
   CUMANES: undefined,
   CARAS_R: undefined,
   STAI: undefined,
+  RIAS: undefined,
+  DERS: undefined,
 });
 
 type CurrentReportStore = {
@@ -109,6 +146,7 @@ type CurrentReportStore = {
   cumanesLateralityByTest: Record<TestType, CumanesLaterality>;
   carasIdentificationByTest: Record<TestType, CarasIdentification>;
   staiIdentificationByTest: Record<TestType, StaiIdentification>;
+  riasFormByTest: Record<TestType, RiasResultsForm>;
   currentReportIdByTest: Record<TestType, string | undefined>;
   openReport: (report: SavedReport) => void;
   setAnswer: (questionId: string, value: number) => void;
@@ -121,6 +159,12 @@ type CurrentReportStore = {
   setCumanesLaterality: (laterality: CumanesLaterality) => void;
   setCarasIdentification: (identification: CarasIdentification) => void;
   setStaiIdentification: (identification: StaiIdentification) => void;
+  setRiasPatient: (patient: RiasPatient) => void;
+  setRiasDirectScore: (key: RiasSubtestKey, value: number | null) => void;
+  setRiasTScore: (key: RiasSubtestKey, value: number | null) => void;
+  setRiasIndex: (key: RiasIndexKey, value: number | null) => void;
+  setRiasIntervalField: (key: keyof RiasIntervals, value: string) => void;
+  setRiasPercentile: (key: RiasIndexKey, value: string) => void;
   setCurrentReportId: (id: string | undefined) => void;
   reset: () => void;
 };
@@ -146,6 +190,9 @@ export const selectCurrentCarasIdentification = (state: CurrentReportStore) =>
 export const selectCurrentStaiIdentification = (state: CurrentReportStore) =>
   state.staiIdentificationByTest[state.currentTest];
 
+export const selectCurrentRiasForm = (state: CurrentReportStore) =>
+  state.riasFormByTest[state.currentTest];
+
 export const selectCurrentReportId = (state: CurrentReportStore) =>
   state.currentReportIdByTest[state.currentTest];
 
@@ -168,6 +215,12 @@ function normalizePersistedState(
   | "setCumanesLaterality"
   | "setCarasIdentification"
   | "setStaiIdentification"
+  | "setRiasPatient"
+  | "setRiasDirectScore"
+  | "setRiasTScore"
+  | "setRiasIndex"
+  | "setRiasIntervalField"
+  | "setRiasPercentile"
   | "setCurrentReportId"
   | "reset"
 > {
@@ -194,6 +247,7 @@ function normalizePersistedState(
   const cumanesLateralityByTest = emptyCumanesLateralityByTest();
   const carasIdentificationByTest = emptyCarasIdentificationByTest();
   const staiIdentificationByTest = emptyStaiIdentificationByTest();
+  const riasFormByTest = emptyRiasFormByTest();
 
   for (const test of Object.keys(cumanesIdentificationByTest) as TestType[]) {
     cumanesIdentificationByTest[test] = {
@@ -223,6 +277,12 @@ function normalizePersistedState(
     };
   }
 
+  for (const test of Object.keys(riasFormByTest) as TestType[]) {
+    riasFormByTest[test] = normalizeRiasResultsForm(
+      legacy.riasFormByTest?.[test],
+    );
+  }
+
   if (legacy.answers) {
     answersByTest[currentTest] = legacy.answers;
   }
@@ -239,6 +299,7 @@ function normalizePersistedState(
     cumanesLateralityByTest,
     carasIdentificationByTest,
     staiIdentificationByTest,
+    riasFormByTest,
     currentReportIdByTest,
   };
 }
@@ -254,6 +315,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
       cumanesLateralityByTest: emptyCumanesLateralityByTest(),
       carasIdentificationByTest: emptyCarasIdentificationByTest(),
       staiIdentificationByTest: emptyStaiIdentificationByTest(),
+      riasFormByTest: emptyRiasFormByTest(),
       currentReportIdByTest: emptyCurrentReportIdByTest(),
       openReport: (report) =>
         set((state) => ({
@@ -298,6 +360,19 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
               ...report.staiIdentification,
             },
           },
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [report.test]: (() => {
+              const form = normalizeRiasResultsForm(report.riasForm);
+              return {
+                ...form,
+                patient: {
+                  ...form.patient,
+                  name: report.patientName?.trim() || form.patient.name,
+                },
+              };
+            })(),
+          },
           currentReportIdByTest: {
             ...state.currentReportIdByTest,
             [report.test]: report.id,
@@ -325,12 +400,24 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
           };
         }),
       setPatientName: (name) =>
-        set((state) => ({
-          patientNameByTest: {
-            ...state.patientNameByTest,
-            [state.currentTest]: name || undefined,
-          },
-        })),
+        set((state) => {
+          const nextState: Partial<CurrentReportStore> = {
+            patientNameByTest: {
+              ...state.patientNameByTest,
+              [state.currentTest]: name || undefined,
+            },
+          };
+          if (state.currentTest === "RIAS") {
+            nextState.riasFormByTest = {
+              ...state.riasFormByTest,
+              RIAS: {
+                ...state.riasFormByTest.RIAS,
+                patient: { ...state.riasFormByTest.RIAS.patient, name },
+              },
+            };
+          }
+          return nextState;
+        }),
       setPatientSex: (sex) =>
         set((state) => ({
           patientSexByTest: {
@@ -364,6 +451,85 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
           staiIdentificationByTest: {
             ...state.staiIdentificationByTest,
             [state.currentTest]: identification,
+          },
+        })),
+      setRiasPatient: (patient) =>
+        set((state) => ({
+          patientNameByTest: {
+            ...state.patientNameByTest,
+            [state.currentTest]: patient.name || undefined,
+          },
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: {
+              ...state.riasFormByTest[state.currentTest],
+              patient,
+            },
+          },
+        })),
+      setRiasDirectScore: (key, value) =>
+        set((state) => ({
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: {
+              ...state.riasFormByTest[state.currentTest],
+              directScores: {
+                ...state.riasFormByTest[state.currentTest].directScores,
+                [key]: value,
+              },
+            },
+          },
+        })),
+      setRiasTScore: (key, value) =>
+        set((state) => ({
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: mergeRiasTSums({
+              ...state.riasFormByTest[state.currentTest],
+              tScores: {
+                ...state.riasFormByTest[state.currentTest].tScores,
+                [key]: value,
+              },
+            }),
+          },
+        })),
+      setRiasIndex: (key, value) =>
+        set((state) => ({
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: {
+              ...state.riasFormByTest[state.currentTest],
+              indices: {
+                ...state.riasFormByTest[state.currentTest].indices,
+                [key]: value,
+              },
+            },
+          },
+        })),
+      setRiasIntervalField: (key, value) =>
+        set((state) => ({
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: {
+              ...state.riasFormByTest[state.currentTest],
+              intervals: {
+                ...state.riasFormByTest[state.currentTest].intervals,
+                [key]: value,
+              },
+            },
+          },
+        })),
+      setRiasPercentile: (key, value) =>
+        set((state) => ({
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: {
+              ...state.riasFormByTest[state.currentTest],
+              percentiles: {
+                ...state.riasFormByTest[state.currentTest].percentiles,
+                [key]: value,
+              },
+            },
           },
         })),
       setCurrentReportId: (id) =>
@@ -403,6 +569,10 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             ...state.staiIdentificationByTest,
             [state.currentTest]: { ...EMPTY_STAI_IDENTIFICATION },
           },
+          riasFormByTest: {
+            ...state.riasFormByTest,
+            [state.currentTest]: createDefaultRiasResultsForm(),
+          },
           currentReportIdByTest: {
             ...state.currentReportIdByTest,
             [state.currentTest]: undefined,
@@ -411,7 +581,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
     }),
     {
       name: "informer-current-report",
-      version: 7,
+      version: 9,
       migrate: (persistedState) => normalizePersistedState(persistedState),
     }
   )
