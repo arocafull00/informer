@@ -49,6 +49,7 @@ export function QuestionList() {
   const questions = useMemo(() => testData[currentTest], [currentTest]);
   const sections = useMemo(() => groupBySection(questions), [questions]);
   const isAdos2 = isAdos2Test(currentTest);
+  const isStai = currentTest === "STAI";
 
   return (
     <div className="space-y-stack-section pb-10">
@@ -116,7 +117,7 @@ export function QuestionList() {
                       ? ados2ItemLabel(sectionNumber, question.code)
                       : undefined
                   }
-                  showAnswerLabels={isAdos2}
+                  showAnswerLabels={isAdos2 || isStai}
                 />
               ))}
             </div>

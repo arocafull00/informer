@@ -1,0 +1,4096 @@
+{
+  "1_EPO": {
+    "ageMin": 6,
+    "ageMax": 7,
+    "A": [
+      {
+        "min": 35,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 98
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 97
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 96
+      },
+      {
+        "min": 29,
+        "max": 31,
+        "percentile": 95
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "percentile": 90
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 85
+      },
+      {
+        "min": 24,
+        "max": 25,
+        "percentile": 80
+      },
+      {
+        "min": 22,
+        "max": 23,
+        "percentile": 70
+      },
+      {
+        "min": 21,
+        "max": 21,
+        "percentile": 60
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 55
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 50
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 45
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 35
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "percentile": 30
+      },
+      {
+        "min": 14,
+        "max": 14,
+        "percentile": 25
+      },
+      {
+        "min": 13,
+        "max": 13,
+        "percentile": 20
+      },
+      {
+        "min": 12,
+        "max": 12,
+        "percentile": 15
+      },
+      {
+        "min": 9,
+        "max": 11,
+        "percentile": 10
+      },
+      {
+        "min": 8,
+        "max": 8,
+        "percentile": 4
+      },
+      {
+        "min": 7,
+        "max": 7,
+        "percentile": 3
+      },
+      {
+        "min": 4,
+        "max": 6,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 3,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 13,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 10,
+        "max": 12,
+        "percentile": 98
+      },
+      {
+        "min": 8,
+        "max": 9,
+        "percentile": 97
+      },
+      {
+        "min": 7,
+        "max": 7,
+        "percentile": 96
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 95
+      },
+      {
+        "min": 4,
+        "max": 4,
+        "percentile": 90
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 85
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 80
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 60
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 30
+      }
+    ],
+    "A_E": [
+      {
+        "min": 34,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 98
+      },
+      {
+        "min": 31,
+        "max": 32,
+        "percentile": 97
+      },
+      {
+        "min": 28,
+        "max": 30,
+        "percentile": 95
+      },
+      {
+        "min": 25,
+        "max": 27,
+        "percentile": 90
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 85
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 80
+      },
+      {
+        "min": 22,
+        "max": 22,
+        "percentile": 75
+      },
+      {
+        "min": 21,
+        "max": 21,
+        "percentile": 70
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 65
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 60
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 55
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 50
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "percentile": 40
+      },
+      {
+        "min": 14,
+        "max": 14,
+        "percentile": 35
+      },
+      {
+        "min": 13,
+        "max": 13,
+        "percentile": 30
+      },
+      {
+        "min": 12,
+        "max": 12,
+        "percentile": 25
+      },
+      {
+        "min": 10,
+        "max": 11,
+        "percentile": 20
+      },
+      {
+        "min": 8,
+        "max": 9,
+        "percentile": 15
+      },
+      {
+        "min": 5,
+        "max": 7,
+        "percentile": 10
+      },
+      {
+        "min": 4,
+        "max": 4,
+        "percentile": 5
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 4
+      },
+      {
+        "min": -4,
+        "max": 2,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": -5,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 94,
+        "max": 100,
+        "percentile": 70
+      },
+      {
+        "min": 92,
+        "max": 93,
+        "percentile": 65
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 60
+      },
+      {
+        "min": 89,
+        "max": 89,
+        "percentile": 55
+      },
+      {
+        "min": 88,
+        "max": 88,
+        "percentile": 50
+      },
+      {
+        "min": 85,
+        "max": 87,
+        "percentile": 45
+      },
+      {
+        "min": 82,
+        "max": 84,
+        "percentile": 40
+      },
+      {
+        "min": 80,
+        "max": 81,
+        "percentile": 35
+      },
+      {
+        "min": 75,
+        "max": 79,
+        "percentile": 30
+      },
+      {
+        "min": 71,
+        "max": 74,
+        "percentile": 25
+      },
+      {
+        "min": 64,
+        "max": 70,
+        "percentile": 20
+      },
+      {
+        "min": 57,
+        "max": 63,
+        "percentile": 15
+      },
+      {
+        "min": 29,
+        "max": 56,
+        "percentile": 10
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "percentile": 5
+      },
+      {
+        "min": 23,
+        "max": 26,
+        "percentile": 4
+      },
+      {
+        "min": 19,
+        "max": 22,
+        "percentile": 3
+      },
+      {
+        "min": -15,
+        "max": 18,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": -16,
+        "percentile": 1
+      }
+    ]
+  },
+  "2_EPO": {
+    "ageMin": 7,
+    "ageMax": 8,
+    "A": [
+      {
+        "min": 41,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 38,
+        "max": 40,
+        "percentile": 98
+      },
+      {
+        "min": 36,
+        "max": 37,
+        "percentile": 97
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 96
+      },
+      {
+        "min": 32,
+        "max": 34,
+        "percentile": 95
+      },
+      {
+        "min": 29,
+        "max": 31,
+        "percentile": 90
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "percentile": 85
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 80
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 75
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 70
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 60
+      },
+      {
+        "min": 22,
+        "max": 22,
+        "percentile": 55
+      },
+      {
+        "min": 21,
+        "max": 21,
+        "percentile": 50
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 45
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 40
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 35
+      },
+      {
+        "min": 16,
+        "max": 17,
+        "percentile": 30
+      },
+      {
+        "min": 15,
+        "max": 15,
+        "percentile": 20
+      },
+      {
+        "min": 13,
+        "max": 14,
+        "percentile": 15
+      },
+      {
+        "min": 11,
+        "max": 12,
+        "percentile": 10
+      },
+      {
+        "min": 10,
+        "max": 10,
+        "percentile": 5
+      },
+      {
+        "min": 9,
+        "max": 9,
+        "percentile": 3
+      },
+      {
+        "min": 7,
+        "max": 8,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 6,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 12,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 8,
+        "max": 11,
+        "percentile": 98
+      },
+      {
+        "min": 7,
+        "max": 7,
+        "percentile": 97
+      },
+      {
+        "min": 6,
+        "max": 6,
+        "percentile": 96
+      },
+      {
+        "min": 4,
+        "max": 5,
+        "percentile": 95
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 90
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 80
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 65
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 35
+      }
+    ],
+    "A_E": [
+      {
+        "min": 39,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "percentile": 98
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "percentile": 97
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 96
+      },
+      {
+        "min": 30,
+        "max": 33,
+        "percentile": 95
+      },
+      {
+        "min": 28,
+        "max": 29,
+        "percentile": 90
+      },
+      {
+        "min": 26,
+        "max": 27,
+        "percentile": 85
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 80
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 75
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 70
+      },
+      {
+        "min": 22,
+        "max": 22,
+        "percentile": 65
+      },
+      {
+        "min": 21,
+        "max": 21,
+        "percentile": 60
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 55
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 50
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 45
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 40
+      },
+      {
+        "min": 16,
+        "max": 16,
+        "percentile": 35
+      },
+      {
+        "min": 15,
+        "max": 15,
+        "percentile": 30
+      },
+      {
+        "min": 14,
+        "max": 14,
+        "percentile": 25
+      },
+      {
+        "min": 13,
+        "max": 13,
+        "percentile": 20
+      },
+      {
+        "min": 11,
+        "max": 12,
+        "percentile": 15
+      },
+      {
+        "min": 7,
+        "max": 10,
+        "percentile": 10
+      },
+      {
+        "min": 6,
+        "max": 6,
+        "percentile": 4
+      },
+      {
+        "min": 4,
+        "max": 5,
+        "percentile": 3
+      },
+      {
+        "min": 0,
+        "max": 3,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": -1,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 94,
+        "max": 100,
+        "percentile": 65
+      },
+      {
+        "min": 92,
+        "max": 93,
+        "percentile": 60
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 55
+      },
+      {
+        "min": 89,
+        "max": 89,
+        "percentile": 50
+      },
+      {
+        "min": 87,
+        "max": 88,
+        "percentile": 45
+      },
+      {
+        "min": 85,
+        "max": 86,
+        "percentile": 40
+      },
+      {
+        "min": 82,
+        "max": 84,
+        "percentile": 35
+      },
+      {
+        "min": 80,
+        "max": 81,
+        "percentile": 30
+      },
+      {
+        "min": 76,
+        "max": 79,
+        "percentile": 25
+      },
+      {
+        "min": 71,
+        "max": 75,
+        "percentile": 20
+      },
+      {
+        "min": 65,
+        "max": 70,
+        "percentile": 15
+      },
+      {
+        "min": 50,
+        "max": 64,
+        "percentile": 10
+      },
+      {
+        "min": 45,
+        "max": 49,
+        "percentile": 5
+      },
+      {
+        "min": 33,
+        "max": 44,
+        "percentile": 4
+      },
+      {
+        "min": 20,
+        "max": 32,
+        "percentile": 3
+      },
+      {
+        "min": 0,
+        "max": 19,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": -1,
+        "percentile": 1
+      }
+    ]
+  },
+  "3_EPO": {
+    "ageMin": 8,
+    "ageMax": 9,
+    "A": [
+      {
+        "min": 47,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 45,
+        "max": 46,
+        "percentile": 98
+      },
+      {
+        "min": 44,
+        "max": 44,
+        "percentile": 97
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 96
+      },
+      {
+        "min": 40,
+        "max": 42,
+        "percentile": 95
+      },
+      {
+        "min": 37,
+        "max": 39,
+        "percentile": 90
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "percentile": 85
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 80
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 75
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 70
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 65
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 60
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 55
+      },
+      {
+        "min": 28,
+        "max": 28,
+        "percentile": 50
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 45
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 40
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 35
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 30
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 25
+      },
+      {
+        "min": 21,
+        "max": 22,
+        "percentile": 20
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "percentile": 15
+      },
+      {
+        "min": 17,
+        "max": 18,
+        "percentile": 10
+      },
+      {
+        "min": 16,
+        "max": 16,
+        "percentile": 5
+      },
+      {
+        "min": 15,
+        "max": 15,
+        "percentile": 3
+      },
+      {
+        "min": 13,
+        "max": 14,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 12,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 11,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 7,
+        "max": 10,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 45
+      }
+    ],
+    "A_E": [
+      {
+        "min": 47,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 45,
+        "max": 46,
+        "percentile": 98
+      },
+      {
+        "min": 43,
+        "max": 44,
+        "percentile": 97
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 96
+      },
+      {
+        "min": 39,
+        "max": 41,
+        "percentile": 95
+      },
+      {
+        "min": 36,
+        "max": 38,
+        "percentile": 90
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 85
+      },
+      {
+        "min": 33,
+        "max": 34,
+        "percentile": 80
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 75
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 70
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 65
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 60
+      },
+      {
+        "min": 28,
+        "max": 28,
+        "percentile": 55
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 50
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 45
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 40
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 35
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 30
+      },
+      {
+        "min": 21,
+        "max": 22,
+        "percentile": 25
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 20
+      },
+      {
+        "min": 18,
+        "max": 19,
+        "percentile": 15
+      },
+      {
+        "min": 15,
+        "max": 17,
+        "percentile": 10
+      },
+      {
+        "min": 14,
+        "max": 14,
+        "percentile": 5
+      },
+      {
+        "min": 13,
+        "max": 13,
+        "percentile": 4
+      },
+      {
+        "min": 11,
+        "max": 12,
+        "percentile": 3
+      },
+      {
+        "min": 8,
+        "max": 10,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 7,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 96,
+        "max": 100,
+        "percentile": 55
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 50
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 45
+      },
+      {
+        "min": 93,
+        "max": 93,
+        "percentile": 40
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 35
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 30
+      },
+      {
+        "min": 88,
+        "max": 89,
+        "percentile": 25
+      },
+      {
+        "min": 85,
+        "max": 87,
+        "percentile": 20
+      },
+      {
+        "min": 80,
+        "max": 84,
+        "percentile": 15
+      },
+      {
+        "min": 72,
+        "max": 79,
+        "percentile": 10
+      },
+      {
+        "min": 67,
+        "max": 71,
+        "percentile": 5
+      },
+      {
+        "min": 63,
+        "max": 66,
+        "percentile": 4
+      },
+      {
+        "min": 56,
+        "max": 62,
+        "percentile": 3
+      },
+      {
+        "min": 32,
+        "max": 55,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 31,
+        "percentile": 1
+      }
+    ]
+  },
+  "4_EPO": {
+    "ageMin": 9,
+    "ageMax": 10,
+    "A": [
+      {
+        "min": 53,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 51,
+        "max": 52,
+        "percentile": 98
+      },
+      {
+        "min": 49,
+        "max": 50,
+        "percentile": 97
+      },
+      {
+        "min": 48,
+        "max": 48,
+        "percentile": 96
+      },
+      {
+        "min": 44,
+        "max": 47,
+        "percentile": 95
+      },
+      {
+        "min": 42,
+        "max": 43,
+        "percentile": 90
+      },
+      {
+        "min": 40,
+        "max": 41,
+        "percentile": 85
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 80
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "percentile": 75
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 70
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 65
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 60
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 55
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 50
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 45
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 40
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 35
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "percentile": 30
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 25
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 20
+      },
+      {
+        "min": 23,
+        "max": 24,
+        "percentile": 15
+      },
+      {
+        "min": 20,
+        "max": 22,
+        "percentile": 10
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 5
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 4
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 3
+      },
+      {
+        "min": 16,
+        "max": 16,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 15,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 10,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 7,
+        "max": 9,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 50
+      }
+    ],
+    "A_E": [
+      {
+        "min": 52,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "percentile": 98
+      },
+      {
+        "min": 48,
+        "max": 49,
+        "percentile": 97
+      },
+      {
+        "min": 47,
+        "max": 47,
+        "percentile": 96
+      },
+      {
+        "min": 43,
+        "max": 46,
+        "percentile": 95
+      },
+      {
+        "min": 41,
+        "max": 42,
+        "percentile": 90
+      },
+      {
+        "min": 39,
+        "max": 40,
+        "percentile": 85
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 80
+      },
+      {
+        "min": 36,
+        "max": 37,
+        "percentile": 75
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 70
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 65
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 60
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 55
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 50
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 45
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 40
+      },
+      {
+        "min": 28,
+        "max": 28,
+        "percentile": 35
+      },
+      {
+        "min": 26,
+        "max": 27,
+        "percentile": 30
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 25
+      },
+      {
+        "min": 23,
+        "max": 24,
+        "percentile": 20
+      },
+      {
+        "min": 21,
+        "max": 22,
+        "percentile": 15
+      },
+      {
+        "min": 18,
+        "max": 20,
+        "percentile": 10
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 5
+      },
+      {
+        "min": 16,
+        "max": 16,
+        "percentile": 4
+      },
+      {
+        "min": 14,
+        "max": 15,
+        "percentile": 3
+      },
+      {
+        "min": 11,
+        "max": 13,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 10,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 96,
+        "max": 100,
+        "percentile": 50
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 45
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 40
+      },
+      {
+        "min": 93,
+        "max": 93,
+        "percentile": 35
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 30
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 25
+      },
+      {
+        "min": 87,
+        "max": 89,
+        "percentile": 20
+      },
+      {
+        "min": 84,
+        "max": 86,
+        "percentile": 15
+      },
+      {
+        "min": 76,
+        "max": 83,
+        "percentile": 10
+      },
+      {
+        "min": 74,
+        "max": 75,
+        "percentile": 5
+      },
+      {
+        "min": 69,
+        "max": 73,
+        "percentile": 4
+      },
+      {
+        "min": 60,
+        "max": 68,
+        "percentile": 3
+      },
+      {
+        "min": 43,
+        "max": 59,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 42,
+        "percentile": 1
+      }
+    ]
+  },
+  "5_EPO": {
+    "ageMin": 10,
+    "ageMax": 11,
+    "A": [
+      {
+        "min": 58,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 98
+      },
+      {
+        "min": 54,
+        "max": 55,
+        "percentile": 97
+      },
+      {
+        "min": 51,
+        "max": 53,
+        "percentile": 96
+      },
+      {
+        "min": 47,
+        "max": 50,
+        "percentile": 95
+      },
+      {
+        "min": 45,
+        "max": 46,
+        "percentile": 90
+      },
+      {
+        "min": 42,
+        "max": 44,
+        "percentile": 85
+      },
+      {
+        "min": 40,
+        "max": 41,
+        "percentile": 80
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 75
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 70
+      },
+      {
+        "min": 37,
+        "max": 37,
+        "percentile": 65
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 60
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 55
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 50
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 45
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 40
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 35
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 30
+      },
+      {
+        "min": 28,
+        "max": 29,
+        "percentile": 25
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 20
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 15
+      },
+      {
+        "min": 21,
+        "max": 25,
+        "percentile": 10
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 4
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 3
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 17,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 10,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 7,
+        "max": 9,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 56,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 55,
+        "max": 55,
+        "percentile": 98
+      },
+      {
+        "min": 52,
+        "max": 54,
+        "percentile": 97
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "percentile": 96
+      },
+      {
+        "min": 47,
+        "max": 49,
+        "percentile": 95
+      },
+      {
+        "min": 44,
+        "max": 46,
+        "percentile": 90
+      },
+      {
+        "min": 41,
+        "max": 43,
+        "percentile": 85
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 80
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 75
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 70
+      },
+      {
+        "min": 36,
+        "max": 37,
+        "percentile": 65
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 60
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 55
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 50
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 45
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 35
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 30
+      },
+      {
+        "min": 28,
+        "max": 28,
+        "percentile": 25
+      },
+      {
+        "min": 26,
+        "max": 27,
+        "percentile": 20
+      },
+      {
+        "min": 24,
+        "max": 25,
+        "percentile": 15
+      },
+      {
+        "min": 20,
+        "max": 23,
+        "percentile": 10
+      },
+      {
+        "min": 18,
+        "max": 19,
+        "percentile": 4
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 3
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 14,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 96,
+        "max": 100,
+        "percentile": 50
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 45
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 40
+      },
+      {
+        "min": 93,
+        "max": 93,
+        "percentile": 35
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 30
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 25
+      },
+      {
+        "min": 88,
+        "max": 89,
+        "percentile": 20
+      },
+      {
+        "min": 84,
+        "max": 87,
+        "percentile": 15
+      },
+      {
+        "min": 79,
+        "max": 83,
+        "percentile": 10
+      },
+      {
+        "min": 74,
+        "max": 78,
+        "percentile": 5
+      },
+      {
+        "min": 69,
+        "max": 73,
+        "percentile": 4
+      },
+      {
+        "min": 61,
+        "max": 68,
+        "percentile": 3
+      },
+      {
+        "min": 51,
+        "max": 60,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 50,
+        "percentile": 1
+      }
+    ]
+  },
+  "6_EPO": {
+    "ageMin": 11,
+    "ageMax": 12,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 97
+      },
+      {
+        "min": 51,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 46,
+        "max": 50,
+        "percentile": 90
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 85
+      },
+      {
+        "min": 42,
+        "max": 43,
+        "percentile": 80
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 75
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 70
+      },
+      {
+        "min": 38,
+        "max": 39,
+        "percentile": 65
+      },
+      {
+        "min": 36,
+        "max": 37,
+        "percentile": 60
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 55
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 50
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 45
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 40
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 35
+      },
+      {
+        "min": 30,
+        "max": 30,
+        "percentile": 30
+      },
+      {
+        "min": 28,
+        "max": 29,
+        "percentile": 25
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 20
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 15
+      },
+      {
+        "min": 21,
+        "max": 25,
+        "percentile": 10
+      },
+      {
+        "min": 20,
+        "max": 20,
+        "percentile": 4
+      },
+      {
+        "min": 19,
+        "max": 19,
+        "percentile": 3
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 17,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 10,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 7,
+        "max": 9,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 58,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 57,
+        "max": 57,
+        "percentile": 97
+      },
+      {
+        "min": 56,
+        "max": 56,
+        "percentile": 96
+      },
+      {
+        "min": 50,
+        "max": 55,
+        "percentile": 95
+      },
+      {
+        "min": 46,
+        "max": 49,
+        "percentile": 90
+      },
+      {
+        "min": 42,
+        "max": 45,
+        "percentile": 85
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 80
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 75
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 70
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "percentile": 65
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 60
+      },
+      {
+        "min": 34,
+        "max": 35,
+        "percentile": 55
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 50
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 45
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 35
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 30
+      },
+      {
+        "min": 28,
+        "max": 28,
+        "percentile": 25
+      },
+      {
+        "min": 26,
+        "max": 27,
+        "percentile": 20
+      },
+      {
+        "min": 24,
+        "max": 25,
+        "percentile": 15
+      },
+      {
+        "min": 20,
+        "max": 23,
+        "percentile": 10
+      },
+      {
+        "min": 18,
+        "max": 19,
+        "percentile": 4
+      },
+      {
+        "min": 17,
+        "max": 17,
+        "percentile": 3
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 14,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 96,
+        "max": 100,
+        "percentile": 50
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 45
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 40
+      },
+      {
+        "min": 93,
+        "max": 93,
+        "percentile": 35
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 30
+      },
+      {
+        "min": 90,
+        "max": 91,
+        "percentile": 25
+      },
+      {
+        "min": 88,
+        "max": 89,
+        "percentile": 20
+      },
+      {
+        "min": 84,
+        "max": 87,
+        "percentile": 15
+      },
+      {
+        "min": 79,
+        "max": 83,
+        "percentile": 10
+      },
+      {
+        "min": 74,
+        "max": 78,
+        "percentile": 5
+      },
+      {
+        "min": 69,
+        "max": 73,
+        "percentile": 4
+      },
+      {
+        "min": 61,
+        "max": 68,
+        "percentile": 3
+      },
+      {
+        "min": 51,
+        "max": 60,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 50,
+        "percentile": 1
+      }
+    ]
+  },
+  "1_ESO": {
+    "ageMin": 12,
+    "ageMax": 13,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 96
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 54,
+        "max": 55,
+        "percentile": 90
+      },
+      {
+        "min": 51,
+        "max": 53,
+        "percentile": 85
+      },
+      {
+        "min": 49,
+        "max": 50,
+        "percentile": 80
+      },
+      {
+        "min": 46,
+        "max": 48,
+        "percentile": 75
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 70
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 65
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 60
+      },
+      {
+        "min": 40,
+        "max": 41,
+        "percentile": 55
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 50
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 45
+      },
+      {
+        "min": 36,
+        "max": 37,
+        "percentile": 40
+      },
+      {
+        "min": 35,
+        "max": 35,
+        "percentile": 35
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 30
+      },
+      {
+        "min": 32,
+        "max": 33,
+        "percentile": 25
+      },
+      {
+        "min": 31,
+        "max": 31,
+        "percentile": 20
+      },
+      {
+        "min": 29,
+        "max": 30,
+        "percentile": 15
+      },
+      {
+        "min": 26,
+        "max": 28,
+        "percentile": 10
+      },
+      {
+        "min": 25,
+        "max": 25,
+        "percentile": 5
+      },
+      {
+        "min": 23,
+        "max": 24,
+        "percentile": 4
+      },
+      {
+        "min": 21,
+        "max": 22,
+        "percentile": 3
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 18,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 10,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 7,
+        "max": 9,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 58,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 55,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 52,
+        "max": 54,
+        "percentile": 90
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "percentile": 85
+      },
+      {
+        "min": 47,
+        "max": 49,
+        "percentile": 80
+      },
+      {
+        "min": 44,
+        "max": 46,
+        "percentile": 75
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 70
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 65
+      },
+      {
+        "min": 40,
+        "max": 41,
+        "percentile": 60
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 55
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 50
+      },
+      {
+        "min": 37,
+        "max": 37,
+        "percentile": 45
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "percentile": 40
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 35
+      },
+      {
+        "min": 32,
+        "max": 33,
+        "percentile": 30
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 25
+      },
+      {
+        "min": 29,
+        "max": 29,
+        "percentile": 20
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "percentile": 15
+      },
+      {
+        "min": 23,
+        "max": 26,
+        "percentile": 10
+      },
+      {
+        "min": 22,
+        "max": 22,
+        "percentile": 5
+      },
+      {
+        "min": 20,
+        "max": 21,
+        "percentile": 4
+      },
+      {
+        "min": 18,
+        "max": 19,
+        "percentile": 3
+      },
+      {
+        "min": 15,
+        "max": 17,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 14,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 96,
+        "max": 100,
+        "percentile": 50
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 45
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 40
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 35
+      },
+      {
+        "min": 91,
+        "max": 91,
+        "percentile": 30
+      },
+      {
+        "min": 89,
+        "max": 90,
+        "percentile": 25
+      },
+      {
+        "min": 87,
+        "max": 88,
+        "percentile": 20
+      },
+      {
+        "min": 84,
+        "max": 86,
+        "percentile": 15
+      },
+      {
+        "min": 79,
+        "max": 83,
+        "percentile": 10
+      },
+      {
+        "min": 74,
+        "max": 78,
+        "percentile": 5
+      },
+      {
+        "min": 70,
+        "max": 73,
+        "percentile": 4
+      },
+      {
+        "min": 68,
+        "max": 69,
+        "percentile": 3
+      },
+      {
+        "min": 53,
+        "max": 67,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 52,
+        "percentile": 1
+      }
+    ]
+  },
+  "2_ESO": {
+    "ageMin": 13,
+    "ageMax": 14,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 96
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 53,
+        "max": 55,
+        "percentile": 90
+      },
+      {
+        "min": 49,
+        "max": 52,
+        "percentile": 85
+      },
+      {
+        "min": 48,
+        "max": 48,
+        "percentile": 80
+      },
+      {
+        "min": 46,
+        "max": 47,
+        "percentile": 75
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 70
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 65
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 60
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 55
+      },
+      {
+        "min": 39,
+        "max": 40,
+        "percentile": 50
+      },
+      {
+        "min": 38,
+        "max": 38,
+        "percentile": 45
+      },
+      {
+        "min": 37,
+        "max": 37,
+        "percentile": 40
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 35
+      },
+      {
+        "min": 34,
+        "max": 35,
+        "percentile": 30
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 25
+      },
+      {
+        "min": 31,
+        "max": 32,
+        "percentile": 20
+      },
+      {
+        "min": 28,
+        "max": 30,
+        "percentile": 15
+      },
+      {
+        "min": 24,
+        "max": 27,
+        "percentile": 10
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 5
+      },
+      {
+        "min": 22,
+        "max": 22,
+        "percentile": 4
+      },
+      {
+        "min": 21,
+        "max": 21,
+        "percentile": 3
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 18,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 7,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 6,
+        "max": 6,
+        "percentile": 98
+      },
+      {
+        "min": 5,
+        "max": 5,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 75
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 58,
+        "max": 59,
+        "percentile": 98
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 52,
+        "max": 55,
+        "percentile": 90
+      },
+      {
+        "min": 48,
+        "max": 51,
+        "percentile": 85
+      },
+      {
+        "min": 46,
+        "max": 47,
+        "percentile": 80
+      },
+      {
+        "min": 45,
+        "max": 45,
+        "percentile": 75
+      },
+      {
+        "min": 43,
+        "max": 44,
+        "percentile": 70
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 65
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 60
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 55
+      },
+      {
+        "min": 38,
+        "max": 39,
+        "percentile": 50
+      },
+      {
+        "min": 37,
+        "max": 37,
+        "percentile": 45
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 40
+      },
+      {
+        "min": 34,
+        "max": 35,
+        "percentile": 35
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 30
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 25
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 20
+      },
+      {
+        "min": 27,
+        "max": 29,
+        "percentile": 15
+      },
+      {
+        "min": 22,
+        "max": 26,
+        "percentile": 10
+      },
+      {
+        "min": 20,
+        "max": 21,
+        "percentile": 4
+      },
+      {
+        "min": 18,
+        "max": 19,
+        "percentile": 3
+      },
+      {
+        "min": 16,
+        "max": 17,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 15,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 97,
+        "max": 100,
+        "percentile": 50
+      },
+      {
+        "min": 96,
+        "max": 96,
+        "percentile": 45
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 40
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 35
+      },
+      {
+        "min": 92,
+        "max": 93,
+        "percentile": 30
+      },
+      {
+        "min": 91,
+        "max": 91,
+        "percentile": 25
+      },
+      {
+        "min": 89,
+        "max": 90,
+        "percentile": 20
+      },
+      {
+        "min": 84,
+        "max": 88,
+        "percentile": 15
+      },
+      {
+        "min": 76,
+        "max": 83,
+        "percentile": 10
+      },
+      {
+        "min": 75,
+        "max": 75,
+        "percentile": 5
+      },
+      {
+        "min": 72,
+        "max": 74,
+        "percentile": 4
+      },
+      {
+        "min": 70,
+        "max": 71,
+        "percentile": 3
+      },
+      {
+        "min": 67,
+        "max": 69,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 66,
+        "percentile": 1
+      }
+    ]
+  },
+  "3_ESO": {
+    "ageMin": 14,
+    "ageMax": 15,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 97
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 96
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 54,
+        "max": 55,
+        "percentile": 90
+      },
+      {
+        "min": 51,
+        "max": 53,
+        "percentile": 85
+      },
+      {
+        "min": 47,
+        "max": 50,
+        "percentile": 80
+      },
+      {
+        "min": 46,
+        "max": 46,
+        "percentile": 75
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 70
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 65
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 60
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 55
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 50
+      },
+      {
+        "min": 38,
+        "max": 39,
+        "percentile": 45
+      },
+      {
+        "min": 37,
+        "max": 37,
+        "percentile": 40
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "percentile": 35
+      },
+      {
+        "min": 34,
+        "max": 34,
+        "percentile": 30
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 25
+      },
+      {
+        "min": 31,
+        "max": 32,
+        "percentile": 20
+      },
+      {
+        "min": 28,
+        "max": 30,
+        "percentile": 15
+      },
+      {
+        "min": 25,
+        "max": 27,
+        "percentile": 10
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 4
+      },
+      {
+        "min": 21,
+        "max": 23,
+        "percentile": 3
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 18,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 7,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 6,
+        "max": 6,
+        "percentile": 98
+      },
+      {
+        "min": 4,
+        "max": 5,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 80
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 58,
+        "max": 59,
+        "percentile": 97
+      },
+      {
+        "min": 55,
+        "max": 57,
+        "percentile": 95
+      },
+      {
+        "min": 53,
+        "max": 54,
+        "percentile": 90
+      },
+      {
+        "min": 50,
+        "max": 52,
+        "percentile": 85
+      },
+      {
+        "min": 47,
+        "max": 49,
+        "percentile": 80
+      },
+      {
+        "min": 45,
+        "max": 46,
+        "percentile": 75
+      },
+      {
+        "min": 43,
+        "max": 44,
+        "percentile": 70
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 65
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 60
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 55
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 50
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "percentile": 45
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 40
+      },
+      {
+        "min": 34,
+        "max": 35,
+        "percentile": 35
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 30
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 25
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 20
+      },
+      {
+        "min": 27,
+        "max": 29,
+        "percentile": 15
+      },
+      {
+        "min": 25,
+        "max": 26,
+        "percentile": 10
+      },
+      {
+        "min": 24,
+        "max": 24,
+        "percentile": 5
+      },
+      {
+        "min": 21,
+        "max": 23,
+        "percentile": 4
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "percentile": 3
+      },
+      {
+        "min": 18,
+        "max": 18,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 17,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 97,
+        "max": 100,
+        "percentile": 45
+      },
+      {
+        "min": 96,
+        "max": 96,
+        "percentile": 40
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 30
+      },
+      {
+        "min": 93,
+        "max": 94,
+        "percentile": 25
+      },
+      {
+        "min": 91,
+        "max": 92,
+        "percentile": 20
+      },
+      {
+        "min": 88,
+        "max": 90,
+        "percentile": 15
+      },
+      {
+        "min": 81,
+        "max": 87,
+        "percentile": 10
+      },
+      {
+        "min": 80,
+        "max": 80,
+        "percentile": 5
+      },
+      {
+        "min": 76,
+        "max": 79,
+        "percentile": 4
+      },
+      {
+        "min": 75,
+        "max": 75,
+        "percentile": 3
+      },
+      {
+        "min": 69,
+        "max": 74,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 68,
+        "percentile": 1
+      }
+    ]
+  },
+  "4_ESO": {
+    "ageMin": 15,
+    "ageMax": 16,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 96
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 95
+      },
+      {
+        "min": 55,
+        "max": 57,
+        "percentile": 85
+      },
+      {
+        "min": 53,
+        "max": 54,
+        "percentile": 80
+      },
+      {
+        "min": 52,
+        "max": 52,
+        "percentile": 75
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "percentile": 70
+      },
+      {
+        "min": 48,
+        "max": 49,
+        "percentile": 65
+      },
+      {
+        "min": 47,
+        "max": 47,
+        "percentile": 60
+      },
+      {
+        "min": 46,
+        "max": 46,
+        "percentile": 55
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 50
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 45
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 40
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 35
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 30
+      },
+      {
+        "min": 37,
+        "max": 39,
+        "percentile": 25
+      },
+      {
+        "min": 36,
+        "max": 36,
+        "percentile": 20
+      },
+      {
+        "min": 33,
+        "max": 35,
+        "percentile": 15
+      },
+      {
+        "min": 30,
+        "max": 32,
+        "percentile": 10
+      },
+      {
+        "min": 28,
+        "max": 29,
+        "percentile": 5
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 4
+      },
+      {
+        "min": 24,
+        "max": 26,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 23,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 6,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 5,
+        "max": 5,
+        "percentile": 98
+      },
+      {
+        "min": 4,
+        "max": 4,
+        "percentile": 97
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 95
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 80
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 96
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 95
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 90
+      },
+      {
+        "min": 55,
+        "max": 55,
+        "percentile": 85
+      },
+      {
+        "min": 52,
+        "max": 54,
+        "percentile": 80
+      },
+      {
+        "min": 51,
+        "max": 51,
+        "percentile": 75
+      },
+      {
+        "min": 49,
+        "max": 50,
+        "percentile": 70
+      },
+      {
+        "min": 48,
+        "max": 48,
+        "percentile": 65
+      },
+      {
+        "min": 46,
+        "max": 47,
+        "percentile": 60
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 55
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 50
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 45
+      },
+      {
+        "min": 40,
+        "max": 41,
+        "percentile": 35
+      },
+      {
+        "min": 39,
+        "max": 39,
+        "percentile": 30
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "percentile": 25
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "percentile": 20
+      },
+      {
+        "min": 32,
+        "max": 34,
+        "percentile": 15
+      },
+      {
+        "min": 28,
+        "max": 31,
+        "percentile": 10
+      },
+      {
+        "min": 27,
+        "max": 27,
+        "percentile": 5
+      },
+      {
+        "min": 26,
+        "max": 26,
+        "percentile": 4
+      },
+      {
+        "min": 24,
+        "max": 25,
+        "percentile": 3
+      },
+      {
+        "min": 23,
+        "max": 23,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 22,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 97,
+        "max": 100,
+        "percentile": 45
+      },
+      {
+        "min": 96,
+        "max": 96,
+        "percentile": 40
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 30
+      },
+      {
+        "min": 93,
+        "max": 94,
+        "percentile": 25
+      },
+      {
+        "min": 92,
+        "max": 92,
+        "percentile": 20
+      },
+      {
+        "min": 89,
+        "max": 91,
+        "percentile": 15
+      },
+      {
+        "min": 86,
+        "max": 88,
+        "percentile": 10
+      },
+      {
+        "min": 83,
+        "max": 85,
+        "percentile": 5
+      },
+      {
+        "min": 81,
+        "max": 82,
+        "percentile": 4
+      },
+      {
+        "min": 78,
+        "max": 80,
+        "percentile": 3
+      },
+      {
+        "min": 72,
+        "max": 77,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 71,
+        "percentile": 1
+      }
+    ]
+  },
+  "1_2_BACHILLERATO": {
+    "ageMin": 16,
+    "ageMax": 18,
+    "A": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 59,
+        "max": 59,
+        "percentile": 95
+      },
+      {
+        "min": 58,
+        "max": 58,
+        "percentile": 90
+      },
+      {
+        "min": 57,
+        "max": 57,
+        "percentile": 80
+      },
+      {
+        "min": 55,
+        "max": 56,
+        "percentile": 75
+      },
+      {
+        "min": 54,
+        "max": 54,
+        "percentile": 70
+      },
+      {
+        "min": 52,
+        "max": 53,
+        "percentile": 65
+      },
+      {
+        "min": 51,
+        "max": 51,
+        "percentile": 60
+      },
+      {
+        "min": 49,
+        "max": 50,
+        "percentile": 55
+      },
+      {
+        "min": 48,
+        "max": 48,
+        "percentile": 50
+      },
+      {
+        "min": 46,
+        "max": 47,
+        "percentile": 45
+      },
+      {
+        "min": 45,
+        "max": 45,
+        "percentile": 40
+      },
+      {
+        "min": 44,
+        "max": 44,
+        "percentile": 35
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 30
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 25
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 20
+      },
+      {
+        "min": 38,
+        "max": 40,
+        "percentile": 15
+      },
+      {
+        "min": 34,
+        "max": 37,
+        "percentile": 10
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 4
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 3
+      },
+      {
+        "min": 29,
+        "max": 31,
+        "percentile": 2
+      },
+      {
+        "min": 0,
+        "max": 28,
+        "percentile": 1
+      }
+    ],
+    "E": [
+      {
+        "min": 5,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 4,
+        "max": 4,
+        "percentile": 98
+      },
+      {
+        "min": 3,
+        "max": 3,
+        "percentile": 96
+      },
+      {
+        "min": 2,
+        "max": 2,
+        "percentile": 90
+      },
+      {
+        "min": 1,
+        "max": 1,
+        "percentile": 80
+      },
+      {
+        "min": 0,
+        "max": 0,
+        "percentile": 55
+      }
+    ],
+    "A_E": [
+      {
+        "min": 60,
+        "max": 60,
+        "percentile": 99
+      },
+      {
+        "min": 58,
+        "max": 59,
+        "percentile": 95
+      },
+      {
+        "min": 56,
+        "max": 57,
+        "percentile": 85
+      },
+      {
+        "min": 55,
+        "max": 55,
+        "percentile": 80
+      },
+      {
+        "min": 54,
+        "max": 54,
+        "percentile": 75
+      },
+      {
+        "min": 53,
+        "max": 53,
+        "percentile": 70
+      },
+      {
+        "min": 52,
+        "max": 52,
+        "percentile": 65
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "percentile": 60
+      },
+      {
+        "min": 48,
+        "max": 49,
+        "percentile": 55
+      },
+      {
+        "min": 47,
+        "max": 47,
+        "percentile": 50
+      },
+      {
+        "min": 46,
+        "max": 46,
+        "percentile": 45
+      },
+      {
+        "min": 44,
+        "max": 45,
+        "percentile": 40
+      },
+      {
+        "min": 43,
+        "max": 43,
+        "percentile": 35
+      },
+      {
+        "min": 42,
+        "max": 42,
+        "percentile": 30
+      },
+      {
+        "min": 41,
+        "max": 41,
+        "percentile": 25
+      },
+      {
+        "min": 40,
+        "max": 40,
+        "percentile": 20
+      },
+      {
+        "min": 37,
+        "max": 39,
+        "percentile": 15
+      },
+      {
+        "min": 34,
+        "max": 36,
+        "percentile": 10
+      },
+      {
+        "min": 33,
+        "max": 33,
+        "percentile": 5
+      },
+      {
+        "min": 32,
+        "max": 32,
+        "percentile": 4
+      },
+      {
+        "min": 30,
+        "max": 31,
+        "percentile": 3
+      },
+      {
+        "min": 27,
+        "max": 29,
+        "percentile": 2
+      },
+      {
+        "min": -60,
+        "max": 26,
+        "percentile": 1
+      }
+    ],
+    "ICI": [
+      {
+        "min": 97,
+        "max": 100,
+        "percentile": 45
+      },
+      {
+        "min": 96,
+        "max": 96,
+        "percentile": 35
+      },
+      {
+        "min": 95,
+        "max": 95,
+        "percentile": 30
+      },
+      {
+        "min": 94,
+        "max": 94,
+        "percentile": 25
+      },
+      {
+        "min": 93,
+        "max": 93,
+        "percentile": 20
+      },
+      {
+        "min": 91,
+        "max": 92,
+        "percentile": 15
+      },
+      {
+        "min": 87,
+        "max": 90,
+        "percentile": 10
+      },
+      {
+        "min": 85,
+        "max": 86,
+        "percentile": 5
+      },
+      {
+        "min": 84,
+        "max": 84,
+        "percentile": 4
+      },
+      {
+        "min": 83,
+        "max": 83,
+        "percentile": 3
+      },
+      {
+        "min": 78,
+        "max": 82,
+        "percentile": 2
+      },
+      {
+        "min": -100,
+        "max": 77,
+        "percentile": 1
+      }
+    ]
+  },
+  "_sourceNotes": [
+    {
+      "group": "1_EPO",
+      "field": "E",
+      "percentile": 60,
+      "sourceValue": "1-",
+      "interpretedAs": "1"
+    },
+    {
+      "group": "2_EPO",
+      "field": "ICI",
+      "percentile": 15,
+      "sourceValue": "6-70",
+      "interpretedAs": "65-70"
+    },
+    {
+      "group": "4_ESO",
+      "field": "ICI",
+      "percentile": 45,
+      "sourceValue": "97-10",
+      "interpretedAs": "97-100"
+    },
+    {
+      "group": "1_2_BACHILLERATO",
+      "field": "A",
+      "percentile": 75,
+      "sourceValue": "5-56",
+      "interpretedAs": "55-56"
+    },
+    {
+      "group": "1_2_BACHILLERATO",
+      "field": "A",
+      "percentile": 70,
+      "sourceValue": "4",
+      "interpretedAs": "54"
+    }
+  ]
+}

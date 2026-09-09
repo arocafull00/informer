@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test:caras-r": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test lib/caras-r-scoring.test.ts",
     "generate-pdf-previews": "node scripts/generate-pdf-previews.mjs"
   },
   "dependencies": {

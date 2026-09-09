@@ -2,8 +2,16 @@ import type {
   CumanesIdentification,
   CumanesLaterality,
 } from "@/lib/cumanes-types";
+import type { CarasIdentification } from "@/lib/caras-r-types";
+import type { StaiIdentification } from "@/lib/stai-types";
 
-export type TestType = "ADIR" | "ADOS2_ADULTO" | "ADOS2_NINO" | "CUMANES";
+export type TestType =
+  | "ADIR"
+  | "ADOS2_ADULTO"
+  | "ADOS2_NINO"
+  | "CUMANES"
+  | "CARAS_R"
+  | "STAI";
 
 export type Question = {
   id: string;
@@ -13,6 +21,7 @@ export type Question = {
   code: string;
   question: string;
   answers: Record<string, string>;
+  scoring?: "direct" | "reverse";
 };
 
 export type SavedReport = {
@@ -26,6 +35,8 @@ export type SavedReport = {
   patientSex?: string;
   cumanesIdentification?: CumanesIdentification;
   cumanesLaterality?: CumanesLaterality;
+  carasIdentification?: CarasIdentification;
+  staiIdentification?: StaiIdentification;
 };
 
 export type ReportGroup = {
@@ -39,4 +50,6 @@ export type CreateReportInput = {
   patientName?: string;
   patientSex?: string;
   cumanesIdentification?: CumanesIdentification;
+  carasIdentification?: CarasIdentification;
+  staiIdentification?: StaiIdentification;
 };

@@ -10,7 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Informer",
-  description: "Informes ADI-R, ADOS-2 y CUMANES para profesionales clínicos",
+  description:
+    "Informes ADI-R, ADOS-2, CUMANES y CARAS-R para profesionales clínicos",
   icons: {
     icon: "/icon.png",
   },

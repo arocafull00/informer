@@ -6,6 +6,14 @@ import {
   type CumanesIdentification,
   type CumanesLaterality,
 } from "@/lib/cumanes-types";
+import {
+  EMPTY_CARAS_IDENTIFICATION,
+  type CarasIdentification,
+} from "@/lib/caras-r-types";
+import {
+  EMPTY_STAI_IDENTIFICATION,
+  type StaiIdentification,
+} from "@/lib/stai-types";
 import type { SavedReport, TestType } from "@/lib/types";
 
 const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
@@ -13,6 +21,8 @@ const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
   ADOS2_ADULTO: {},
   ADOS2_NINO: {},
   CUMANES: {},
+  CARAS_R: {},
+  STAI: {},
 });
 
 const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
@@ -20,6 +30,8 @@ const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
   ADOS2_ADULTO: undefined,
   ADOS2_NINO: undefined,
   CUMANES: undefined,
+  CARAS_R: undefined,
+  STAI: undefined,
 });
 
 const emptyPatientSexByTest = (): Record<TestType, string> => ({
@@ -27,6 +39,8 @@ const emptyPatientSexByTest = (): Record<TestType, string> => ({
   ADOS2_ADULTO: "",
   ADOS2_NINO: "",
   CUMANES: "",
+  CARAS_R: "",
+  STAI: "",
 });
 
 const emptyCumanesIdentificationByTest = (): Record<
@@ -37,6 +51,8 @@ const emptyCumanesIdentificationByTest = (): Record<
   ADOS2_ADULTO: { ...EMPTY_CUMANES_IDENTIFICATION },
   ADOS2_NINO: { ...EMPTY_CUMANES_IDENTIFICATION },
   CUMANES: { ...EMPTY_CUMANES_IDENTIFICATION },
+  CARAS_R: { ...EMPTY_CUMANES_IDENTIFICATION },
+  STAI: { ...EMPTY_CUMANES_IDENTIFICATION },
 });
 
 const emptyCumanesLateralityByTest = (): Record<
@@ -47,6 +63,32 @@ const emptyCumanesLateralityByTest = (): Record<
   ADOS2_ADULTO: { ...EMPTY_CUMANES_LATERALITY },
   ADOS2_NINO: { ...EMPTY_CUMANES_LATERALITY },
   CUMANES: { ...EMPTY_CUMANES_LATERALITY },
+  CARAS_R: { ...EMPTY_CUMANES_LATERALITY },
+  STAI: { ...EMPTY_CUMANES_LATERALITY },
+});
+
+const emptyCarasIdentificationByTest = (): Record<
+  TestType,
+  CarasIdentification
+> => ({
+  ADIR: { ...EMPTY_CARAS_IDENTIFICATION },
+  ADOS2_ADULTO: { ...EMPTY_CARAS_IDENTIFICATION },
+  ADOS2_NINO: { ...EMPTY_CARAS_IDENTIFICATION },
+  CUMANES: { ...EMPTY_CARAS_IDENTIFICATION },
+  CARAS_R: { ...EMPTY_CARAS_IDENTIFICATION },
+  STAI: { ...EMPTY_CARAS_IDENTIFICATION },
+});
+
+const emptyStaiIdentificationByTest = (): Record<
+  TestType,
+  StaiIdentification
+> => ({
+  ADIR: { ...EMPTY_STAI_IDENTIFICATION },
+  ADOS2_ADULTO: { ...EMPTY_STAI_IDENTIFICATION },
+  ADOS2_NINO: { ...EMPTY_STAI_IDENTIFICATION },
+  CUMANES: { ...EMPTY_STAI_IDENTIFICATION },
+  CARAS_R: { ...EMPTY_STAI_IDENTIFICATION },
+  STAI: { ...EMPTY_STAI_IDENTIFICATION },
 });
 
 const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => ({
@@ -54,6 +96,8 @@ const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => (
   ADOS2_ADULTO: undefined,
   ADOS2_NINO: undefined,
   CUMANES: undefined,
+  CARAS_R: undefined,
+  STAI: undefined,
 });
 
 type CurrentReportStore = {
@@ -63,6 +107,8 @@ type CurrentReportStore = {
   patientSexByTest: Record<TestType, string>;
   cumanesIdentificationByTest: Record<TestType, CumanesIdentification>;
   cumanesLateralityByTest: Record<TestType, CumanesLaterality>;
+  carasIdentificationByTest: Record<TestType, CarasIdentification>;
+  staiIdentificationByTest: Record<TestType, StaiIdentification>;
   currentReportIdByTest: Record<TestType, string | undefined>;
   openReport: (report: SavedReport) => void;
   setAnswer: (questionId: string, value: number) => void;
@@ -73,6 +119,8 @@ type CurrentReportStore = {
     identification: CumanesIdentification
   ) => void;
   setCumanesLaterality: (laterality: CumanesLaterality) => void;
+  setCarasIdentification: (identification: CarasIdentification) => void;
+  setStaiIdentification: (identification: StaiIdentification) => void;
   setCurrentReportId: (id: string | undefined) => void;
   reset: () => void;
 };
@@ -91,6 +139,12 @@ export const selectCurrentCumanesIdentification = (state: CurrentReportStore) =>
 
 export const selectCurrentCumanesLaterality = (state: CurrentReportStore) =>
   state.cumanesLateralityByTest[state.currentTest];
+
+export const selectCurrentCarasIdentification = (state: CurrentReportStore) =>
+  state.carasIdentificationByTest[state.currentTest];
+
+export const selectCurrentStaiIdentification = (state: CurrentReportStore) =>
+  state.staiIdentificationByTest[state.currentTest];
 
 export const selectCurrentReportId = (state: CurrentReportStore) =>
   state.currentReportIdByTest[state.currentTest];
@@ -112,6 +166,8 @@ function normalizePersistedState(
   | "setPatientSex"
   | "setCumanesIdentification"
   | "setCumanesLaterality"
+  | "setCarasIdentification"
+  | "setStaiIdentification"
   | "setCurrentReportId"
   | "reset"
 > {
@@ -136,6 +192,8 @@ function normalizePersistedState(
   };
   const cumanesIdentificationByTest = emptyCumanesIdentificationByTest();
   const cumanesLateralityByTest = emptyCumanesLateralityByTest();
+  const carasIdentificationByTest = emptyCarasIdentificationByTest();
+  const staiIdentificationByTest = emptyStaiIdentificationByTest();
 
   for (const test of Object.keys(cumanesIdentificationByTest) as TestType[]) {
     cumanesIdentificationByTest[test] = {
@@ -148,6 +206,20 @@ function normalizePersistedState(
     cumanesLateralityByTest[test] = {
       ...EMPTY_CUMANES_LATERALITY,
       ...legacy.cumanesLateralityByTest?.[test],
+    };
+  }
+
+  for (const test of Object.keys(carasIdentificationByTest) as TestType[]) {
+    carasIdentificationByTest[test] = {
+      ...EMPTY_CARAS_IDENTIFICATION,
+      ...legacy.carasIdentificationByTest?.[test],
+    };
+  }
+
+  for (const test of Object.keys(staiIdentificationByTest) as TestType[]) {
+    staiIdentificationByTest[test] = {
+      ...EMPTY_STAI_IDENTIFICATION,
+      ...legacy.staiIdentificationByTest?.[test],
     };
   }
 
@@ -165,6 +237,8 @@ function normalizePersistedState(
     patientSexByTest,
     cumanesIdentificationByTest,
     cumanesLateralityByTest,
+    carasIdentificationByTest,
+    staiIdentificationByTest,
     currentReportIdByTest,
   };
 }
@@ -178,6 +252,8 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
       patientSexByTest: emptyPatientSexByTest(),
       cumanesIdentificationByTest: emptyCumanesIdentificationByTest(),
       cumanesLateralityByTest: emptyCumanesLateralityByTest(),
+      carasIdentificationByTest: emptyCarasIdentificationByTest(),
+      staiIdentificationByTest: emptyStaiIdentificationByTest(),
       currentReportIdByTest: emptyCurrentReportIdByTest(),
       openReport: (report) =>
         set((state) => ({
@@ -206,6 +282,20 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             [report.test]: {
               ...EMPTY_CUMANES_LATERALITY,
               ...report.cumanesLaterality,
+            },
+          },
+          carasIdentificationByTest: {
+            ...state.carasIdentificationByTest,
+            [report.test]: {
+              ...EMPTY_CARAS_IDENTIFICATION,
+              ...report.carasIdentification,
+            },
+          },
+          staiIdentificationByTest: {
+            ...state.staiIdentificationByTest,
+            [report.test]: {
+              ...EMPTY_STAI_IDENTIFICATION,
+              ...report.staiIdentification,
             },
           },
           currentReportIdByTest: {
@@ -262,6 +352,20 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             [state.currentTest]: laterality,
           },
         })),
+      setCarasIdentification: (identification) =>
+        set((state) => ({
+          carasIdentificationByTest: {
+            ...state.carasIdentificationByTest,
+            [state.currentTest]: identification,
+          },
+        })),
+      setStaiIdentification: (identification) =>
+        set((state) => ({
+          staiIdentificationByTest: {
+            ...state.staiIdentificationByTest,
+            [state.currentTest]: identification,
+          },
+        })),
       setCurrentReportId: (id) =>
         set((state) => ({
           currentReportIdByTest: {
@@ -291,6 +395,14 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             ...state.cumanesLateralityByTest,
             [state.currentTest]: { ...EMPTY_CUMANES_LATERALITY },
           },
+          carasIdentificationByTest: {
+            ...state.carasIdentificationByTest,
+            [state.currentTest]: { ...EMPTY_CARAS_IDENTIFICATION },
+          },
+          staiIdentificationByTest: {
+            ...state.staiIdentificationByTest,
+            [state.currentTest]: { ...EMPTY_STAI_IDENTIFICATION },
+          },
           currentReportIdByTest: {
             ...state.currentReportIdByTest,
             [state.currentTest]: undefined,
@@ -299,7 +411,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
     }),
     {
       name: "informer-current-report",
-      version: 5,
+      version: 7,
       migrate: (persistedState) => normalizePersistedState(persistedState),
     }
   )

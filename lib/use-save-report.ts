@@ -2,14 +2,20 @@
 
 import { useMemo, useCallback, useEffect } from "react";
 import {
+  selectCurrentCarasIdentification,
   selectCurrentAnswers,
   selectCurrentCumanesIdentification,
   selectCurrentCumanesLaterality,
   selectCurrentPatientName,
   selectCurrentPatientSex,
   selectCurrentReportId,
+  selectCurrentStaiIdentification,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
+import { buildCarasMarkdown } from "@/lib/caras-r-scoring";
+import { EMPTY_CARAS_IDENTIFICATION } from "@/lib/caras-r-types";
+import { buildStaiMarkdown } from "@/lib/stai-scoring";
+import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { testData } from "@/lib/test-data";
@@ -23,11 +29,23 @@ export function useReportMarkdown() {
   const currentTest = useCurrentReportStore((s) => s.currentTest);
   const answers = useCurrentReportStore(selectCurrentAnswers);
   const patientSex = useCurrentReportStore(selectCurrentPatientSex);
+  const carasIdentification = useCurrentReportStore(
+    selectCurrentCarasIdentification
+  );
+  const staiIdentification = useCurrentReportStore(
+    selectCurrentStaiIdentification
+  );
 
   return useMemo(() => {
+    if (currentTest === "CARAS_R") {
+      return buildCarasMarkdown(carasIdentification, answers);
+    }
+    if (currentTest === "STAI") {
+      return buildStaiMarkdown(staiIdentification, patientSex, answers);
+    }
     const data = testData[currentTest];
     return generateMarkdown(data, answers, patientSex);
-  }, [currentTest, answers, patientSex]);
+  }, [answers, carasIdentification, currentTest, patientSex, staiIdentification]);
 }
 
 export function useAutoSaveReport() {
@@ -40,6 +58,12 @@ export function useAutoSaveReport() {
   );
   const cumanesLaterality = useCurrentReportStore(
     selectCurrentCumanesLaterality
+  );
+  const carasIdentification = useCurrentReportStore(
+    selectCurrentCarasIdentification
+  );
+  const staiIdentification = useCurrentReportStore(
+    selectCurrentStaiIdentification
   );
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
@@ -60,12 +84,16 @@ export function useAutoSaveReport() {
       patientSex: previousPatientSex,
       cumanesIdentification: previousCumanesIdentification,
       cumanesLaterality: previousCumanesLaterality,
+      carasIdentification: previousCarasIdentification,
+      staiIdentification: previousStaiIdentification,
       ...reportBase
     } = existingReport;
     void previousPatientName;
     void previousPatientSex;
     void previousCumanesIdentification;
     void previousCumanesLaterality;
+    void previousCarasIdentification;
+    void previousStaiIdentification;
 
     saveReport({
       ...reportBase,
@@ -80,6 +108,12 @@ export function useAutoSaveReport() {
             cumanesLaterality: { ...cumanesLaterality },
           }
         : {}),
+      ...(currentTest === "CARAS_R"
+        ? { carasIdentification: { ...carasIdentification } }
+        : {}),
+      ...(currentTest === "STAI"
+        ? { staiIdentification: { ...staiIdentification } }
+        : {}),
     });
   }, [
     currentReportId,
@@ -90,6 +124,8 @@ export function useAutoSaveReport() {
     patientSex,
     cumanesIdentification,
     cumanesLaterality,
+    carasIdentification,
+    staiIdentification,
     saveReport,
   ]);
 }
@@ -104,16 +140,35 @@ export function useCreateNewReport() {
       patientName,
       patientSex,
       cumanesIdentification,
+      carasIdentification,
+      staiIdentification,
     }: CreateReportInput) => {
       const trimmedPatientName = patientName?.trim();
       const data = testData[test];
       const emptyAnswers: Record<string, number> = {};
+      const initialCarasIdentification = {
+        ...EMPTY_CARAS_IDENTIFICATION,
+        ...carasIdentification,
+      };
+      const initialStaiIdentification = {
+        ...EMPTY_STAI_IDENTIFICATION,
+        ...staiIdentification,
+      };
       const report: SavedReport = {
         id: crypto.randomUUID(),
         createdAt: new Date().toISOString(),
         test,
         answers: emptyAnswers,
-        markdown: generateMarkdown(data, emptyAnswers, patientSex ?? ""),
+        markdown:
+          test === "CARAS_R"
+            ? buildCarasMarkdown(initialCarasIdentification, emptyAnswers)
+            : test === "STAI"
+              ? buildStaiMarkdown(
+                  initialStaiIdentification,
+                  patientSex ?? "",
+                  emptyAnswers
+                )
+              : generateMarkdown(data, emptyAnswers, patientSex ?? ""),
         ...(trimmedPatientName ? { patientName: trimmedPatientName } : {}),
         ...(patientSex ? { patientSex } : {}),
         ...(test === "CUMANES"
@@ -123,6 +178,20 @@ export function useCreateNewReport() {
                 ...cumanesIdentification,
               },
               cumanesLaterality: { ...EMPTY_CUMANES_LATERALITY },
+            }
+          : {}),
+        ...(test === "CARAS_R"
+          ? {
+              carasIdentification: {
+                ...initialCarasIdentification,
+              },
+            }
+          : {}),
+        ...(test === "STAI"
+          ? {
+              staiIdentification: {
+                ...initialStaiIdentification,
+              },
             }
           : {}),
       };

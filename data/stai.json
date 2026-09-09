@@ -1,0 +1,602 @@
+[
+  {
+    "id": "stai-01",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "1",
+    "question": "Me siento calmado",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-02",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "2",
+    "question": "Me siento seguro",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-03",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "3",
+    "question": "Estoy tenso",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-04",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "4",
+    "question": "Estoy contrariado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-05",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "5",
+    "question": "Me siento cómodo (estoy a gusto)",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-06",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "6",
+    "question": "Me siento alterado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-07",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "7",
+    "question": "Estoy preocupado ahora por posibles desgracias futuras",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-08",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "8",
+    "question": "Me siento descansado",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-09",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "9",
+    "question": "Me siento angustiado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-10",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "10",
+    "question": "Me siento confortable",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-11",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "11",
+    "question": "Tengo confianza en mí mismo",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-12",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "12",
+    "question": "Me siento nervioso",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-13",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "13",
+    "question": "Estoy desasosegado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-14",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "14",
+    "question": "Me siento muy «atado» (como oprimido)",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-15",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "15",
+    "question": "Estoy relajado",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-16",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "16",
+    "question": "Me siento satisfecho",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-17",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "17",
+    "question": "Estoy preocupado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-18",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "18",
+    "question": "Me siento aturdido y sobreexcitado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-19",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "19",
+    "question": "Me siento alegre",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-20",
+    "test": "STAI",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "20",
+    "question": "En este momento me siento bien",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-21",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "21",
+    "question": "Me siento bien",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-22",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "22",
+    "question": "Me canso rápidamente",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-23",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "23",
+    "question": "Siento ganas de llorar",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-24",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "24",
+    "question": "Me gustaría ser tan feliz como otros",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-25",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "25",
+    "question": "Pierdo oportunidades por no decidirme pronto",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-26",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "26",
+    "question": "Me siento descansado",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-27",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "27",
+    "question": "Soy una persona tranquila, serena y sosegada",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-28",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "28",
+    "question": "Veo que las dificultades se amontonan y no puedo con ellas",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-29",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "29",
+    "question": "Me preocupo demasiado por cosas sin importancia",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-30",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "30",
+    "question": "Soy feliz",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-31",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "31",
+    "question": "Suelo tomar las cosas demasiado seriamente",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-32",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "32",
+    "question": "Me falta confianza en mí mismo",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-33",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "33",
+    "question": "Me siento seguro",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-34",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "34",
+    "question": "No suelo afrontar las crisis o dificultades",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-35",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "35",
+    "question": "Me siento triste (melancólico)",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-36",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "36",
+    "question": "Estoy satisfecho",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-37",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "37",
+    "question": "Me rondan y molestan pensamientos sin importancia",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-38",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "38",
+    "question": "Me afectan tanto los desengaños que no puedo olvidarlos",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-39",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "39",
+    "question": "Soy una persona estable",
+    "scoring": "reverse",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  },
+  {
+    "id": "stai-40",
+    "test": "STAI",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "40",
+    "question": "Cuando pienso sobre asuntos y preocupaciones actuales me pongo tenso y agitado",
+    "scoring": "direct",
+    "answers": {
+      "0": "Casi nunca",
+      "1": "A veces",
+      "2": "A menudo",
+      "3": "Casi siempre"
+    }
+  }
+]

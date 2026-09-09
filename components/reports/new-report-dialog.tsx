@@ -4,6 +4,8 @@ import { useState, type FormEvent } from "react";
 import { AdirSubjectSexPicker } from "@/components/adir/adir-subject-sex-picker";
 import { Ados2SubjectSexPicker } from "@/components/ados2/ados2-subject-sex-picker";
 import { CumanesIdentificationFields } from "@/components/cumanes/cumanes-identification-fields";
+import { CarasIdentificationFields } from "@/components/caras-r/caras-identification-fields";
+import { StaiIdentificationFields } from "@/components/stai/stai-identification-fields";
 import {
   Dialog,
   DialogContent,
@@ -19,6 +21,14 @@ import {
   EMPTY_CUMANES_IDENTIFICATION,
   type CumanesIdentification,
 } from "@/lib/cumanes-types";
+import {
+  EMPTY_CARAS_IDENTIFICATION,
+  type CarasIdentification,
+} from "@/lib/caras-r-types";
+import {
+  EMPTY_STAI_IDENTIFICATION,
+  type StaiIdentification,
+} from "@/lib/stai-types";
 import { testLabels } from "@/lib/test-data";
 import type { CreateReportInput, TestType } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -53,6 +63,16 @@ const reportTypes: {
     label: "CUMANES",
     description: "Madurez neuropsicológica en población escolar.",
   },
+  {
+    value: "CARAS_R",
+    label: "CARAS-R",
+    description: "Percepción de diferencias y control de la impulsividad.",
+  },
+  {
+    value: "STAI",
+    label: "STAI",
+    description: "Inventario de ansiedad estado-rasgo.",
+  },
 ];
 
 export function NewReportDialog({
@@ -66,16 +86,28 @@ export function NewReportDialog({
   const [adosSex, setAdosSex] = useState<Ados2SubjectSex>("");
   const [cumanesIdentification, setCumanesIdentification] =
     useState<CumanesIdentification>({ ...EMPTY_CUMANES_IDENTIFICATION });
+  const [carasIdentification, setCarasIdentification] =
+    useState<CarasIdentification>({ ...EMPTY_CARAS_IDENTIFICATION });
+  const [staiIdentification, setStaiIdentification] =
+    useState<StaiIdentification>({ ...EMPTY_STAI_IDENTIFICATION });
 
   const isAdos2 = selectedTest ? isAdos2Test(selectedTest) : false;
   const isCumanes = selectedTest === "CUMANES";
-  const patientSex = isAdos2 || isCumanes ? adosSex : adirSex;
+  const isCaras = selectedTest === "CARAS_R";
+  const isStai = selectedTest === "STAI";
+  const patientSex = isCaras
+    ? ""
+    : isAdos2 || isCumanes || isStai
+      ? adosSex
+      : adirSex;
 
   const handleTestChange = (value: string) => {
     setSelectedTest(value as TestType);
     setAdirSex("");
     setAdosSex("");
     setCumanesIdentification({ ...EMPTY_CUMANES_IDENTIFICATION });
+    setCarasIdentification({ ...EMPTY_CARAS_IDENTIFICATION });
+    setStaiIdentification({ ...EMPTY_STAI_IDENTIFICATION });
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -93,6 +125,8 @@ export function NewReportDialog({
       patientName,
       patientSex,
       ...(isCumanes ? { cumanesIdentification } : {}),
+      ...(isCaras ? { carasIdentification } : {}),
+      ...(isStai ? { staiIdentification } : {}),
     });
     onClose();
   };
@@ -211,6 +245,26 @@ export function NewReportDialog({
                       setAdosSex(sex as Ados2SubjectSex)
                     }
                     onIdentificationChange={setCumanesIdentification}
+                  />
+                ) : isCaras ? (
+                  <CarasIdentificationFields
+                    idPrefix="new-caras"
+                    patientName={patientName}
+                    identification={carasIdentification}
+                    onPatientNameChange={setPatientName}
+                    onIdentificationChange={setCarasIdentification}
+                  />
+                ) : isStai ? (
+                  <StaiIdentificationFields
+                    idPrefix="new-stai"
+                    patientName={patientName}
+                    patientSex={patientSex}
+                    identification={staiIdentification}
+                    onPatientNameChange={setPatientName}
+                    onPatientSexChange={(sex) =>
+                      setAdosSex(sex as Ados2SubjectSex)
+                    }
+                    onIdentificationChange={setStaiIdentification}
                   />
                 ) : (
                   <>
