@@ -33,6 +33,12 @@ const templates = [
     width: 595,
     height: 842,
   },
+  {
+    input: path.join(root, "data", "cumanes.pdf"),
+    output: path.join(outDir, "cumanes.png"),
+    width: 596,
+    height: 842,
+  },
 ];
 
 async function renderTemplate(template) {

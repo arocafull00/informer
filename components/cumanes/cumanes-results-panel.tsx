@@ -1,6 +1,10 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Check, Copy, Sparkles } from "lucide-react";
+import { buildCumanesPdfForm } from "@/lib/cumanes-pdf/build-cumanes-pdf-form";
+import { buildCumanesResultsText } from "@/lib/cumanes-pdf/build-cumanes-results-text";
+import { downloadCumanesPdf } from "@/lib/cumanes-pdf/download-cumanes-pdf";
 import {
   CUMANES_TEST_ORDER,
   cumanesNorms,
@@ -17,6 +21,8 @@ import {
   selectCurrentAnswers,
   selectCurrentCumanesIdentification,
   selectCurrentCumanesLaterality,
+  selectCurrentPatientName,
+  selectCurrentPatientSex,
   selectCurrentReportId,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
@@ -96,10 +102,15 @@ function CumanesResultRow({ code }: { code: TestCode }) {
 export function CumanesResultsPanel() {
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const answers = useCurrentReportStore(selectCurrentAnswers);
+  const patientName = useCurrentReportStore(selectCurrentPatientName);
+  const patientSex = useCurrentReportStore(selectCurrentPatientSex);
   const identification = useCurrentReportStore(
     selectCurrentCumanesIdentification
   );
   const laterality = useCurrentReportStore(selectCurrentCumanesLaterality);
+  const [copied, setCopied] = useState(false);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  const [pdfError, setPdfError] = useState<string | null>(null);
   const indexSummary = getCumanesIndexSummary(identification.age, answers);
   const formattedSum =
     indexSummary.sum === null
@@ -107,6 +118,44 @@ export function CumanesResultsPanel() {
       : indexSummary.sum.toLocaleString("es-ES", {
           maximumFractionDigits: 2,
         });
+  const resultsText = useMemo(
+    () =>
+      buildCumanesResultsText({
+        patientName: patientName ?? "",
+        patientSex,
+        identification,
+        laterality,
+        answers,
+      }),
+    [answers, identification, laterality, patientName, patientSex]
+  );
+
+  const handleCopyText = async () => {
+    await navigator.clipboard.writeText(resultsText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleGeneratePdf = async () => {
+    setIsGeneratingPdf(true);
+    setPdfError(null);
+    try {
+      const form = buildCumanesPdfForm({
+        patientName: patientName ?? "",
+        patientSex,
+        identification,
+        laterality,
+        answers,
+      });
+      await downloadCumanesPdf(form);
+    } catch (error) {
+      setPdfError(
+        error instanceof Error ? error.message : "No se pudo generar el PDF"
+      );
+    } finally {
+      setIsGeneratingPdf(false);
+    }
+  };
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -272,7 +321,41 @@ export function CumanesResultsPanel() {
             </p>
           ) : null}
           <p>La velocidad lectora (LX-v) no aporta puntuación transformada.</p>
+          {pdfError ? (
+            <p className="mt-2 text-error">{pdfError}</p>
+          ) : null}
         </div>
+      </div>
+
+      <div className="flex shrink-0 gap-2 border-t border-outline-variant bg-surface-container-lowest p-3">
+        <button
+          type="button"
+          onClick={handleCopyText}
+          className="interactive-press flex min-h-9 flex-1 items-center justify-center gap-1.5 rounded-lg bg-surface-container px-3 py-2 text-label-md text-on-surface hover:bg-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {copied ? (
+            <>
+              <Check className="size-4" aria-hidden="true" />
+              Copiado
+            </>
+          ) : (
+            <>
+              <Copy className="size-4" aria-hidden="true" />
+              Copiar texto
+            </>
+          )}
+        </button>
+        {currentReportId ? (
+          <button
+            type="button"
+            onClick={handleGeneratePdf}
+            disabled={isGeneratingPdf}
+            className="interactive-press flex min-h-9 flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <Sparkles className="size-4" aria-hidden="true" />
+            {isGeneratingPdf ? "Generando..." : "Generar PDF"}
+          </button>
+        ) : null}
       </div>
     </div>
   );

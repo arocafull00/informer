@@ -3,13 +3,11 @@
 import { ChevronDown } from "lucide-react";
 import { CumanesIdentificationFields } from "@/components/cumanes/cumanes-identification-fields";
 import { CumanesLateralitySection } from "@/components/cumanes/cumanes-laterality-section";
-import { Input } from "@/components/ui/input";
+import { CumanesScoreInputRow } from "@/components/cumanes/cumanes-score-input-row";
 import {
   CUMANES_TEST_GROUPS,
   CUMANES_TEST_ORDER,
-  cumanesNorms,
 } from "@/lib/cumanes-scoring";
-import type { TestCode } from "@/lib/cumanes-types";
 import {
   selectCurrentAnswers,
   selectCurrentCumanesIdentification,
@@ -44,20 +42,6 @@ export function CumanesScoreForm() {
     (code) => answers[code] !== undefined
   ).length;
   const progress = (answeredCount / CUMANES_TEST_ORDER.length) * 100;
-
-  const handleScoreChange = (code: TestCode, value: string) => {
-    if (value === "") {
-      clearAnswer(code);
-      return;
-    }
-
-    const parsed = Number(value);
-    if (!Number.isInteger(parsed) || parsed < 0) {
-      clearAnswer(code);
-      return;
-    }
-    setAnswer(code, parsed);
-  };
 
   return (
     <div className="space-y-stack-section pb-10">
@@ -148,38 +132,15 @@ export function CumanesScoreForm() {
                 </h2>
                 <div className="overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest">
                   {group.codes.map((code, index) => (
-                    <div
-                      key={code}
-                      className={`grid min-h-16 grid-cols-[minmax(0,1fr)_7rem] items-center gap-4 px-4 py-3 ${
-                        index > 0 ? "border-t border-outline-variant" : ""
-                      }`}
-                    >
-                      <label
-                        htmlFor={`cumanes-score-${code}`}
-                        className="min-w-0"
-                      >
-                        <span className="block text-body-md font-medium text-on-surface">
-                          {cumanesNorms.tests[code].name}
-                        </span>
-                        <span className="mt-0.5 block text-mono-sm font-medium text-primary">
-                          {code}
-                        </span>
-                      </label>
-                      <Input
-                        id={`cumanes-score-${code}`}
-                        type="number"
-                        inputMode="numeric"
-                        min={0}
-                        step={1}
-                        value={answers[code] ?? ""}
-                        onChange={(event) =>
-                          handleScoreChange(code, event.target.value)
-                        }
-                        disabled={!scoringEnabled}
-                        aria-label={`Puntuación directa de ${cumanesNorms.tests[code].name}`}
-                        className="h-10 border-outline-variant bg-surface-container-lowest text-right text-body-lg tabular-nums text-on-surface"
-                      />
-                    </div>
+                    <CumanesScoreInputRow
+                      key={`${currentReportId ?? "none"}-${code}`}
+                      code={code}
+                      value={answers[code]}
+                      onValidChange={(score) => setAnswer(code, score)}
+                      onClear={() => clearAnswer(code)}
+                      disabled={!scoringEnabled}
+                      showTopBorder={index > 0}
+                    />
                   ))}
                 </div>
               </section>

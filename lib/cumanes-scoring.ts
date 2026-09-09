@@ -57,6 +57,56 @@ export const CUMANES_POSITIVE_SUM_CODES: TestCode[] = [
 
 export const CUMANES_NEGATIVE_SUM_CODES: TestCode[] = ["FE-t", "FE-e"];
 
+export type CumanesDirectScoreLimit = {
+  min: number | null;
+  max: number | null;
+};
+
+export const directScoreLimits: Record<TestCode, CumanesDirectScoreLimit> = {
+  CA: { min: 0, max: 10 },
+  CIM: { min: 0, max: 20 },
+  FF: { min: 0, max: 30 },
+  FS: { min: 0, max: 30 },
+  "LX-c": { min: 0, max: 8 },
+  "LX-v": { min: 0, max: null },
+  EA: { min: 0, max: 16 },
+  VP: { min: 0, max: 39 },
+  MVE: { min: 0, max: 30 },
+  MVI: { min: 0, max: 15 },
+  RI: { min: 0, max: 20 },
+  "FE-t": { min: null, max: null },
+  "FE-e": { min: 0, max: 30 },
+};
+
+export function isCumanesDirectScoreInRange(
+  code: TestCode,
+  score: number
+): boolean {
+  const limits = directScoreLimits[code];
+  if (limits.min !== null && score < limits.min) {
+    return false;
+  }
+  if (limits.max !== null && score > limits.max) {
+    return false;
+  }
+  return true;
+}
+
+export function formatCumanesDirectScoreLimitsLabel(code: TestCode): string {
+  const { min, max } = directScoreLimits[code];
+  const parts: string[] = [];
+  if (min !== null) {
+    parts.push(`Mínimo: ${min}`);
+  }
+  if (max !== null) {
+    parts.push(`Máximo: ${max}`);
+  }
+  if (parts.length === 0) {
+    return "Sin límites";
+  }
+  return parts.join(". ");
+}
+
 const CUMANES_SUM_CODES = [
   ...CUMANES_POSITIVE_SUM_CODES,
   ...CUMANES_NEGATIVE_SUM_CODES,
@@ -90,6 +140,40 @@ export type CumanesIndexSummary = {
   status: CumanesIndexStatus;
 };
 
+function lookupBoundedNorm<T>(
+  norms: Record<string, T>,
+  score: number
+): T | null {
+  const exact = norms[String(score)];
+  if (exact) return exact;
+
+  let lteMatch: T | null = null;
+  let lteThreshold = Infinity;
+  let gteMatch: T | null = null;
+  let gteThreshold = -Infinity;
+
+  for (const [key, result] of Object.entries(norms)) {
+    if (key.startsWith("<=")) {
+      const threshold = Number(key.slice(2));
+      if (score <= threshold && threshold < lteThreshold) {
+        lteThreshold = threshold;
+        lteMatch = result;
+      }
+      continue;
+    }
+
+    if (key.startsWith(">=")) {
+      const threshold = Number(key.slice(2));
+      if (score >= threshold && threshold > gteThreshold) {
+        gteThreshold = threshold;
+        gteMatch = result;
+      }
+    }
+  }
+
+  return lteMatch ?? gteMatch;
+}
+
 export function getCumanesScore(
   age: Age | null | undefined,
   code: TestCode,
@@ -101,6 +185,10 @@ export function getCumanesScore(
 
   if (!age) {
     return { transformation: null, decatype: null, status: "age-missing" };
+  }
+
+  if (!isCumanesDirectScoreInRange(code, directScore)) {
+    return { transformation: null, decatype: null, status: "score-unmatched" };
   }
 
   const test = cumanesNorms.tests[code];
@@ -128,7 +216,7 @@ export function getCumanesScore(
     return { transformation: null, decatype: null, status: "norm-missing" };
   }
 
-  const match = (norms as StandardTestNorms)[String(directScore)];
+  const match = lookupBoundedNorm(norms as StandardTestNorms, directScore);
   return match
     ? { ...match, status: "matched" }
     : { transformation: null, decatype: null, status: "score-unmatched" };
@@ -161,19 +249,7 @@ export function getCumanesIdnResult(
   roundedSum: number
 ): IdnScoreResult | null {
   const norms = cumanesIdnNorms[age];
-  const exactMatch = norms[String(roundedSum)];
-  if (exactMatch) return exactMatch;
-
-  for (const [key, result] of Object.entries(norms)) {
-    if (key.startsWith("<=") && roundedSum <= Number(key.slice(2))) {
-      return result;
-    }
-    if (key.startsWith(">=") && roundedSum >= Number(key.slice(2))) {
-      return result;
-    }
-  }
-
-  return null;
+  return lookupBoundedNorm(norms, roundedSum);
 }
 
 export function getCumanesIndexSummary(

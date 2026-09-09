@@ -1,4 +1,9 @@
-export type PdfTemplateId = "adir" | "rias" | "ados2-nino" | "ados2-adulto";
+export type PdfTemplateId =
+  | "adir"
+  | "rias"
+  | "ados2-nino"
+  | "ados2-adulto"
+  | "cumanes";
 
 export type PdfTemplate = {
   id: PdfTemplateId;
@@ -31,6 +36,12 @@ export const PDF_TEMPLATES: PdfTemplate[] = [
     label: "ADOS-2 Adulto",
     imageSrc: "/pdf/ados2-adulto.png",
     pageSize: { width: 595, height: 842 },
+  },
+  {
+    id: "cumanes",
+    label: "CUMANES",
+    imageSrc: "/pdf/cumanes.png",
+    pageSize: { width: 596, height: 842 },
   },
 ];
 

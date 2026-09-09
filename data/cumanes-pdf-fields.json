@@ -1,0 +1,469 @@
+{
+  "pageSize": {
+    "width": 596,
+    "height": 842
+  },
+  "perfilDecatipo": {
+    "size": {
+      "width": 7,
+      "height": 7
+    },
+    "xByDecatipo": {
+      "1": 355,
+      "2": 373,
+      "3": 388,
+      "4": 405,
+      "5": 420,
+      "6": 436,
+      "7": 452,
+      "8": 471,
+      "9": 485,
+      "10": 500
+    },
+    "yByPrueba": {
+      "CA": 479,
+      "CIM": 466,
+      "FF": 453,
+      "FS": 440,
+      "LX-c": 427,
+      "LX-v": 414,
+      "EA": 401,
+      "VP": 388,
+      "FE-t": 375,
+      "FE-e": 360,
+      "MVE": 346,
+      "MVI": 333,
+      "RI": 320
+    }
+  },
+  "puntuacionesTipicas": {
+    "minScore": 60,
+    "maxScore": 140,
+    "startX": 349,
+    "endX": 507,
+    "y": 267,
+    "markRadius": 4
+  },
+  "fields": {
+    "patient.name": {
+      "type": "point",
+      "x": 167,
+      "y": 625,
+      "align": "left"
+    },
+    "identification.examinerName": {
+      "type": "point",
+      "x": 166,
+      "y": 604,
+      "align": "left"
+    },
+    "identification.center": {
+      "type": "point",
+      "x": 166,
+      "y": 584,
+      "align": "left"
+    },
+    "identification.course": {
+      "type": "point",
+      "x": 165,
+      "y": 566,
+      "align": "left"
+    },
+    "identification.consultReason": {
+      "type": "point",
+      "x": 166,
+      "y": 546,
+      "align": "left"
+    },
+    "patient.sex.varon": {
+      "type": "check",
+      "x": 379,
+      "y": 623,
+      "radius": 3.5
+    },
+    "patient.sex.mujer": {
+      "type": "check",
+      "x": 404,
+      "y": 623,
+      "radius": 3.5
+    },
+    "identification.evaluationDate.year": {
+      "type": "point",
+      "x": 428,
+      "y": 601,
+      "align": "center"
+    },
+    "identification.evaluationDate.month": {
+      "type": "point",
+      "x": 460,
+      "y": 601,
+      "align": "center"
+    },
+    "identification.evaluationDate.day": {
+      "type": "point",
+      "x": 496,
+      "y": 602,
+      "align": "center"
+    },
+    "identification.birthDate.year": {
+      "type": "point",
+      "x": 427,
+      "y": 585,
+      "align": "center"
+    },
+    "identification.birthDate.month": {
+      "type": "point",
+      "x": 463,
+      "y": 584,
+      "align": "center"
+    },
+    "identification.birthDate.day": {
+      "type": "point",
+      "x": 493,
+      "y": 583,
+      "align": "center"
+    },
+    "identification.age": {
+      "type": "point",
+      "x": 430,
+      "y": 565,
+      "align": "center"
+    },
+    "directScores.CA": {
+      "type": "point",
+      "x": 131,
+      "y": 475,
+      "align": "center"
+    },
+    "directScores.CIM": {
+      "type": "point",
+      "x": 131,
+      "y": 460,
+      "align": "center"
+    },
+    "directScores.FF": {
+      "type": "point",
+      "x": 131,
+      "y": 447,
+      "align": "center"
+    },
+    "directScores.FS": {
+      "type": "point",
+      "x": 131,
+      "y": 433,
+      "align": "center"
+    },
+    "directScores.LX-c": {
+      "type": "point",
+      "x": 131,
+      "y": 421,
+      "align": "center"
+    },
+    "directScores.LX-v": {
+      "type": "point",
+      "x": 131,
+      "y": 408,
+      "align": "center"
+    },
+    "directScores.EA": {
+      "type": "point",
+      "x": 131,
+      "y": 393,
+      "align": "center"
+    },
+    "directScores.VP": {
+      "type": "point",
+      "x": 131,
+      "y": 379,
+      "align": "center"
+    },
+    "directScores.FE-t": {
+      "type": "point",
+      "x": 131,
+      "y": 366,
+      "align": "center"
+    },
+    "directScores.FE-e": {
+      "type": "point",
+      "x": 129,
+      "y": 354,
+      "align": "center"
+    },
+    "directScores.MVE": {
+      "type": "point",
+      "x": 131,
+      "y": 339,
+      "align": "center"
+    },
+    "directScores.MVI": {
+      "type": "point",
+      "x": 131,
+      "y": 328,
+      "align": "center"
+    },
+    "directScores.RI": {
+      "type": "point",
+      "x": 131,
+      "y": 314,
+      "align": "center"
+    },
+    "transformations.CA": {
+      "type": "point",
+      "x": 171,
+      "y": 475,
+      "align": "center"
+    },
+    "transformations.CIM": {
+      "type": "point",
+      "x": 170,
+      "y": 461,
+      "align": "center"
+    },
+    "transformations.FF": {
+      "type": "point",
+      "x": 169,
+      "y": 448,
+      "align": "center"
+    },
+    "transformations.FS": {
+      "type": "point",
+      "x": 169,
+      "y": 434,
+      "align": "center"
+    },
+    "transformations.LX-c": {
+      "type": "point",
+      "x": 170,
+      "y": 420,
+      "align": "center"
+    },
+    "transformations.EA": {
+      "type": "point",
+      "x": 169,
+      "y": 393,
+      "align": "center"
+    },
+    "transformations.VP": {
+      "type": "point",
+      "x": 170,
+      "y": 379,
+      "align": "center"
+    },
+    "transformations.FE-t": {
+      "type": "point",
+      "x": 171,
+      "y": 366,
+      "align": "center"
+    },
+    "transformations.FE-e": {
+      "type": "point",
+      "x": 169,
+      "y": 352,
+      "align": "center"
+    },
+    "transformations.MVE": {
+      "type": "point",
+      "x": 170,
+      "y": 340,
+      "align": "center"
+    },
+    "transformations.MVI": {
+      "type": "point",
+      "x": 170,
+      "y": 329,
+      "align": "center"
+    },
+    "transformations.RI": {
+      "type": "point",
+      "x": 170,
+      "y": 316,
+      "align": "center"
+    },
+    "decatypes.CA": {
+      "type": "point",
+      "x": 233,
+      "y": 473,
+      "align": "center"
+    },
+    "decatypes.CIM": {
+      "type": "point",
+      "x": 233,
+      "y": 460,
+      "align": "center"
+    },
+    "decatypes.FF": {
+      "type": "point",
+      "x": 233,
+      "y": 447,
+      "align": "center"
+    },
+    "decatypes.FS": {
+      "type": "point",
+      "x": 233,
+      "y": 434,
+      "align": "center"
+    },
+    "decatypes.LX-c": {
+      "type": "point",
+      "x": 233,
+      "y": 421,
+      "align": "center"
+    },
+    "decatypes.LX-v": {
+      "type": "point",
+      "x": 233,
+      "y": 408,
+      "align": "center"
+    },
+    "decatypes.EA": {
+      "type": "point",
+      "x": 233,
+      "y": 395,
+      "align": "center"
+    },
+    "decatypes.VP": {
+      "type": "point",
+      "x": 233,
+      "y": 382,
+      "align": "center"
+    },
+    "decatypes.FE-t": {
+      "type": "point",
+      "x": 233,
+      "y": 369,
+      "align": "center"
+    },
+    "decatypes.FE-e": {
+      "type": "point",
+      "x": 231,
+      "y": 354,
+      "align": "center"
+    },
+    "decatypes.MVE": {
+      "type": "point",
+      "x": 233,
+      "y": 340,
+      "align": "center"
+    },
+    "decatypes.MVI": {
+      "type": "point",
+      "x": 233,
+      "y": 327,
+      "align": "center"
+    },
+    "decatypes.RI": {
+      "type": "point",
+      "x": 233,
+      "y": 314,
+      "align": "center"
+    },
+    "index.sum": {
+      "type": "point",
+      "x": 172,
+      "y": 288,
+      "align": "center"
+    },
+    "index.typicalScore": {
+      "type": "point",
+      "x": 170,
+      "y": 263,
+      "align": "center"
+    },
+    "index.percentile": {
+      "type": "point",
+      "x": 168,
+      "y": 234,
+      "align": "center"
+    },
+    "laterality.manual.leftConsistent": {
+      "type": "check",
+      "x": 177,
+      "y": 192,
+      "radius": 3.5
+    },
+    "laterality.manual.leftInconsistent": {
+      "type": "check",
+      "x": 251,
+      "y": 191,
+      "radius": 3.5
+    },
+    "laterality.manual.ambiguous": {
+      "type": "check",
+      "x": 324,
+      "y": 192,
+      "radius": 3.5
+    },
+    "laterality.manual.rightInconsistent": {
+      "type": "check",
+      "x": 397,
+      "y": 194,
+      "radius": 3.5
+    },
+    "laterality.manual.rightConsistent": {
+      "type": "check",
+      "x": 470,
+      "y": 194,
+      "radius": 3.5
+    },
+    "laterality.podalic.leftConsistent": {
+      "type": "check",
+      "x": 178,
+      "y": 179,
+      "radius": 3.5
+    },
+    "laterality.podalic.leftInconsistent": {
+      "type": "check",
+      "x": 251,
+      "y": 181,
+      "radius": 3.5
+    },
+    "laterality.podalic.ambiguous": {
+      "type": "check",
+      "x": 325,
+      "y": 180,
+      "radius": 3.5
+    },
+    "laterality.podalic.rightInconsistent": {
+      "type": "check",
+      "x": 399,
+      "y": 181,
+      "radius": 3.5
+    },
+    "laterality.podalic.rightConsistent": {
+      "type": "check",
+      "x": 472,
+      "y": 180,
+      "radius": 3.5
+    },
+    "laterality.ocular.leftConsistent": {
+      "type": "check",
+      "x": 178,
+      "y": 169,
+      "radius": 3.5
+    },
+    "laterality.ocular.leftInconsistent": {
+      "type": "check",
+      "x": 250,
+      "y": 169,
+      "radius": 3.5
+    },
+    "laterality.ocular.ambiguous": {
+      "type": "check",
+      "x": 325,
+      "y": 168,
+      "radius": 3.5
+    },
+    "laterality.ocular.rightInconsistent": {
+      "type": "check",
+      "x": 399,
+      "y": 169,
+      "radius": 3.5
+    },
+    "laterality.ocular.rightConsistent": {
+      "type": "check",
+      "x": 472,
+      "y": 169,
+      "radius": 3.5
+    }
+  }
+}
