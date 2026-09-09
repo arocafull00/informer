@@ -159,17 +159,18 @@ export function StaiResultsPanel() {
 
         {!summary.estado.complete && !summary.rasgo.complete ? (
           <p className="mt-4 text-body-md leading-relaxed text-on-surface-variant">
-            Completa las 40 respuestas para calcular ambas puntuaciones.
+            Las PD muestran el acumulado actual. Completa las 40 respuestas para
+            calcular ambos percentiles.
           </p>
         ) : null}
         {summary.estado.complete && !summary.rasgo.complete ? (
           <p className="mt-4 text-body-md leading-relaxed text-on-surface-variant">
-            Completa la sección Ansiedad-Rasgo para obtener su PD y percentil.
+            Completa la sección Ansiedad-Rasgo para obtener su percentil.
           </p>
         ) : null}
         {!summary.estado.complete && summary.rasgo.complete ? (
           <p className="mt-4 text-body-md leading-relaxed text-on-surface-variant">
-            Completa la sección Ansiedad-Estado para obtener su PD y percentil.
+            Completa la sección Ansiedad-Estado para obtener su percentil.
           </p>
         ) : null}
       </div>

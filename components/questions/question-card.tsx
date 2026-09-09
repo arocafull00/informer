@@ -7,6 +7,7 @@ interface QuestionCardProps {
   question: Question;
   displayCode?: string;
   showAnswerLabels?: boolean;
+  labeledGrid?: boolean;
   disabled?: boolean;
 }
 
@@ -14,6 +15,7 @@ export function QuestionCard({
   question,
   displayCode,
   showAnswerLabels = false,
+  labeledGrid = false,
   disabled = false,
 }: QuestionCardProps) {
   return (
@@ -32,6 +34,7 @@ export function QuestionCard({
             questionId={question.id}
             options={question.answers}
             showLabels={showAnswerLabels}
+            labeledGrid={labeledGrid}
             disabled={disabled}
           />
         </div>

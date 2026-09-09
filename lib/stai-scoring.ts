@@ -1,5 +1,7 @@
-import staiQuestions from "@/data/stai.json";
-import staiCorrecciones from "@/data/stai-correcciones.json";
+import staiQuestions from "../data/stai.json" with { type: "json" };
+import staiCorrecciones from "../data/stai-correcciones.json" with {
+  type: "json",
+};
 import {
   mapPatientSexToStaiSex,
   STAI_ESTADO_REVERSE_CODES,
@@ -9,7 +11,7 @@ import {
   type StaiNorms,
   type StaiScale,
   type StaiSex,
-} from "@/lib/stai-types";
+} from "./stai-types.ts";
 
 export const staiNorms = staiCorrecciones as StaiNorms;
 
@@ -76,17 +78,22 @@ function computeDirectScore(
 ): { score: number | null; complete: boolean } {
   const scaleQuestions = getScaleQuestions(scale);
   let sum = 0;
+  let answeredCount = 0;
 
   for (const question of scaleQuestions) {
     const raw = answers[question.id];
     if (raw === undefined) {
-      return { score: null, complete: false };
+      continue;
     }
     const reverse = isReverseCode(scale, question.code);
     sum += scoreItem(raw, reverse);
+    answeredCount += 1;
   }
 
-  return { score: sum, complete: true };
+  return {
+    score: answeredCount > 0 ? sum : null,
+    complete: answeredCount === scaleQuestions.length,
+  };
 }
 
 function findExactPercentile(

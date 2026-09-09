@@ -14,6 +14,7 @@ interface ScoreSelectorProps {
   questionId: string;
   options: Record<string, string>;
   showLabels?: boolean;
+  labeledGrid?: boolean;
   disabled?: boolean;
 }
 
@@ -21,6 +22,7 @@ export function ScoreSelector({
   questionId,
   options,
   showLabels = false,
+  labeledGrid = false,
   disabled = false,
 }: ScoreSelectorProps) {
   const answers = useCurrentReportStore(selectCurrentAnswers);
@@ -37,7 +39,11 @@ export function ScoreSelector({
   return (
     <div
       className={
-        showLabels ? "flex flex-col gap-2" : "flex flex-wrap gap-2"
+        showLabels
+          ? labeledGrid
+            ? "grid grid-cols-2 gap-2"
+            : "flex flex-col gap-2"
+          : "flex flex-wrap gap-2"
       }
       role="group"
       aria-label="Puntuación"

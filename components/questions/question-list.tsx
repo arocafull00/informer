@@ -118,6 +118,7 @@ export function QuestionList() {
                       : undefined
                   }
                   showAnswerLabels={isAdos2 || isStai}
+                  labeledGrid={isStai}
                 />
               ))}
             </div>
