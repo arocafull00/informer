@@ -43,7 +43,7 @@ function validateGroupName(
 ): { name: string; error?: string } {
   const normalizedName = normalizeGroupName(name);
   if (!normalizedName) {
-    return { name: normalizedName, error: "Escribe un nombre para el grupo." };
+    return { name: normalizedName, error: "Escribe un nombre para el paciente." };
   }
 
   const duplicate = groups.some(
@@ -55,7 +55,7 @@ function validateGroupName(
   );
 
   return duplicate
-    ? { name: normalizedName, error: "Ya existe un grupo con ese nombre." }
+    ? { name: normalizedName, error: "Ya existe un paciente con ese nombre." }
     : { name: normalizedName };
 }
 
@@ -105,7 +105,7 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
       createGroup: (name) => {
         let result: GroupMutationResult = {
           ok: false,
-          error: "No se pudo crear el grupo.",
+          error: "No se pudo crear el paciente.",
         };
         set((state) => {
           const validated = validateGroupName(state.groups, name);
@@ -128,7 +128,7 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
       renameGroup: (id, name) => {
         let result: GroupMutationResult = {
           ok: false,
-          error: "No se encontró el grupo.",
+          error: "No se encontró el paciente.",
         };
         set((state) => {
           if (!state.groups.some((group) => group.id === id)) return state;

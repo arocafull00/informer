@@ -135,7 +135,7 @@ export function Sidebar() {
       <div className="mb-3 px-2">
         <h2 className="text-headline-md font-bold text-primary">Histórico</h2>
         <p className="text-body-md text-on-surface-variant">
-          Informes recientes
+          Tests de pacientes
         </p>
       </div>
 
@@ -154,7 +154,7 @@ export function Sidebar() {
           className="interactive-press flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-label-md text-on-surface hover:bg-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <FolderPlus className="size-4" aria-hidden="true" />
-          Nuevo grupo
+          Nuevo paciente
         </button>
         <button
           type="button"
@@ -172,6 +172,9 @@ export function Sidebar() {
             plugin === Accessibility ? spanishAccessibility : plugin
           )
         }
+        onDragOver={(event) => {
+          event.preventDefault();
+        }}
         onDragEnd={(event) => {
           if (event.canceled) return;
           const { source, target } = event.operation;
@@ -179,7 +182,11 @@ export function Sidebar() {
 
           if (source.type === "group" && isSortable(source)) {
             const groupId = String(source.id).replace(/^group:/, "");
-            moveGroup(groupId, source.index);
+            const targetIndex =
+              target?.type === "group" && isSortable(target)
+                ? target.index
+                : source.index;
+            moveGroup(groupId, targetIndex);
             return;
           }
 
@@ -198,10 +205,10 @@ export function Sidebar() {
             return;
           }
 
-          if (isSortable(source)) {
-            const targetGroupId = getGroupIdFromSortableKey(source.group);
+          if (target?.type === "report" && isSortable(target)) {
+            const targetGroupId = getGroupIdFromSortableKey(target.group);
             if (targetGroupId !== undefined) {
-              moveReport(reportId, targetGroupId, source.index);
+              moveReport(reportId, targetGroupId, target.index);
             }
           }
         }}

@@ -155,7 +155,7 @@ export function HistoryItem({
               }
               className="mt-1 h-8 w-full rounded border border-outline-variant bg-surface-container-lowest px-2 text-body-md text-on-surface outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30"
             >
-              <option value="">Sin grupo</option>
+              <option value="">Sin paciente</option>
               {groups.map((group) => (
                 <option key={group.id} value={group.id}>
                   {group.name}

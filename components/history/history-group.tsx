@@ -75,7 +75,7 @@ function HistoryGroupContent({
     data: {
       entityType: "report-zone",
       groupId,
-      label: group?.name ?? "Sin grupo",
+      label: group?.name ?? "Sin paciente",
     },
   });
 
@@ -87,7 +87,7 @@ function HistoryGroupContent({
         isDragging && "z-20 opacity-70",
         isGroupDropTarget && !isDragging && "bg-surface-container"
       )}
-      aria-label={group?.name ?? "Sin grupo"}
+      aria-label={group?.name ?? "Sin paciente"}
     >
       <div
         ref={reportZoneRef}
@@ -103,7 +103,7 @@ function HistoryGroupContent({
               ref={handleRef}
               type="button"
               className="interactive-press flex size-7 shrink-0 touch-none items-center justify-center rounded text-outline hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label={`Arrastrar grupo ${group.name}`}
+              aria-label={`Arrastrar paciente ${group.name}`}
             >
               <GripVertical className="size-4" aria-hidden="true" />
             </button>
@@ -142,7 +142,9 @@ function HistoryGroupContent({
             </button>
           ) : (
             <div className="flex min-w-0 flex-1 items-center gap-2 py-1">
-              <span className="truncate text-label-md font-semibold">Sin grupo</span>
+              <span className="truncate text-label-md font-semibold">
+                Sin paciente
+              </span>
               <span className="ml-auto shrink-0 rounded-full bg-surface-container-high px-1.5 py-0.5 text-mono-sm text-on-surface-variant">
                 {reports.length}
               </span>
@@ -153,7 +155,7 @@ function HistoryGroupContent({
             <details className="relative shrink-0">
               <summary
                 className="interactive-press flex size-7 list-none items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden"
-                aria-label={`Acciones del grupo ${group.name}`}
+                aria-label={`Acciones del paciente ${group.name}`}
               >
                 <MoreHorizontal className="size-[18px]" aria-hidden="true" />
               </summary>
@@ -165,7 +167,7 @@ function HistoryGroupContent({
                   className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
                 >
                   <ChevronUp className="size-4" aria-hidden="true" />
-                  Subir grupo
+                  Subir paciente
                 </button>
                 <button
                   type="button"
@@ -174,7 +176,7 @@ function HistoryGroupContent({
                   className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
                 >
                   <ChevronDown className="size-4" aria-hidden="true" />
-                  Bajar grupo
+                  Bajar paciente
                 </button>
                 <button
                   type="button"
@@ -190,7 +192,7 @@ function HistoryGroupContent({
                   className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md text-destructive hover:bg-destructive/10"
                 >
                   <Trash2 className="size-4" aria-hidden="true" />
-                  Eliminar grupo
+                  Eliminar paciente
                 </button>
               </div>
             </details>
@@ -242,7 +244,7 @@ function SortableHistoryGroup(props: HistoryGroupProps & { group: ReportGroup })
     data: {
       entityType: "group",
       groupId: group.id,
-      label: `grupo ${group.name}`,
+      label: `paciente ${group.name}`,
     },
   });
 

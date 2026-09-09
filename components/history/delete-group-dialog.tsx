@@ -28,12 +28,12 @@ export function DeleteGroupDialog({
     >
       <DialogContent showCloseButton={false} className="max-w-sm">
         <DialogHeader>
-          <DialogTitle>Eliminar grupo</DialogTitle>
+          <DialogTitle>Eliminar paciente</DialogTitle>
           <DialogDescription>
             Se eliminará «{groupName}».
             {reportCount > 0
-              ? ` Sus ${reportCount === 1 ? "informe se moverá" : `${reportCount} informes se moverán`} a «Sin grupo».`
-              : " El grupo está vacío."}
+              ? ` Sus ${reportCount === 1 ? "informe se moverá" : `${reportCount} informes se moverán`} a «Sin paciente».`
+              : " El paciente no tiene informes."}
           </DialogDescription>
         </DialogHeader>
         <div className="flex justify-end gap-2">
@@ -49,7 +49,7 @@ export function DeleteGroupDialog({
             onClick={onConfirm}
             className="interactive-press min-h-9 rounded-lg bg-destructive px-4 py-2 text-label-md text-white hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2"
           >
-            Eliminar grupo
+            Eliminar paciente
           </button>
         </div>
       </DialogContent>

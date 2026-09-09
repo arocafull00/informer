@@ -46,12 +46,12 @@ export function GroupNameDialog({
         <form onSubmit={handleSubmit} className="space-y-4">
           <DialogHeader>
             <DialogTitle>
-              {editing ? "Cambiar nombre del grupo" : "Nuevo grupo"}
+              {editing ? "Cambiar nombre del paciente" : "Nuevo paciente"}
             </DialogTitle>
             <DialogDescription>
               {editing
                 ? "Escribe el nuevo nombre con el que quieres identificarlo."
-                : "Ponle un nombre para organizar tus informes."}
+                : "Añade un paciente para organizar sus tests."}
             </DialogDescription>
           </DialogHeader>
 
@@ -60,7 +60,7 @@ export function GroupNameDialog({
               htmlFor={inputId}
               className="text-body-md font-medium text-on-surface"
             >
-              Nombre del grupo
+              Nombre del paciente
             </label>
             <Input
               autoFocus
@@ -94,7 +94,7 @@ export function GroupNameDialog({
               type="submit"
               className="interactive-press min-h-9 rounded-lg bg-primary px-4 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              {editing ? "Guardar" : "Crear grupo"}
+              {editing ? "Guardar" : "Crear paciente"}
             </button>
           </div>
         </form>
