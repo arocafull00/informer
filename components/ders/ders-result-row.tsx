@@ -14,11 +14,15 @@ function ResultValue({
     return <span className="text-outline">—</span>;
   }
 
-  if (elevated) {
-    return <span className="font-bold text-on-surface">{score}</span>;
+  if (!elevated) {
+    return <span className="font-semibold text-on-surface">{score}</span>;
   }
 
-  return <span className="font-semibold text-on-surface">{score}</span>;
+  return (
+    <span className="inline-flex min-w-12 items-center justify-center rounded-md border border-primary px-2.5 py-1 text-body-lg font-bold tabular-nums text-primary">
+      {score}
+    </span>
+  );
 }
 
 export function DersResultRow({
@@ -33,7 +37,15 @@ export function DersResultRow({
         scope="row"
         className="px-4 py-3 text-left text-body-md font-medium text-on-surface"
       >
-        {label}
+        <span className="inline-flex items-center gap-2">
+          {elevated ? (
+            <span
+              className="size-2 shrink-0 rounded-full bg-primary"
+              aria-hidden="true"
+            />
+          ) : null}
+          {label}
+        </span>
       </th>
       <td className="px-4 py-3 text-center text-body-md tabular-nums">
         <ResultValue score={score} complete={complete} elevated={elevated} />

@@ -252,7 +252,7 @@ export function buildDersMarkdown(
         result.key === "dersTotal"
           ? "Escala total del DERS"
           : result.label;
-      return `- ${label}: ${getInterpretationText(result.key)}`;
+      return `- **${label}**: ${getInterpretationText(result.key)}`;
     })
     .join("\n\n");
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { DersResultRow } from "@/components/ders/ders-result-row";
 import {
   buildDersMarkdown,
@@ -77,6 +78,16 @@ export function DersResultsPanel() {
       <div className="min-h-0 flex-1 overflow-y-auto bg-surface-container-lowest p-4">
         <ThresholdNotice status={summary.thresholdStatus} />
 
+        {summary.subscales.some((result) => result.elevated) ? (
+          <p className="mb-3 flex items-center gap-2 text-body-md text-on-surface-variant">
+            <span
+              className="size-2 shrink-0 rounded-full bg-primary"
+              aria-hidden="true"
+            />
+            Puntuación por encima del umbral
+          </p>
+        ) : null}
+
         <div className="overflow-x-auto rounded-xl border border-outline-variant">
           <table className="w-full min-w-[320px] border-collapse bg-surface-container-lowest">
             <thead className="bg-surface-container-low">
@@ -118,6 +129,19 @@ export function DersResultsPanel() {
             Ninguna subescala supera su umbral. No hay interpretaciones para
             copiar.
           </p>
+        ) : null}
+
+        {hasInterpretations ? (
+          <section className="mt-6">
+            <h3 className="text-headline-md text-on-surface">
+              Interpretaciones
+            </h3>
+            <div className="mt-3 rounded-xl border border-outline-variant bg-surface-container-low p-4">
+              <div className="max-w-none text-on-surface-variant [&_li]:text-body-md [&_li]:leading-[1.6] [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:space-y-1 [&_ol]:pl-5 [&_p]:text-body-md [&_p]:leading-[1.6] [&_strong]:font-semibold [&_strong]:text-on-surface [&_ul]:my-2 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
+                <ReactMarkdown>{markdown}</ReactMarkdown>
+              </div>
+            </div>
+          </section>
         ) : null}
       </div>
 
