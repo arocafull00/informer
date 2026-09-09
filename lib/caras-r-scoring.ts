@@ -1,4 +1,4 @@
-import normsJson from "../data/caras-r-norms.json" with { type: "json" };
+import normsJson from "../data/caras_r_percentiles.json" with { type: "json" };
 import type {
   CarasAge,
   CarasCourse,
@@ -8,7 +8,7 @@ import type {
   CarasScoreCode,
 } from "@/lib/caras-r-types";
 
-export const carasNorms = normsJson as CarasNorms;
+export const carasNorms = normsJson as unknown as CarasNorms;
 
 export const CARAS_INPUT_CODES = ["A", "E"] as const;
 
@@ -50,7 +50,7 @@ export function isCarasAgeCompatible(
   course: CarasCourse,
   age: CarasAge
 ): boolean {
-  const norms = carasNorms.courses[course];
+  const norms = carasNorms[course];
   return age >= norms.ageMin && age <= norms.ageMax;
 }
 
@@ -88,7 +88,7 @@ export function getCarasPercentile(
   }
 
   return findPercentile(
-    carasNorms.courses[identification.course][code],
+    carasNorms[identification.course][code],
     score
   );
 }
@@ -138,6 +138,20 @@ function formatTableValue(value: number | null): string {
   return value === null ? "—" : String(value);
 }
 
+function formatPercentileValue(
+  row: CarasResultRow,
+  normStatus: CarasNormStatus
+): string {
+  if (
+    normStatus === "matched" &&
+    row.directScore !== null &&
+    row.percentile === null
+  ) {
+    return "Sin correspondencia";
+  }
+  return formatTableValue(row.percentile);
+}
+
 export function buildCarasMarkdown(
   identification: CarasIdentification,
   answers: Record<string, number>
@@ -147,8 +161,8 @@ export function buildCarasMarkdown(
     "| PDPC | PD | PC |",
     "| --- | ---: | ---: |",
     ...summary.rows.map(
-      ({ label, directScore, percentile }) =>
-        `| ${label} | ${formatTableValue(directScore)} | ${formatTableValue(percentile)} |`
+      (row) =>
+        `| ${row.label} | ${formatTableValue(row.directScore)} | ${formatPercentileValue(row, summary.normStatus)} |`
     ),
   ].join("\n");
 }

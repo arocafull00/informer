@@ -56,7 +56,16 @@ function NormNotice({ status }: { status: CarasNormStatus }) {
   );
 }
 
-function ResultValue({ value }: { value: number | null }) {
+function ResultValue({
+  value,
+  unmatched = false,
+}: {
+  value: number | null;
+  unmatched?: boolean;
+}) {
+  if (unmatched) {
+    return <span className="text-error">Sin correspondencia</span>;
+  }
   return value === null ? (
     <span className="text-outline">—</span>
   ) : (
@@ -151,7 +160,14 @@ export function CarasResultsPanel() {
                     <ResultValue value={row.directScore} />
                   </td>
                   <td className="px-4 py-3 text-center text-body-md tabular-nums">
-                    <ResultValue value={row.percentile} />
+                    <ResultValue
+                      value={row.percentile}
+                      unmatched={
+                        summary.normStatus === "matched" &&
+                        row.directScore !== null &&
+                        row.percentile === null
+                      }
+                    />
                   </td>
                 </tr>
               ))}

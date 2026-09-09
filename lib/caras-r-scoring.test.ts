@@ -2,10 +2,15 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   buildCarasMarkdown,
+  carasNorms,
   getCarasPercentile,
   getCarasScoreSummary,
   isCarasDirectScoreInRange,
 } from "./caras-r-scoring.ts";
+import {
+  CARAS_COURSES,
+  type CarasScoreCode,
+} from "./caras-r-types.ts";
 
 test("calcula el caso acordado para 2.º EPO", () => {
   const result = getCarasScoreSummary(
@@ -98,4 +103,39 @@ test("genera la tabla Markdown exacta", () => {
       "| ÍNDICE CONTROL IMPULSIVIDAD | 91 | 55 |",
     ].join("\n")
   );
+});
+
+test("carga todos los cursos del archivo completo y documenta su único hueco", () => {
+  const domains: Record<CarasScoreCode, [number, number]> = {
+    A: [0, 60],
+    E: [0, 60],
+    A_E: [-60, 60],
+    ICI: [-100, 100],
+  };
+  const gaps: Array<[string, CarasScoreCode, number]> = [];
+
+  for (const { value: course } of CARAS_COURSES) {
+    for (const [code, [min, max]] of Object.entries(domains) as Array<
+      [CarasScoreCode, [number, number]]
+    >) {
+      for (let score = min; score <= max; score += 1) {
+        const matched = carasNorms[course][code].some(
+          (interval) => score >= interval.min && score <= interval.max
+        );
+        if (!matched) gaps.push([course, code, score]);
+      }
+    }
+  }
+
+  assert.deepEqual(gaps, [["1_ESO", "ICI", 93]]);
+  assert.equal(CARAS_COURSES.length, 11);
+});
+
+test("señala en Markdown una puntuación sin correspondencia normativa", () => {
+  const markdown = buildCarasMarkdown(
+    { age: 12, course: "1_ESO" },
+    { A: 58, E: 2 }
+  );
+
+  assert.match(markdown, /\| ÍNDICE CONTROL IMPULSIVIDAD \| 93 \| Sin correspondencia \|/);
 });
