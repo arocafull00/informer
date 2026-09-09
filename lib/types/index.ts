@@ -19,12 +19,19 @@ export type SavedReport = {
   id: string;
   createdAt: string;
   test: TestType;
+  groupId?: string;
   answers: Record<string, number>;
   markdown: string;
   patientName?: string;
   patientSex?: string;
   cumanesIdentification?: CumanesIdentification;
   cumanesLaterality?: CumanesLaterality;
+};
+
+export type ReportGroup = {
+  id: string;
+  name: string;
+  collapsed: boolean;
 };
 
 export type CreateReportInput = {
