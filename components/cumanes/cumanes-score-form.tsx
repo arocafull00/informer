@@ -1,6 +1,9 @@
 "use client";
 
+import { useCallback } from "react";
 import { ChevronDown } from "lucide-react";
+import { IncompleteItemNavigation } from "@/components/progress/incomplete-item-navigation";
+import { useIncompleteItemNavigation } from "@/hooks/use-incomplete-item-navigation";
 import { CumanesIdentificationFields } from "@/components/cumanes/cumanes-identification-fields";
 import { CumanesLateralitySection } from "@/components/cumanes/cumanes-laterality-section";
 import { CumanesScoreInputRow } from "@/components/cumanes/cumanes-score-input-row";
@@ -42,6 +45,16 @@ export function CumanesScoreForm() {
     (code) => answers[code] !== undefined
   ).length;
   const progress = (answeredCount / CUMANES_TEST_ORDER.length) * 100;
+  const resolveFocusTarget = useCallback(
+    (code: string) => document.getElementById(`cumanes-score-${code}`),
+    []
+  );
+  const incompleteNavigation = useIncompleteItemNavigation({
+    itemIds: CUMANES_TEST_ORDER,
+    answers,
+    resolveFocusTarget,
+    disabled: !scoringEnabled,
+  });
 
   return (
     <div className="space-y-stack-section pb-10">
@@ -100,9 +113,16 @@ export function CumanesScoreForm() {
                 Puntuaciones directas
               </h1>
             </div>
-            <span className="shrink-0 text-mono-sm text-on-surface-variant">
-              Progreso: {answeredCount} / {CUMANES_TEST_ORDER.length}
-            </span>
+            <div className="flex shrink-0 items-center gap-1">
+              <span className="text-mono-sm text-on-surface-variant">
+                Progreso: {answeredCount} / {CUMANES_TEST_ORDER.length}
+              </span>
+              <IncompleteItemNavigation
+                canNavigate={incompleteNavigation.canNavigate}
+                onNavigatePrevious={incompleteNavigation.navigatePrevious}
+                onNavigateNext={incompleteNavigation.navigateNext}
+              />
+            </div>
           </div>
           <div
             className="h-2 w-full overflow-hidden rounded-full bg-surface-container-highest"

@@ -12,6 +12,8 @@ import {
   Trash2,
 } from "lucide-react";
 import { HistoryItemLabel } from "./history-item-label";
+import { ReportCompletenessBadge } from "@/components/reports/report-completeness-badge";
+import { getReportCompleteness } from "@/lib/get-report-completeness";
 import { getReportLabel } from "@/lib/get-report-label";
 import { testLabels } from "@/lib/test-data";
 import { cn } from "@/lib/utils";
@@ -51,6 +53,7 @@ export function HistoryItem({
 }: HistoryItemProps) {
   const [editing, setEditing] = useState(false);
   const label = getReportLabel(report);
+  const completeness = getReportCompleteness(report);
   const groupId = report.groupId ?? null;
   const { ref, handleRef, isDragging, isDropTarget } = useSortable({
     id: `report:${report.id}`,
@@ -103,11 +106,12 @@ export function HistoryItem({
         <span className="min-w-0 flex-1">
           <span
             className={cn(
-              "mb-0.5 block truncate text-mono-sm font-medium",
+              "mb-0.5 flex items-center gap-1 truncate text-mono-sm font-medium",
               isActive ? "text-primary" : "text-on-surface-variant"
             )}
           >
-            {testLabels[report.test]}
+            <span className="truncate">{testLabels[report.test]}</span>
+            <ReportCompletenessBadge completeness={completeness} compact />
           </span>
           <HistoryItemLabel
             label={label}

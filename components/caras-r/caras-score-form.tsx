@@ -1,6 +1,9 @@
 "use client";
 
+import { useCallback } from "react";
 import { ChevronDown } from "lucide-react";
+import { IncompleteItemNavigation } from "@/components/progress/incomplete-item-navigation";
+import { useIncompleteItemNavigation } from "@/hooks/use-incomplete-item-navigation";
 import { CarasIdentificationFields } from "@/components/caras-r/caras-identification-fields";
 import { CarasScoreInputRow } from "@/components/caras-r/caras-score-input-row";
 import {
@@ -28,6 +31,16 @@ export function CarasScoreForm() {
   const answeredCount = INPUT_CODES.filter(
     (code) => answers[code] !== undefined
   ).length;
+  const resolveFocusTarget = useCallback(
+    (code: string) => document.getElementById(`caras-score-${code}`),
+    []
+  );
+  const incompleteNavigation = useIncompleteItemNavigation({
+    itemIds: INPUT_CODES,
+    answers,
+    resolveFocusTarget,
+    disabled: !scoringEnabled,
+  });
 
   return (
     <div className="space-y-stack-section pb-10">
@@ -83,9 +96,16 @@ export function CarasScoreForm() {
                 Puntuaciones directas
               </h1>
             </div>
-            <span className="shrink-0 text-mono-sm text-on-surface-variant">
-              Progreso: {answeredCount} / {INPUT_CODES.length}
-            </span>
+            <div className="flex shrink-0 items-center gap-1">
+              <span className="text-mono-sm text-on-surface-variant">
+                Progreso: {answeredCount} / {INPUT_CODES.length}
+              </span>
+              <IncompleteItemNavigation
+                canNavigate={incompleteNavigation.canNavigate}
+                onNavigatePrevious={incompleteNavigation.navigatePrevious}
+                onNavigateNext={incompleteNavigation.navigateNext}
+              />
+            </div>
           </div>
           <div
             className="h-2 w-full overflow-hidden rounded-full bg-surface-container-highest"

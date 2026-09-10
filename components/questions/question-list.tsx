@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
+import { IncompleteItemNavigation } from "@/components/progress/incomplete-item-navigation";
+import { useIncompleteItemNavigation } from "@/hooks/use-incomplete-item-navigation";
 import {
   selectCurrentAnswers,
   selectCurrentReportId,
@@ -48,6 +50,20 @@ export function QuestionList() {
 
   const questions = useMemo(() => testData[currentTest], [currentTest]);
   const sections = useMemo(() => groupBySection(questions), [questions]);
+  const questionIds = useMemo(
+    () => questions.map((question) => question.id),
+    [questions]
+  );
+  const resolveFocusTarget = useCallback(
+    (itemId: string) => document.getElementById(`question-${itemId}`),
+    []
+  );
+  const incompleteNavigation = useIncompleteItemNavigation({
+    itemIds: questionIds,
+    answers,
+    resolveFocusTarget,
+    disabled: !scoringEnabled,
+  });
   const isAdos2 = isAdos2Test(currentTest);
   const isStai = currentTest === "STAI";
   const isDers = currentTest === "DERS";
@@ -90,9 +106,16 @@ export function QuestionList() {
                     {sectionTitle}
                   </h1>
                 </div>
-                <span className="text-mono-sm text-on-surface-variant">
-                  Progreso: {answeredInSection} / {totalInSection}
-                </span>
+                <div className="flex shrink-0 items-center gap-1">
+                  <span className="text-mono-sm text-on-surface-variant">
+                    Progreso: {answeredInSection} / {totalInSection}
+                  </span>
+                  <IncompleteItemNavigation
+                    canNavigate={incompleteNavigation.canNavigate}
+                    onNavigatePrevious={incompleteNavigation.navigatePrevious}
+                    onNavigateNext={incompleteNavigation.navigateNext}
+                  />
+                </div>
               </div>
               <div
                 className="h-2 w-full overflow-hidden rounded-full bg-surface-container-highest"
