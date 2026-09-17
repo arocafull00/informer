@@ -32,7 +32,13 @@ export default function Home() {
         <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <ReportTopbar />
           <div className="flex min-h-0 flex-1 overflow-hidden">
-            <section className="mx-auto flex min-w-0 flex-1 flex-col overflow-y-auto bg-background p-gutter-grid lg:max-w-[960px]">
+            <section
+              className={
+                isRias
+                  ? "mx-auto flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden bg-background p-gutter-grid lg:max-w-[960px]"
+                  : "mx-auto flex min-w-0 flex-1 flex-col overflow-y-auto bg-background p-gutter-grid lg:max-w-[960px]"
+              }
+            >
               {isCumanes ? (
                 <CumanesScoreForm />
               ) : isCaras ? (
@@ -45,7 +51,7 @@ export default function Home() {
                 <QuestionList />
               )}
             </section>
-            <aside className="flex w-[45%] min-w-[360px] max-w-[720px] shrink-0 flex-col border-l border-outline-variant bg-surface">
+            <aside className="flex h-full min-h-0 w-[45%] min-w-[360px] max-w-[720px] shrink-0 flex-col overflow-hidden border-l border-outline-variant bg-surface">
               {isCumanes ? (
                 <CumanesResultsPanel />
               ) : isCaras ? (

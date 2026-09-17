@@ -144,7 +144,7 @@ export function Sidebar() {
           className="interactive-press flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           <FilePlus className="size-4" aria-hidden="true" />
-          Nuevo informe
+          Nuevo test
         </button>
         <button
           type="button"

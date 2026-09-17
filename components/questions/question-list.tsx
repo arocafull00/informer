@@ -77,7 +77,7 @@ export function QuestionList() {
             Selecciona o crea un informe
           </p>
           <p className="mt-1 text-body-md leading-relaxed text-on-surface-variant">
-            Usa Nuevo Informe en el histórico o abre uno existente para empezar a
+            Usa Nuevo test en el histórico o abre uno existente para empezar a
             puntuar.
           </p>
         </div>

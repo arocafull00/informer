@@ -1,6 +1,7 @@
 export type PdfTemplateId =
   | "adir"
   | "rias"
+  | "rias-grafica"
   | "ados2-nino"
   | "ados2-adulto"
   | "cumanes";
@@ -24,6 +25,12 @@ export const PDF_TEMPLATES: PdfTemplate[] = [
     label: "RIAS Perfil",
     imageSrc: "/pdf/rias-perfil.png",
     pageSize: { width: 496, height: 710 },
+  },
+  {
+    id: "rias-grafica",
+    label: "RIAS Gráfica",
+    imageSrc: "/pdf/rias-grafica.png",
+    pageSize: { width: 595, height: 842 },
   },
   {
     id: "ados2-nino",

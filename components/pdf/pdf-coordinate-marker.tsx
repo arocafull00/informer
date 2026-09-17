@@ -1,16 +1,20 @@
 import type { PdfCoordinateEntry } from "@/lib/pdf/export-fields";
-import { pdfRectToScreen, pdfToScreen } from "@/lib/pdf/coordinates";
+import {
+  pdfRectToScreen,
+  pdfToScreen,
+  type PdfPageSize,
+} from "@/lib/pdf/coordinates";
 
 type PdfCoordinateMarkerProps = {
   entry: PdfCoordinateEntry;
   img: HTMLImageElement | null;
-  pageHeight: number;
+  pageSize: PdfPageSize;
 };
 
 export function PdfCoordinateMarker({
   entry,
   img,
-  pageHeight,
+  pageSize,
 }: PdfCoordinateMarkerProps) {
   if (!img) return null;
 
@@ -23,7 +27,7 @@ export function PdfCoordinateMarker({
         height: entry.height,
       },
       img,
-      pageHeight,
+      pageSize,
     );
 
     return (
@@ -39,7 +43,7 @@ export function PdfCoordinateMarker({
     );
   }
 
-  const point = pdfToScreen({ x: entry.x, y: entry.y }, img, pageHeight);
+  const point = pdfToScreen({ x: entry.x, y: entry.y }, img, pageSize);
 
   return (
     <div

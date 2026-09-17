@@ -52,7 +52,7 @@ export function PdfCoordinatePicker({
   const handlePointer = (clientX: number, clientY: number) => {
     const img = imgRef.current;
     if (!img) return null;
-    return screenToPdf(clientX, clientY, img, pageSize.height);
+    return screenToPdf(clientX, clientY, img, pageSize);
   };
 
   const pendingMarker =
@@ -61,9 +61,9 @@ export function PdfCoordinatePicker({
         className="pointer-events-none absolute size-2 rounded-full border-2 border-red-500 bg-white"
         style={{
           left:
-            pdfToScreen(pendingRectStart, imgRef.current, pageSize.height).x - 4,
+            pdfToScreen(pendingRectStart, imgRef.current, pageSize).x - 4,
           top:
-            pdfToScreen(pendingRectStart, imgRef.current, pageSize.height).y - 4,
+            pdfToScreen(pendingRectStart, imgRef.current, pageSize).y - 4,
         }}
       />
     ) : null;
@@ -100,7 +100,7 @@ export function PdfCoordinatePicker({
               key={entry.id}
               entry={entry}
               img={imgRef.current}
-              pageHeight={pageSize.height}
+              pageSize={pageSize}
             />
           ))}
           {pendingMarker}

@@ -22,8 +22,7 @@ export function RiasIntervalsStep({
   onPercentileChange,
 }: RiasIntervalsStepProps) {
   return (
-    <div className="max-h-[calc(90vh-13rem)] overflow-y-auto pr-1">
-      <div className="space-y-4">
+    <div className="space-y-4">
         <div className="space-y-1.5">
           <Label htmlFor="rias-confidence" className="text-body-md text-on-surface">
             Intervalo de confianza (%)
@@ -75,7 +74,6 @@ export function RiasIntervalsStep({
             </div>
           </div>
         ))}
-      </div>
     </div>
   );
 }

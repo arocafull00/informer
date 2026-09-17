@@ -168,7 +168,7 @@ export function NewReportDialog({
             <div className="flex items-start justify-between gap-4 pr-1">
               <div>
                 <DialogTitle className="text-headline-md text-on-surface">
-                  Nuevo informe
+                  Nuevo test
                 </DialogTitle>
                 <DialogDescription className="mt-1 text-body-md text-on-surface-variant">
                   {step === 1

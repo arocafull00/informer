@@ -55,7 +55,7 @@ export function RiasScoreForm() {
   };
 
   return (
-    <div className="space-y-stack-section pb-10">
+    <div className="flex min-h-0 flex-1 flex-col gap-stack-section">
       {!scoringEnabled ? (
         <div className="rounded-xl border border-outline-variant bg-surface-container-low p-4">
           <p className="text-body-md font-medium text-on-surface">
@@ -68,7 +68,7 @@ export function RiasScoreForm() {
         </div>
       ) : null}
 
-      <header className="space-y-4">
+      <header className="shrink-0 space-y-4">
         <div>
           <span className="text-label-md uppercase tracking-wider text-primary">
             RIAS
@@ -82,7 +82,9 @@ export function RiasScoreForm() {
 
       <div
         className={
-          scoringEnabled ? undefined : "pointer-events-none opacity-60"
+          scoringEnabled
+            ? "min-h-0 flex-1 overflow-y-auto"
+            : "pointer-events-none min-h-0 flex-1 overflow-y-auto opacity-60"
         }
       >
         {step === 0 ? (
@@ -117,7 +119,7 @@ export function RiasScoreForm() {
         ) : null}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-outline-variant pt-4">
+      <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-t border-outline-variant bg-background pt-4">
         <Button
           type="button"
           variant="outline"

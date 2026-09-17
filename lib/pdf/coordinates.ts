@@ -8,6 +8,11 @@ export type PdfRect = PdfPoint & {
   height: number;
 };
 
+export type PdfPageSize = {
+  width: number;
+  height: number;
+};
+
 export function imageDimensionsMatchPageSize(
   img: HTMLImageElement,
   pageWidth: number,
@@ -20,39 +25,49 @@ export function screenToPdf(
   clientX: number,
   clientY: number,
   img: HTMLImageElement,
-  pageHeight: number,
+  pageSize: PdfPageSize,
 ): PdfPoint {
   const rect = img.getBoundingClientRect();
-  const x = ((clientX - rect.left) / rect.width) * img.naturalWidth;
-  const screenY = ((clientY - rect.top) / rect.height) * img.naturalHeight;
+  const ratioX = (clientX - rect.left) / rect.width;
+  const ratioY = (clientY - rect.top) / rect.height;
+
   return {
-    x: Math.round(x),
-    y: Math.round(pageHeight - screenY),
+    x: Math.round(ratioX * pageSize.width),
+    y: Math.round(pageSize.height - ratioY * pageSize.height),
   };
 }
 
 export function pdfToScreen(
   point: PdfPoint,
   img: HTMLImageElement,
-  pageHeight: number,
+  pageSize: PdfPageSize,
 ): PdfPoint {
   const rect = img.getBoundingClientRect();
-  const scaleX = rect.width / img.naturalWidth;
-  const scaleY = rect.height / img.naturalHeight;
-  const screenY = pageHeight - point.y;
+  const ratioX = point.x / pageSize.width;
+  const ratioY = (pageSize.height - point.y) / pageSize.height;
+
   return {
-    x: point.x * scaleX,
-    y: screenY * scaleY,
+    x: ratioX * rect.width,
+    y: ratioY * rect.height,
   };
 }
 
 export function pdfRectToScreen(
   rect: PdfRect,
   img: HTMLImageElement,
-  pageHeight: number,
+  pageSize: PdfPageSize,
 ): { left: number; top: number; width: number; height: number } {
-  const topLeft = pdfToScreen({ x: rect.x, y: rect.y + rect.height }, img, pageHeight);
-  const bottomRight = pdfToScreen({ x: rect.x + rect.width, y: rect.y }, img, pageHeight);
+  const topLeft = pdfToScreen(
+    { x: rect.x, y: rect.y + rect.height },
+    img,
+    pageSize,
+  );
+  const bottomRight = pdfToScreen(
+    { x: rect.x + rect.width, y: rect.y },
+    img,
+    pageSize,
+  );
+
   return {
     left: topLeft.x,
     top: topLeft.y,

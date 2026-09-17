@@ -32,3 +32,31 @@ export type RiasPdfFieldMap = {
   pageSize: { width: number; height: number };
   fields: Record<string, RiasPdfField>;
 };
+
+export type RiasChartScoreColumn = {
+  x: number;
+  yMinScore: number;
+  yMaxScore: number;
+  yAtMin: number;
+  yAtMax: number;
+};
+
+export type RiasChartPdfFieldMap = {
+  pageSize: { width: number; height: number };
+  tScoreColumns: Record<string, RiasChartScoreColumn>;
+  indexColumns: Record<string, RiasChartScoreColumn>;
+  markRadius: number;
+};
+
+export function getRiasChartScoreY(
+  score: number,
+  column: RiasChartScoreColumn,
+): number {
+  const clamped = Math.min(
+    column.yMaxScore,
+    Math.max(column.yMinScore, score),
+  );
+  const ratio =
+    (clamped - column.yMinScore) / (column.yMaxScore - column.yMinScore);
+  return column.yAtMin + ratio * (column.yAtMax - column.yAtMin);
+}

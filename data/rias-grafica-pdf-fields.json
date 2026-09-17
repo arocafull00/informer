@@ -1,0 +1,81 @@
+{
+  "pageSize": {
+    "width": 595,
+    "height": 842
+  },
+  "tScoreColumns": {
+    "Ad": {
+      "x": 86,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 103,
+      "yAtMax": 549
+    },
+    "An": {
+      "x": 123,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 103,
+      "yAtMax": 549
+    },
+    "Ca": {
+      "x": 165,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 103,
+      "yAtMax": 549
+    },
+    "Fi": {
+      "x": 199,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 103,
+      "yAtMax": 549
+    },
+    "Mv": {
+      "x": 241,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 97,
+      "yAtMax": 549
+    },
+    "Mnv": {
+      "x": 279,
+      "yMinScore": 10,
+      "yMaxScore": 90,
+      "yAtMin": 103,
+      "yAtMax": 549
+    }
+  },
+  "indexColumns": {
+    "IV": {
+      "x": 387,
+      "yMinScore": 40,
+      "yMaxScore": 160,
+      "yAtMin": 101,
+      "yAtMax": 548
+    },
+    "INV": {
+      "x": 425,
+      "yMinScore": 40,
+      "yMaxScore": 160,
+      "yAtMin": 101,
+      "yAtMax": 548
+    },
+    "IG": {
+      "x": 462,
+      "yMinScore": 40,
+      "yMaxScore": 160,
+      "yAtMin": 101,
+      "yAtMax": 548
+    },
+    "IM": {
+      "x": 507,
+      "yMinScore": 40,
+      "yMaxScore": 160,
+      "yAtMin": 101,
+      "yAtMax": 548
+    }
+  },
+  "markRadius": 3
+}
