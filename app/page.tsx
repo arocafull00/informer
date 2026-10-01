@@ -13,6 +13,8 @@ import { StaiResultsPanel } from "@/components/stai/stai-results-panel";
 import { RiasScoreForm } from "@/components/rias/rias-score-form";
 import { RiasResultsPanel } from "@/components/rias/rias-results-panel";
 import { DersResultsPanel } from "@/components/ders/ders-results-panel";
+import { ProescScoreForm } from "@/components/proesc/proesc-score-form";
+import { ProescResultsPanel } from "@/components/proesc/proesc-results-panel";
 import { useAutoSaveReport } from "@/lib/use-save-report";
 import { useCurrentReportStore } from "@/store/use-current-report-store";
 
@@ -24,6 +26,7 @@ export default function Home() {
   const isStai = currentTest === "STAI";
   const isRias = currentTest === "RIAS";
   const isDers = currentTest === "DERS";
+  const isProesc = currentTest === "PROESC";
 
   return (
     <div className="h-dvh w-full overflow-hidden bg-background">
@@ -47,6 +50,8 @@ export default function Home() {
                 <StaiQuestionnaire />
               ) : isRias ? (
                 <RiasScoreForm />
+              ) : isProesc ? (
+                <ProescScoreForm />
               ) : (
                 <QuestionList />
               )}
@@ -62,6 +67,8 @@ export default function Home() {
                 <RiasResultsPanel />
               ) : isDers ? (
                 <DersResultsPanel />
+              ) : isProesc ? (
+                <ProescResultsPanel />
               ) : (
                 <MarkdownPreview />
               )}

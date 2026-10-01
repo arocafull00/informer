@@ -14,6 +14,7 @@ export const testData: Record<TestType, Question[]> = {
   STAI: staiData as unknown as Question[],
   RIAS: [],
   DERS: dersData as unknown as Question[],
+  PROESC: [],
 };
 
 export const testLabels: Record<TestType, string> = {
@@ -25,4 +26,5 @@ export const testLabels: Record<TestType, string> = {
   STAI: "STAI",
   RIAS: "RIAS",
   DERS: "DERS",
+  PROESC: "PROESC",
 };

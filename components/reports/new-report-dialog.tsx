@@ -37,6 +37,7 @@ import {
   type RiasPatient,
 } from "@/lib/rias-scoring";
 import { cn } from "@/lib/utils";
+import { PROESC_COURSES, type ProescCourse } from "@/lib/proesc-scoring";
 
 type NewReportDialogProps = {
   onClose: () => void;
@@ -88,6 +89,11 @@ const reportTypes: {
     label: "DERS",
     description: "Escala de dificultades en la regulación emocional.",
   },
+  {
+    value: "PROESC",
+    label: "PROESC",
+    description: "Evaluación de los procesos de escritura.",
+  },
 ];
 
 export function NewReportDialog({
@@ -97,6 +103,7 @@ export function NewReportDialog({
   const [step, setStep] = useState<1 | 2>(1);
   const [selectedTest, setSelectedTest] = useState<TestType | null>(null);
   const [patientName, setPatientName] = useState("");
+  const [proescCourse, setProescCourse] = useState<ProescCourse>("");
   const [adirSex, setAdirSex] = useState<AdirSubjectSex>("");
   const [adosSex, setAdosSex] = useState<Ados2SubjectSex>("");
   const [cumanesIdentification, setCumanesIdentification] =
@@ -114,6 +121,7 @@ export function NewReportDialog({
   const isCaras = selectedTest === "CARAS_R";
   const isStai = selectedTest === "STAI";
   const isRias = selectedTest === "RIAS";
+  const isProesc = selectedTest === "PROESC";
   const patientSex = isCaras
     ? ""
     : isAdos2 || isCumanes || isStai
@@ -128,6 +136,7 @@ export function NewReportDialog({
     setCarasIdentification({ ...EMPTY_CARAS_IDENTIFICATION });
     setStaiIdentification({ ...EMPTY_STAI_IDENTIFICATION });
     setRiasPatient(createDefaultRiasResultsForm().patient);
+    setProescCourse("");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -140,6 +149,7 @@ export function NewReportDialog({
     }
 
     if (!selectedTest) return;
+    if (isProesc && !proescCourse) return;
     onConfirm({
       test: selectedTest,
       patientName: isRias ? riasPatient.name : patientName,
@@ -148,6 +158,7 @@ export function NewReportDialog({
       ...(isCaras ? { carasIdentification } : {}),
       ...(isStai ? { staiIdentification } : {}),
       ...(isRias ? { riasPatient } : {}),
+      ...(isProesc ? { proescCourse } : {}),
     });
     onClose();
   };
@@ -292,6 +303,20 @@ export function NewReportDialog({
                     patient={riasPatient}
                     onChange={setRiasPatient}
                   />
+                ) : isProesc ? (
+                  <div className="space-y-4">
+                    <div className="space-y-1.5">
+                      <label htmlFor="new-proesc-name" className="text-body-md font-medium text-on-surface">Nombre del paciente</label>
+                      <input id="new-proesc-name" value={patientName} onChange={(event) => setPatientName(event.target.value)} placeholder="Nombre y apellidos" className="w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-body-md text-on-surface" />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor="new-proesc-course" className="text-body-md font-medium text-on-surface">Curso del niño</label>
+                      <select id="new-proesc-course" required value={proescCourse} onChange={(event) => setProescCourse(event.target.value as ProescCourse)} className="w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-body-md text-on-surface">
+                        <option value="">Selecciona un curso</option>
+                        {PROESC_COURSES.map((course) => <option key={course.value} value={course.value}>{course.label}</option>)}
+                      </select>
+                    </div>
+                  </div>
                 ) : (
                   <>
                     <div className="space-y-1.5">
@@ -370,6 +395,7 @@ export function NewReportDialog({
                 </button>
                 <button
                   type="submit"
+                  disabled={isProesc && !proescCourse}
                   className="interactive-press min-h-9 rounded-lg bg-primary px-4 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Crear informe

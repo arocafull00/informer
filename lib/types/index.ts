@@ -5,6 +5,7 @@ import type {
 import type { CarasIdentification } from "@/lib/caras-r-types";
 import type { StaiIdentification } from "@/lib/stai-types";
 import type { RiasPatient, RiasResultsForm } from "@/lib/rias-scoring";
+import type { ProescCourse } from "@/lib/proesc-scoring";
 
 export type TestType =
   | "ADIR"
@@ -14,7 +15,8 @@ export type TestType =
   | "CARAS_R"
   | "STAI"
   | "RIAS"
-  | "DERS";
+  | "DERS"
+  | "PROESC";
 
 export type Question = {
   id: string;
@@ -41,6 +43,7 @@ export type SavedReport = {
   carasIdentification?: CarasIdentification;
   staiIdentification?: StaiIdentification;
   riasForm?: RiasResultsForm;
+  proescCourse?: ProescCourse;
 };
 
 export type ReportGroup = {
@@ -57,4 +60,5 @@ export type CreateReportInput = {
   carasIdentification?: CarasIdentification;
   staiIdentification?: StaiIdentification;
   riasPatient?: RiasPatient;
+  proescCourse?: ProescCourse;
 };

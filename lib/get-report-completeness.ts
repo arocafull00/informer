@@ -16,6 +16,7 @@ import {
 import { getStaiScoreSummary } from "@/lib/stai-scoring";
 import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { testData } from "@/lib/test-data";
+import { getProescSummary } from "@/lib/proesc-scoring";
 import type { SavedReport, TestType } from "@/lib/types";
 
 export type ReportCompleteness = {
@@ -44,6 +45,10 @@ export function getReportCompleteness(
   report: SavedReport
 ): ReportCompleteness {
   switch (report.test) {
+    case "PROESC": {
+      const summary = getProescSummary(report.proescCourse ?? "", report.answers);
+      return { isComplete: summary.complete, answeredCount: summary.answeredCount, totalCount: summary.rows.length };
+    }
     case "ADIR":
     case "ADOS2_ADULTO":
     case "ADOS2_NINO": {

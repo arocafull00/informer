@@ -10,6 +10,7 @@ import {
   selectCurrentPatientSex,
   selectCurrentReportId,
   selectCurrentRiasForm,
+  selectProescCourse,
   selectCurrentStaiIdentification,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
@@ -21,6 +22,7 @@ import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
 import { testData } from "@/lib/test-data";
+import { buildProescMarkdown } from "@/lib/proesc-scoring";
 import {
   EMPTY_CUMANES_IDENTIFICATION,
   EMPTY_CUMANES_LATERALITY,
@@ -41,6 +43,7 @@ export function useReportMarkdown() {
   const staiIdentification = useCurrentReportStore(
     selectCurrentStaiIdentification
   );
+  const proescCourse = useCurrentReportStore(selectProescCourse);
 
   return useMemo(() => {
     if (currentTest === "CARAS_R") {
@@ -52,10 +55,11 @@ export function useReportMarkdown() {
     if (currentTest === "DERS") {
       return buildDersMarkdown(patientSex, answers);
     }
+    if (currentTest === "PROESC") return buildProescMarkdown(proescCourse, answers);
     if (currentTest === "RIAS") return "";
     const data = testData[currentTest];
     return generateMarkdown(data, answers, patientSex);
-  }, [answers, carasIdentification, currentTest, patientSex, staiIdentification]);
+  }, [answers, carasIdentification, currentTest, patientSex, staiIdentification, proescCourse]);
 }
 
 export function useAutoSaveReport() {
@@ -76,6 +80,7 @@ export function useAutoSaveReport() {
     selectCurrentStaiIdentification
   );
   const riasForm = useCurrentReportStore(selectCurrentRiasForm);
+  const proescCourse = useCurrentReportStore(selectProescCourse);
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const saveReport = useReportHistoryStore((s) => s.saveReport);
 
@@ -98,6 +103,7 @@ export function useAutoSaveReport() {
       carasIdentification: previousCarasIdentification,
       staiIdentification: previousStaiIdentification,
       riasForm: previousRiasForm,
+      proescCourse: previousProescCourse,
       ...reportBase
     } = existingReport;
     void previousPatientName;
@@ -107,6 +113,7 @@ export function useAutoSaveReport() {
     void previousCarasIdentification;
     void previousStaiIdentification;
     void previousRiasForm;
+    void previousProescCourse;
 
     saveReport({
       ...reportBase,
@@ -130,6 +137,7 @@ export function useAutoSaveReport() {
       ...(currentTest === "RIAS"
         ? { riasForm: normalizeRiasResultsForm(riasForm) }
         : {}),
+      ...(currentTest === "PROESC" ? { proescCourse } : {}),
     });
   }, [
     currentReportId,
@@ -143,6 +151,7 @@ export function useAutoSaveReport() {
     carasIdentification,
     staiIdentification,
     riasForm,
+    proescCourse,
     saveReport,
   ]);
 }
@@ -160,6 +169,7 @@ export function useCreateNewReport() {
       carasIdentification,
       staiIdentification,
       riasPatient,
+      proescCourse,
     }: CreateReportInput) => {
       const trimmedPatientName = patientName?.trim();
       const data = testData[test];
@@ -188,6 +198,8 @@ export function useCreateNewReport() {
         markdown:
           test === "RIAS"
             ? ""
+            : test === "PROESC"
+            ? buildProescMarkdown(proescCourse ?? "", emptyAnswers)
             : test === "CARAS_R"
             ? buildCarasMarkdown(initialCarasIdentification, emptyAnswers)
             : test === "STAI"
@@ -225,6 +237,7 @@ export function useCreateNewReport() {
             }
           : {}),
         ...(test === "RIAS" ? { riasForm: initialRiasForm } : {}),
+        ...(test === "PROESC" ? { proescCourse: proescCourse ?? "" } : {}),
       };
 
       saveReport(report);

@@ -1,0 +1,881 @@
+{
+  "3_primaria": {
+    "nombre": "3º Educación Primaria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 10, "resultado": "si" },
+          { "min": 11, "max": 14, "resultado": "dudas" },
+          { "min": 15, "max": 17, "resultado": "nivel_bajo" },
+          { "min": 18, "max": 21, "resultado": "nivel_medio" },
+          { "min": 22, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 14, "resultado": "si" },
+          { "min": 15, "max": 16, "resultado": "dudas" },
+          { "min": 17, "max": 19, "resultado": "nivel_bajo" },
+          { "min": 20, "max": 22, "resultado": "nivel_medio" },
+          { "min": 23, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 18, "resultado": "si" },
+          { "min": 19, "max": 20, "resultado": "dudas" },
+          { "min": 21, "max": 22, "resultado": "nivel_bajo" },
+          { "min": 23, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 7, "resultado": "si" },
+          { "min": 8, "max": 9, "resultado": "dudas" },
+          { "min": 10, "max": 11, "resultado": "nivel_bajo" },
+          { "min": 12, "max": 13, "resultado": "nivel_medio" },
+          { "min": 14, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "dudas" },
+          { "min": 1, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 6, "resultado": "nivel_medio" },
+          { "min": 7, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 4, "resultado": "si" },
+          { "min": 5, "max": 6, "resultado": "dudas" },
+          { "min": 7, "max": 8, "resultado": "nivel_bajo" },
+          { "min": 9, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "si" },
+          { "min": 2, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "dudas" },
+          { "min": 1, "max": 1, "resultado": "nivel_bajo" },
+          { "min": 2, "max": 3, "resultado": "nivel_medio" },
+          { "min": 4, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 89, "resultado": "si" },
+          { "min": 90, "max": 104, "resultado": "dudas" },
+          { "min": 105, "max": 118, "resultado": "nivel_bajo" },
+          { "min": 119, "max": 133, "resultado": "nivel_medio" },
+          { "min": 134, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "4_primaria": {
+    "nombre": "4º Educación Primaria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 10, "resultado": "si" },
+          { "min": 11, "max": 14, "resultado": "dudas" },
+          { "min": 15, "max": 18, "resultado": "nivel_bajo" },
+          { "min": 19, "max": 22, "resultado": "nivel_medio" },
+          { "min": 23, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 14, "resultado": "si" },
+          { "min": 15, "max": 17, "resultado": "dudas" },
+          { "min": 18, "max": 20, "resultado": "nivel_bajo" },
+          { "min": 21, "max": 23, "resultado": "nivel_medio" },
+          { "min": 24, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 18, "resultado": "si" },
+          { "min": 19, "max": 20, "resultado": "dudas" },
+          { "min": 21, "max": 22, "resultado": "nivel_bajo" },
+          { "min": 23, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 10, "resultado": "dudas" },
+          { "min": 11, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "dudas" },
+          { "min": 1, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 9, "resultado": "nivel_medio" },
+          { "min": 10, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 5, "resultado": "si" },
+          { "min": 6, "max": 7, "resultado": "dudas" },
+          { "min": 8, "max": 8, "resultado": "nivel_bajo" },
+          { "min": 9, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "si" },
+          { "min": 2, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 2, "resultado": "dudas" },
+          { "min": 3, "max": 4, "resultado": "nivel_bajo" },
+          { "min": 5, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "dudas" },
+          { "min": 1, "max": 2, "resultado": "nivel_bajo" },
+          { "min": 3, "max": 3, "resultado": "nivel_medio" },
+          { "min": 4, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 95, "resultado": "si" },
+          { "min": 96, "max": 109, "resultado": "dudas" },
+          { "min": 110, "max": 123, "resultado": "nivel_bajo" },
+          { "min": 124, "max": 138, "resultado": "nivel_medio" },
+          { "min": 139, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "5_primaria": {
+    "nombre": "5º Educación Primaria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 14, "resultado": "si" },
+          { "min": 15, "max": 17, "resultado": "dudas" },
+          { "min": 18, "max": 20, "resultado": "nivel_bajo" },
+          { "min": 21, "max": 23, "resultado": "nivel_medio" },
+          { "min": 24, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 16, "resultado": "si" },
+          { "min": 17, "max": 19, "resultado": "dudas" },
+          { "min": 20, "max": 21, "resultado": "nivel_bajo" },
+          { "min": 22, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 20, "resultado": "si" },
+          { "min": 21, "max": 21, "resultado": "dudas" },
+          { "min": 22, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 10, "resultado": "dudas" },
+          { "min": 11, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "dudas" },
+          { "min": 3, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 11, "resultado": "nivel_medio" },
+          { "min": 12, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 6, "resultado": "si" },
+          { "min": 7, "max": 7, "resultado": "dudas" },
+          { "min": 8, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 5, "resultado": "dudas" },
+          { "min": 6, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "si" },
+          { "min": 2, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 4, "resultado": "nivel_bajo" },
+          { "min": 5, "max": 6, "resultado": "nivel_medio" },
+          { "min": 7, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 107, "resultado": "si" },
+          { "min": 108, "max": 120, "resultado": "dudas" },
+          { "min": 121, "max": 132, "resultado": "nivel_bajo" },
+          { "min": 133, "max": 145, "resultado": "nivel_medio" },
+          { "min": 146, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "6_primaria": {
+    "nombre": "6º Educación Primaria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 15, "resultado": "si" },
+          { "min": 16, "max": 18, "resultado": "dudas" },
+          { "min": 19, "max": 21, "resultado": "nivel_bajo" },
+          { "min": 22, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 17, "resultado": "si" },
+          { "min": 18, "max": 20, "resultado": "dudas" },
+          { "min": 21, "max": 22, "resultado": "nivel_bajo" },
+          { "min": 23, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 9, "resultado": "si" },
+          { "min": 10, "max": 11, "resultado": "dudas" },
+          { "min": 12, "max": 13, "resultado": "nivel_bajo" },
+          { "min": 14, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "si" },
+          { "min": 2, "max": 5, "resultado": "dudas" },
+          { "min": 6, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 13, "resultado": "nivel_medio" },
+          { "min": 14, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 7, "resultado": "si" },
+          { "min": 8, "max": 8, "resultado": "dudas" },
+          { "min": 9, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 4, "resultado": "dudas" },
+          { "min": 5, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "si" },
+          { "min": 3, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 117, "resultado": "si" },
+          { "min": 118, "max": 128, "resultado": "dudas" },
+          { "min": 129, "max": 139, "resultado": "nivel_bajo" },
+          { "min": 140, "max": 150, "resultado": "nivel_medio" },
+          { "min": 151, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "1_eso": {
+    "nombre": "1º Educación Secundaria Obligatoria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 18, "resultado": "si" },
+          { "min": 19, "max": 20, "resultado": "dudas" },
+          { "min": 21, "max": 22, "resultado": "nivel_bajo" },
+          { "min": 23, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 19, "resultado": "si" },
+          { "min": 20, "max": 21, "resultado": "dudas" },
+          { "min": 22, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 9, "resultado": "si" },
+          { "min": 10, "max": 11, "resultado": "dudas" },
+          { "min": 12, "max": 13, "resultado": "nivel_bajo" },
+          { "min": 14, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 4, "resultado": "si" },
+          { "min": 5, "max": 8, "resultado": "dudas" },
+          { "min": 9, "max": 11, "resultado": "nivel_bajo" },
+          { "min": 12, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 9, "resultado": "dudas" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "si" },
+          { "min": 3, "max": 4, "resultado": "dudas" },
+          { "min": 5, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "si" },
+          { "min": 3, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 6, "resultado": "nivel_medio" },
+          { "min": 7, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 4, "resultado": "nivel_medio" },
+          { "min": 5, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 127, "resultado": "si" },
+          { "min": 128, "max": 134, "resultado": "dudas" },
+          { "min": 135, "max": 142, "resultado": "nivel_bajo" },
+          { "min": 143, "max": 149, "resultado": "nivel_medio" },
+          { "min": 150, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "2_eso": {
+    "nombre": "2º Educación Secundaria Obligatoria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 20, "resultado": "si" },
+          { "min": 21, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 17, "resultado": "si" },
+          { "min": 18, "max": 20, "resultado": "dudas" },
+          { "min": 21, "max": 22, "resultado": "nivel_bajo" },
+          { "min": 23, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 19, "resultado": "si" },
+          { "min": 20, "max": 21, "resultado": "dudas" },
+          { "min": 22, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 20, "resultado": "si" },
+          { "min": 21, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 9, "resultado": "si" },
+          { "min": 10, "max": 10, "resultado": "dudas" },
+          { "min": 11, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 7, "resultado": "dudas" },
+          { "min": 8, "max": 11, "resultado": "nivel_bajo" },
+          { "min": 12, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 4, "resultado": "dudas" },
+          { "min": 5, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "si" },
+          { "min": 3, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 124, "resultado": "si" },
+          { "min": 125, "max": 133, "resultado": "dudas" },
+          { "min": 134, "max": 142, "resultado": "nivel_bajo" },
+          { "min": 143, "max": 151, "resultado": "nivel_medio" },
+          { "min": 152, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "3_eso": {
+    "nombre": "3º Educación Secundaria Obligatoria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 22, "resultado": "si" },
+          { "min": 23, "max": 23, "resultado": "dudas" },
+          { "min": 24, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 19, "resultado": "si" },
+          { "min": 20, "max": 21, "resultado": "dudas" },
+          { "min": 22, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 20, "resultado": "si" },
+          { "min": 21, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 22, "resultado": "si" },
+          { "min": 23, "max": 23, "resultado": "dudas" },
+          { "min": 24, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 9, "resultado": "si" },
+          { "min": 10, "max": 11, "resultado": "dudas" },
+          { "min": 12, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 5, "resultado": "si" },
+          { "min": 6, "max": 8, "resultado": "dudas" },
+          { "min": 9, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 15, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 4, "resultado": "dudas" },
+          { "min": 5, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 1, "resultado": "si" },
+          { "min": 2, "max": 3, "resultado": "dudas" },
+          { "min": 4, "max": 5, "resultado": "nivel_bajo" },
+          { "min": 6, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 1, "resultado": "dudas" },
+          { "min": 2, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 129, "resultado": "si" },
+          { "min": 130, "max": 137, "resultado": "dudas" },
+          { "min": 138, "max": 145, "resultado": "nivel_bajo" },
+          { "min": 146, "max": 153, "resultado": "nivel_medio" },
+          { "min": 154, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  },
+  "4_eso": {
+    "nombre": "4º Educación Secundaria Obligatoria",
+    "pruebas": {
+      "dictado_silabas": {
+        "nombre": "Dictado de sílabas",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 23, "resultado": "dudas" },
+          { "min": 24, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_arbitraria": {
+        "nombre": "Dictado de palabras - Ortografía arbitraria",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_palabras_ortografia_reglada": {
+        "nombre": "Dictado de palabras - Ortografía reglada",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 23, "resultado": "nivel_bajo" },
+          { "min": 24, "max": 24, "resultado": "nivel_medio" },
+          { "min": 25, "max": 25, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_pseudopalabras_total": {
+        "nombre": "Dictado de pseudopalabras - Total",
+        "rangos": [
+          { "min": 0, "max": 21, "resultado": "si" },
+          { "min": 22, "max": 22, "resultado": "dudas" },
+          { "min": 23, "max": 24, "resultado": "nivel_bajo" },
+          { "min": 25, "max": 25, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_pseudopalabras_reglas_ortograficas": {
+        "nombre": "Dictado de pseudopalabras - Reglas ortográficas",
+        "rangos": [
+          { "min": 0, "max": 9, "resultado": "si" },
+          { "min": 10, "max": 10, "resultado": "dudas" },
+          { "min": 11, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 14, "resultado": "nivel_medio" },
+          { "min": 15, "max": 15, "resultado": "nivel_alto" }
+        ]
+      },
+      "dictado_frases_acentos": {
+        "nombre": "Dictado de frases - Acentos",
+        "rangos": [
+          { "min": 0, "max": 7, "resultado": "si" },
+          { "min": 8, "max": 10, "resultado": "dudas" },
+          { "min": 11, "max": 12, "resultado": "nivel_bajo" },
+          { "min": 13, "max": 15, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_mayusculas": {
+        "nombre": "Dictado de frases - Mayúsculas",
+        "rangos": [
+          { "min": 0, "max": 8, "resultado": "si" },
+          { "min": 9, "max": 9, "resultado": "nivel_bajo" },
+          { "min": 10, "max": 10, "resultado": "nivel_medio" }
+        ]
+      },
+      "dictado_frases_signos_puntuacion": {
+        "nombre": "Dictado de frases - Signos de puntuación",
+        "rangos": [
+          { "min": 0, "max": 3, "resultado": "si" },
+          { "min": 4, "max": 5, "resultado": "dudas" },
+          { "min": 6, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 8, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_cuento": {
+        "nombre": "Escritura de un cuento",
+        "rangos": [
+          { "min": 0, "max": 2, "resultado": "si" },
+          { "min": 3, "max": 4, "resultado": "dudas" },
+          { "min": 5, "max": 6, "resultado": "nivel_bajo" },
+          { "min": 7, "max": 7, "resultado": "nivel_medio" },
+          { "min": 8, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "escritura_redaccion": {
+        "nombre": "Escritura de una redacción",
+        "rangos": [
+          { "min": 0, "max": 0, "resultado": "si" },
+          { "min": 1, "max": 2, "resultado": "dudas" },
+          { "min": 3, "max": 3, "resultado": "nivel_bajo" },
+          { "min": 4, "max": 5, "resultado": "nivel_medio" },
+          { "min": 6, "max": 10, "resultado": "nivel_alto" }
+        ]
+      },
+      "total_bateria": {
+        "nombre": "Total batería",
+        "rangos": [
+          { "min": 0, "max": 133, "resultado": "si" },
+          { "min": 134, "max": 140, "resultado": "dudas" },
+          { "min": 141, "max": 147, "resultado": "nivel_bajo" },
+          { "min": 148, "max": 154, "resultado": "nivel_medio" },
+          { "min": 155, "max": 168, "resultado": "nivel_alto" }
+        ]
+      }
+    }
+  }
+}

@@ -25,6 +25,7 @@ import {
   type RiasSubtestKey,
 } from "@/lib/rias-scoring";
 import type { SavedReport, TestType } from "@/lib/types";
+import type { ProescCourse } from "@/lib/proesc-scoring";
 
 const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
   ADIR: {},
@@ -35,6 +36,7 @@ const emptyAnswersByTest = (): Record<TestType, Record<string, number>> => ({
   STAI: {},
   RIAS: {},
   DERS: {},
+  PROESC: {},
 });
 
 const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
@@ -46,6 +48,7 @@ const emptyPatientNameByTest = (): Record<TestType, string | undefined> => ({
   STAI: undefined,
   RIAS: undefined,
   DERS: undefined,
+  PROESC: undefined,
 });
 
 const emptyPatientSexByTest = (): Record<TestType, string> => ({
@@ -57,6 +60,7 @@ const emptyPatientSexByTest = (): Record<TestType, string> => ({
   STAI: "",
   RIAS: "",
   DERS: "",
+  PROESC: "",
 });
 
 const emptyCumanesIdentificationByTest = (): Record<
@@ -71,6 +75,7 @@ const emptyCumanesIdentificationByTest = (): Record<
   STAI: { ...EMPTY_CUMANES_IDENTIFICATION },
   RIAS: { ...EMPTY_CUMANES_IDENTIFICATION },
   DERS: { ...EMPTY_CUMANES_IDENTIFICATION },
+  PROESC: { ...EMPTY_CUMANES_IDENTIFICATION },
 });
 
 const emptyCumanesLateralityByTest = (): Record<
@@ -85,6 +90,7 @@ const emptyCumanesLateralityByTest = (): Record<
   STAI: { ...EMPTY_CUMANES_LATERALITY },
   RIAS: { ...EMPTY_CUMANES_LATERALITY },
   DERS: { ...EMPTY_CUMANES_LATERALITY },
+  PROESC: { ...EMPTY_CUMANES_LATERALITY },
 });
 
 const emptyCarasIdentificationByTest = (): Record<
@@ -99,6 +105,7 @@ const emptyCarasIdentificationByTest = (): Record<
   STAI: { ...EMPTY_CARAS_IDENTIFICATION },
   RIAS: { ...EMPTY_CARAS_IDENTIFICATION },
   DERS: { ...EMPTY_CARAS_IDENTIFICATION },
+  PROESC: { ...EMPTY_CARAS_IDENTIFICATION },
 });
 
 const emptyStaiIdentificationByTest = (): Record<
@@ -113,6 +120,7 @@ const emptyStaiIdentificationByTest = (): Record<
   STAI: { ...EMPTY_STAI_IDENTIFICATION },
   RIAS: { ...EMPTY_STAI_IDENTIFICATION },
   DERS: { ...EMPTY_STAI_IDENTIFICATION },
+  PROESC: { ...EMPTY_STAI_IDENTIFICATION },
 });
 
 const emptyRiasFormByTest = (): Record<TestType, RiasResultsForm> => ({
@@ -124,6 +132,7 @@ const emptyRiasFormByTest = (): Record<TestType, RiasResultsForm> => ({
   STAI: createDefaultRiasResultsForm(),
   RIAS: createDefaultRiasResultsForm(),
   DERS: createDefaultRiasResultsForm(),
+  PROESC: createDefaultRiasResultsForm(),
 });
 
 const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => ({
@@ -135,6 +144,7 @@ const emptyCurrentReportIdByTest = (): Record<TestType, string | undefined> => (
   STAI: undefined,
   RIAS: undefined,
   DERS: undefined,
+  PROESC: undefined,
 });
 
 type CurrentReportStore = {
@@ -147,12 +157,14 @@ type CurrentReportStore = {
   carasIdentificationByTest: Record<TestType, CarasIdentification>;
   staiIdentificationByTest: Record<TestType, StaiIdentification>;
   riasFormByTest: Record<TestType, RiasResultsForm>;
+  proescCourse: ProescCourse;
   currentReportIdByTest: Record<TestType, string | undefined>;
   openReport: (report: SavedReport) => void;
   setAnswer: (questionId: string, value: number) => void;
   clearAnswer: (questionId: string) => void;
   setPatientName: (name: string) => void;
   setPatientSex: (sex: string) => void;
+  setProescCourse: (course: ProescCourse) => void;
   setCumanesIdentification: (
     identification: CumanesIdentification
   ) => void;
@@ -193,6 +205,8 @@ export const selectCurrentStaiIdentification = (state: CurrentReportStore) =>
 export const selectCurrentRiasForm = (state: CurrentReportStore) =>
   state.riasFormByTest[state.currentTest];
 
+export const selectProescCourse = (state: CurrentReportStore) => state.proescCourse;
+
 export const selectCurrentReportId = (state: CurrentReportStore) =>
   state.currentReportIdByTest[state.currentTest];
 
@@ -211,6 +225,7 @@ function normalizePersistedState(
   | "clearAnswer"
   | "setPatientName"
   | "setPatientSex"
+  | "setProescCourse"
   | "setCumanesIdentification"
   | "setCumanesLaterality"
   | "setCarasIdentification"
@@ -300,6 +315,7 @@ function normalizePersistedState(
     carasIdentificationByTest,
     staiIdentificationByTest,
     riasFormByTest,
+    proescCourse: legacy.proescCourse ?? "",
     currentReportIdByTest,
   };
 }
@@ -316,10 +332,12 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
       carasIdentificationByTest: emptyCarasIdentificationByTest(),
       staiIdentificationByTest: emptyStaiIdentificationByTest(),
       riasFormByTest: emptyRiasFormByTest(),
+      proescCourse: "",
       currentReportIdByTest: emptyCurrentReportIdByTest(),
       openReport: (report) =>
         set((state) => ({
           currentTest: report.test,
+          proescCourse: report.test === "PROESC" ? report.proescCourse ?? "" : state.proescCourse,
           answersByTest: {
             ...state.answersByTest,
             [report.test]: { ...report.answers },
@@ -425,6 +443,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
             [state.currentTest]: sex,
           },
         })),
+      setProescCourse: (course) => set({ proescCourse: course }),
       setCumanesIdentification: (identification) =>
         set((state) => ({
           cumanesIdentificationByTest: {
@@ -541,6 +560,7 @@ export const useCurrentReportStore = create<CurrentReportStore>()(
         })),
       reset: () =>
         set((state) => ({
+          ...(state.currentTest === "PROESC" ? { proescCourse: "" as ProescCourse } : {}),
           answersByTest: {
             ...state.answersByTest,
             [state.currentTest]: {},

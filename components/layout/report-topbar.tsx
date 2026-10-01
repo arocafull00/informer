@@ -13,6 +13,7 @@ import {
   selectCurrentPatientSex,
   selectCurrentReportId,
   selectCurrentRiasForm,
+  selectProescCourse,
   selectCurrentStaiIdentification,
   useCurrentReportStore,
 } from "@/store/use-current-report-store";
@@ -34,6 +35,7 @@ export function ReportTopbar() {
     selectCurrentStaiIdentification
   );
   const riasForm = useCurrentReportStore(selectCurrentRiasForm);
+  const proescCourse = useCurrentReportStore(selectProescCourse);
   const report = useReportHistoryStore((state) =>
     currentReportId
       ? state.reports.find((item) => item.id === currentReportId)
@@ -54,6 +56,7 @@ export function ReportTopbar() {
       carasIdentification,
       staiIdentification,
       riasForm,
+      proescCourse,
     });
   }, [
     answers,
@@ -65,6 +68,7 @@ export function ReportTopbar() {
     patientSex,
     report?.createdAt,
     riasForm,
+    proescCourse,
     staiIdentification,
   ]);
 
