@@ -1,5 +1,6 @@
 import { fillProescPdf } from "@/lib/proesc-pdf/fill-proesc-pdf";
 import { parseProescPdfInput } from "@/lib/proesc-scoring";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export const runtime = "nodejs";
 
@@ -19,7 +20,7 @@ export async function POST(request: Request) {
     return new Response(Buffer.from(bytes), {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'attachment; filename="proesc-resultados.pdf"',
+        "Content-Disposition": `attachment; filename="${getReportPdfFilename(input.patientName, "proesc")}"`,
         "Cache-Control": "private, no-store",
       },
     });

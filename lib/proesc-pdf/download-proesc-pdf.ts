@@ -1,4 +1,5 @@
 import type { ProescCourse } from "@/lib/proesc-scoring";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export async function downloadProescPdf(input: {
   patientName: string;
@@ -16,7 +17,7 @@ export async function downloadProescPdf(input: {
   const url = URL.createObjectURL(await response.blob());
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "proesc-resultados.pdf";
+  anchor.download = getReportPdfFilename(input.patientName, "proesc");
   anchor.click();
   URL.revokeObjectURL(url);
 }

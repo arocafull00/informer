@@ -3,6 +3,7 @@ import {
   type AdirResultsForm,
 } from "@/lib/adir-scoring";
 import { fillAdirPdf } from "@/lib/adir-pdf/fill-adir-pdf";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export const runtime = "nodejs";
 
@@ -24,7 +25,7 @@ export async function POST(request: Request) {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'attachment; filename="adi-r-resultados.pdf"',
+        "Content-Disposition": `attachment; filename="${getReportPdfFilename(form.subject.nameOrId, "adi-r")}"`,
       },
     });
   } catch {

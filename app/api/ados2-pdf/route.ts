@@ -1,5 +1,6 @@
 import { fillAdos2Pdf } from "@/lib/ados2-pdf/fill-ados2-pdf";
 import { isAdos2PdfTest, type Ados2PdfForm } from "@/lib/ados2-pdf/types";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export const runtime = "nodejs";
 
@@ -17,10 +18,10 @@ export async function POST(request: Request) {
 
   try {
     const pdfBytes = await fillAdos2Pdf(form);
-    const filename =
-      form.test === "ADOS2_NINO"
-        ? "ados2-nino-resultados.pdf"
-        : "ados2-adulto-resultados.pdf";
+    const filename = getReportPdfFilename(
+      form.subject.identification,
+      form.test === "ADOS2_NINO" ? "ados2-nino" : "ados2-adulto",
+    );
 
     return new Response(Buffer.from(pdfBytes), {
       status: 200,

@@ -1,5 +1,6 @@
 import type { Ados2ScoreSummary } from "@/lib/ados2-scoring";
 import type { TestType } from "@/lib/types";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 import { isAdos2PdfTest, type Ados2PdfForm, type Ados2Subject } from "./types";
 
 export async function downloadAdos2Pdf(
@@ -27,10 +28,10 @@ export async function downloadAdos2Pdf(
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download =
-    test === "ADOS2_NINO"
-      ? "ados2-nino-resultados.pdf"
-      : "ados2-adulto-resultados.pdf";
+  anchor.download = getReportPdfFilename(
+    subject.identification,
+    test === "ADOS2_NINO" ? "ados2-nino" : "ados2-adulto",
+  );
   anchor.click();
   URL.revokeObjectURL(url);
 }

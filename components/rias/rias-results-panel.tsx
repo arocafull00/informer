@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ChartNoAxesColumn, Check, TableProperties } from "lucide-react";
+import { Check, Download } from "lucide-react";
 import { RiasIndexResultRow } from "./rias-index-result-row";
-import {
-  downloadRiasChartPdf,
-  downloadRiasPdf,
-} from "@/lib/rias-pdf/download-rias-pdf";
+import { downloadRiasPdf } from "@/lib/rias-pdf/download-rias-pdf";
 import {
   RIAS_INDEX_KEYS,
   isRiasResultsFormComplete,
@@ -20,15 +17,13 @@ import {
 export function RiasResultsPanel() {
   const currentReportId = useCurrentReportStore(selectCurrentReportId);
   const form = useCurrentReportStore(selectCurrentRiasForm);
-  const [generatingPdf, setGeneratingPdf] = useState<
-    "table" | "chart" | null
-  >(null);
+  const [generatingPdf, setGeneratingPdf] = useState(false);
   const [pdfError, setPdfError] = useState<string | null>(null);
   const isComplete = isRiasResultsFormComplete(form);
 
-  const handleDownloadTable = async () => {
+  const handleDownload = async () => {
     if (!isComplete) return;
-    setGeneratingPdf("table");
+    setGeneratingPdf(true);
     setPdfError(null);
     try {
       await downloadRiasPdf(form);
@@ -37,22 +32,7 @@ export function RiasResultsPanel() {
         error instanceof Error ? error.message : "No se pudo generar el PDF",
       );
     } finally {
-      setGeneratingPdf(null);
-    }
-  };
-
-  const handleDownloadChart = async () => {
-    if (!isComplete) return;
-    setGeneratingPdf("chart");
-    setPdfError(null);
-    try {
-      await downloadRiasChartPdf(form);
-    } catch (error) {
-      setPdfError(
-        error instanceof Error ? error.message : "No se pudo generar el PDF",
-      );
-    } finally {
-      setGeneratingPdf(null);
+      setGeneratingPdf(false);
     }
   };
 
@@ -116,7 +96,7 @@ export function RiasResultsPanel() {
 
         {!isComplete ? (
           <p className="mt-4 text-body-md leading-relaxed text-on-surface-variant">
-            Completa todos los pasos del formulario para generar los PDF de
+            Completa todos los pasos del formulario para generar el PDF de
             resultados.
           </p>
         ) : null}
@@ -126,28 +106,15 @@ export function RiasResultsPanel() {
           </p>
         ) : null}
         {currentReportId ? (
-          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+          <div className="mt-4">
             <button
               type="button"
-              onClick={handleDownloadTable}
-              disabled={!isComplete || generatingPdf !== null}
-              className="interactive-press flex min-h-9 items-center justify-center gap-1.5 rounded-lg bg-surface-container px-3 py-2 text-label-md text-on-surface hover:bg-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60"
+              onClick={handleDownload}
+              disabled={!isComplete || generatingPdf}
+              className="interactive-press flex min-h-9 w-full items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              <TableProperties className="size-4" aria-hidden="true" />
-              {generatingPdf === "table"
-                ? "Generando..."
-                : "Descargar tabla"}
-            </button>
-            <button
-              type="button"
-              onClick={handleDownloadChart}
-              disabled={!isComplete || generatingPdf !== null}
-              className="interactive-press flex min-h-9 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              <ChartNoAxesColumn className="size-4" aria-hidden="true" />
-              {generatingPdf === "chart"
-                ? "Generando..."
-                : "Descargar gráfica"}
+              <Download className="size-4" aria-hidden="true" />
+              {generatingPdf ? "Generando..." : "Descargar PDF"}
             </button>
           </div>
         ) : null}

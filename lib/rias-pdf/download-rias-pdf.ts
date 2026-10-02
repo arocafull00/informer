@@ -1,4 +1,5 @@
 import type { RiasResultsForm } from "@/lib/rias-scoring";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 async function downloadPdfBlob(blob: Blob, filename: string): Promise<void> {
   const url = URL.createObjectURL(blob);
@@ -29,12 +30,5 @@ async function fetchRiasPdf(
 
 export async function downloadRiasPdf(form: RiasResultsForm): Promise<void> {
   const blob = await fetchRiasPdf(form, "/api/rias-pdf");
-  await downloadPdfBlob(blob, "rias-perfil-resultados.pdf");
-}
-
-export async function downloadRiasChartPdf(
-  form: RiasResultsForm,
-): Promise<void> {
-  const blob = await fetchRiasPdf(form, "/api/rias-chart-pdf");
-  await downloadPdfBlob(blob, "rias-grafica-resultados.pdf");
+  await downloadPdfBlob(blob, getReportPdfFilename(form.patient.name, "rias"));
 }

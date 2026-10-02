@@ -1,4 +1,5 @@
 import type { AdirResultsForm } from "@/lib/adir-scoring";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export async function downloadAdirPdf(form: AdirResultsForm): Promise<void> {
   const response = await fetch("/api/adir-pdf", {
@@ -16,7 +17,7 @@ export async function downloadAdirPdf(form: AdirResultsForm): Promise<void> {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "adi-r-resultados.pdf";
+  anchor.download = getReportPdfFilename(form.subject.nameOrId, "adi-r");
   anchor.click();
   URL.revokeObjectURL(url);
 }

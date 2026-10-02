@@ -3,6 +3,7 @@ import path from "node:path";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import type { RiasResultsForm } from "@/lib/rias-scoring";
 import type { RiasPdfFieldMap, RiasPdfTextField } from "./types";
+import { fillRiasChartPdf } from "./fill-rias-chart-pdf";
 
 function loadFieldMap(): RiasPdfFieldMap {
   const mapPath = path.join(process.cwd(), "data", "rias-pdf-fields.json");
@@ -161,6 +162,12 @@ export async function fillRiasPdf(form: RiasResultsForm): Promise<Uint8Array> {
     const value = values[fieldKey];
     if (!value) continue;
     drawTextInField(page, field, value, font, origin);
+  }
+
+  const chartDoc = await PDFDocument.load(await fillRiasChartPdf(form));
+  const chartPages = await pdfDoc.copyPages(chartDoc, chartDoc.getPageIndices());
+  for (const chartPage of chartPages) {
+    pdfDoc.addPage(chartPage);
   }
 
   return pdfDoc.save();

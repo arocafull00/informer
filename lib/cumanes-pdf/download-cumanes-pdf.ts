@@ -1,4 +1,5 @@
 import type { CumanesPdfForm } from "./types";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export async function downloadCumanesPdf(form: CumanesPdfForm): Promise<void> {
   const response = await fetch("/api/cumanes-pdf", {
@@ -16,7 +17,7 @@ export async function downloadCumanesPdf(form: CumanesPdfForm): Promise<void> {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "cumanes-resultados.pdf";
+  anchor.download = getReportPdfFilename(form.patientName, "cumanes");
   anchor.click();
   URL.revokeObjectURL(url);
 }

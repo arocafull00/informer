@@ -3,6 +3,7 @@ import {
   type RiasResultsForm,
 } from "@/lib/rias-scoring";
 import { fillRiasPdf } from "@/lib/rias-pdf/fill-rias-pdf";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export const runtime = "nodejs";
 
@@ -24,7 +25,7 @@ export async function POST(request: Request) {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'attachment; filename="rias-perfil-resultados.pdf"',
+        "Content-Disposition": `attachment; filename="${getReportPdfFilename(form.patient.name, "rias")}"`,
       },
     });
   } catch {

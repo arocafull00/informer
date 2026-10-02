@@ -1,5 +1,6 @@
 import { fillCumanesPdf } from "@/lib/cumanes-pdf/fill-cumanes-pdf";
 import type { CumanesPdfForm } from "@/lib/cumanes-pdf/types";
+import { getReportPdfFilename } from "@/lib/pdf/report-filename";
 
 export const runtime = "nodejs";
 
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'attachment; filename="cumanes-resultados.pdf"',
+        "Content-Disposition": `attachment; filename="${getReportPdfFilename(form.patientName, "cumanes")}"`,
       },
     });
   } catch {
