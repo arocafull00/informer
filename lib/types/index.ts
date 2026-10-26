@@ -33,6 +33,7 @@ export type Question = {
 export type SavedReport = {
   id: string;
   createdAt: string;
+  updatedAt?: string;
   test: TestType;
   groupId?: string;
   answers: Record<string, number>;

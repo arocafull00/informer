@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useDroppable } from "@dnd-kit/react";
 import { useSortable } from "@dnd-kit/react/sortable";
 import {
@@ -23,6 +24,7 @@ type HistoryGroupProps = {
   groupCount: number;
   groups: ReportGroup[];
   reports: SavedReport[];
+  filtering?: boolean;
   currentReportId?: string;
   onRestoreReport: (id: string) => void;
   onDeleteReport: (id: string) => void;
@@ -51,6 +53,7 @@ function HistoryGroupContent({
   groupCount,
   groups,
   reports,
+  filtering = false,
   currentReportId,
   sortableRef,
   handleRef,
@@ -67,7 +70,8 @@ function HistoryGroupContent({
 }: GroupContentProps) {
   const groupId = group?.id ?? null;
   const groupKey = group?.id ?? UNGROUPED_KEY;
-  const collapsed = group?.collapsed ?? false;
+  const [filteredCollapsed, setFilteredCollapsed] = useState(false);
+  const collapsed = filtering ? filteredCollapsed : (group?.collapsed ?? false);
   const { ref: reportZoneRef, isDropTarget: isReportDropTarget } = useDroppable({
     id: `report-zone:${groupKey}`,
     type: "report-zone",
@@ -102,6 +106,8 @@ function HistoryGroupContent({
             <button
               ref={handleRef}
               type="button"
+              disabled={filtering}
+              title={filtering ? "Limpia los filtros para reordenar" : undefined}
               className="interactive-press flex size-7 shrink-0 touch-none items-center justify-center rounded text-outline hover:bg-surface-container-high hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={`Arrastrar paciente ${group.name}`}
             >
@@ -116,7 +122,11 @@ function HistoryGroupContent({
           {group ? (
             <button
               type="button"
-              onClick={() => onToggleGroup(group.id)}
+              onClick={() =>
+                filtering
+                  ? setFilteredCollapsed(!filteredCollapsed)
+                  : onToggleGroup(group.id)
+              }
               className="flex min-w-0 flex-1 items-center gap-1.5 rounded py-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-expanded={!collapsed}
             >
@@ -162,7 +172,7 @@ function HistoryGroupContent({
               <div className="absolute right-0 z-50 mt-1 w-44 space-y-1 rounded-lg border border-outline-variant bg-surface-container-lowest p-1.5 text-on-surface shadow-level-1">
                 <button
                   type="button"
-                  disabled={groupIndex === 0}
+                  disabled={filtering || groupIndex === 0}
                   onClick={() => onMoveGroup(group.id, groupIndex - 1)}
                   className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
                 >
@@ -171,7 +181,7 @@ function HistoryGroupContent({
                 </button>
                 <button
                   type="button"
-                  disabled={groupIndex === groupCount - 1}
+                  disabled={filtering || groupIndex === groupCount - 1}
                   onClick={() => onMoveGroup(group.id, groupIndex + 1)}
                   className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
                 >
@@ -206,6 +216,7 @@ function HistoryGroupContent({
                 <HistoryItem
                   key={report.id}
                   report={report}
+                  reorderingDisabled={filtering}
                   groups={groups}
                   index={index}
                   isActive={report.id === currentReportId}
@@ -240,6 +251,7 @@ function SortableHistoryGroup(props: HistoryGroupProps & { group: ReportGroup })
     index: groupIndex,
     group: "history-groups",
     type: "group",
+    disabled: props.filtering,
     accept: "group",
     data: {
       entityType: "group",

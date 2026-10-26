@@ -79,10 +79,26 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
         set((state) => {
           const existingIndex = state.reports.findIndex((r) => r.id === report.id);
           if (existingIndex === -1) {
-            return { reports: [report, ...state.reports] };
+            return {
+              reports: [
+                { ...report, updatedAt: new Date().toISOString() },
+                ...state.reports,
+              ],
+            };
           }
+          const existingReport = state.reports[existingIndex];
+          const changed = Object.keys({ ...existingReport, ...report }).some(
+            (key) =>
+              key !== "updatedAt" &&
+              JSON.stringify(existingReport[key as keyof SavedReport]) !==
+                JSON.stringify(report[key as keyof SavedReport])
+          );
+          if (!changed) return state;
           const reports = [...state.reports];
-          reports[existingIndex] = report;
+          reports[existingIndex] = {
+            ...report,
+            updatedAt: new Date().toISOString(),
+          };
           return { reports };
         }),
       deleteReport: (id) =>
@@ -94,12 +110,14 @@ export const useReportHistoryStore = create<ReportHistoryStore>()(
           reports: state.reports.map((report) => {
             if (report.id !== id) return report;
             const trimmed = patientName.trim();
+            if ((report.patientName ?? "") === trimmed) return report;
+            const updatedAt = new Date().toISOString();
             if (!trimmed) {
               const { patientName: removedPatientName, ...rest } = report;
               void removedPatientName;
-              return rest;
+              return { ...rest, updatedAt };
             }
-            return { ...report, patientName: trimmed };
+            return { ...report, patientName: trimmed, updatedAt };
           }),
         })),
       createGroup: (name) => {

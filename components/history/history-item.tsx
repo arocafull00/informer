@@ -28,6 +28,7 @@ export function getReportsGroupKey(groupId: string | null) {
 
 interface HistoryItemProps {
   report: SavedReport;
+  reorderingDisabled?: boolean;
   groups: ReportGroup[];
   index: number;
   isActive: boolean;
@@ -41,6 +42,7 @@ interface HistoryItemProps {
 
 export function HistoryItem({
   report,
+  reorderingDisabled = false,
   groups,
   index,
   isActive,
@@ -60,6 +62,7 @@ export function HistoryItem({
     index,
     group: getReportsGroupKey(groupId),
     type: "report",
+    disabled: reorderingDisabled,
     accept: "report",
     data: {
       entityType: "report",
@@ -84,6 +87,8 @@ export function HistoryItem({
       <button
         ref={handleRef}
         type="button"
+        disabled={reorderingDisabled}
+        title={reorderingDisabled ? "Limpia los filtros para reordenar" : undefined}
         className="interactive-press flex size-7 shrink-0 touch-none items-center justify-center rounded text-outline hover:bg-surface-container-highest hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         aria-label={`Arrastrar ${label}`}
       >
@@ -134,7 +139,7 @@ export function HistoryItem({
         <div className="absolute right-0 z-40 mt-1 w-48 space-y-1 rounded-lg border border-outline-variant bg-surface-container-lowest p-1.5 text-on-surface shadow-level-1">
           <button
             type="button"
-            disabled={isFirst}
+            disabled={reorderingDisabled || isFirst}
             onClick={() => onMove(groupId, index - 1)}
             className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
           >
@@ -143,7 +148,7 @@ export function HistoryItem({
           </button>
           <button
             type="button"
-            disabled={isLast}
+            disabled={reorderingDisabled || isLast}
             onClick={() => onMove(groupId, index + 1)}
             className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md hover:bg-surface-container-high disabled:opacity-40"
           >
