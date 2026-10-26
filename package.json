@@ -10,7 +10,9 @@
     "test:caras-r": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test lib/caras-r-scoring.test.ts",
     "test:stai": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test lib/stai-scoring.test.ts",
     "test:proesc": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test lib/proesc-scoring.test.ts",
-    "generate-pdf-previews": "node scripts/generate-pdf-previews.mjs"
+    "test:omr": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test lib/omr/read-sheet.test.ts",
+    "generate-pdf-previews": "node scripts/generate-pdf-previews.mjs",
+    "generate-omr-templates": "node scripts/generate-omr-templates.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
@@ -21,9 +23,11 @@
     "@neondatabase/serverless": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "jsqr": "^1.4.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.6",
     "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "5.6.205",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
@@ -41,6 +45,7 @@
     "eslint-config-next": "16.2.6",
     "pdf-to-img": "^6.1.0",
     "playwright": "^1.61.1",
+    "qrcode": "^1.5.4",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"

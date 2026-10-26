@@ -13,6 +13,8 @@ import {
   ados2SectionHeading,
   isAdos2Test,
 } from "@/lib/ados2-labels";
+import { SheetReaderPanel } from "@/components/sheet-reader/sheet-reader-panel";
+import { isSheetTest } from "@/lib/omr/sheet-maps";
 import { testData, testLabels } from "@/lib/test-data";
 import type { Question } from "@/lib/types";
 import { QuestionCard } from "./question-card";
@@ -81,6 +83,9 @@ export function QuestionList() {
             puntuar.
           </p>
         </div>
+      )}
+      {isSheetTest(currentTest) && (
+        <SheetReaderPanel test={currentTest} disabled={!scoringEnabled} />
       )}
       {sections.map(({ sectionNumber, section, questions: qs }) => {
         const answeredInSection = qs.filter(

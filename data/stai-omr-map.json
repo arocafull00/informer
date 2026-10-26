@@ -1,0 +1,1264 @@
+{
+  "test": "STAI",
+  "version": 1,
+  "units": "mm",
+  "origin": "top-left",
+  "page": {
+    "width": 210,
+    "height": 297
+  },
+  "markerSize": 10,
+  "boxSize": 5.5,
+  "pages": [
+    {
+      "page": 1,
+      "qr": "STAI-1/2",
+      "qrCenter": [
+        195,
+        15
+      ],
+      "qrSize": 14,
+      "markers": {
+        "topLeft": [
+          15,
+          15
+        ],
+        "bottomLeft": [
+          15,
+          282
+        ],
+        "bottomRight": [
+          195,
+          282
+        ]
+      },
+      "items": [
+        {
+          "id": "stai-01",
+          "code": "1",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 78.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 78.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 78.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 78.8
+            }
+          ]
+        },
+        {
+          "id": "stai-02",
+          "code": "2",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 87.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 87.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 87.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 87.8
+            }
+          ]
+        },
+        {
+          "id": "stai-03",
+          "code": "3",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 96.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 96.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 96.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 96.8
+            }
+          ]
+        },
+        {
+          "id": "stai-04",
+          "code": "4",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 105.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 105.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 105.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 105.8
+            }
+          ]
+        },
+        {
+          "id": "stai-05",
+          "code": "5",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 114.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 114.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 114.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 114.8
+            }
+          ]
+        },
+        {
+          "id": "stai-06",
+          "code": "6",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 123.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 123.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 123.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 123.8
+            }
+          ]
+        },
+        {
+          "id": "stai-07",
+          "code": "7",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 135.1
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 135.1
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 135.1
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 135.1
+            }
+          ]
+        },
+        {
+          "id": "stai-08",
+          "code": "8",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 146.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 146.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 146.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 146.4
+            }
+          ]
+        },
+        {
+          "id": "stai-09",
+          "code": "9",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 155.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 155.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 155.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 155.4
+            }
+          ]
+        },
+        {
+          "id": "stai-10",
+          "code": "10",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 164.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 164.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 164.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 164.4
+            }
+          ]
+        },
+        {
+          "id": "stai-11",
+          "code": "11",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 173.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 173.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 173.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 173.4
+            }
+          ]
+        },
+        {
+          "id": "stai-12",
+          "code": "12",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 182.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 182.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 182.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 182.4
+            }
+          ]
+        },
+        {
+          "id": "stai-13",
+          "code": "13",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 191.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 191.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 191.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 191.4
+            }
+          ]
+        },
+        {
+          "id": "stai-14",
+          "code": "14",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 200.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 200.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 200.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 200.4
+            }
+          ]
+        },
+        {
+          "id": "stai-15",
+          "code": "15",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 209.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 209.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 209.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 209.4
+            }
+          ]
+        },
+        {
+          "id": "stai-16",
+          "code": "16",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 218.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 218.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 218.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 218.4
+            }
+          ]
+        },
+        {
+          "id": "stai-17",
+          "code": "17",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 227.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 227.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 227.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 227.4
+            }
+          ]
+        },
+        {
+          "id": "stai-18",
+          "code": "18",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 236.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 236.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 236.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 236.4
+            }
+          ]
+        },
+        {
+          "id": "stai-19",
+          "code": "19",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 245.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 245.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 245.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 245.4
+            }
+          ]
+        },
+        {
+          "id": "stai-20",
+          "code": "20",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 254.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 254.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 254.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 254.4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "qr": "STAI-2/2",
+      "qrCenter": [
+        195,
+        15
+      ],
+      "qrSize": 14,
+      "markers": {
+        "topLeft": [
+          15,
+          15
+        ],
+        "bottomLeft": [
+          15,
+          282
+        ],
+        "bottomRight": [
+          195,
+          282
+        ]
+      },
+      "items": [
+        {
+          "id": "stai-21",
+          "code": "21",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 78.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 78.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 78.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 78.8
+            }
+          ]
+        },
+        {
+          "id": "stai-22",
+          "code": "22",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 87.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 87.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 87.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 87.8
+            }
+          ]
+        },
+        {
+          "id": "stai-23",
+          "code": "23",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 96.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 96.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 96.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 96.8
+            }
+          ]
+        },
+        {
+          "id": "stai-24",
+          "code": "24",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 105.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 105.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 105.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 105.8
+            }
+          ]
+        },
+        {
+          "id": "stai-25",
+          "code": "25",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 114.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 114.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 114.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 114.8
+            }
+          ]
+        },
+        {
+          "id": "stai-26",
+          "code": "26",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 123.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 123.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 123.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 123.8
+            }
+          ]
+        },
+        {
+          "id": "stai-27",
+          "code": "27",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 132.8
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 132.8
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 132.8
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 132.8
+            }
+          ]
+        },
+        {
+          "id": "stai-28",
+          "code": "28",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 144.1
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 144.1
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 144.1
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 144.1
+            }
+          ]
+        },
+        {
+          "id": "stai-29",
+          "code": "29",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 155.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 155.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 155.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 155.4
+            }
+          ]
+        },
+        {
+          "id": "stai-30",
+          "code": "30",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 164.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 164.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 164.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 164.4
+            }
+          ]
+        },
+        {
+          "id": "stai-31",
+          "code": "31",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 173.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 173.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 173.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 173.4
+            }
+          ]
+        },
+        {
+          "id": "stai-32",
+          "code": "32",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 182.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 182.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 182.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 182.4
+            }
+          ]
+        },
+        {
+          "id": "stai-33",
+          "code": "33",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 191.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 191.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 191.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 191.4
+            }
+          ]
+        },
+        {
+          "id": "stai-34",
+          "code": "34",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 200.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 200.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 200.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 200.4
+            }
+          ]
+        },
+        {
+          "id": "stai-35",
+          "code": "35",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 209.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 209.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 209.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 209.4
+            }
+          ]
+        },
+        {
+          "id": "stai-36",
+          "code": "36",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 218.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 218.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 218.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 218.4
+            }
+          ]
+        },
+        {
+          "id": "stai-37",
+          "code": "37",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 227.4
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 227.4
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 227.4
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 227.4
+            }
+          ]
+        },
+        {
+          "id": "stai-38",
+          "code": "38",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 238.7
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 238.7
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 238.7
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 238.7
+            }
+          ]
+        },
+        {
+          "id": "stai-39",
+          "code": "39",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 250
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 250
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 250
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 250
+            }
+          ]
+        },
+        {
+          "id": "stai-40",
+          "code": "40",
+          "boxes": [
+            {
+              "value": "0",
+              "label": "Casi nunca",
+              "x": 128.5,
+              "y": 261.3
+            },
+            {
+              "value": "1",
+              "label": "A veces",
+              "x": 147.5,
+              "y": 261.3
+            },
+            {
+              "value": "2",
+              "label": "A menudo",
+              "x": 166.5,
+              "y": 261.3
+            },
+            {
+              "value": "3",
+              "label": "Casi siempre",
+              "x": 185.5,
+              "y": 261.3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
