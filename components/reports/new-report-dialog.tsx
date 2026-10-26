@@ -80,6 +80,11 @@ const reportTypes: {
     description: "Inventario de ansiedad estado-rasgo.",
   },
   {
+    value: "STAIC",
+    label: "STAIC",
+    description: "Inventario de ansiedad estado-rasgo para niños.",
+  },
+  {
     value: "RIAS",
     label: "RIAS",
     description: "Escalas de inteligencia y memoria.",

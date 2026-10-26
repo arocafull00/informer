@@ -1,0 +1,562 @@
+[
+  {
+    "id": "staic-01",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "1",
+    "question": "Me siento calmado",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-02",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "2",
+    "question": "Me siento inquieto",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-03",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "3",
+    "question": "Me siento nervioso",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-04",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "4",
+    "question": "Me encuentro descansado",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-05",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "5",
+    "question": "Tengo miedo",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-06",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "6",
+    "question": "Estoy relajado",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-07",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "7",
+    "question": "Estoy preocupado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-08",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "8",
+    "question": "Me encuentro satisfecho",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-09",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "9",
+    "question": "Me siento feliz",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-10",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "10",
+    "question": "Me siento seguro",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-11",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "11",
+    "question": "Me encuentro bien",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-12",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "12",
+    "question": "Me siento molesto",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-13",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "13",
+    "question": "Me siento agradablemente",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-14",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "14",
+    "question": "Me encuentro atemorizado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-15",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "15",
+    "question": "Me encuentro confuso",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-16",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "16",
+    "question": "Me siento animoso",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-17",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "17",
+    "question": "Me siento angustiado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-18",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "18",
+    "question": "Me encuentro alegre",
+    "scoring": "reverse",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-19",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "19",
+    "question": "Me encuentro contrariado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-20",
+    "test": "STAIC",
+    "sectionNumber": 1,
+    "section": "Ansiedad-Estado",
+    "code": "20",
+    "question": "Me siento triste",
+    "scoring": "direct",
+    "answers": {
+      "1": "Nada",
+      "2": "Algo",
+      "3": "Mucho"
+    }
+  },
+  {
+    "id": "staic-21",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "21",
+    "question": "Me preocupa cometer errores",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-22",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "22",
+    "question": "Siento ganas de llorar",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-23",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "23",
+    "question": "Me siento desgraciado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-24",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "24",
+    "question": "Me cuesta tomar una decisión",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-25",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "25",
+    "question": "Me cuesta enfrentarme a mis problemas",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-26",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "26",
+    "question": "Me preocupo demasiado",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-27",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "27",
+    "question": "Me encuentro molesto",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-28",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "28",
+    "question": "Pensamientos sin importancia me vienen a la cabeza y me molestan",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-29",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "29",
+    "question": "Me preocupan las cosas del colegio",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-30",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "30",
+    "question": "Me cuesta decidirme en lo que tengo que hacer",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-31",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "31",
+    "question": "Noto que mi corazón late más rápido",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-32",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "32",
+    "question": "Aunque no lo digo, tengo miedo",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-33",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "33",
+    "question": "Me preocupo por cosas que puedan ocurrir",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-34",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "34",
+    "question": "Me cuesta quedarme dormido por las noches",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-35",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "35",
+    "question": "Tengo sensaciones extrañas en el estómago",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-36",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "36",
+    "question": "Me preocupa lo que otros piensen de mí",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-37",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "37",
+    "question": "Me influyen tanto los problemas que no puedo olvidarlos durante un tiempo",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-38",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "38",
+    "question": "Tomo las cosas demasiado en serio",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-39",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "39",
+    "question": "Encuentro muchas dificultades en mi vida",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  },
+  {
+    "id": "staic-40",
+    "test": "STAIC",
+    "sectionNumber": 2,
+    "section": "Ansiedad-Rasgo",
+    "code": "40",
+    "question": "Me siento menos feliz que los demás chicos",
+    "scoring": "direct",
+    "answers": {
+      "1": "Casi nunca",
+      "2": "A veces",
+      "3": "A menudo"
+    }
+  }
+]

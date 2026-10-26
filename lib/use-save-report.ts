@@ -18,6 +18,7 @@ import { buildCarasMarkdown } from "@/lib/caras-r-scoring";
 import { EMPTY_CARAS_IDENTIFICATION } from "@/lib/caras-r-types";
 import { buildDersMarkdown } from "@/lib/ders-scoring";
 import { buildStaiMarkdown } from "@/lib/stai-scoring";
+import { buildStaicMarkdown } from "@/lib/staic-scoring";
 import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { useReportHistoryStore } from "@/store/use-report-history-store";
 import { generateMarkdown } from "@/lib/generators/generate-markdown";
@@ -52,6 +53,7 @@ export function useReportMarkdown() {
     if (currentTest === "STAI") {
       return buildStaiMarkdown(staiIdentification, patientSex, answers);
     }
+    if (currentTest === "STAIC") return buildStaicMarkdown(answers);
     if (currentTest === "DERS") {
       return buildDersMarkdown(patientSex, answers);
     }
@@ -208,6 +210,8 @@ export function useCreateNewReport() {
                   patientSex ?? "",
                   emptyAnswers
                 )
+              : test === "STAIC"
+                ? buildStaicMarkdown(emptyAnswers)
               : test === "DERS"
                 ? buildDersMarkdown(patientSex ?? "", emptyAnswers)
                 : generateMarkdown(data, emptyAnswers, patientSex ?? ""),

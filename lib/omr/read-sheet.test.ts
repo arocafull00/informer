@@ -55,7 +55,7 @@ function chosenIndex(itemIndex: number, optionCount: number) {
   return (itemIndex * 7 + 1) % optionCount;
 }
 
-for (const sheetTest of ["STAI", "DERS"] as const) {
+for (const sheetTest of ["STAI", "STAIC", "DERS"] as const) {
   for (const pageNumber of [1, 2]) {
     test(`${sheetTest} page ${pageNumber}: reads one cross per item from a tilted photo`, async () => {
       const page = sheetMaps[sheetTest].pages[pageNumber - 1];

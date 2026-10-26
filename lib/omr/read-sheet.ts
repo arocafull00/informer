@@ -30,7 +30,7 @@ export const FAINT_FILL = 0.025;
 const INK_RATIO = 0.7;
 const BOX_INSET = 0.9;
 const BOX_SAMPLES = 15;
-const QR_PAYLOAD = /^(STAI|DERS)-(\d+)\/(\d+)$/;
+const QR_PAYLOAD = /^(STAIC|STAI|DERS)-(\d+)\/(\d+)$/;
 
 type JsQr = typeof jsQRModule;
 const jsQR: JsQr =

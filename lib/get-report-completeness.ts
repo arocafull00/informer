@@ -14,6 +14,7 @@ import {
   normalizeRiasResultsForm,
 } from "@/lib/rias-scoring";
 import { getStaiScoreSummary } from "@/lib/stai-scoring";
+import { getStaicScoreSummary } from "@/lib/staic-scoring";
 import { EMPTY_STAI_IDENTIFICATION } from "@/lib/stai-types";
 import { testData } from "@/lib/test-data";
 import { getProescSummary } from "@/lib/proesc-scoring";
@@ -89,6 +90,14 @@ export function getReportCompleteness(
         isComplete: summary.estado.complete && summary.rasgo.complete,
         answeredCount,
         totalCount,
+      };
+    }
+    case "STAIC": {
+      const { estado, rasgo } = getStaicScoreSummary(report.answers);
+      return {
+        isComplete: estado.complete && rasgo.complete,
+        answeredCount: estado.answeredCount + rasgo.answeredCount,
+        totalCount: estado.totalItems + rasgo.totalItems,
       };
     }
     case "RIAS": {

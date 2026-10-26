@@ -67,7 +67,7 @@ export function QuestionList() {
     disabled: !scoringEnabled,
   });
   const isAdos2 = isAdos2Test(currentTest);
-  const isStai = currentTest === "STAI";
+  const isStai = currentTest === "STAI" || currentTest === "STAIC";
   const isDers = currentTest === "DERS";
   const showAnswerLabels = isAdos2 || isStai || isDers;
 

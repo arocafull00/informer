@@ -14,6 +14,7 @@ export type TestType =
   | "CUMANES"
   | "CARAS_R"
   | "STAI"
+  | "STAIC"
   | "RIAS"
   | "DERS"
   | "PROESC";

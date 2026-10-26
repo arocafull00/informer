@@ -51,6 +51,24 @@ const tests = [
     ],
   },
   {
+    name: "staic",
+    test: "STAIC",
+    pages: (items) => [
+      {
+        title: "Ansiedad-Estado",
+        items: items.filter((item) => item.section === "Ansiedad-Estado"),
+        instructions:
+          "Lee cada frase y marca la respuesta que diga mejor cómo te sientes ahora mismo, en este momento. No hay respuestas buenas ni malas.",
+      },
+      {
+        title: "Ansiedad-Rasgo",
+        items: items.filter((item) => item.section === "Ansiedad-Rasgo"),
+        instructions:
+          "Lee cada frase y marca la respuesta que diga mejor cómo te sientes en general, no sólo en este momento. No hay respuestas buenas ni malas.",
+      },
+    ],
+  },
+  {
     name: "ders",
     test: "DERS",
     pages: (items) => {

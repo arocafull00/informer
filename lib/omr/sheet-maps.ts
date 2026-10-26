@@ -1,7 +1,8 @@
 import dersMap from "../../data/ders-omr-map.json" with { type: "json" };
 import staiMap from "../../data/stai-omr-map.json" with { type: "json" };
+import staicMap from "../../data/staic-omr-map.json" with { type: "json" };
 
-export type SheetTest = "STAI" | "DERS";
+export type SheetTest = "STAI" | "STAIC" | "DERS";
 
 export type SheetBox = { value: string; label: string; x: number; y: number };
 
@@ -27,11 +28,13 @@ export type SheetMap = {
 
 export const sheetMaps: Record<SheetTest, SheetMap> = {
   STAI: staiMap as SheetMap,
+  STAIC: staicMap as SheetMap,
   DERS: dersMap as SheetMap,
 };
 
 export const sheetTemplateUrls: Record<SheetTest, string> = {
   STAI: "/plantillas/stai.pdf",
+  STAIC: "/plantillas/staic.pdf",
   DERS: "/plantillas/ders.pdf",
 };
 

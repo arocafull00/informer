@@ -41,7 +41,9 @@ export function ScoreSelector({
       className={
         showLabels
           ? labeledGrid
-            ? "grid grid-cols-2 gap-2"
+            ? scores.length === 3
+              ? "grid grid-cols-[repeat(auto-fit,minmax(9rem,1fr))] gap-2"
+              : "grid grid-cols-2 gap-2"
             : "flex flex-col gap-2"
           : "flex flex-wrap gap-2"
       }

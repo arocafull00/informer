@@ -10,6 +10,7 @@ import { CarasResultsPanel } from "@/components/caras-r/caras-results-panel";
 import { CarasScoreForm } from "@/components/caras-r/caras-score-form";
 import { StaiQuestionnaire } from "@/components/stai/stai-questionnaire";
 import { StaiResultsPanel } from "@/components/stai/stai-results-panel";
+import { StaicResultsPanel } from "@/components/staic/staic-results-panel";
 import { RiasScoreForm } from "@/components/rias/rias-score-form";
 import { RiasResultsPanel } from "@/components/rias/rias-results-panel";
 import { DersResultsPanel } from "@/components/ders/ders-results-panel";
@@ -24,6 +25,7 @@ export default function Home() {
   const isCumanes = currentTest === "CUMANES";
   const isCaras = currentTest === "CARAS_R";
   const isStai = currentTest === "STAI";
+  const isStaic = currentTest === "STAIC";
   const isRias = currentTest === "RIAS";
   const isDers = currentTest === "DERS";
   const isProesc = currentTest === "PROESC";
@@ -63,6 +65,8 @@ export default function Home() {
                 <CarasResultsPanel />
               ) : isStai ? (
                 <StaiResultsPanel />
+              ) : isStaic ? (
+                <StaicResultsPanel />
               ) : isRias ? (
                 <RiasResultsPanel />
               ) : isDers ? (
