@@ -29,6 +29,7 @@ export function RiasTScoresStep({
                 label={RIAS_SUBTEST_LABELS[key]}
                 value={tScores[key]}
                 onChange={(value) => onScoreChange(key, value)}
+                autoAdvance
               />
             ))}
           </div>

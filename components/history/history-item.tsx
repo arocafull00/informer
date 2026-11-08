@@ -186,7 +186,7 @@ export function HistoryItem({
             className="flex min-h-8 w-full items-center gap-2 rounded px-2 text-left text-label-md text-destructive hover:bg-destructive/10"
           >
             <Trash2 className="size-4" aria-hidden="true" />
-            Eliminar informe
+            Eliminar test
           </button>
         </div>
       </details>

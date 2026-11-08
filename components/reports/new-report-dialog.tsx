@@ -264,7 +264,7 @@ export function NewReportDialog({
               <div className="space-y-5">
                 <div className="rounded-lg bg-surface-container-low px-3 py-2.5">
                   <span className="text-mono-sm uppercase tracking-wider text-on-surface-variant">
-                    Tipo de informe
+                    Test seleccionado
                   </span>
                   <p className="mt-0.5 text-body-md font-semibold text-primary">
                     {selectedTest ? testLabels[selectedTest] : ""}
@@ -403,7 +403,7 @@ export function NewReportDialog({
                   disabled={isProesc && !proescCourse}
                   className="interactive-press min-h-9 rounded-lg bg-primary px-4 py-2 text-label-md text-on-primary hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  Crear informe
+                  Crear test
                 </button>
               </>
             )}
