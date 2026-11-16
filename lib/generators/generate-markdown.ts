@@ -1,4 +1,7 @@
-import { ados2SectionHeading } from "@/lib/ados2-labels";
+import {
+  ados2SectionHeading,
+  formatAdos2SectionName,
+} from "@/lib/ados2-labels";
 import { applyGenderedPhrasing } from "@/lib/gendered-phrasing";
 import type { Question } from "@/lib/types";
 
@@ -59,7 +62,7 @@ function generateAdirMarkdown(
     const bullets = collectAnswerLines(inSection, answers, "*", patientSex);
     if (bullets.length === 0) return;
 
-    lines.push(section);
+    lines.push(`**${formatAdos2SectionName(section)}**`);
     lines.push("");
     lines.push(...bullets);
     lines.push("");
